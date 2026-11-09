@@ -8,7 +8,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "c3ea45c595326f803aeabde78ddf20d57e7c0e7eff850cfc85e5af1ce185f7b1"
+      "public_sha256": "0defb36b2e3c3d2595cb3dfad16c50b6281bdfb788cbb6b494ae5ce301e8e8fe"
     },
     {
       "old": "deployment/project/scripts/build_polyphase_model.py",

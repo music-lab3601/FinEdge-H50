@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7446,
-      "sha256": "c3ea45c595326f803aeabde78ddf20d57e7c0e7eff850cfc85e5af1ce185f7b1"
+      "bytes": 7325,
+      "sha256": "0defb36b2e3c3d2595cb3dfad16c50b6281bdfb788cbb6b494ae5ce301e8e8fe"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -748,8 +748,8 @@
     },
     {
       "path": "docs/FPGA_BUILD.md",
-      "bytes": 6394,
-      "sha256": "af8eee94a7473920615e1c48c351543079773b2421da8b1db9290490d3d3a5aa"
+      "bytes": 6311,
+      "sha256": "5128c9be7d1435f449905cf1cc3460ebf7c7f077a1e816931d14a96c227423cd"
     },
     {
       "path": "docs/MODEL_BUILD.md",
@@ -2104,12 +2104,12 @@
     {
       "path": "provenance/source_map.json",
       "bytes": 405690,
-      "sha256": "f61a331e4a81a69d5d67fd18a21862963327519eac87c24058bc6bfad56229bc"
+      "sha256": "ad374455a72f482f3841fd560613cdecfdfdca2dd383091e199ff77dff0a444c"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "eb11694bf8f87f3dcba37e6435cf22b0dd9f18bfe9e6383ed33df3d7b376daed"
+      "sha256": "73295d6a24b8c9f3e069bed44fb0356d52d039c8673f2a5402320a26be61bed3"
     },
     {
       "path": "requirements.txt",
