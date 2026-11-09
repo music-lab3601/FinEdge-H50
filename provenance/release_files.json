@@ -373,8 +373,8 @@
     },
     {
       "path": "deployment/commands.py",
-      "bytes": 5634,
-      "sha256": "cf79b465858c904facde9b9ddc3ca481ca99cfb2fe7566466b150f3c8309c722"
+      "bytes": 5747,
+      "sha256": "ba46e640e370ec28f874916164fec512ed7afea69e6e32b42a711a6f1833468d"
     },
     {
       "path": "deployment/export/__init__.py",
@@ -743,8 +743,8 @@
     },
     {
       "path": "deployment/rebuild.py",
-      "bytes": 13969,
-      "sha256": "0de68471db8b4d704e9d63463bca3c1175e876401e7dcf2f1a2718d6c338dd72"
+      "bytes": 14001,
+      "sha256": "02d31338fd23369a554a7d87b1de64e1f5039a02027babe748e6c960fff9eccc"
     },
     {
       "path": "docs/MODEL_BUILD.md",
@@ -763,8 +763,8 @@
     },
     {
       "path": "docs/int8_rebuild_validation.json",
-      "bytes": 4363,
-      "sha256": "05d31fb2ce0238ca1a4f7e8e6f630742589c477b3e47503e6fb6f75603c41412"
+      "bytes": 4334,
+      "sha256": "6cd4d2410b68af7209516cad0c2aa175cf6a1baefdd465f97c6106737121eced"
     },
     {
       "path": "docs/migration_validation.json",
@@ -2083,8 +2083,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 383677,
-      "sha256": "a1650dbd96e4b3ac43563506cf8343163708e1aba9b6806408eff200409df828"
+      "bytes": 383913,
+      "sha256": "dbfd94d80e4324469c534dfdd79c021b19440b41e2a8eef3123f7a7ff564a18e"
     },
     {
       "path": "provenance/template_migration.json",

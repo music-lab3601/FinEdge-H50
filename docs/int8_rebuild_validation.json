@@ -193,5 +193,12 @@
   ],
   "unified_command": "python finedge.py model rebuild --raw-mbo FILE --work-dir NEW_DIRECTORY",
   "board_validation": "pending",
-  "fresh_clone_full_rebuild": "operator receipt records final commit"
+  "fresh_clone_full_rebuild": "passed",
+  "tested_code_commit": "82393dabaa830942a8f63063e12c1300197c7ac0",
+  "unit_tests": {
+    "executed": 661,
+    "passed": 635,
+    "skipped": 26
+  },
+  "regenerated_graph_supplied_to_compiler": true
 }
