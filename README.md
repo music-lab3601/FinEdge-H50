@@ -108,7 +108,7 @@ python -B finedge.py fpga --work-dir <another_new_ascii_build_directory> --packa
 python -B finedge.py simulate
 ```
 
-模型编译阶段及所需收据见[模型构建说明](docs/MODEL_BUILD.md)。FPGA采用Vivado 2018.3、匹配的Procise/JFM及悟净完整版参考输入。厂商文件按清单导入并核对哈希。构建入口将源文件和厂商输入复制到独立英文路径工作目录，随后综合、布局布线、物理审计和BOOT打包。
+模型编译阶段及所需收据见[模型构建说明](docs/MODEL_BUILD.md)。FPGA采用Vivado 2018.3、匹配的Procise/JFM及悟净完整版参考输入。厂商文件按清单导入并核对哈希。构建入口将源文件和厂商输入复制到独立英文路径工作目录，随后综合、布局布线、物理审计和BOOT打包。导入步骤、工具设置、目录约定及产物见[FPGA构建说明](docs/FPGA_BUILD.md)。
 
 ## 当前验收
 

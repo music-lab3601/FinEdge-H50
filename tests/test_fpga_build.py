@@ -3,6 +3,7 @@ import hashlib
 from pathlib import Path
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from unittest.mock import patch
 
 from hardware.scripts import build_fpga as build
@@ -21,6 +22,17 @@ class FpgaBuildTests(unittest.TestCase):
                          (root / 'project/PS_AI IP/a.xml').as_posix())
         self.assertEqual(build.replace_value('repo://hardware/rom/a.hex', root),
                          (root / 'hardware/rom/a.hex').as_posix())
+
+    def test_project_uses_public_mailbox_and_shared_port(self):
+        refs = {item.get('Path') for item in ET.parse(build.ROOT / 'hardware/project/reference.xpr').findall('.//File')}
+        self.assertIn('repo://hardware/rtl/common/b1_mailbox.sv', refs)
+        self.assertIn('repo://hardware/rtl/scheduler/shared_input_beat_port_v1.sv', refs)
+
+    def test_ethernet_macro_continuations_have_valid_line_endings(self):
+        for path in (build.ROOT / 'third_party/verilog-ethernet').rglob('*'):
+            if path.is_file() and path.suffix in {'.v', '.tcl'}:
+                with self.subTest(path=path.name):
+                    self.assertNotIn(b'\r\r\n', path.read_bytes())
 
     def test_import_rejects_changed_source_before_copy(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -50,6 +62,31 @@ class FpgaBuildTests(unittest.TestCase):
                 (root / 'project/rtl/ip/a.dcp').write_bytes(b'changed')
                 with self.assertRaises(ConfigurationError):
                     build.restore_vendor_outputs(root)
+
+    def test_stage_preserves_plain_vendor_bytes_and_handles_json_bd(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / 'repo'
+            vendor = root / 'cache'
+            for directory in ('hardware/project', 'hardware/scripts', 'third_party/verilog-ethernet'):
+                (source / directory).mkdir(parents=True)
+            (vendor / 'ip_patch').mkdir(parents=True)
+            (vendor / 'ip_patch/ip_patch.cfg').write_text('old tool path', encoding='utf-8')
+            original = b'\xef\xbb\xbf// vendor bytes\r\n'
+            (vendor / 'unchanged.v').write_bytes(original)
+            (vendor / 'design.bd').write_text('{"design": {}}', encoding='utf-8')
+            (source / 'hardware/project/reference.xpr').write_text(
+                '<Project><File Path="vendor://fpga/PS_AI IP/a.xml"/>'
+                '<Option Name="IPRepoPath" Val="$PPRDIR/PS_AI IP"/></Project>', encoding='utf-8')
+            (source / 'hardware/scripts/build.tcl').write_text('set p {__PROJECT__}', encoding='utf-8')
+            with patch.object(build, 'ROOT', source), patch.object(build, 'resolve_path', return_value=vendor), \
+                    patch.object(build, 'dependencies', return_value={'status': 'passed'}), \
+                    patch.object(build, 'required_assets', return_value=[]), \
+                    patch.object(build, 'tool_executable', return_value=root / 'tool/bin/vivado.bat'):
+                project = build.stage(root / 'output')
+            self.assertEqual((project.parent / 'unchanged.v').read_bytes(), original)
+            self.assertEqual(ET.parse(project).find('.//File').get('Path'),
+                             (project.parent / 'PS_AI IP/a.xml').as_posix())
 
 
 if __name__ == '__main__':

@@ -143,7 +143,13 @@ def stage(directory):
     tcl = (directory / 'hardware/scripts/build.tcl').read_text('utf-8')
     tcl = tcl.replace('__PROJECT__', project.as_posix()).replace('__BUILD__', directory.as_posix())
     (directory / 'build.tcl').write_text(tcl, encoding='utf-8')
-    atomic_json(directory / 'staging.json', dict(status='staged', dependency_check=status, board_access=False))
+    sources = [path for folder in ('hardware', 'third_party/verilog-ethernet')
+               for path in (ROOT / folder).rglob('*')
+               if path.is_file() and '__pycache__' not in path.parts]
+    source_inputs = [dict(path=path.relative_to(ROOT).as_posix(), bytes=path.stat().st_size,
+                          sha256=hashlib.sha256(path.read_bytes()).hexdigest()) for path in sorted(sources)]
+    atomic_json(directory / 'staging.json', dict(status='staged', dependency_check=status,
+                source_inputs=source_inputs, vendor_inputs=required_assets(), board_access=False))
     return project
 
 
@@ -195,20 +201,23 @@ def main():
     procise = resolve_path('tool://procise/')
     env['PATH'] = os.pathsep.join([str(procise / 'dll'), str(procise / 'bin'), env['PATH']])
     env.pop('TCL_LIBRARY', None)
-    state = dict(status='running', project=str(project), board_access=False)
+    started = time.monotonic_ns()
+    state = dict(status='running', project=str(project), board_access=False, started_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))
     atomic_json(directory / 'result.json', state)
-    with ResourceLock(work_path('state/locks'), 'full_vivado'), (directory / 'build.log').open('xb') as log:
-        result = subprocess.run([str(vivado), '-mode', 'batch', '-source', str(directory / 'build.tcl')],
-                                cwd=directory, env=env, stdout=log, stderr=subprocess.STDOUT)
-    complete = result.returncode == 0 and (directory / 'market_routed.dcp').is_file()
-    state.update(status='build_finished_requires_validation' if complete else 'failed', return_code=result.returncode)
-    atomic_json(directory / 'result.json', state)
-    atomic_json(directory / 'execution_result.json', state)
-    if not complete:
-        raise RuntimeError('FPGA build failed. Inspect ' + str(directory / 'build.log'))
-    if args.package_boot:
-        subprocess.run([sys.executable, '-B', '-m', 'hardware.scripts.package_board_generated', '--build', str(directory),
-                        '--cdc-recipe', str(directory / 'hardware/constraints/network_cdc.tcl')], env=env, check=True)
+    with ResourceLock(work_path('state/locks'), 'full_vivado'):
+        with (directory / 'build.log').open('xb') as log:
+            result = subprocess.run([str(vivado), '-mode', 'batch', '-source', str(directory / 'build.tcl')],
+                                    cwd=directory, env=env, stdout=log, stderr=subprocess.STDOUT)
+        complete = result.returncode == 0 and (directory / 'market_routed.dcp').is_file()
+        state.update(status='build_finished_requires_validation' if complete else 'failed', return_code=result.returncode,
+                     elapsed_ns=time.monotonic_ns() - started)
+        atomic_json(directory / 'result.json', state)
+        atomic_json(directory / 'execution_result.json', state)
+        if not complete:
+            raise RuntimeError('FPGA build failed. Inspect ' + str(directory / 'build.log'))
+        if args.package_boot:
+            subprocess.run([sys.executable, '-B', '-m', 'hardware.scripts.package_board_generated', '--build', str(directory),
+                            '--cdc-recipe', str(directory / 'hardware/constraints/network_cdc.tcl')], env=env, check=True)
     return 0
 
 

@@ -453,7 +453,7 @@
           <Attr Name="UsedIn" Val="simulation" />
         </FileInfo>
       </File>
-      <File Path="vendor://fpga/rtl/finedge_ddr/b1_mailbox.sv">
+      <File Path="repo://hardware/rtl/common/b1_mailbox.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis" />
           <Attr Name="UsedIn" Val="implementation" />
@@ -726,7 +726,7 @@
           <Attr Name="UsedIn" Val="simulation" />
         </FileInfo>
       </File>
-      <File Path="vendor://fpga/rtl/finedge_ddr/user_ddr_beat_port_v1.sv">
+      <File Path="repo://hardware/rtl/scheduler/shared_input_beat_port_v1.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis" />
           <Attr Name="UsedIn" Val="implementation" />
