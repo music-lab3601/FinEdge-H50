@@ -8,6 +8,7 @@ set_property include_dirs [file join $source rom] [get_filesets sources_1]
 # Build our clock IP from generated RTL in the new top-level synthesis run.
 set_property GENERATE_SYNTH_CHECKPOINT false [get_files *fm_pl_clocks.xci]
 generate_target all [get_ips fm_pl_clocks]
+set_property STEPS.SYNTH_DESIGN.TCL.PRE [file join $source scripts synth_pre.tcl] [get_runs synth_1]
 set_property STEPS.OPT_DESIGN.TCL.POST [file join $source scripts opt_post.tcl] [get_runs impl_1]
 set_property STEPS.WRITE_BITSTREAM.TCL.PRE [file join $build project ip_patch process_control write_bitstream_pre.tcl] [get_runs impl_1]
 set_property STEPS.PLACE_DESIGN.ARGS.DIRECTIVE Default [get_runs impl_1]

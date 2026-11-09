@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7118,
-      "sha256": "42a50f32c5fed07cb91abb9d464ab15d97ce251b6aff6f0d36ce0e47828d15ed"
+      "bytes": 7213,
+      "sha256": "7c20d03c2d93529405148491085ae83c9697a827df0e94ded2e006d3dada10fe"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -745,6 +745,11 @@
       "path": "deployment/rebuild.py",
       "bytes": 14001,
       "sha256": "02d31338fd23369a554a7d87b1de64e1f5039a02027babe748e6c960fff9eccc"
+    },
+    {
+      "path": "docs/FPGA_BUILD.md",
+      "bytes": 4808,
+      "sha256": "d1b178bad4c6a9db8639184190c90551635f5e601882398dca7aab1567c418be"
     },
     {
       "path": "docs/MODEL_BUILD.md",
@@ -1543,8 +1548,8 @@
     },
     {
       "path": "hardware/project/reference.xpr",
-      "bytes": 145029,
-      "sha256": "7ecceccb5a464aef5b6dccf7ef184a6c58181f91deccef7d9b6b3107b860536c"
+      "bytes": 145030,
+      "sha256": "58512d99b0a0ed5984e94f64061bd3f2f788fc07e4f50d5f3730a2edba28e37b"
     },
     {
       "path": "hardware/rom/fixed_lane0.hex",
@@ -1808,13 +1813,13 @@
     },
     {
       "path": "hardware/scripts/build.tcl",
-      "bytes": 2578,
-      "sha256": "b62927d33640e9b6f505bed5e2f26ec02319e8c09d75bb2524e5e58ca5515c3f"
+      "bytes": 2976,
+      "sha256": "86f4173b9912708264c189fdc577caf88694b5bf251f8c545bcc0f9190863db8"
     },
     {
       "path": "hardware/scripts/build_fpga.py",
-      "bytes": 6442,
-      "sha256": "367efd8c3e1910542efb2f2be7c6a7c70e1e49b293e69bd1397b04031febbf0b"
+      "bytes": 12182,
+      "sha256": "72501520f00802e5627cfdc1a6916777db617af836e2cdd0d9f83d19a5b9eb0a"
     },
     {
       "path": "hardware/scripts/build_source.ps1",
@@ -1843,8 +1848,8 @@
     },
     {
       "path": "hardware/scripts/package_board_generated.py",
-      "bytes": 9179,
-      "sha256": "277d1c4175fdcf55fb255a25321313fae0c4f84e75c7b27153594d1b9760c1b0"
+      "bytes": 9393,
+      "sha256": "064e3308b113c0879d8eb7f4a9d474b837eeb04750110348c0cb809ac9bb673f"
     },
     {
       "path": "hardware/scripts/procise_run_disable_icap.tcl",
@@ -1860,6 +1865,11 @@
       "path": "hardware/scripts/simulate.ps1",
       "bytes": 376,
       "sha256": "1e41ae607ae80462ee953776613e0b7cc0c33f4674e188fdf19168b9c88e0514"
+    },
+    {
+      "path": "hardware/scripts/synth_pre.tcl",
+      "bytes": 386,
+      "sha256": "5ffe123c488298219266896e59abeb2a0ad11219fba185662224bc8ad0ed2be0"
     },
     {
       "path": "host/__init__.py",
@@ -2083,13 +2093,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 383913,
-      "sha256": "dbfd94d80e4324469c534dfdd79c021b19440b41e2a8eef3123f7a7ff564a18e"
+      "bytes": 404375,
+      "sha256": "ae3febc2b167dacbaf2fa843275a35ee2a781809835b61496755045119769cdf"
     },
     {
       "path": "provenance/template_migration.json",
-      "bytes": 21409,
-      "sha256": "d93da2857320f16ae1de966e1f2965bd758ac1d92217fcfa27b863f90fcf25a5"
+      "bytes": 21942,
+      "sha256": "01659adfbc03bf5bef0d2767268a2f65290969a4e81ed14941a4fb678a7ea1f1"
     },
     {
       "path": "requirements.txt",
@@ -2517,6 +2527,11 @@
       "sha256": "7b9f8db83b36cd4f59fbacd558a2d75b207a2074e96d0e3b9dc9d513aa80a0d6"
     },
     {
+      "path": "tests/test_fpga_build.py",
+      "bytes": 5224,
+      "sha256": "cf595babe535006bdbfa736d846057f36456fbac0b34f7822b562bde34d238bf"
+    },
+    {
       "path": "tests/test_public_entry.py",
       "bytes": 4632,
       "sha256": "3d854bd38d28d9f9c1ea2c7b080cab68cd1d0035a9e05614a6dddf744b908764"
@@ -2548,673 +2563,673 @@
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/arbiter.v",
-      "bytes": 5311,
-      "sha256": "1f3a894a8c5ba0370c6f0e22417de553e5896caae645fd4e81602f802a66c774"
+      "bytes": 4993,
+      "sha256": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_adapter.v",
-      "bytes": 13300,
-      "sha256": "899e278afed4d9dfdd7e0229f9ac4a30f61a164ee7e9fc631f7593f8883bd110"
+      "bytes": 12650,
+      "sha256": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_arb_mux.v",
-      "bytes": 12253,
-      "sha256": "c58e39826fb8728552d6de104e8f3fffb8a2d0ac2d76af46f8afad1e85901613"
+      "bytes": 11633,
+      "sha256": "bee8d11f32f7fb1c5afdd6cdad872cd7de9dc94bcb4787f9aa119f2ebbc489a6"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_async_fifo.v",
-      "bytes": 36288,
-      "sha256": "ec8769c01ad9d27e853096ecfe1bdf9e552f82122f747cf4844571abc92d35a1"
+      "bytes": 34468,
+      "sha256": "339734a7984d7d540451c92f0831495837c451d170ba60dfbd59f851b28f4250"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_async_fifo_adapter.v",
-      "bytes": 13723,
-      "sha256": "dc9ff7e6681b43cd492656788a96db0fa6083d0a85c794acf3cc1843052f0890"
+      "bytes": 12967,
+      "sha256": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_broadcast.v",
-      "bytes": 7806,
-      "sha256": "86452f0a13a7af658282a2e83391880dcbbed2d29b98cf426348a2fcb4728e6e"
+      "bytes": 7416,
+      "sha256": "a644b7542adf7552cb4713ab22856e1b76c58780da970d122351e45bc0bc51bf"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_cobs_decode.v",
-      "bytes": 12531,
-      "sha256": "76eac07de071786a11c27938c14e414b0713d4ed0f6d57749799263d8359fcfe"
+      "bytes": 11865,
+      "sha256": "5964e1b3a0820c2ab348e0f87793b4a18c08b55586a5c65d6a1c86d9602babf6"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_cobs_encode.v",
-      "bytes": 18223,
-      "sha256": "a4996de49f8a7690c85ab109c9913e8fb43fde8b305c63f3e207bc69286e1a14"
+      "bytes": 17203,
+      "sha256": "2aa1b67891e6bf61941678ebbccd0f24ffa1fa0ef899206f06f1f435830ac9b9"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_crosspoint.v",
-      "bytes": 6499,
-      "sha256": "e7ca9ea9d1c8dac51b354fec79893090fcb03d3bb4aeef3eb459ae205107533b"
+      "bytes": 6193,
+      "sha256": "4d34473a887a571e860c226fac3afc9252728f92c383df6b73e9a3e3e067ef39"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_demux.v",
-      "bytes": 11317,
-      "sha256": "ce606dc70d12bdf416b15c2dda5e7214adb77e056f7f1ac169a9e92a2f87778b"
+      "bytes": 10715,
+      "sha256": "b3ec5e59baa6b29f9d2bd077c262b8f3e57ea1de1162e19614f93dc866d5ba38"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_fifo.v",
-      "bytes": 22786,
-      "sha256": "bda6bbf963d61315f26bd53d7c309ac76d59ffd16f0adbe53ea348adaeb000ab"
+      "bytes": 21656,
+      "sha256": "cb7d05672272356af90f5217400ce868b299ddcc4d837a2394fb7d5155400dc9"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_fifo_adapter.v",
-      "bytes": 12817,
-      "sha256": "58da4566816310735b6a8fe660312897572ec44c0d238d8504f2c6fe4476c74e"
+      "bytes": 12095,
+      "sha256": "7662fbf53def5dfb353a590a3ae7309b4f9519847288c90a42ed63df57c95d00"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_frame_join.v",
-      "bytes": 11888,
-      "sha256": "2a466266927d0127684a98351fcced63720edab30858b1cc0911e71045a8f8ce"
+      "bytes": 11226,
+      "sha256": "32cfa21be9b9bd7c8d23abab54586cd3665a59dce042a3147b695dc663ef0388"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_frame_len.v",
-      "bytes": 3520,
-      "sha256": "15c34420d9080170c91c7715de10c3905cd0c55adbdf4ae777f616fcacb635e9"
+      "bytes": 3292,
+      "sha256": "6862690f1f4f0ca8b5416caba90f4fe7523d8616c7405ba581df1e63e96ac9c9"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_frame_length_adjust.v",
-      "bytes": 26342,
-      "sha256": "5d2227c46032cbb1c6292be08e2f79c6c23d508fe7447cc2eace86e0f39988a2"
+      "bytes": 25108,
+      "sha256": "4b11a92dbdcd0b7b4999d94a62f57b0fc9e0476c543cffcfc817b0b7405f148b"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_frame_length_adjust_fifo.v",
-      "bytes": 7638,
-      "sha256": "9bb5dc6d8c8bba30a20f753cd3108b041b94a05d8c2996f910a2b3cd581b77a9"
+      "bytes": 7156,
+      "sha256": "26f1636f5d4f219ca1dcf336b45b636e74a0977826ee51cdcab4e5c2d136b7ce"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_ll_bridge.v",
-      "bytes": 2648,
-      "sha256": "4e0fcb2f17d63560d6c3c481a57d8f0e39515a009cf77fe72ce76b7f6e4802b3"
+      "bytes": 2482,
+      "sha256": "0642f97b993ce2f73104deb502aaa58e62c4581937beb1db1acfc114ba0efd65"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_mux.v",
-      "bytes": 10164,
-      "sha256": "03794380bdb724daf7400d615621d5ecde5ac9917e35bfc5e974699dacb5f481"
+      "bytes": 9630,
+      "sha256": "599c47b8889b6f22a325b3bb27a38b13b64a7ba08b0f4aefea1e2f550389e68a"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_pipeline_fifo.v",
-      "bytes": 10892,
-      "sha256": "a855d99f16f7d76707538365bb9afdcb5d57ded0fbfa85d73cfaa51731461520"
+      "bytes": 10364,
+      "sha256": "a7cdccbf905c3f95d4a626fe77d84879a09c3f472dffc5ea2eb7acc9ba113c02"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_pipeline_register.v",
-      "bytes": 5652,
-      "sha256": "3d9cee9d18f49d3231777baea07532fce33a0d8ea6c8f57a7f79ea0cae305ffc"
+      "bytes": 5328,
+      "sha256": "89bcac460e3822dbbed3f2dbd4d9902faac1262d9dcad867b39c97a6f4402fcc"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_ram_switch.v",
-      "bytes": 50173,
-      "sha256": "68d617cd445f6be099badf1d8821f630bb56a4d15a7574a8965a6be7d5e6960b"
+      "bytes": 47871,
+      "sha256": "87de8b2f0f408bda4d7046c1cf5999edf885f6a613dfb75cf992bba8455f27c8"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_rate_limit.v",
-      "bytes": 9321,
-      "sha256": "b1f265e594dc216843f5f49ea821f80b5542c544906e18f946be92582b7506d7"
+      "bytes": 8801,
+      "sha256": "bdfb4e29768c5224c543098765b8d648f3fe774eb42643c289d85b446414d155"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_register.v",
-      "bytes": 10858,
-      "sha256": "b2862a85fc7704f1c2da1c9167fae4f9596ab41abc9029f3c4342bdeb6fc8dd5"
+      "bytes": 10298,
+      "sha256": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_srl_fifo.v",
-      "bytes": 6413,
-      "sha256": "54cb6e1722005fdcf40d2e97e263513b76c3b2f79027c5efd8a9174a5824998a"
+      "bytes": 6015,
+      "sha256": "b657b6592e9a31a5f88289cfd34b1504b2114443a1c4df0ba89d10b4235a3104"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_srl_register.v",
-      "bytes": 5401,
-      "sha256": "d18ab38945965498f35dafb92f394632f1a56d35772b75a8a35b2680adeb4c71"
+      "bytes": 5085,
+      "sha256": "5c0a8b0810977520e78fdee88254a824e6e86e526b0e1b04b89734217a66e6a6"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_stat_counter.v",
-      "bytes": 13012,
-      "sha256": "208359ac1abb2e24c6b71bb3d6430a44166de02723a619ff6a0a7352f74ed3c9"
+      "bytes": 12272,
+      "sha256": "2a431655333c6d4b8daad55a80eb2b22b9796e92b15a2c295a6b5d2f5e0e2ce1"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_switch.v",
-      "bytes": 17559,
-      "sha256": "a29726718f02648b38f9b69a39b8055fdb6663bef1994e7573bd50026f09aee2"
+      "bytes": 16739,
+      "sha256": "ccfe5eb62d5fead748bca36f22a0012599af46d2ec486c1bb091308234510e6f"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/axis_tap.v",
-      "bytes": 12502,
-      "sha256": "6a427d92d18d0f23cd96dc24529eaf86cbd1c97510c42740b598df2da33893da"
+      "bytes": 11838,
+      "sha256": "9b659c8c99dcef1feba2f859369c8c127a1b5539c35245446e35591de9fa8106"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/ll_axis_bridge.v",
-      "bytes": 2156,
-      "sha256": "399c5c16a9d254326c1dbdf89deb8cecccf7f10f8a73b7226dae77fed7f86940"
+      "bytes": 2020,
+      "sha256": "cfdef6d0c0f8958f37dc3f5a50b517f16c76eac98233c18ea00c33b745f291f9"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/priority_encoder.v",
-      "bytes": 3437,
-      "sha256": "f03b2cf61e359c2633f669d07894cef8609f699c710e288c6bbab7930025a174"
+      "bytes": 3253,
+      "sha256": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/rtl/sync_reset.v",
-      "bytes": 1819,
-      "sha256": "7448d6ba7d621a5d7f0b61a97724af2d8ce7dcb8aec6deac413ea36f63a3369e"
+      "bytes": 1697,
+      "sha256": "a6701ef1a7412be2615592c2db70a7cebc07baa208ffba79e34ecaedf0289a91"
     },
     {
       "path": "third_party/verilog-ethernet/lib/axis/syn/vivado/axis_async_fifo.tcl",
-      "bytes": 7561,
-      "sha256": "55345008c0d316e3313c4529a7a2fca2b1457d2349910b00d346331ad284020d"
+      "bytes": 7281,
+      "sha256": "3f57cca60ad8151c329b5ef29c816005e52e1e20943c42f1b3eb2a134e7da839"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/arp.v",
-      "bytes": 18841,
-      "sha256": "6f49df9dea3410e824b97cb6f02d63e8d529bfc8811865c9e6a3864a2aa76000"
+      "bytes": 17937,
+      "sha256": "41e2301695fdfc1cc93252041107574a0ed040ba92c99d57dce73317804f4698"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/arp_cache.v",
-      "bytes": 7446,
-      "sha256": "c09b4a9b567be0cd86bcbec83a42f7dcb1ead5d6c402e61f37db0b5ef3024fe0"
+      "bytes": 6952,
+      "sha256": "d8b573a7582c08f67f90aba9316d98e5b0e0c5bbcbcd7a6935d6537e3f4aa2f8"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/arp_eth_rx.v",
-      "bytes": 12336,
-      "sha256": "48b4ee1d0f15787a88226cb71457602c3cac60d5c8c0601b00607f8d5df4863d"
+      "bytes": 11674,
+      "sha256": "4113e03df063b91d64be4da8e455ba45d8251cecc8e66ec75cec93c518443bee"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/arp_eth_tx.v",
-      "bytes": 14233,
-      "sha256": "09c4d6d1d844de6b297cf4870ed16358309aa5b9d73fb1db8eb1ff0f39a4cf8d"
+      "bytes": 13497,
+      "sha256": "88be298ea8f236900416ebd3295aa2fa86a8785acc2b8edca87278afc2338f86"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_baser_rx_64.v",
-      "bytes": 20055,
-      "sha256": "72187c4d72faef82a38d093ffaed97ff622d53fae9eaa4910df9d0949382cdf3"
+      "bytes": 18935,
+      "sha256": "50ab52a1be6dfa62bfeae6decc443a065871d1117f4f69d21bb14f176f8e6873"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_baser_tx_64.v",
-      "bytes": 27838,
-      "sha256": "a2fccea2e45dff9826fc4353e5188a7602fcaeb80349b02cebd8004d4ad4e2ca"
+      "bytes": 26254,
+      "sha256": "b3b8267f9a2c5af1d45836e73051407f919b0f1cee226eb27c233cc6e958f240"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_eth_fcs.v",
-      "bytes": 4106,
-      "sha256": "e06389174b60c3c55291daecff96f6680d7d4ae857f3772ab30817031c0534e2"
+      "bytes": 3824,
+      "sha256": "9aba0ff55de115dcab4a2f3ed46bf967bf5fb1eb8011bffcbd5842bf2e37a731"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_eth_fcs_check.v",
-      "bytes": 10939,
-      "sha256": "124b510820517ce198221c2116bd76a0d959ef301de9738ba90751d7ae148a82"
+      "bytes": 10249,
+      "sha256": "af5c29694f070a5fe550e46557ac07d1f4e276767a275bdcfbb379072cd48a9b"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_eth_fcs_check_64.v",
-      "bytes": 15802,
-      "sha256": "1e6ec2ea7361adabc34327df89b55cfa14221f24db5122bb37541645b742a755"
+      "bytes": 14838,
+      "sha256": "5d5d06c813a8b108173db5636266f4511de5fa6cf5478fb48472e72e6a752ad9"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_eth_fcs_insert.v",
-      "bytes": 11914,
-      "sha256": "248d842931ae27e91dc1ff447544472a7660207837e3d3832d7d1c115bac416f"
+      "bytes": 11170,
+      "sha256": "864c9d4d5cc3607b38ba5ca3f6c75c930d2dee690663b504f1952bb9e717d981"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_eth_fcs_insert_64.v",
-      "bytes": 23863,
-      "sha256": "6f9c720cc86fab892dd7b68a4911c4c8665510f70f27e10a1a8b3dec6d019b38"
+      "bytes": 22421,
+      "sha256": "5b9b835fff3a497eecb0f0a406f6b98c351776c64af99bd98ccec82623aadd59"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_gmii_rx.v",
-      "bytes": 11309,
-      "sha256": "67a95c3e4519f566d4b67f581b77d2df79e4f2d317d58126a3cb35b1e9478694"
+      "bytes": 10593,
+      "sha256": "70d8e8c8ebfd22b8b1ffed7c077864c1944217a3e844f79cd3807cc41cf449d7"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_gmii_tx.v",
-      "bytes": 14589,
-      "sha256": "eae8dd081d0d8d7275ec84811eb2ba52dbae7a3719dd17561c0c81f9eb02560c"
+      "bytes": 13673,
+      "sha256": "6803d245a1482269f234f84d00739a23ecdeb4ca06340570454ad78f98550229"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_xgmii_rx_32.v",
-      "bytes": 11215,
-      "sha256": "c8730f6fb89b5d8367876f34a19ad34ab6c434ea1571bd3fa4b30de3ca37b815"
+      "bytes": 10505,
+      "sha256": "b1537e8511db33898a5e6357d7c4c88ba672455bb051ab57e3ea77d2dd64e584"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_xgmii_rx_64.v",
-      "bytes": 14394,
-      "sha256": "6958dcde327d9b2efb463001546199bdb79c1c9c186ee890bb0f9748a8666d68"
+      "bytes": 13496,
+      "sha256": "99d2b9578a440f03232030ae3da72eeb26b1cc8321d8eb24aa34b98fc46b8ccb"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_xgmii_tx_32.v",
-      "bytes": 18154,
-      "sha256": "135a4dc39fd58076920ae61cc340626f0b73cafd82248c61f7e315fdba63865d"
+      "bytes": 17028,
+      "sha256": "5aa9cb71980c795702c54ac7f49815ff04655eb8bdc4b3c50843c61c795077db"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/axis_xgmii_tx_64.v",
-      "bytes": 22575,
-      "sha256": "9a2417f4e5ab3587335e806356544d80da51fb98a2b9bef4b2cffc4165a45d09"
+      "bytes": 21263,
+      "sha256": "e65559d1aad43507629efa1b54e59a9bfa650ee2e06f1ead8451c1b4134fe8e2"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_arb_mux.v",
-      "bytes": 13876,
-      "sha256": "2c41f5fff2681c2de676a684b27c8d9a6b5ca4f8c6ee4002e309c470d1f13792"
+      "bytes": 13246,
+      "sha256": "5207295c7093e70f16a31497a67abb285f18acdac370d726735e94e89e4cc759"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_axis_rx.v",
-      "bytes": 16193,
-      "sha256": "b19559801613b640e04ba107c294b92fbe3f76ec3032a3ba4026fda34e22bb60"
+      "bytes": 15383,
+      "sha256": "4fb3ab7e0ccafdc85a46f37e533b7fb6e74a7101cfc18757126175ed01354d59"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_axis_tx.v",
-      "bytes": 15927,
-      "sha256": "1738234810be07b735967f5081a86f0d9271e0c1689236329d8bb786f3a0f86e"
+      "bytes": 15109,
+      "sha256": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_demux.v",
-      "bytes": 13535,
-      "sha256": "12dbc1cde8cc402969e0606d419eb883ff875b513ad100360f760ffff952444c"
+      "bytes": 12917,
+      "sha256": "5ec09074734c9fcb0d1cd91f7ad752d4f20fe5279dcf44ceb2cdacedb7939aa6"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_10g.v",
-      "bytes": 25450,
-      "sha256": "1d00103e70b98c2cded0bfc5dfba1d177676d9679c775971c932f6acb28bf463"
+      "bytes": 23988,
+      "sha256": "bcc21bf95ef53be1f5c363d1e03368c1b99bfe520273a5c576f7024cd13ac310"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_10g_fifo.v",
-      "bytes": 15574,
-      "sha256": "83fcd8ae656b48c043f9fec7e69c064a086d41d6f062ee94bfd195c55d5a9249"
+      "bytes": 14598,
+      "sha256": "458856b644f4964130d04086bcf4e0253df6a465ddf08202f9b59de92e1a34e4"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_1g.v",
-      "bytes": 22741,
-      "sha256": "da68d206bd95c8e792d984e4feabe16f213bd10669adba580bca4e03b3718b0f"
+      "bytes": 21453,
+      "sha256": "caacd61ad484d96ff14991100009aa67f16aa66a85d9bd245ed2869926da652c"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v",
-      "bytes": 10882,
-      "sha256": "ef76123e8374be1257a2250855f13628fb6a3bc6e57568e1411ca6866fd17aa7"
+      "bytes": 10216,
+      "sha256": "a5cf2d9e28a4dc0193634c4530f33bf5c5e8536741c3a0e5b78e3f74219ad868"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_1g_gmii.v",
-      "bytes": 7600,
-      "sha256": "36894f87a99de5b7f1b48200250b119e3c154e640eb19fe44b709589b4f85592"
+      "bytes": 7088,
+      "sha256": "44e755d50945c37a2cbd6cd39c7401451b02a005c154af88642b4050360a0b69"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_1g_gmii_fifo.v",
-      "bytes": 11733,
-      "sha256": "b7d8481106c683cb4721152cbf12aaab9f225b3a511d58bd55c9356ed11b08f6"
+      "bytes": 11013,
+      "sha256": "738e2619795fe52202498dfdad940ef32d009132a42477fe6bc59493c5fb430e"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_1g_rgmii.v",
-      "bytes": 7661,
-      "sha256": "b4466c3692bf5cf0460e6e9239168d4efae0c738d1fe317706cc4cef3996c1f5"
+      "bytes": 7149,
+      "sha256": "1b2169d54706005ef54ed5cdb1c994e65bd5b329dca8fc917f6badd212f36b5b"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_1g_rgmii_fifo.v",
-      "bytes": 11699,
-      "sha256": "3c9f5da8e08057a009820d7d7a414069df9fca0a1cd51080fde417764c52dbf5"
+      "bytes": 10983,
+      "sha256": "5abd4448f31c0234efab84f53ef8c1b14642a1a07d2804f0a0a4dbb60306f22d"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_mii.v",
-      "bytes": 5171,
-      "sha256": "9c5fdb467a7e4de56c8bfb026e8539962bede65bb29420ce7632cb7f849f690a"
+      "bytes": 4823,
+      "sha256": "0de7c247c1d13b0069d969f4b0bbbf6377c5db380feff9eb87c99a0bd715daf7"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_mii_fifo.v",
-      "bytes": 10966,
-      "sha256": "da1615035060579d9d22fe88c73cb22c0dbac2a3ee70135b9e9647d4938170c6"
+      "bytes": 10292,
+      "sha256": "08c8623c40c4902e81b4d3a70be08ab29e475c9c585d5e7a1efef30eb94c494d"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_phy_10g.v",
-      "bytes": 7737,
-      "sha256": "5d734dfd30c2fbe5d7b8f724096684eed991bb724ef2fec1e204bf29f9e386b7"
+      "bytes": 7315,
+      "sha256": "aec69dea924f19f0279dfed1070ca0bd092d424e5a7d6983a60c41ce9d5f638e"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_phy_10g_fifo.v",
-      "bytes": 17646,
-      "sha256": "fe92f4e09bd6b8048e806af80e17b15179e35ffdd80190190ed1b23111204be0"
+      "bytes": 16578,
+      "sha256": "8e6019a5be425aed3b53079a7bba3a5479cb8a46fcb48de8c4cda9f60b0e6bc1"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_phy_10g_rx.v",
-      "bytes": 5507,
-      "sha256": "d2ee41aa1c3a14900014611175567deec1527839d3cdb77b240459c44e0ef918"
+      "bytes": 5161,
+      "sha256": "be594605bdb2ecc67de0eaa1fabb38f8f81125e66cfff56626085d33acf0ad39"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mac_phy_10g_tx.v",
-      "bytes": 5527,
-      "sha256": "242df3d71c3e9539aa268ed2a0ea238c0bdd617f3ea204df78d9dffcec484e58"
+      "bytes": 5181,
+      "sha256": "60dd2d7bea5389ff89957940250c15752ebc0825f3434b7fbe4f9ad0ff60ba15"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_mux.v",
-      "bytes": 13513,
-      "sha256": "1469b84ceb75b09dd5afe151854ed859dfcf378f508ad3ef6793a13536c989c7"
+      "bytes": 12907,
+      "sha256": "120ad9170c8847e989df626ead412261f4e637c717b3163a7478971cae7d323d"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g.v",
-      "bytes": 4568,
-      "sha256": "a80e79cba89bd5f2beba81b8ce5bd76c5d72339cb26e1e1c71b6dd596e102451"
+      "bytes": 4284,
+      "sha256": "89d13d9dec752dcfebba26b11bf8070467a0304e4c771020b5009e220ab3ae59"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_rx.v",
-      "bytes": 4481,
-      "sha256": "b0804b4505eb56edb2e3444d1331f011050de81919e6553c61d6442b96ee0ec3"
+      "bytes": 4183,
+      "sha256": "6852e9f65cceb80626281bba46fa529822498238f27d7deee2905187586e5784"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_rx_ber_mon.v",
-      "bytes": 3506,
-      "sha256": "4b8b7f6437cc1334609ffb9185344edf5a6058692b12e91438da546ea294e820"
+      "bytes": 3258,
+      "sha256": "46587623ecfec35434b21cf97b98d5c619ee3d292ef16aa9b8c226c143b1fddd"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_rx_frame_sync.v",
-      "bytes": 4785,
-      "sha256": "383bd2c84d3ba0d732a4fe6f31a5c4be1f980ef040d07fed86f0a67e3278137a"
+      "bytes": 4493,
+      "sha256": "6bdf55011c55cd96c10aa462e8dbb6c77a1aa8ddef602cb8bc551e2f2b9491e5"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_rx_if.v",
-      "bytes": 8617,
-      "sha256": "644854aee8327c937084e9d3908723fd5d0c9dc4292e2d49ca363259eace43d2"
+      "bytes": 8061,
+      "sha256": "962afaa60a6c935427194d3d5d20dfde39937024e5576b19284094d3f94d9eec"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_rx_watchdog.v",
-      "bytes": 5035,
-      "sha256": "6a8b1760bf443e33d249d4ae4f4df58db06ee0a338b986752f5dbb9388662755"
+      "bytes": 4691,
+      "sha256": "d7ca2d1ee86841094b291764ccf2d0c832b36ff61a188935c3a9b0723ae93d5e"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_tx.v",
-      "bytes": 3513,
-      "sha256": "d30461f7856e530b4220fecc9a73574f6625b32cebebecab699e822dae84d97a"
+      "bytes": 3259,
+      "sha256": "3ccc7a6dd0c23bd94ca9ab8f603408e823cc000f4429013deeb9b9714c0f7769"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/eth_phy_10g_tx_if.v",
-      "bytes": 5631,
-      "sha256": "ca584c61747efdd557bd06d272cd5c4d63ede989774b4aea7ff993409b82e35f"
+      "bytes": 5265,
+      "sha256": "eb7b22ac57abbc4ee887ac945ac66507aeda06417c7dd188cd8e7a5e713f3ac4"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/gmii_phy_if.v",
-      "bytes": 4371,
-      "sha256": "2bdce5e9e938f07c3b52d3dcb1fc8279f885ad837aaf7044f08da5a1023498f4"
+      "bytes": 4067,
+      "sha256": "9da180f3c5e7036c8cdc81a157315789c409cbf7c63f672ad3fec37ac966afc3"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/iddr.v",
-      "bytes": 4642,
-      "sha256": "de3136d7b686ae1c21e8a436e6c0ece53f740adfa384bbbe4077104f5a4caaed"
+      "bytes": 4314,
+      "sha256": "1c7d429c684ae16b7326d242a3a681879a0243e07d1c3a00143a364d79aa47a9"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip.v",
-      "bytes": 12184,
-      "sha256": "f19cf7bea16df26125ad3b62ae58b0115346ead78505398b044437d5e3ee0965"
+      "bytes": 11494,
+      "sha256": "ec609c681edf22a1bcf803255dceeffe4b668b541bce00105e7c0cdaec710c42"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_64.v",
-      "bytes": 12651,
-      "sha256": "58104567e814472efd09ebf7790c3a8109c0db1d4693a2198c1b12ac77fb11ff"
+      "bytes": 11945,
+      "sha256": "f50ca503e658c09c29edbc368ff3e6d3759bf2de9c831c115e5cb140eced9ffd"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_arb_mux.v",
-      "bytes": 18581,
-      "sha256": "3693a6f603f36b87ee31ef3135cf93be5b17b56aef4bd0c140a7e8b2bc37a6b4"
+      "bytes": 17769,
+      "sha256": "ceec7cb7e1d9304c6550cdae183c31cd03a611fdc29641d93e0e650aa7a6b70b"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_complete.v",
-      "bytes": 16581,
-      "sha256": "91fdf74d6229626d42e8bf5f286dddbd3ebed699ab941ca2a93e26dbd2cf37fd"
+      "bytes": 15693,
+      "sha256": "4c0aac8dc73adac3f867f0f15e6bb1abda45f4d7417878e149fea79500791f63"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_complete_64.v",
-      "bytes": 17639,
-      "sha256": "05cbb8a040932dd1dc87f28fa0f7310d0cbc7ef1625c98829f45a411eea46149"
+      "bytes": 16713,
+      "sha256": "df3502b52dcce13eb75ccb1dd66a2d7526bf5381be71aeb700963a224508da0a"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_demux.v",
-      "bytes": 18077,
-      "sha256": "7b822e8441a68ae059afeab5404c418af5753908feda11b3004a049801e498a2"
+      "bytes": 17277,
+      "sha256": "cbebf69d304360e1619ab14609c26fc3e4af718ccc35a3395e14f4e4d0f7887b"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_eth_rx.v",
-      "bytes": 23663,
-      "sha256": "693071be8e0b538f029d1302a3751000418e2b78a1cd18c4ad8dab7ffddfab14"
+      "bytes": 22501,
+      "sha256": "f8f4bfb0352872b3e7a52616242e51fd5c6261c93a2569fbf9e0777620e1f8ae"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_eth_rx_64.v",
-      "bytes": 28539,
-      "sha256": "f38dc9e4be7714f5d06cb85ec5d3f693d7e74d7115e405009d1af384940bf30d"
+      "bytes": 27159,
+      "sha256": "8773830d79d7e339ee40c72cd63287fdf3dd884c80e151e401c1195bd32fd917"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_eth_tx.v",
-      "bytes": 20057,
-      "sha256": "1d25f4e68e0687857381dc5288ca373a4c798bb12c281f360406e2542395eb5f"
+      "bytes": 19055,
+      "sha256": "53a1378a6cd5cfa50ece8169f3f83bf4fadd6a66abe04809fe6a995ea224b3ce"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_eth_tx_64.v",
-      "bytes": 28200,
-      "sha256": "f6b3a5f5ae0afc4fc74b3b21201f14cca70cb3f2a1e0d682dcf51262f0bf7e42"
+      "bytes": 26896,
+      "sha256": "ec717dc691fc9ede23ec9e593aad84683c68efd245fe088c1ecab18eb74b1e8e"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ip_mux.v",
-      "bytes": 18131,
-      "sha256": "6ec71bc677eb468acd27cd6523e6bfe387779e6f7f1fb22f77fb655ccbe9464e"
+      "bytes": 17343,
+      "sha256": "1d5232ab50868b1a2c386e88af330f7027774d90485cf7ec2f75ec2296de890a"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/lfsr.v",
-      "bytes": 17221,
-      "sha256": "568353674bdb1a6165f8b92e6cdcad91e31b33544233e6aa1884add985516544"
+      "bytes": 16327,
+      "sha256": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/mac_ctrl_rx.v",
-      "bytes": 17281,
-      "sha256": "4aca72605b4670a5f649e4f406322e6d3c43b5a2552ccb6ba07170677114225c"
+      "bytes": 16385,
+      "sha256": "b5c0eda334c078518adb5fb7db324ae966ebddba0031bc91cedd32b831137fb1"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/mac_ctrl_tx.v",
-      "bytes": 15762,
-      "sha256": "90cb3bbd891004a9f1671c0bc12a02c21e35210aac17f239151cdf7ac7d354ce"
+      "bytes": 14920,
+      "sha256": "48202a9a8f4b4e9688a4a0eac9dfe7492825be9f1f54a77590008db851b391c1"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/mac_pause_ctrl_rx.v",
-      "bytes": 7931,
-      "sha256": "a77e75051f8527d6439fa2a84ae205525993d49e2b65ffa31159f2857c184f0f"
+      "bytes": 7489,
+      "sha256": "4b8d5d985fe5e7d3ec28f0c70a8c212fb7b3df6548cbf4dcaac2473a23b24a57"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/mac_pause_ctrl_tx.v",
-      "bytes": 12293,
-      "sha256": "00be51765684160f0d6d3cfb6eabc39b4fe9f3e600237ebd68d03d20133e7e53"
+      "bytes": 11667,
+      "sha256": "c5de52ceae4cf7c048262132191b1e4c366deca15d931e4703f6a05eff789c5a"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/mii_phy_if.v",
-      "bytes": 4042,
-      "sha256": "05a441999c5710dbad90e37f8cd4e615a8e5d5258b286886c566bcb3abcddeef"
+      "bytes": 3760,
+      "sha256": "6e752ba3e981758f1a4d01b54e3b6855111ca5bad5ceab77f972fba935095c00"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/oddr.v",
-      "bytes": 4193,
-      "sha256": "c81640cb0de6d6d55a4e4f7bc799a36e3be8f7c4ca6a673c7db2625b26ba32e2"
+      "bytes": 3901,
+      "sha256": "402394a215bd8b748f880e31cb17f525a313ecb758234fd5b01d447cc4581402"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_clock.v",
-      "bytes": 11075,
-      "sha256": "cb0b4ee3aaa6b72334ad2a5760c939daef6cd0b1374dc374609d44d39685c23a"
+      "bytes": 10433,
+      "sha256": "7d62e2a1715384e8c47f7cbb474662f9c183ea325942dbe1e456610f6110da81"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_clock_cdc.v",
-      "bytes": 29433,
-      "sha256": "37663a7096bd9aac0cfc1b54f04faf46befab1d0da944e1b49e3724363e09494"
+      "bytes": 27773,
+      "sha256": "0c8c81cff4871a4b27998a12403902bbff9c6fc22e66d70eea3150b4e79b9dc6"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_perout.v",
-      "bytes": 11188,
-      "sha256": "9762ba8782942ef3deb938dfad3fffec929b947434e4a4d19306abd945595d74"
+      "bytes": 10536,
+      "sha256": "e8562fb34d5fe4e2da2af31c398e379b35eb605b319a6902146b33a0da2a6c66"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_tag_insert.v",
-      "bytes": 3368,
-      "sha256": "650162b62e1180759f49a014631ae535ffb79ef44cd072289c5b2a4241b4aebe"
+      "bytes": 3146,
+      "sha256": "b74bfd1750bd4f62a980828d29ed0976c0128bf27b880b1fe76936280da4d5b4"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_td_leaf.v",
-      "bytes": 35672,
-      "sha256": "00c270c6547df14f6304ea5b00bd8aee02d23179451e79caadd54481a9a279b3"
+      "bytes": 33624,
+      "sha256": "aef2c2e2a1d6eedf49e81618025974f288e08d7f9dfe7bc8dbb4d9c1e6283d95"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_td_phc.v",
-      "bytes": 23261,
-      "sha256": "db6b63670f254c845fa5274cd3352d4e465f02addc0109193cf32e9d83a25321"
+      "bytes": 21983,
+      "sha256": "976fe47404b197c16d15390c82da8642483c31ad6727694f23d0dc0db0899416"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_td_rel2tod.v",
-      "bytes": 10211,
-      "sha256": "be821726e0d1b661a9c1e81ceed0f96c25ce4cd5e23a473179920d5931cd0ba6"
+      "bytes": 9585,
+      "sha256": "2eefda2745a10c94f63971719ebb798910cd489f85deca0f83d4c46b2a0251ae"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ptp_ts_extract.v",
-      "bytes": 2178,
-      "sha256": "50cc6a51c3d472df77fd9bbc93fbec81bb2555b57ed2454c9f53e747d38ddc90"
+      "bytes": 2028,
+      "sha256": "6373a8982dae454eb6b3275a007901ac6d658c10c1976848f751348008c8abaa"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/rgmii_phy_if.v",
-      "bytes": 7443,
-      "sha256": "446087c9555faf9b6caae445b98201143db47dacd51f265f3b1e9051cf153803"
+      "bytes": 6929,
+      "sha256": "3ca6c38f17934a1a305345db93536739e5a482f3283a9fa7498c1fa747e8539a"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_ddr_in.v",
-      "bytes": 3919,
-      "sha256": "6033ddfe02dca620936a8719b91d2b7767f68ddd0cf1a1b6a3ca59588e91160b"
+      "bytes": 3617,
+      "sha256": "ba78fec337d5889fa87acf31079c44e19b2592da714347a5c1b915284707bf1b"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_ddr_in_diff.v",
-      "bytes": 3457,
-      "sha256": "507f17542d6a35e142ff6b266e869c479aa02efbc65760326cc9ee07f756ccf6"
+      "bytes": 3213,
+      "sha256": "21b2150f2027498fc56d9505b7e3ca454e45a35966561ec4e0bfc3303c230e94"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_ddr_out.v",
-      "bytes": 2451,
-      "sha256": "b72dd878237a428b26a02e7a0d97286c6fa565e7793181c0511f094f44f1116b"
+      "bytes": 2279,
+      "sha256": "7697bcee212054c1a276a579c3fd641cc7ecac1106fd1f8339110cd479f22aea"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_ddr_out_diff.v",
-      "bytes": 3475,
-      "sha256": "ab99e2bff6b6325706f6cc6a2a720890aa0cebd5ae191bf9b06039f8f5d7c82f"
+      "bytes": 3229,
+      "sha256": "53d0476c7446111feb4e3ad637feb7e20dd61785d924262b2c4284c101ec5f4f"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_sdr_in.v",
-      "bytes": 4282,
-      "sha256": "e54dc991f4451bd79fc8fe7481cc5c019205f0a8f2a4283c60e036ada428a308"
+      "bytes": 3948,
+      "sha256": "b71edd7c90d19ebe30850f20ef8e781d74e1233ab4b01bc613d652d853d88d2b"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_sdr_in_diff.v",
-      "bytes": 3220,
-      "sha256": "576c0e93a9e2a16ebfa7dbadc43274c043633c776d8b5a1239ff0d23d924836b"
+      "bytes": 2955,
+      "sha256": "3eb29f04e1539c027c9a5cad92654ffc4e652928cd247d3afeee94c5f0689cbf"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_sdr_out.v",
-      "bytes": 2202,
-      "sha256": "432bc0a325cf4d4cef767b83da04656ffc59d489985161128dfb1bdc2767a15a"
+      "bytes": 2048,
+      "sha256": "3eb5251c2cc1bdbf8d380e1954d5d8cdf107c3977541afe219e4a1034cc7eb80"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/ssio_sdr_out_diff.v",
-      "bytes": 3222,
-      "sha256": "ff9a2d7ae7559dc514bd884e4c7ce2f75ee408ff57a048e03a59f41f000fd72d"
+      "bytes": 2990,
+      "sha256": "40ffaeee4189b900d59186b6d88ea7ecf49db7cfebb962a8ae1d6538154c44ee"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp.v",
-      "bytes": 16181,
-      "sha256": "504ec86a32eb91f53d1ef2080347377bc01034c6acc31038465a21abcc3ab1b1"
+      "bytes": 15347,
+      "sha256": "750d3cf657463e28cab742eaf2309022840f3d00b45e3b668153b7fd63254cd7"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_64.v",
-      "bytes": 16862,
-      "sha256": "947ac7f4431baf572478a10632aaa6e41074989d27b13b4ae6ce065e6c672e38"
+      "bytes": 16006,
+      "sha256": "910e0dfdc12652d520cb49237e35d2dffcb006ac0029e7f46c0c1e66e34ca2a6"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_arb_mux.v",
-      "bytes": 20363,
-      "sha256": "a9d2b984a121eef8ed572376ef45d4318eb6f0173e558cd4282e8ab59a77fea2"
+      "bytes": 19495,
+      "sha256": "a867eb6abe05986f71cae6ded5bdbf3746d54f358d8fdec83382fe38b8e6fc9d"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_checksum_gen.v",
-      "bytes": 21918,
-      "sha256": "a9f1dd26d49e4c32288299dda68b7eb40e3371439e34080a06fe40c79b2141ed"
+      "bytes": 20796,
+      "sha256": "95ad19792cb143b4250d8e65ad8dea9ac1be8a8d1fa61ca631c80b24d16719fa"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_checksum_gen_64.v",
-      "bytes": 23710,
-      "sha256": "1acab1246e5445a7d93f8d177d976244ce3a402b4a0d56a749cc5d936fd4ec77"
+      "bytes": 22516,
+      "sha256": "c28f8aeebfe34c74ef753f45478d64dfbaf615d0d854d61f75d0d112ca8995f0"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_complete.v",
-      "bytes": 24716,
-      "sha256": "663c4286d63e7849e54f3738862cc8df66645b568a4ea8a1cfaea0eeaca9337b"
+      "bytes": 23434,
+      "sha256": "c801c805a1e42ec4f2309ad58c1a0d533ad369993236224b2214c2ee5b8844a7"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_complete_64.v",
-      "bytes": 25924,
-      "sha256": "a9ca6794606af9bfe6a33817d69ba5150f0e2714d2ea4060e8d891373a5c6717"
+      "bytes": 24602,
+      "sha256": "57e4f5cd7af926276b0790b9c371e648d5badfd4f9d83beead93fc1320da1d50"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_demux.v",
-      "bytes": 19815,
-      "sha256": "50edf9c09c269668ea75c43db1a0dbce411f7f70e9fbf0db2d8a3b218afaabf6"
+      "bytes": 18959,
+      "sha256": "c734f329ed67f289d98832855eb5182f7d863653a8aac13b56a76eee59e5e0d8"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_ip_rx.v",
-      "bytes": 21159,
-      "sha256": "a1b2180432cc5cfe52473c8caf5792c4c8df5602596da6fbfd3656ee49dc126e"
+      "bytes": 20087,
+      "sha256": "bed1fb03cabe705b9757bfa17e262dfc739ccf48700e04c234ebc276a5f527c1"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_ip_rx_64.v",
-      "bytes": 22427,
-      "sha256": "dae38fea09db1ea97cf4f27b6f2fcb37753454b35c7e52678276e3d0f6b4f604"
+      "bytes": 21299,
+      "sha256": "d91fae456b9687f4b9a5ee5720091b315b2bc9922eb7c7b1a682e37a6a92c51f"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_ip_tx.v",
-      "bytes": 19412,
-      "sha256": "7513c157e0bf1d2e148a4ce17537800b5535bfa8c77649e9ccbfb34e4e3315e7"
+      "bytes": 18418,
+      "sha256": "c5e3cd5a4e4b418b7315e7c39f6e0124bd0fcec3f4e073d949ae1235a606846c"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_ip_tx_64.v",
-      "bytes": 22285,
-      "sha256": "49e129ffb6f52ec3ee86f9db1dd458ba622d7f51dd1002e124ad40a5692db24d"
+      "bytes": 21179,
+      "sha256": "e3bb0ebd4c7f0c1d9753dcea3940809ac7a747d681e7d3cb9c5744f7aa4088fc"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/udp_mux.v",
-      "bytes": 19881,
-      "sha256": "067efa239f7e59b481392c885ac04383c88ee779a1342a4b3e58ef5baad027bd"
+      "bytes": 19037,
+      "sha256": "fdbb8ffd42405d3db2201894eab36b2e618056f611c3301c15f862e37a1d0de8"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/xgmii_baser_dec_64.v",
-      "bytes": 15791,
-      "sha256": "d7bd91747279f72843d3a3263cb43daa9e9ed478c5b38059c28fc62930a9a429"
+      "bytes": 14957,
+      "sha256": "f65a860e7d38e6ca77a90dcb98718a6ee50d5ebfe55b262320c6d9f78e481eb6"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/xgmii_baser_enc_64.v",
-      "bytes": 11291,
-      "sha256": "6a6a6f247d791fedce98853c3398cdeb471a65c63a7e5eaa81d0e24db3e2df1a"
+      "bytes": 10723,
+      "sha256": "588a0871d72fe7350636e404fb3345c8659d94ee79b97abbd9feb81e447b7696"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/xgmii_deinterleave.v",
-      "bytes": 2288,
-      "sha256": "ca50ac148df7083c6b57a2aab1a03ce73a25b39d835d4774b54e0d7451240fcc"
+      "bytes": 2166,
+      "sha256": "5ab0de601da6ac2917a980b4ad30dbcda86a1cfc62dfd52bd891e9b654c44cea"
     },
     {
       "path": "third_party/verilog-ethernet/rtl/xgmii_interleave.v",
-      "bytes": 2283,
-      "sha256": "1e23caa47882e34a88914481abcbfb338a4d7eaee405fcaf221ffc83f24bb89c"
+      "bytes": 2161,
+      "sha256": "1bba6881732c709041ce7a6be15c32cedfa89c3c7091e682f8495a96719b8635"
     },
     {
       "path": "third_party/verilog-ethernet/syn/vivado/eth_mac.tcl",
-      "bytes": 2620,
-      "sha256": "4fd7cca3791e0cb4a9fdc1b78aacc728378b495f32d3c8f68f7b7e67accd79c0"
+      "bytes": 2520,
+      "sha256": "f8db669f11e19112fd8e6e2b36eb3de59228baf4ccbd50dcd2bd6fc3f51fd03f"
     },
     {
       "path": "third_party/verilog-ethernet/syn/vivado/eth_mac_1g_rgmii.tcl",
-      "bytes": 3093,
-      "sha256": "9c5d71f5cd8f27c968d4daf1be7fa3d5d07f79d18c742c3235a0eeef6bc90f0d"
+      "bytes": 2969,
+      "sha256": "60ab6d0889d3f6a7f13d8fe5ed0a5be168471cbae59b5d50355f975689f5d821"
     },
     {
       "path": "third_party/verilog-ethernet/syn/vivado/eth_mac_fifo.tcl",
-      "bytes": 2576,
-      "sha256": "7f6513ef9c8bc85c362aa9a8b4f9a2d2d7b7b05fbdbe630070d6b94528c3c969"
+      "bytes": 2476,
+      "sha256": "7a72034182f9784931ceb7f3958efdf6f55551e2df73dff56daa520717c4f157"
     },
     {
       "path": "third_party/verilog-ethernet/syn/vivado/rgmii_phy_if.tcl",
-      "bytes": 2296,
-      "sha256": "ad3e7c4a4b7646f7ba2202971b8fc27db79b0038410bfe5d9868bb4e9e29a38e"
+      "bytes": 2212,
+      "sha256": "d1d957acbc710d26309c44be254ade66854098c2a46da15c6b4af2c33f37455d"
     },
     {
       "path": "tools/__init__.py",
