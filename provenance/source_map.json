@@ -2955,11 +2955,12 @@
     "path": "software/DEPENDENCIES.md",
     "origin": "software_delivery/DEPENDENCIES.md",
     "source_sha256": "c33e511eb63e3ae3253494f697dc027ff2e297174e8a5bf4be17ca0b5aa964a2",
-    "public_sha256": "6b14d0aa92b56dd4e62f8b3a84925e7db50bbcee7676443e7f7fe6c2792dde67",
+    "public_sha256": "151f6e04394319360d57a7e7cddff7aea7102d971f4a5d873b5e86cd9be927dc",
     "category": "training_source",
     "adaptations": [
       "Public repository documentation context clarified",
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Clean Python acceptance; dependency or installation metadata updated"
     ],
     "pre_migration_public_path": "software/DEPENDENCIES.md"
   },
@@ -6370,9 +6371,11 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
+    "public_sha256": "7ade737ab182ada8f5050de23a08dd342e8f3c22ccf8e8faee5d603f310a40ac",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Clean Python acceptance; dependency or installation metadata updated"
+    ],
     "pre_migration_public_path": "README.md"
   },
   {
@@ -6570,9 +6573,11 @@
     "path": "docs/release_status.json",
     "origin": "public_repository_migration/docs/release_status.json",
     "source_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
-    "public_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
+    "public_sha256": "96e852f77f628bc4e182a41f9af1acf9a45f08d826625ee18e54dd8dfa25459c",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Clean Python acceptance; dependency or installation metadata updated"
+    ],
     "pre_migration_public_path": "docs/release_status.json"
   },
   {
@@ -6813,10 +6818,11 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "2e9855384fc4fe0b1da049b8a59cb9385d066061c3f1159a27970b1a5e855b35",
+    "public_sha256": "29d2979ba643d42b731d5f5c65383e4dc316d7027211ef85c3a81ecf9200076f",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Clean Python acceptance; dependency or installation metadata updated"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -6824,9 +6830,11 @@
     "path": "requirements.txt",
     "origin": "public_repository_migration/requirements.txt",
     "source_sha256": "bdb7de7068797d6f8f3cafcfc97ddb57f194d69eedc5588688d64322457bb40b",
-    "public_sha256": "bdb7de7068797d6f8f3cafcfc97ddb57f194d69eedc5588688d64322457bb40b",
+    "public_sha256": "aecac73470ed94e8b5a00d3496eaa0c02d8cf04c71c2325a1cdc930f0a541bda",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Clean Python acceptance; dependency or installation metadata updated"
+    ],
     "pre_migration_public_path": "requirements.txt"
   },
   {
@@ -7057,5 +7065,13 @@
       "Functional directory migration and portable runtime configuration"
     ],
     "pre_migration_public_path": "tools/verify_checkout.py"
+  },
+  {
+    "path": "docs/clean_environment_validation.json",
+    "origin": "clean_environment_acceptance/docs/clean_environment_validation.json",
+    "source_sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef",
+    "public_sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef",
+    "category": "validation_receipt",
+    "adaptations": []
   }
 ]

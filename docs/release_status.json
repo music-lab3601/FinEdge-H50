@@ -13,5 +13,7 @@
   "board_validation": "pending",
   "GitHub_remote_created": false,
   "GitHub_pushed": false,
-  "validation": "docs/migration_validation.json"
+  "validation": "docs/migration_validation.json",
+  "clean_Python_environment": "passed_after_databento_dependency_correction",
+  "clean_environment_validation": "docs/clean_environment_validation.json"
 }

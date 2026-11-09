@@ -1,0 +1,88 @@
+{
+  "schema": "finedge-clean-python-acceptance-1",
+  "date": "2026-11-09",
+  "status": "passed",
+  "tested_code_commit": "fa7d7eb133eadeedd844396c0aabc67ab0ca0718",
+  "platform": "Windows x64",
+  "python": "3.12.15",
+  "environment": "Fresh venv created from installed Python 3.12 standard-library runtime",
+  "include_system_site_packages": false,
+  "user_site_enabled": false,
+  "dependencies_installed_from": [
+    "https://download.pytorch.org/whl/cpu",
+    "https://pypi.org/simple"
+  ],
+  "prior_application_packages_reused": false,
+  "installed_distributions": {
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "coloredlogs": "15.0.1",
+    "databento-dbn": "0.71.0",
+    "filelock": "4.2.4",
+    "flatbuffers": "25.12.19",
+    "fsspec": "2026.9.0",
+    "humanfriendly": "10.0",
+    "mpmath": "1.3.0",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "onnx": "1.17.0",
+    "onnxruntime": "1.22.1",
+    "packaging": "26.3",
+    "pip": "25.0.1",
+    "protobuf": "7.36.2",
+    "pyreadline3": "3.5.6",
+    "pyserial": "3.5",
+    "setuptools": "78.1.0",
+    "sympy": "1.14.0",
+    "torch": "2.7.1+cpu",
+    "typing_extensions": "4.16.0"
+  },
+  "correction": {
+    "dependency": "databento-dbn==0.71.0",
+    "initial_result": "STATUS test module import failed with ModuleNotFoundError",
+    "resolution": "Pinned dependency added to requirements.txt; full suite rerun"
+  },
+  "pip_check": "passed",
+  "templates_resolved": 57,
+  "unit_tests": {
+    "executed": 654,
+    "passed": 628,
+    "skipped": 26,
+    "failed": 0,
+    "skip_reason": "Optional historical SDK/data receipts absent"
+  },
+  "cpu_synthetic": {
+    "windows": 32,
+    "max_abs_error": 0
+  },
+  "UDP_cpu_loop": {
+    "events": 180,
+    "eligible_records": 160,
+    "windows": 61,
+    "incremental_vs_batch": "elementwise_equal"
+  },
+  "dashboard": {
+    "CLI_startup": "passed",
+    "HTTP_resources": "passed",
+    "authenticated_API": "passed",
+    "normal_shutdown": true
+  },
+  "onnx": {
+    "windows": 32,
+    "max_abs_error": 3.5762786865234375e-07,
+    "class_mismatches": 0
+  },
+  "polyphase": {
+    "windows": 96,
+    "max_abs_error": 1.430511474609375e-06,
+    "class_mismatches": 0
+  },
+  "board_access": false,
+  "SDK_or_FPGA_build_executed": false,
+  "scope": "Clean Python application dependencies and board-independent functionality on the existing Windows OS",
+  "pending": [
+    "Complete mixed/native INT8 model rebuild",
+    "Vendor-integrated full FPGA build",
+    "Board acceptance"
+  ]
+}

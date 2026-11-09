@@ -1,13 +1,24 @@
-> 来源交付文档快照。公开仓库的实际目录、资产身份和验收状态见根目录README及provenance。
-
-# 依赖与外部输入
-
-冻结CPU推理的原环境记录：Python 3.12.14、NumPy 2.2.6、Torch 2.7.1+cu128；版本原文保存在冻结package/environment.json和requirements_snapshot.txt，未在本次重新安装或验证。
-
-原训练及核验代码主要使用NumPy/PyTorch；Databento DBN/MBO转换另需databento_dbn，上游采集支持代码可使用requests/tqdm等。标准库无需另装；准确额外依赖以各入口实际imports及历史环境为准，不虚构未保存的精确版本。
-
-真实复训还需原始352B盘口记录、P1/P2筛选与缓存、manifest/路径和新独立执行安排。完整行情与缓存未随源码附带。
-
-当前合并提交包的硬件部分已包含板端ARM常驻C/Python管理、32槽FPGA工程、独立MBO UDP/QPC行情源、GUI及已编译混合精度模型；这些自研工程不是仍待补交的外部依赖。具体位置见EXTERNAL_COMPONENTS.md和硬件部分/README.md，硬件Python依赖另见硬件部分/03_检查与配置/requirements.txt。
-
-上板仍需匹配的开发板、ICraft SDK、系统镜像、驱动和构建工具。随包model.json记录的编译版本为Icraft v3.36.1、XIR 3.36.1.0及ONNX opset11，这些是编译工件内的版本记录，不代表本次已安装或验证全部环境。完整ONNX导出/ICraft编译校准过程源码与记录、量化评价窗的跨格式追溯资料仍未完整随包；已有编译模型与RTL中保存的尺度/常数不应据此被解释为缺失。当前演示配置还引用原F盘行情和显示数据，使用前需按硬件说明准备实际输入并调整路径。
+# 软件依赖
+
+## 无板卡运行与测试
+
+使用64位Python 3.12，先创建独立venv。安装步骤见根目录README，六项直接依赖固定在`requirements.txt`。
+
+| 依赖 | 版本 | 用途 |
+|---|---|---|
+| NumPy | 2.2.6 | 价量张量、预处理和数值核对 |
+| PyTorch CPU | 2.7.1 | 冻结TorchScript推理和模型结构测试 |
+| ONNX | 1.17.0 | 模型导出与计算图检查 |
+| ONNX Runtime | 1.22.1 | 导出模型输出对照 |
+| pyserial | 3.5 | 串口管理接口及其测试 |
+| databento-dbn | 0.71.0 | DBN状态消息、行情记录解码及合成数据测试 |
+
+PyTorch通过官方CPU索引安装，实际包版本为`2.7.1+cpu`。安装其余依赖后执行`python -m pip check`，核对依赖完整性。标准库随Python提供，Git作为独立命令行工具安装。
+
+## 训练与板卡构建
+
+正式训练需要配置相应CUDA版PyTorch、训练数据、注册文件和预算记录。板卡构建需要匹配的Vivado、Procise、JFM和Icraft工具链，C++工具需要CMake及编译器。各项通过集中配置选择，外部资产身份见`external/dependencies.json`。
+
+## 历史环境记录
+
+来源资料中保留的Python、CUDA和依赖版本用于说明原实验环境。本轮独立环境的实际安装版本、依赖来源和验证范围由验收记录单独保存。

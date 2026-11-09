@@ -48,18 +48,23 @@ provenance/                来源、目录映射与发布文件清单
 
 ## 无板卡验证
 
-使用Python 3.12。PyTorch CPU版可先从官方CPU索引安装，然后安装其余依赖。
+使用64位Python 3.12和Git。Windows PowerShell先创建独立环境，再通过该环境的解释器安装依赖与运行检查。
 
-```shell
-python -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -r requirements.txt
-python -B finedge.py check checkout
-python -B finedge.py configure --render
-python -B finedge.py check imports
-python -B finedge.py cpu check
-python -B finedge.py cpu smoke --records 160
-python -B finedge.py check tests
+```powershell
+py -3.12 -m venv .local/python_env
+$finedgePython = (Resolve-Path .local/python_env/Scripts/python.exe).Path
+& $finedgePython -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+& $finedgePython -m pip install -r requirements.txt
+& $finedgePython -m pip check
+& $finedgePython -B finedge.py check checkout
+& $finedgePython -B finedge.py configure --render
+& $finedgePython -B finedge.py check imports
+& $finedgePython -B finedge.py cpu check
+& $finedgePython -B finedge.py cpu smoke --records 160
+& $finedgePython -B finedge.py check tests
 ```
+
+后续示例中的`python`同样使用这个环境的解释器。`requirements.txt`包含行情DBN解码库，完整测试会验证其状态消息解析。
 
 `cpu check`验证随仓库提供的32个人工合成窗口。`cpu smoke`独立生成MBO事件，通过本机UDP发送，接收方建簿、增量预处理、组窗并调用冻结CPU模型。160条有效盘口产生61窗，每窗同时对照批量预处理结果。输出保存在`.local/checks/`。此命令的输入和后端均在日志中标明。
 

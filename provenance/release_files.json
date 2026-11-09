@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6515,
-      "sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423"
+      "bytes": 6935,
+      "sha256": "7ade737ab182ada8f5050de23a08dd342e8f3c22ccf8e8faee5d603f310a40ac"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -747,14 +747,19 @@
       "sha256": "bc5f64a130b1f9c79ffeb369d9addb868e79c8041bde7c065d31a1862737205c"
     },
     {
+      "path": "docs/clean_environment_validation.json",
+      "bytes": 2482,
+      "sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef"
+    },
+    {
       "path": "docs/migration_validation.json",
       "bytes": 2818,
       "sha256": "8657929236f023e6eb95a1ad5f550ed1b615b64d64942c713a5e12867147fc94"
     },
     {
       "path": "docs/release_status.json",
-      "bytes": 582,
-      "sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9"
+      "bytes": 736,
+      "sha256": "96e852f77f628bc4e182a41f9af1acf9a45f08d826625ee18e54dd8dfa25459c"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -2063,18 +2068,18 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 380699,
-      "sha256": "842675901ad15684c92f8baacdb8d39402ca95c6575f145e95cfb24cc5ac5349"
+      "bytes": 381487,
+      "sha256": "007db30bba981c89806a24a0f86d4dbaedb88a6fefe7fa085920df2600c96e58"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21409,
-      "sha256": "2e9855384fc4fe0b1da049b8a59cb9385d066061c3f1159a27970b1a5e855b35"
+      "sha256": "29d2979ba643d42b731d5f5c65383e4dc316d7027211ef85c3a81ecf9200076f"
     },
     {
       "path": "requirements.txt",
-      "bytes": 73,
-      "sha256": "bdb7de7068797d6f8f3cafcfc97ddb57f194d69eedc5588688d64322457bb40b"
+      "bytes": 95,
+      "sha256": "aecac73470ed94e8b5a00d3496eaa0c02d8cf04c71c2325a1cdc930f0a541bda"
     },
     {
       "path": "shared/__init__.py",
@@ -2113,8 +2118,8 @@
     },
     {
       "path": "software/DEPENDENCIES.md",
-      "bytes": 1751,
-      "sha256": "6b14d0aa92b56dd4e62f8b3a84925e7db50bbcee7676443e7f7fe6c2792dde67"
+      "bytes": 1320,
+      "sha256": "151f6e04394319360d57a7e7cddff7aea7102d971f4a5d873b5e86cd9be927dc"
     },
     {
       "path": "software/EXTERNAL_COMPONENTS.md",
