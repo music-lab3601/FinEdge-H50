@@ -79,20 +79,24 @@ foreach box $fifos {
  # RAM-to-prefetch path rather than exempting either clock domain.
  if {![string match {*payload_fifo} $box]} {
   set ram [get_cells -hier -quiet -filter "NAME =~ ${box}/mem_reg* && (REF_NAME =~ RAM* || REF_NAME =~ FD*)"]
-  set launch [get_pins -quiet -of_objects $ram -filter {REF_PIN_NAME == WCLK || REF_PIN_NAME == CLK || REF_PIN_NAME == C}]
+  # Use the decomposed RAMD32/RAMS32 clock pins. The enclosing RAM32M WCLK
+  # port is not a valid timing startpoint in the Vivado 2018.3 model.
+  set launch [get_pins -quiet -of_objects $ram -filter {REF_PIN_NAME == CLK || REF_PIN_NAME == C}]
   set data_out [get_pins -quiet -of_objects $ram -filter {DIRECTION == OUT}]
   set reader [get_cells -hier -quiet -filter "NAME =~ ${box}/rb_reg* && REF_NAME =~ FD*"]
   set read_launch [get_pins -quiet -of_objects $reader -filter {REF_PIN_NAME == C}]
   set capture [get_cells -hier -quiet -filter "NAME =~ ${box}/r_data_reg* && REF_NAME =~ FD*"]
   if {![llength $ram] || ![llength $launch] || ![llength $read_launch] || ![llength $data_out] || ![llength $capture]} {error "Missing FIFO metadata RAM clock/output/capture $box"}
-  # LUTRAM asynchronous read paths can launch from the read-address register.
-  # Bound every actual path through its output, without inventing a clock-to-
-  # output arc. Normal read-domain setup/hold remains timed.
-  # In Vivado's distributed-RAM model WCLK is a write timing endpoint, not
-  # a read-data launch point. Read address -> mux -> capture is timed here;
-  # source-domain writes are normally timed and Gray publication guards CDC.
+  # Vivado exposes RAMD32 CLK->O paths as well as read-address->O paths.
+  # A newly written word is readable only after wg1, wg2 and the registered
+  # fetch condition. At 125MHz this gives >=16ns before capture. The writer
+  # cannot reuse the slot until the read pointer returns through rg1/rg2.
+  # Bound write publication to 5ns and exempt only its asynchronous hold
+  # relationship. Read-address paths retain their ordinary hold checks.
+  set_max_delay -datapath_only 5.0 -from $launch -through $data_out -to $capture
+  set_false_path -hold -from $launch -through $data_out -to $capture
   set_max_delay -datapath_only 5.0 -from $read_launch -through $data_out -to $capture
-  puts "WT_FIFO_DATA_CDC $box outputs=[llength $data_out] capture=[llength $capture] budget=5ns"
+  puts "WT_FIFO_DATA_CDC $box write_clocks=[llength $launch] outputs=[llength $data_out] capture=[llength $capture] budget=5ns"
  }
 }
 

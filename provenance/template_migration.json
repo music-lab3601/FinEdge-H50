@@ -193,7 +193,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "5bd2b0baa1676d49530e7624a4b5a20f63c48debc4b1ecc41bf77685a8acb9fd"
+      "public_sha256": "d122aca91a2246f12196aefdd2362f06ca2a46490bf6d7a6462b2fed5c50cd8c"
     },
     {
       "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/opt_post.tcl",

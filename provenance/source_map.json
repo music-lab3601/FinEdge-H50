@@ -72,11 +72,12 @@
     "path": "hardware/constraints/network_cdc.tcl",
     "origin": "revised_h50/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/network_cdc_signoff_mcp_v5.tcl",
     "source_sha256": "9ea974b6814d3e7c5de85e9d0733560a2d9f1689e29e6568d807ae4819bf274e",
-    "public_sha256": "5bd2b0baa1676d49530e7624a4b5a20f63c48debc4b1ecc41bf77685a8acb9fd",
+    "public_sha256": "d122aca91a2246f12196aefdd2362f06ca2a46490bf6d7a6462b2fed5c50cd8c",
     "category": "hardware_source",
     "adaptations": [
       "machine path strings replaced by documented configuration tokens",
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/network_cdc_signoff_mcp_v5.tcl"
   },
@@ -6970,12 +6971,13 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "01659adfbc03bf5bef0d2767268a2f65290969a4e81ed14941a4fb678a7ea1f1",
+    "public_sha256": "6242863a6e7909a09413c386ff0cbe96376fb5ebab0c2c4f4ed9cf4ca49827fb",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
