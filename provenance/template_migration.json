@@ -520,7 +520,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "f4425a484f238cb6cf3656974b4316cc93b342062ed686a65f26c0a15d03604b"
+      "public_sha256": "41dd3151e2b3de5f48730f857748c702788a9e6b2fb92547127d64564760a0b8"
     }
   ],
   "validation": {

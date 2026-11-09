@@ -22,8 +22,13 @@ def main():
         '[file normalize [file join [file dirname [info script]] ../vendor/verilog-ethernet]]',
         '{'+(P/'third_party/verilog-ethernet').as_posix()+'}')
     (audit/'applied_cdc.tcl').write_text(cdc, encoding='utf-8')
-    tcl=f'''open_checkpoint {{{(out/'market_routed.dcp').as_posix()}}}
+    fifo_audit=P/'hardware/scripts/audit_metadata_fifo.tcl'
+    tcl=f'''set f [open {{{(audit/'applied_cdc.tcl').as_posix()}}} r];read $f;close $f
+set f [open {{{fifo_audit.as_posix()}}} r];read $f;close $f
+open_checkpoint {{{(out/'market_routed.dcp').as_posix()}}}
 source {{{(audit/'applied_cdc.tcl').as_posix()}}}
+set finedge_fifo_audit_file {{{(audit/'fifo_publication.tsv').as_posix()}}}
+source {{{fifo_audit.as_posix()}}}
 # 750ps additional PHY RX delay. The physical FPGA clock/data routes are kept;
 # change the external device configuration with its matching launch-edge model.
 # Previous 1.95ns PHY skew caused real RX hold violations on these routed pins.
@@ -112,6 +117,8 @@ exit
                  vendor_general_DDR_drain_proven=False,audit=str(audit),source_build=str(out))
     release['vendor_only_minimum_period_exceptions']=sorted(observed)
     release['final_CDC_constraints_sha256']=sha(audit/'applied_cdc.tcl')
+    release['metadata_FIFO_publication_checks']=2
+    release['metadata_FIFO_publication_report_sha256']=sha(audit/'fifo_publication.tsv')
     release['final_CDC_recipe']=str(recipe)
     release['CDC_scope']='Held-data mailboxes, Gray counters, and upstream MAC/FIFO first-stage synchronizers only; no new whole-clock waiver'
     release['PHY_RX_extra_delay_ps']=750

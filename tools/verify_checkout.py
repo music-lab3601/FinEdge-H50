@@ -59,7 +59,8 @@ REQUIRED += [RELATIVE_BUILD + '/project/rtl/bench/' + name for name in (
 LAYOUT = json.loads((ROOT/'provenance/layout_map.json').read_text(encoding='utf-8'))['files']
 REQUIRED = [LAYOUT.get(name,name) for name in REQUIRED]
 REQUIRED += ['finedge.py', 'config/default.json', 'models/normalization.json',
-             'hardware/project/reference.xpr', 'tools/configuration.py', 'requirements.txt']
+             'hardware/project/reference.xpr', 'tools/configuration.py', 'requirements.txt',
+             'hardware/scripts/audit_metadata_fifo.tcl']
 
 
 def sha(path):

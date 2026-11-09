@@ -2890,10 +2890,11 @@
     "path": "hardware/scripts/package_board_generated.py",
     "origin": "revised_h50/versions/realtime_integration_v1/scripts/package_board_generated.py",
     "source_sha256": "ff61a244d3e6d5349dbd7f22e9b0638f55bd933acd0061d5bb9569a4640cda5d",
-    "public_sha256": "064e3308b113c0879d8eb7f4a9d474b837eeb04750110348c0cb809ac9bb673f",
+    "public_sha256": "38ca74a3943dd72aadad3cd22ac81fed141b08d6176b3685a1c2f05ff68701f5",
     "category": "hardware_source",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/scripts/package_board_generated.py"
@@ -6971,12 +6972,13 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "6242863a6e7909a09413c386ff0cbe96376fb5ebab0c2c4f4ed9cf4ca49827fb",
+    "public_sha256": "08fb9f4bc77dd2d683c183b36d4aea2064ddf9638bc47187df48409bdc3e0acf",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
@@ -7215,10 +7217,11 @@
     "path": "tools/verify_checkout.py",
     "origin": "public_repository_migration/tools/verify_checkout.py",
     "source_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a",
-    "public_sha256": "f4425a484f238cb6cf3656974b4316cc93b342062ed686a65f26c0a15d03604b",
+    "public_sha256": "41dd3151e2b3de5f48730f857748c702788a9e6b2fb92547127d64564760a0b8",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
     "pre_migration_public_path": "tools/verify_checkout.py"
   },
@@ -7278,15 +7281,25 @@
     "path": "docs/FPGA_BUILD.md",
     "origin": "fpga_source_build/docs/FPGA_BUILD.md",
     "source_sha256": "d1b178bad4c6a9db8639184190c90551635f5e601882398dca7aab1567c418be",
-    "public_sha256": "d1b178bad4c6a9db8639184190c90551635f5e601882398dca7aab1567c418be",
+    "public_sha256": "152e58df039e31e73e98c2f590bb03cb74b68383e5a35ae7e8cf1cebfb38ecc9",
     "category": "FPGA_build_source_or_validation",
-    "adaptations": []
+    "adaptations": [
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+    ]
   },
   {
     "path": "hardware/scripts/synth_pre.tcl",
     "origin": "fpga_source_build/hardware/scripts/synth_pre.tcl",
     "source_sha256": "5ffe123c488298219266896e59abeb2a0ad11219fba185662224bc8ad0ed2be0",
     "public_sha256": "5ffe123c488298219266896e59abeb2a0ad11219fba185662224bc8ad0ed2be0",
+    "category": "FPGA_build_source_or_validation",
+    "adaptations": []
+  },
+  {
+    "path": "hardware/scripts/audit_metadata_fifo.tcl",
+    "origin": "fpga_source_build/hardware/scripts/audit_metadata_fifo.tcl",
+    "source_sha256": "5bbfb511c1f74f09df53bf27ad7be55119cc0a69af0a0232639a788a7e53bbdd",
+    "public_sha256": "5bbfb511c1f74f09df53bf27ad7be55119cc0a69af0a0232639a788a7e53bbdd",
     "category": "FPGA_build_source_or_validation",
     "adaptations": []
   }

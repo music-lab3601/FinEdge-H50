@@ -60,6 +60,8 @@ Vivado 重置综合运行时会移除部分 IP 输出。构建入口在生成运
 
 物理审计要求普通建立与保持时序均通过、路由错误为零、DRC 无 Error，活跃寄存器时钟和最大延迟约束覆盖完整，建簿时钟为 125 MHz。厂商已确认的 AI 内部两项 1 GHz 最小周期模型例外逐引脚检查，其余最小周期和脉宽检查正常执行。两项例外及其数值写入 `boot/release.json`。
 
+命令与完成信息的两个小型异步 FIFO 使用双级 Gray 指针同步后读取 RAM。其叶级 RAM 时钟输出到读寄存器的数据发布路径按 5 ns 限制，异步保持关系仅对该路径豁免。读地址路径单独约束。物理审计逐 FIFO 核验实际路径、5 ns 要求、裕量和保持例外，将命中端点写入 `physical_audit/fifo_publication.tsv`。
+
 BOOT 使用厂商后处理生成的 `ai7030_edif_top_disable_icap.bit`，结合已登记的 FSBL、BL31 和 U-Boot 打包。主要发布产物为 `boot/BOOT.bin`、`boot/BOOT.bin.gz` 与 `boot/release.json`。本轮功耗报告采用环境温度 25℃、典型工艺及工具默认活动率，属于工具估计。
 
 构建成功时，BOOT 收据状态为 `packaged_pending_board_validation`。后续应在板卡加载该产物，并核验 DDR、行情接收、推理结果及演示完整链路。
