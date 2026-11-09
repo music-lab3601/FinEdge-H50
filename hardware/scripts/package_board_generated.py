@@ -120,7 +120,8 @@ exit
     release['metadata_FIFO_publication_checks']=2
     release['metadata_FIFO_publication_report_sha256']=sha(audit/'fifo_publication.tsv')
     release['final_CDC_recipe']=str(recipe)
-    release['CDC_scope']='Held-data mailboxes, Gray counters, and upstream MAC/FIFO first-stage synchronizers only; no new whole-clock waiver'
+    release['CDC_scope']='Held-data mailboxes, Gray pointers, immutable metadata RAM publication and MAC/FIFO synchronizers'
+    release['vendor_input_DRC_severity_overrides']=['REQP-44','REQP-46','REQP-52','REQP-56']
     release['PHY_RX_extra_delay_ps']=750
     release['PHY_RX_external_input_delay_ns']={'min':2.25,'max':4.25,'reference':'preceding DDR launch edge'}
     release['PHY_RX_profile_scope']='Candidate external +/-1ns bounds; 750ps PHY skew required at deployment, actual packet validation and PVT signoff separate'

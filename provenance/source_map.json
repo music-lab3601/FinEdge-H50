@@ -2890,10 +2890,11 @@
     "path": "hardware/scripts/package_board_generated.py",
     "origin": "revised_h50/versions/realtime_integration_v1/scripts/package_board_generated.py",
     "source_sha256": "ff61a244d3e6d5349dbd7f22e9b0638f55bd933acd0061d5bb9569a4640cda5d",
-    "public_sha256": "38ca74a3943dd72aadad3cd22ac81fed141b08d6176b3685a1c2f05ff68701f5",
+    "public_sha256": "2f1815afff9ac8a0490ddb9ca0ccb99c0b8d404fa90558a2ae0af719399bdb9d",
     "category": "hardware_source",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
