@@ -2621,7 +2621,7 @@
     "path": "tests/host/test_dispatch_speed.py",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/tests/test_dispatch_speed.py",
     "source_sha256": "6c76924ff0c7c7c2a50f03d779fc1fcf5e5e683e316b3f06b0e74c468b5058e4",
-    "public_sha256": "b1a95cd0a73a8aa2b36daaca35fca254ce2f38deb50e2746e0b7b8312cdd53ee",
+    "public_sha256": "06dba7a202774db3c11ea0c397345ea42f8b353d0242eee2c58c77074062b5de",
     "category": "hardware_source",
     "adaptations": [
       "Functional directory migration and portable runtime configuration"
@@ -2643,7 +2643,7 @@
     "path": "tests/host/test_startup_input.py",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/tests/test_startup_input.py",
     "source_sha256": "6a3ae7692602c624a54d1f0c4f7af3d504b4cd1ae3e31b8f9ebe9b28fa66b2f5",
-    "public_sha256": "ee5af37e06df62a6bc42cf2944a2d28ef602c8a3260d1f0b75f975945ff6dbd4",
+    "public_sha256": "786bd22b1722626120746fa26ddcbf9727b948e0990b7e829303209e0f05d465",
     "category": "hardware_source",
     "adaptations": [
       "Functional directory migration and portable runtime configuration"

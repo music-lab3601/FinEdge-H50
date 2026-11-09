@@ -2064,7 +2064,7 @@
     {
       "path": "provenance/source_map.json",
       "bytes": 380462,
-      "sha256": "f79a5b9a665c4a3a0acf60eccee2907435db30d0ebffbed61680d507f3b7e715"
+      "sha256": "0a0aef14e32ab568416dc6b2b8fec8b58fb473ee879d94724f74ba7d3122b1eb"
     },
     {
       "path": "provenance/template_migration.json",
@@ -2353,8 +2353,8 @@
     },
     {
       "path": "tests/host/test_dispatch_speed.py",
-      "bytes": 5015,
-      "sha256": "b1a95cd0a73a8aa2b36daaca35fca254ce2f38deb50e2746e0b7b8312cdd53ee"
+      "bytes": 4981,
+      "sha256": "06dba7a202774db3c11ea0c397345ea42f8b353d0242eee2c58c77074062b5de"
     },
     {
       "path": "tests/host/test_session_auth.py",
@@ -2363,8 +2363,8 @@
     },
     {
       "path": "tests/host/test_startup_input.py",
-      "bytes": 5225,
-      "sha256": "ee5af37e06df62a6bc42cf2944a2d28ef602c8a3260d1f0b75f975945ff6dbd4"
+      "bytes": 5106,
+      "sha256": "786bd22b1722626120746fa26ddcbf9727b948e0990b7e829303209e0f05d465"
     },
     {
       "path": "tests/rtl/tb_fifo.sv",

@@ -33,7 +33,7 @@ class DispatchSpeedTests(unittest.TestCase):
                          [300_000_000_000, 150_000_000_000, 75_000_000_000])
 
     def test_market_clock_advances_faster_but_remaining_time_is_wall_time(self):
-        with tempfile.TemporaryDirectory(dir=U/'artifacts') as directory:
+        with tempfile.TemporaryDirectory() as directory:
             for speed in (1, 2, 4):
                 e = Evidence.__new__(Evidence)
                 e.d = Path(directory)
@@ -56,7 +56,7 @@ class DispatchSpeedTests(unittest.TestCase):
         # The future 50 records take 50/25/12.5ms at 1/2/4x. A real 20ms
         # response is timely at 1/2x and late at 4x; its latency stays 20ms.
         for speed, expected_timely in ((1, True), (2, True), (4, False)):
-            with self.subTest(speed=speed), tempfile.TemporaryDirectory(dir=U/'artifacts') as temp:
+            with self.subTest(speed=speed), tempfile.TemporaryDirectory() as temp:
                 d = Path(temp)
                 (d/'sender/source').mkdir(parents=True)
                 rows = np.zeros(150, dtype=ROW)
