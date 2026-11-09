@@ -1,0 +1,33 @@
+{
+  "schema": "D_precision_improvement_study_v2",
+  "date": "2026-10-30",
+  "authorization": "User requested continuing improvement of INT8 accuracy",
+  "baseline": "Parent v1 ordinary INT8 and paired TF32 remain immutable",
+  "new_candidates_max": 1,
+  "candidate_type": "INT8 with evidence-selected FP16 sensitive regions",
+  "training": false,
+  "normalization_refit": false,
+  "calibration_changes": false,
+  "layer_selection_data": "16 deterministic samples from the original 256 calibration windows",
+  "candidate_screening_data": "original calibration windows only",
+  "previous_evaluation_status": "already observed; retained as historical evidence, not new acceptance data",
+  "fresh_evaluation": {
+    "date": "2025-12-15",
+    "symbol": "AAPL",
+    "count": 512,
+    "endpoints_accepted_index": "numpy.linspace(50099,150210,512,dtype=int64)",
+    "input_history": 100,
+    "label_horizon": 50,
+    "first_input_accepted_index": 50000,
+    "last_label_accepted_index": 150260,
+    "window_footprints_nonoverlapping": true,
+    "scope": "previously unused later same-day engineering holdout, not original validation or independent date",
+    "do_not_read_labels_before_candidate_freeze": true
+  },
+  "budget": {
+    "accuracy_drop_vs_original_fp32_percentage_points_max": 1.0,
+    "macro_f1_drop_vs_original_fp32_percentage_points_max": 1.0
+  },
+  "policy": "Freeze one candidate before evaluating fresh holdout; no tuning after its results",
+  "board_access": "G only; D stays offline"
+}

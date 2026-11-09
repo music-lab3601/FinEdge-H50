@@ -1,0 +1,2011 @@
+{
+  "schema": "ED4_H50_training_source_inventory_v1",
+  "created_utc": "2026-11-01T15:17:21.410883+00:00",
+  "review_mode": "source AST + small JSON + source-only ZIP member bytes; no delivery module imports or model/data payload loads",
+  "selected_identity": {
+    "family": "ED4_feature42_lr0.001_seed42",
+    "epoch": 3,
+    "L": 100,
+    "H": 50,
+    "label": "endpoint midpoint change, threshold0; no future mean",
+    "feature": "same-record relative prices; raw quantities unchanged; TRAIN-only population zscore",
+    "train_dates": "2025-12-08..12",
+    "development_dates": [
+      "2025-12-15",
+      "2025-12-16"
+    ]
+  },
+  "files": [
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/audit_tcn_existing_data_ed6_resource_supplement.py",
+      "destination": "project/scripts/audit_tcn_existing_data_ed6_resource_supplement.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib"
+      ],
+      "bytes": 29001,
+      "sha256": "c0e1388704da530739e764d9f6d5beb807f498bf982d5718a3e4a2f1fdde0f57"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/audit_tcn_existing_data_ed7.py",
+      "destination": "project/scripts/audit_tcn_existing_data_ed7.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 25085,
+      "sha256": "22cd9c5ceaa103ce0132aef10ae47302390820b81e9d2c22a8807c536919b533"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/audit_tcn_existing_data_ed7_compat.py",
+      "destination": "project/scripts/audit_tcn_existing_data_ed7_compat.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_compat_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 36074,
+      "sha256": "514f10235de7f7f420d80462b6e54ed1db676b511a7a9fd4479cfbf001f4f0e2"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/finalize_tcn_existing_data_ed4.py",
+      "destination": "project/scripts/finalize_tcn_existing_data_ed4.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "stat"
+      ],
+      "bytes": 39809,
+      "sha256": "feb436a2ad4638f9ed47accfc09247c7a14d23fd76da17b6555d9489eb17e566"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/finalize_tcn_existing_data_ed6.py",
+      "destination": "project/scripts/finalize_tcn_existing_data_ed6.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib"
+      ],
+      "bytes": 39961,
+      "sha256": "e60c7f19ae0e8b08f6cb3a8248818276e20b062826670a96460de9b300ce54e5"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/finalize_tcn_existing_data_ed6_v2.py",
+      "destination": "project/scripts/finalize_tcn_existing_data_ed6_v2.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib"
+      ],
+      "bytes": 50707,
+      "sha256": "e02052afdb0ae8ff7e82d1999d4e304438b176b7d5cd78b2e1d1d5a28073d2a1"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/finalize_tcn_existing_data_ed7.py",
+      "destination": "project/scripts/finalize_tcn_existing_data_ed7.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "zipfile",
+        "zlib"
+      ],
+      "bytes": 17243,
+      "sha256": "dfdab908bdc1424cce4440b980b82db4ad0b1868d3090a34100dcab146bddd41"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/finalize_tcn_existing_data_ed7_compat.py",
+      "destination": "project/scripts/finalize_tcn_existing_data_ed7_compat.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_compat_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "traceback",
+        "zipfile",
+        "zlib"
+      ],
+      "bytes": 26701,
+      "sha256": "728ad8bf2c2d8cdababf31a60e591c9ee61a92cd3d22453c651066c47d3ebe60"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/prepare_tcn_existing_data_ed7_compat.py",
+      "destination": "project/scripts/prepare_tcn_existing_data_ed7_compat.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_compat_contract.py"
+      ],
+      "external_imports": [
+        "json",
+        "pathlib",
+        "shutil"
+      ],
+      "bytes": 4880,
+      "sha256": "3ae7b8c053973d28be96e8e86ee8b491d0764d2c8a7234d6df2cd08530c866dc"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/read_tcn_existing_data_ed6_progress.py",
+      "destination": "project/scripts/read_tcn_existing_data_ed6_progress.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "ctypes",
+        "json",
+        "pathlib"
+      ],
+      "bytes": 2919,
+      "sha256": "d46e12a84a39413a667a366548bdb35a248447ad1d9ce147ee73013824061cda"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/register_tcn_existing_data_ed6.py",
+      "destination": "project/scripts/register_tcn_existing_data_ed6.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed6_train.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "copy",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "sys"
+      ],
+      "bytes": 25638,
+      "sha256": "6e1f994aaf2004d9316a59aeac6a72be64df44857de517b7d72133e7e4deaca3"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/register_tcn_existing_data_ed6_postrepair.py",
+      "destination": "project/scripts/register_tcn_existing_data_ed6_postrepair.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/register_tcn_existing_data_ed6.py",
+        "scripts/tcn_existing_data_ed6_train.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "sys"
+      ],
+      "bytes": 10392,
+      "sha256": "df0c9a6c9c76a71a7f46b433f5d01ec77f8946be6529dac57e17693dce852696"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed4_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed4_capture.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 5914,
+      "sha256": "169af02d117e17e694df4934c61687644eebe6c2c32d4e04af57c3568dbc29b1"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed4_checkpoint_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed4_checkpoint_capture.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [
+        "scripts/run_tcn_existing_data_ed4_capture.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 3674,
+      "sha256": "de42366412251a5814dd1bd9456f1a92987211ba44836b8df9b5e8ad02425e0a"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed6_audit_v2_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed6_audit_v2_capture.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/run_tcn_existing_data_ed6_capture.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 11278,
+      "sha256": "f4a01b17025ef9a53ca823335b5d23095e73c4fb5a018d085993cd23efe9b747"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed6_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed6_capture.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 7658,
+      "sha256": "16c15c96560f5a11ae63b5e69b0724962850f77ac28e100fd78289cd0937f4f2"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed6_finalizer_tests_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed6_finalizer_tests_capture.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 3148,
+      "sha256": "de130bd64c2a71f9e523bb1778867ab05967c00f989ee4e927431d21f0e9bbd0"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed6_finalizer_v2_tests_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed6_finalizer_v2_tests_capture.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 3314,
+      "sha256": "abfe02a3793616119c7a128913d930e65e7a942eab52b1bdc6abb224b5c421a7"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed6_postrun_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed6_postrun_capture.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/run_tcn_existing_data_ed6_capture.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 8294,
+      "sha256": "ed36dd848d29dc1971dadcd9505a3194811b4c89abcc9c09a3c53ccfa66cf7f8"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed6_resource_publication_gate.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed6_resource_publication_gate.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/audit_tcn_existing_data_ed6_resource_supplement.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 11358,
+      "sha256": "25f4dfa18a7de40d038453bc30931f10569187c558a24113d46ea8e86835a86a"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed7_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed7_capture.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 5578,
+      "sha256": "24e985b54ec971803070d183cfc588822527fff0ba2093885005ba0cf1323150"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed7_compat_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed7_compat_capture.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed7_compat_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 5669,
+      "sha256": "d9191e8e386573733b793536418631bb474984f717ae1be6dfe8beea5628b253"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed7_tests_v2_capture.py",
+      "destination": "project/scripts/run_tcn_existing_data_ed7_tests_v2_capture.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [
+        "scripts/run_tcn_existing_data_ed7_capture.py",
+        "scripts/tcn_existing_data_ed7_contract.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 4407,
+      "sha256": "a084969dfc491a140f015ae0c7ae4a6d8c9343834f6f0b73188a261aaa4cdc4b"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed4_features.py",
+      "destination": "project/scripts/tcn_existing_data_ed4_features.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [
+        "scripts/tcn_research_data_p2.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 24773,
+      "sha256": "76ba74f731b937d9d39ca492cfcaf398968f24edfc139f3ae35fb0471e0a59ab",
+      "ED4_registration_bound_sha256": "76ba74f731b937d9d39ca492cfcaf398968f24edfc139f3ae35fb0471e0a59ab",
+      "ED4_registration_matches": true
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed4_train.py",
+      "destination": "project/scripts/tcn_existing_data_ed4_train.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed4_features.py",
+        "scripts/tcn_research_data_p2.py",
+        "scripts/tcn_research_evaluate_p2.py",
+        "scripts/tcn_research_p5_model.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "ctypes",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "platform",
+        "random",
+        "sys",
+        "time",
+        "traceback"
+      ],
+      "bytes": 36873,
+      "sha256": "b957f6cc61765c8939bfd039fea73c6d0b063f3b62237a6815d3ca1ddb5761ef",
+      "ED4_registration_bound_sha256": "b957f6cc61765c8939bfd039fea73c6d0b063f3b62237a6815d3ca1ddb5761ef",
+      "ED4_registration_matches": true
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed6_data.py",
+      "destination": "project/scripts/tcn_existing_data_ed6_data.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed4_features.py",
+        "scripts/tcn_research_data_p2.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 19411,
+      "sha256": "b3e0eb5e304762748589e1ac4966a60a4bbfa1c15618a0f842651973f6a791f7"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed6_train.py",
+      "destination": "project/scripts/tcn_existing_data_ed6_train.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed6_data.py",
+        "scripts/tcn_research_data_p2.py",
+        "scripts/tcn_research_evaluate_p2.py",
+        "scripts/tcn_research_p5_model.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "ctypes",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "platform",
+        "random",
+        "sys",
+        "time",
+        "traceback"
+      ],
+      "bytes": 47889,
+      "sha256": "729e4db69898a11abf1ba114cf5a443fca42ccee6200e6b924151d47c5ea475c"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_compat_contract.py",
+      "destination": "project/scripts/tcn_existing_data_ed7_compat_contract.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [],
+      "external_imports": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib"
+      ],
+      "bytes": 16946,
+      "sha256": "08ac923e180f3c2354dc7ded82aaf2df97b0e7c796f602f681f7d0c20318cc2e"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_compat_export.py",
+      "destination": "project/scripts/tcn_existing_data_ed7_compat_export.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [
+        "scripts/tcn_candidate.py",
+        "scripts/tcn_existing_data_ed7_compat_contract.py",
+        "scripts/tcn_existing_data_ed7_compat_runtime.py",
+        "scripts/tcn_research_p5_model.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "shutil",
+        "sys",
+        "torch"
+      ],
+      "bytes": 29359,
+      "sha256": "1f7b96ab9dee1d3874ece4552156695f8605e3c0e6a7ad2eb1d2257ca4ddf54f"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_compat_runtime.py",
+      "destination": "project/scripts/tcn_existing_data_ed7_compat_runtime.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "torch"
+      ],
+      "bytes": 11807,
+      "sha256": "cfe0b5fbf504ae5cc9415ff30072bd939e9ea264896a3f42032b8e1b27156aac"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_contract.py",
+      "destination": "project/scripts/tcn_existing_data_ed7_contract.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [],
+      "external_imports": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib"
+      ],
+      "bytes": 13537,
+      "sha256": "0787d0aec4b50ef0c55103a5c4ff4b9b8ab55d4e84da2ebdf807a25c5d2bc84d"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_export.py",
+      "destination": "project/scripts/tcn_existing_data_ed7_export.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [
+        "scripts/tcn_candidate.py",
+        "scripts/tcn_existing_data_ed7_contract.py",
+        "scripts/tcn_existing_data_ed7_runtime.py",
+        "scripts/tcn_research_p5_model.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "shutil",
+        "sys",
+        "torch"
+      ],
+      "bytes": 26899,
+      "sha256": "182b457fbdbaf893db7c50ac1d7b848a0c8d2d579133eb0c416fa25069be3589"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_runtime.py",
+      "destination": "project/scripts/tcn_existing_data_ed7_runtime.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "torch"
+      ],
+      "bytes": 11651,
+      "sha256": "a36ec941fb6e876eb1c837be95337031957213bad0afd1d28eff60b9888ec319"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_finalize_tcn_existing_data_ed6.py",
+      "destination": "project/scripts/test_finalize_tcn_existing_data_ed6.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/finalize_tcn_existing_data_ed6.py"
+      ],
+      "external_imports": [
+        "copy",
+        "fractions",
+        "unittest"
+      ],
+      "bytes": 6438,
+      "sha256": "0d5fc1370e3774d73e434740cdb0871f52ac8c86e91ffe5350cb4e43acd54a4e"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_finalize_tcn_existing_data_ed6_v2.py",
+      "destination": "project/scripts/test_finalize_tcn_existing_data_ed6_v2.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/finalize_tcn_existing_data_ed6_v2.py"
+      ],
+      "external_imports": [
+        "copy",
+        "fractions",
+        "unittest"
+      ],
+      "bytes": 8163,
+      "sha256": "c5b4af412a83511fcc8d8b4ef299c7ba84044153edd6573dd189c1b1dbd304fa"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed4_features.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed4_features.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed4_features.py",
+        "scripts/tcn_research_data_p2.py"
+      ],
+      "external_imports": [
+        "copy",
+        "hashlib",
+        "numpy",
+        "pathlib",
+        "tempfile",
+        "unittest"
+      ],
+      "bytes": 13591,
+      "sha256": "fef181000d422f5dd63969ea38119232479ed1d3b2ec06c43250fd436c68053d"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed4_train.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed4_train.py",
+      "reason": "ED4 primary training, relative feature preparation, checkpoint/finalization or its tests",
+      "actual_scope": "selected_ED4_seed42_training_or_QA",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed4_train.py"
+      ],
+      "external_imports": [
+        "ast",
+        "copy",
+        "fractions",
+        "importlib",
+        "json",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 7865,
+      "sha256": "0298d66b422756c100087c6949e5a75fd566342ad3533997406e80b26238d4eb"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed6_data.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed6_data.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed4_features.py",
+        "scripts/tcn_existing_data_ed6_data.py",
+        "scripts/tcn_research_data_p2.py"
+      ],
+      "external_imports": [
+        "copy",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "tempfile",
+        "unittest"
+      ],
+      "bytes": 14831,
+      "sha256": "80e9487f7777c7ec7b82bf97552270bca149a98e2cd64142d4f1ae285c7445ea"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed6_resource_supplement.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed6_resource_supplement.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/audit_tcn_existing_data_ed6_resource_supplement.py",
+        "scripts/run_tcn_existing_data_ed6_resource_publication_gate.py"
+      ],
+      "external_imports": [
+        "copy",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 14049,
+      "sha256": "2028562258ec41be8f48b68562c2b2a169302c07b726ed4e0cedaf57059124ac"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed6_train.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed6_train.py",
+      "reason": "ED6 paired seed43 candidate/control replication and resource/audit support",
+      "actual_scope": "seed43_replication_evidence_not_selected_seed42_model",
+      "local_imports": [
+        "scripts/tcn_existing_data_ed6_train.py"
+      ],
+      "external_imports": [
+        "ast",
+        "copy",
+        "fractions",
+        "importlib",
+        "json",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 15756,
+      "sha256": "3f526a0058d779de9a33b9c2e906e1377f0255710f60a7a14e2a28304a7ede4f"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed7.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed7.py",
+      "reason": "Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity",
+      "actual_scope": "historical_original_ED7_failed_export_not_primary",
+      "local_imports": [
+        "scripts/audit_tcn_existing_data_ed7.py",
+        "scripts/tcn_existing_data_ed4_features.py",
+        "scripts/tcn_existing_data_ed7_contract.py",
+        "scripts/tcn_existing_data_ed7_runtime.py"
+      ],
+      "external_imports": [
+        "ast",
+        "contextlib",
+        "copy",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 25222,
+      "sha256": "e34cc04853d991873126f7a20077f948669791199ff321de9bc56187c42aa6ff"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed7_compat.py",
+      "destination": "project/scripts/test_tcn_existing_data_ed7_compat.py",
+      "reason": "Successful v3 TorchScript compatibility export/runtime/independent audit and tests",
+      "actual_scope": "selected_ED7_compatibility_v3_delivery",
+      "local_imports": [
+        "scripts/audit_tcn_existing_data_ed7_compat.py",
+        "scripts/tcn_existing_data_ed4_features.py",
+        "scripts/tcn_existing_data_ed7_compat_contract.py",
+        "scripts/tcn_existing_data_ed7_compat_runtime.py"
+      ],
+      "external_imports": [
+        "ast",
+        "contextlib",
+        "copy",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "tempfile",
+        "types",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 39240,
+      "sha256": "023de8d3373bdb959d4ad1759ab777cdb3a640d49bbe7141aefb3d8808017c6d"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_research_data_p2.py",
+      "destination": "project/scripts/tcn_research_data_p2.py",
+      "reason": "P2 L100/H50 endpoint threshold-zero labels, unique TRAIN normalization, admitted-range window construction",
+      "actual_scope": "actual_ED4_P2_input_contract",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "sys",
+        "time"
+      ],
+      "bytes": 31042,
+      "sha256": "0f1fb25a6752d318149da0a3765d2ec02909e1b5558a2f8d9e50ea637bae3b1a",
+      "ED4_registration_bound_sha256": "0f1fb25a6752d318149da0a3765d2ec02909e1b5558a2f8d9e50ea637bae3b1a",
+      "ED4_registration_matches": true
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_research_evaluate_p2.py",
+      "destination": "project/scripts/tcn_research_evaluate_p2.py",
+      "reason": "Shared runtime, metrics and state digests imported by ED4/ED6 training",
+      "actual_scope": "actual_ED4_ED6_training_dependency",
+      "local_imports": [
+        "scripts/tcn_candidate.py",
+        "scripts/tcn_research_data_p2.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "fractions",
+        "hashlib",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "time",
+        "torch"
+      ],
+      "bytes": 19291,
+      "sha256": "1cef97f8960610b3edb7abca475b93f7b51b375f5f901ef82d6b8770a0ee73fd",
+      "ED4_registration_bound_sha256": "1cef97f8960610b3edb7abca475b93f7b51b375f5f901ef82d6b8770a0ee73fd",
+      "ED4_registration_matches": true
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_research_p5_model.py",
+      "destination": "project/scripts/tcn_research_p5_model.py",
+      "reason": "Original weight-normalized TCN builder used by selected ED4 checkpoint",
+      "actual_scope": "actual_selected_model_builder",
+      "local_imports": [
+        "scripts/tcn_candidate.py"
+      ],
+      "external_imports": [
+        "torch.nn.utils",
+        "torch.nn.utils.parametrizations"
+      ],
+      "bytes": 2375,
+      "sha256": "271708434069db9b754f9a0753cdad1b9196329c7fbe640b1ed4c88311167d35",
+      "ED4_registration_bound_sha256": "271708434069db9b754f9a0753cdad1b9196329c7fbe640b1ed4c88311167d35",
+      "ED4_registration_matches": true
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_candidate.py",
+      "destination": "project/scripts/tcn_candidate.py",
+      "reason": "TemporalConvCandidate, causal blocks and model constants used by builder/export",
+      "actual_scope": "actual_selected_model_definition",
+      "local_imports": [],
+      "external_imports": [
+        "json",
+        "pathlib",
+        "torch",
+        "torch.nn"
+      ],
+      "bytes": 10945,
+      "sha256": "acc9e0b6edfc10793df25c69173d94cd9c6c76c74d73294e327dd91b7c3c45fc",
+      "ED4_registration_bound_sha256": "acc9e0b6edfc10793df25c69173d94cd9c6c76c74d73294e327dd91b7c3c45fc",
+      "ED4_registration_matches": true
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_research_screening_p1.py",
+      "destination": "project/scripts/tcn_research_screening_p1.py",
+      "reason": "P1 screened range/source-registry production behind the explicitly pinned P2 input contract",
+      "actual_scope": "upstream_P1_research_range_provenance_not_ED4_train_import",
+      "local_imports": [
+        "scripts/tcn_research_screening_core.py",
+        "scripts/tcn_screening_reference.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "copy",
+        "databento_dbn",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "numpy",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "sys",
+        "time"
+      ],
+      "bytes": 31909,
+      "sha256": "f69a1f3fc018b955274314649a36721bf7de7ef16b01c837fb5020ac1de2cde7"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_research_screening_core.py",
+      "destination": "project/scripts/tcn_research_screening_core.py",
+      "reason": "P1 eligibility, phase/status and valid range screening implementation",
+      "actual_scope": "upstream_P1_research_range_provenance_not_ED4_train_import",
+      "local_imports": [
+        "scripts/tcn_screening_reference.py"
+      ],
+      "external_imports": [
+        "collections.abc",
+        "numpy"
+      ],
+      "bytes": 15272,
+      "sha256": "a7137ebc01cbedcb72b331fa4bd213cdbb62088d5cd3527f6c296346185fb477"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_screening_reference.py",
+      "destination": "project/scripts/tcn_screening_reference.py",
+      "reason": "Independent screening/reference rules used by P1 source chain",
+      "actual_scope": "upstream_P1_research_range_provenance_not_ED4_train_import",
+      "local_imports": [],
+      "external_imports": [
+        "dataclasses"
+      ],
+      "bytes": 12550,
+      "sha256": "c16fe9cd87bd60e5338b57022cc2bf2be6fda8025d0b490735929a47c22deacf"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/audit_tcn_research_screening_p1.py",
+      "destination": "project/scripts/audit_tcn_research_screening_p1.py",
+      "reason": "Independent P1 screened-range audit behind accepted P2 input contract",
+      "actual_scope": "upstream_P1_audit_provenance",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "array",
+        "collections",
+        "datetime",
+        "hashlib",
+        "json",
+        "ntpath",
+        "pathlib",
+        "re",
+        "sys",
+        "time",
+        "traceback"
+      ],
+      "bytes": 29165,
+      "sha256": "ae55e879ef177b38a108144176d017f65649c93f157e44f462409a0233461b7e"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/audit_tcn_research_p2.py",
+      "destination": "project/scripts/audit_tcn_research_p2.py",
+      "reason": "Independent P2 label/statistics and source-contract audit implementation",
+      "actual_scope": "upstream_P2_audit_provenance",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "array",
+        "collections",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "ntpath",
+        "pathlib",
+        "re",
+        "sys",
+        "time"
+      ],
+      "bytes": 36281,
+      "sha256": "fbb39ff5c07758e58bb7c89d9a4a60704a2b243b9065ed19be2adbcecc6c30dd"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/itch_book.py",
+      "destination": "project/scripts/itch_book.py",
+      "reason": "Native ITCH message decoder, order-book mutations, 352-byte top10 snapshot schema; also used by MBO adapter",
+      "actual_scope": "actual_upstream_record_origin_reference_not_ED4_train_import",
+      "local_imports": [],
+      "external_imports": [
+        "bisect",
+        "collections",
+        "hashlib",
+        "struct"
+      ],
+      "bytes": 7889,
+      "sha256": "d0145272ce3e8740800c52406b2809ebc598c883c0c189e513949add3c6e1079"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/itch_book_w3.py",
+      "destination": "project/scripts/itch_book_w3.py",
+      "reason": "W3 native decoder extension and framed raw iteration used for TRAIN08-12 record origin",
+      "actual_scope": "actual_upstream_native_TRAIN_record_origin_reference",
+      "local_imports": [
+        "scripts/itch_book.py"
+      ],
+      "external_imports": [],
+      "bytes": 2023,
+      "sha256": "55e7e0fa8cb754ee6065da0c4efd2010ecf51f05afd1cab3efee6798e820975a"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w3_engine.py",
+      "destination": "project/scripts/w3_engine.py",
+      "reason": "W3 native ITCH replay/book building producing TRAIN08-12 records.bin referenced by P2 contract",
+      "actual_scope": "actual_upstream_native_TRAIN_record_origin_reference",
+      "local_imports": [
+        "scripts/itch_book_w3.py",
+        "scripts/w1.py",
+        "scripts/w2_reference.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "collections",
+        "contextlib",
+        "csv",
+        "datetime",
+        "gzip",
+        "json",
+        "numpy",
+        "pathlib",
+        "shutil",
+        "struct",
+        "sys",
+        "time"
+      ],
+      "bytes": 18624,
+      "sha256": "7b7840222f7b29f2c4a5d0f3967b8eda21bd152a98cbc7aa76dacabcc40fe88b"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w3.py",
+      "destination": "project/scripts/w3.py",
+      "reason": "W3 book preparation CLI used by native record provenance chain",
+      "actual_scope": "upstream_native_book_CLI_reference",
+      "local_imports": [
+        "scripts/w1.py",
+        "scripts/w3_download.py",
+        "scripts/w3_engine.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "shutil",
+        "sys"
+      ],
+      "bytes": 4718,
+      "sha256": "549c694dddb09617c66dc5760e79269549460d7377b8a37d3720264e58a0beaf"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w3_samples.py",
+      "destination": "project/scripts/w3_samples.py",
+      "reason": "Original W3 source registration/sampling helper imported by data_v2 train-source adapter",
+      "actual_scope": "upstream_original_support_not_selected_ED4_sampler",
+      "local_imports": [
+        "scripts/w1.py",
+        "scripts/w2.py",
+        "scripts/w3.py",
+        "scripts/w3_engine.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "bisect",
+        "datetime",
+        "json",
+        "numpy",
+        "pathlib",
+        "sys",
+        "torch"
+      ],
+      "bytes": 18486,
+      "sha256": "6b16f360d345c3d877eafd1e24564e85562d39cd6d7bdf069b23a16b7ebff9b2"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_data_v2.py",
+      "destination": "project/scripts/tcn_data_v2.py",
+      "reason": "MBO engineering adapter and source metadata for DEV15/16 records.bin referenced by P2 contract",
+      "actual_scope": "actual_upstream_DEV15_16_record_origin_reference",
+      "local_imports": [
+        "scripts/databento_mbo_v2.py",
+        "scripts/itch_book.py",
+        "scripts/w3_samples.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "collections",
+        "databento_dbn",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "numpy",
+        "pathlib",
+        "sys",
+        "time"
+      ],
+      "bytes": 23947,
+      "sha256": "fff15df3c3df49b98ca43f1f2202e89da6e523af31db350d6ededca2edef6b77"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/databento_mbo_v2.py",
+      "destination": "project/scripts/databento_mbo_v2.py",
+      "reason": "MBO engineering order-book replay adapter behind DEV15/16 record source contract",
+      "actual_scope": "actual_upstream_DEV15_16_record_origin_reference",
+      "local_imports": [
+        "scripts/itch_book.py"
+      ],
+      "external_imports": [
+        "collections",
+        "datetime"
+      ],
+      "bytes": 9037,
+      "sha256": "698f917dcec260c17bf23348fb1776a08cd23e07d293a08577e0867be1c6cdd8"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/databento_status_check.py",
+      "destination": "project/scripts/databento_status_check.py",
+      "reason": "STATUS timeline parsing used as P1 eligibility provenance for DEV15/16",
+      "actual_scope": "upstream_status_timeline_provenance",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "collections",
+        "databento_dbn",
+        "datetime",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "pathlib",
+        "re",
+        "struct",
+        "sys"
+      ],
+      "bytes": 21203,
+      "sha256": "420ec09b494198ac40569afe01300234b4ec32b0e1382199852cf706960ee27e"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/checkpoint_validation.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/checkpoint_validation.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "selected_ED4_independent_audit_and_checkpoint_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "time",
+        "torch"
+      ],
+      "bytes": 12212,
+      "sha256": "e259ba9fbf4508496dddb31e7bc4addacb7ca83deb6c847a973a3a81a1e44f5d"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/independent_audit.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/independent_audit.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "selected_ED4_independent_audit_and_checkpoint_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "stat",
+        "time"
+      ],
+      "bytes": 27564,
+      "sha256": "05ad25e29cd99bb4f62bafa9327cedc13cde7e3997134c467589c1ffbccd356e"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/test_postrun_helpers.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/test_postrun_helpers.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "selected_ED4_independent_audit_and_checkpoint_QA",
+      "local_imports": [],
+      "external_imports": [
+        "ast",
+        "fractions",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "tempfile",
+        "unittest"
+      ],
+      "bytes": 7206,
+      "sha256": "33245ae5b2d0fa8a5d426446583c33377389af4c08df4a7a365a40588d3ebe61"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/checkpoint_validation.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/checkpoint_validation.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "time",
+        "torch"
+      ],
+      "bytes": 13465,
+      "sha256": "91e89620472365a92962565042068f428afca07693a03c1656bd3b51a49f76f6"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/independent_audit.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/independent_audit.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA; historical_path_admission_failure_preserved",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 37313,
+      "sha256": "e144319058710c5a182c778b93fb32bc0ea72e70b8522e9eb2acbcb4e10e2ff3"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/independent_audit_v2.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/independent_audit_v2.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "fractions",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 44165,
+      "sha256": "4941080981521d11785953bbbb9ebbb941a56a54150034dc916f3350a7101042"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/capture.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/capture.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 5271,
+      "sha256": "833322f73925aff5bf5688a1092c12926314a94b09af6cf78045ec7618c0dcb3"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/guard.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/guard.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "ctypes",
+        "ctypes.wintypes",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "time"
+      ],
+      "bytes": 13521,
+      "sha256": "773757701ce1f8b2c6d21cd963fe3fbba96073be7910e2960210d77a074489cd"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/postrun_tests_capture.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/postrun_tests_capture.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "bytes": 5286,
+      "sha256": "ca7cd21f6405dc16d806466b8315e24107f16f6cd3dbb3a6225ca09cbb2ea844"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/test_guard.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/test_guard.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "ast",
+        "datetime",
+        "importlib.util",
+        "pathlib",
+        "unittest"
+      ],
+      "bytes": 10182,
+      "sha256": "f2f06aaaaed285d4e999318ee4bfeda94f5b2df650db1155cca0e277af4ac020"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_audit_v2.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_audit_v2.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "ast",
+        "copy",
+        "fractions",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 19321,
+      "sha256": "23e6dd04610ec958729d348aecd8faac8ce5071e6e194f608aeb893c2fe400a6"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_postrun_helpers.py",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_postrun_helpers.py",
+      "reason": "Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations",
+      "actual_scope": "seed43_replication_independent_audit_and_resource_QA",
+      "local_imports": [],
+      "external_imports": [
+        "ast",
+        "copy",
+        "fractions",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 15239,
+      "sha256": "e04f53aa964bcf74e23281c148f132c37a0321eb0cf55d8c95845e794a92e819"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_tcn_candidate.py",
+      "destination": "project/tests/test_tcn_candidate.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/tcn_candidate.py"
+      ],
+      "external_imports": [
+        "copy",
+        "io",
+        "pathlib",
+        "sys",
+        "torch",
+        "unittest"
+      ],
+      "bytes": 8773,
+      "sha256": "4d43cea0c162a2946b530d3ba5a275f6be09485a406841db1f26592447af4ba7"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_tcn_research_p5_model.py",
+      "destination": "project/tests/test_tcn_research_p5_model.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/tcn_candidate.py",
+        "scripts/tcn_research_p5_model.py"
+      ],
+      "external_imports": [
+        "hashlib",
+        "importlib",
+        "json",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "torch",
+        "unittest"
+      ],
+      "bytes": 9128,
+      "sha256": "680fb41004b933def4510a639bd3583a2b90fd1ea39aabb9ad11988386cc4014"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_tcn_research_data_p2.py",
+      "destination": "project/tests/test_tcn_research_data_p2.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/tcn_research_data_p2.py"
+      ],
+      "external_imports": [
+        "copy",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "unittest"
+      ],
+      "bytes": 14406,
+      "sha256": "a9c2427882e8781e13e1a0ff9b88c6e86b50efe1034055d283033b1b941f24fb"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_tcn_research_evaluate_p2.py",
+      "destination": "project/tests/test_tcn_research_evaluate_p2.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/tcn_research_evaluate_p2.py"
+      ],
+      "external_imports": [
+        "fractions",
+        "pathlib",
+        "sys",
+        "unittest"
+      ],
+      "bytes": 3454,
+      "sha256": "4487ee8cf2b2de99cfa2d39a3943ae687c38b088c37c21de80ab5f89204c9d73"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_tcn_research_screening_core.py",
+      "destination": "project/tests/test_tcn_research_screening_core.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [],
+      "external_imports": [
+        "dataclasses",
+        "numpy",
+        "scripts",
+        "unittest"
+      ],
+      "bytes": 18272,
+      "sha256": "6e7a16e440d30a535fb33c63b9aa3cf64651f9289fdf1156d69bce99aea162c5"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_tcn_research_screening_p1.py",
+      "destination": "project/tests/test_tcn_research_screening_p1.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [],
+      "external_imports": [
+        "calendar",
+        "copy",
+        "json",
+        "pathlib",
+        "scripts",
+        "sys",
+        "tempfile",
+        "types",
+        "unittest"
+      ],
+      "bytes": 20266,
+      "sha256": "514ec74db9dc83101a13b7192a43abea55ab952b1dfaadafcbceed618d4b29cb"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_audit_tcn_research_p2.py",
+      "destination": "project/tests/test_audit_tcn_research_p2.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [],
+      "external_imports": [
+        "hashlib",
+        "importlib.util",
+        "pathlib",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 3085,
+      "sha256": "d6f8d81e3f8c85c15821409f508f87301c00269c6e88eb611b4663748a292c37"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_w3.py",
+      "destination": "project/tests/test_w3.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/itch_book_w3.py",
+        "tests/test_w2.py",
+        "scripts/w3.py",
+        "scripts/w3_download.py",
+        "scripts/w3_engine.py",
+        "scripts/w3_samples.py"
+      ],
+      "external_imports": [
+        "gzip",
+        "http.server",
+        "io",
+        "json",
+        "numpy",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "test_w2",
+        "threading",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 12733,
+      "sha256": "d458098579321b05e326250e1cae98eae84720ca1551557b4d2d1d2c752ad601"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_databento_mbo_v2.py",
+      "destination": "project/tests/test_databento_mbo_v2.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/databento_mbo_v2.py",
+        "scripts/itch_book.py"
+      ],
+      "external_imports": [
+        "pathlib",
+        "sys",
+        "types",
+        "unittest"
+      ],
+      "bytes": 21558,
+      "sha256": "c6674bffc0349c35845f2884da3aca396e897658f701175f0a2ad8d88b72aad8"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_databento_status_check.py",
+      "destination": "project/tests/test_databento_status_check.py",
+      "reason": "Existing focused unit/regression test source for selected model/data/upstream record chain",
+      "actual_scope": "archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/databento_status_check.py"
+      ],
+      "external_imports": [
+        "databento_dbn",
+        "datetime",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "types",
+        "unittest"
+      ],
+      "bytes": 15010,
+      "sha256": "1c8d2678c8c2790adb51d3a0e84307d7703c44ca385c97c75a165412c975e282"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/tests/test_w2.py",
+      "destination": "project/tests/test_w2.py",
+      "reason": "Required local import of tests/test_w3.py",
+      "actual_scope": "static_import_dependency_for_archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/itch_book.py",
+        "scripts/w2.py"
+      ],
+      "external_imports": [
+        "gzip",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "struct",
+        "sys",
+        "tempfile",
+        "unittest",
+        "unittest.mock"
+      ],
+      "bytes": 7625,
+      "sha256": "88af78d5ee944f726eeea59c6a48561a548e4da2e6994ce92e2e9afb96c25b18"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w3_download.py",
+      "destination": "project/scripts/w3_download.py",
+      "reason": "Required local import of tests/test_w3.py",
+      "actual_scope": "static_import_dependency_for_archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/w1.py"
+      ],
+      "external_imports": [
+        "gzip",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "time",
+        "urllib.request"
+      ],
+      "bytes": 4907,
+      "sha256": "486c73097e8553187d655b900b7a64bf3be179a3bfdd25876d9c0f518d5571cf"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w1.py",
+      "destination": "project/scripts/w1.py",
+      "reason": "Required local import of scripts/w3_download.py",
+      "actual_scope": "static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution",
+      "local_imports": [],
+      "external_imports": [
+        "argparse",
+        "collections",
+        "datetime",
+        "gzip",
+        "hashlib",
+        "io",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "re",
+        "shutil",
+        "struct",
+        "subprocess",
+        "sys",
+        "time",
+        "torch",
+        "urllib.request",
+        "zlib"
+      ],
+      "bytes": 16367,
+      "sha256": "8afc9871392f29be7b2567857b360a6f4cb042c2d096f97aac91effb187cd30e"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/w1_data.json",
+      "destination": "project/configs/w1_data.json",
+      "reason": "Literal configuration dependency in scripts/w1.py",
+      "actual_scope": "configuration_for_static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution",
+      "bytes": 1411,
+      "sha256": "2f1a9dad9a7a68a84131ec267db374d3bd4377a9163afd0fef41a123bcd565e8"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w2.py",
+      "destination": "project/scripts/w2.py",
+      "reason": "Required local import of tests/test_w2.py",
+      "actual_scope": "static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution",
+      "local_imports": [
+        "scripts/itch_book.py",
+        "scripts/w1.py",
+        "scripts/w2_reference.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "collections",
+        "contextlib",
+        "csv",
+        "datetime",
+        "gzip",
+        "json",
+        "numpy",
+        "pathlib",
+        "shutil",
+        "struct",
+        "sys",
+        "time"
+      ],
+      "bytes": 18061,
+      "sha256": "47d38f9607e3caf78a1b0404ceeac39d012f7c76f00b54b553e52ec4b5002829"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/w2_audit.json",
+      "destination": "project/configs/w2_audit.json",
+      "reason": "Literal configuration dependency in tests/test_w2.py",
+      "actual_scope": "configuration_for_static_import_dependency_for_archived_test_source_no_new_test_execution; configuration_for_static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution; configuration_for_upstream_native_book_CLI_reference",
+      "bytes": 1090,
+      "sha256": "050d27636a3350784be079183a8b4eaab988ee2bfc6625a46cdc1934b53e623f"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/scripts/w2_reference.py",
+      "destination": "project/scripts/w2_reference.py",
+      "reason": "Required local import of scripts/w2.py",
+      "actual_scope": "static_import_dependency_for_static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution",
+      "local_imports": [],
+      "external_imports": [
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "struct"
+      ],
+      "bytes": 3337,
+      "sha256": "a6c0a1d225e9aea8a33efea70f2c08a0edcfcb861db240ebfe8e92b0aaaa9243"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/tcn_data_protocol_v2.json",
+      "destination": "project/configs/tcn_data_protocol_v2.json",
+      "reason": "Literal configuration dependency in scripts/tcn_data_v2.py",
+      "actual_scope": "configuration_for_actual_upstream_DEV15_16_record_origin_reference; configuration_for_upstream_P1_research_range_provenance_not_ED4_train_import; upstream_DEV_record_contract",
+      "bytes": 4739,
+      "sha256": "db2fe2b61f2dd83bd29a2725955bb63955c79e50080a1244bb3cfe7b1b15937d"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/w3_protocol_frozen_v1.json",
+      "destination": "project/configs/w3_protocol_frozen_v1.json",
+      "reason": "Literal configuration dependency in scripts/tcn_data_v2.py",
+      "actual_scope": "configuration_for_actual_upstream_DEV15_16_record_origin_reference; configuration_for_actual_selected_model_definition; upstream_TRAIN_record_contract",
+      "bytes": 4909,
+      "sha256": "e93c62c122e714f3b70035b6b6acd235825049513a8c4b96223b71ecd12b81eb"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/w3_protocol_draft.json",
+      "destination": "project/configs/w3_protocol_draft.json",
+      "reason": "Literal configuration dependency in scripts/w3.py",
+      "actual_scope": "configuration_for_upstream_native_book_CLI_reference",
+      "bytes": 4909,
+      "sha256": "e93c62c122e714f3b70035b6b6acd235825049513a8c4b96223b71ecd12b81eb"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/tcn_research_protocol_b_v1.json",
+      "destination": "project/configs/tcn_research_protocol_b_v1.json",
+      "reason": "Literal configuration dependency in scripts/audit_tcn_research_screening_p1.py",
+      "actual_scope": "configuration_for_upstream_P1_audit_provenance; configuration_for_upstream_P1_research_range_provenance_not_ED4_train_import; actual_upstream_research_data_contract",
+      "bytes": 9203,
+      "sha256": "7003d63f5b6b49f7d6f757ebaee1128c06091f1d8a0cbd0c1abb53b044a0c9aa"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/w4_selection_rules.json",
+      "destination": "project/configs/w4_selection_rules.json",
+      "reason": "Literal configuration dependency in scripts/tcn_candidate.py",
+      "actual_scope": "configuration_for_actual_selected_model_definition",
+      "bytes": 1209,
+      "sha256": "6b82b9900512655f86ce25deff496ae69187e210e5dc75742f0b5321f7ea2f5f"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/tcn01_train.json",
+      "destination": "project/configs/tcn01_train.json",
+      "reason": "Literal configuration dependency in scripts/tcn_research_evaluate_p2.py",
+      "actual_scope": "configuration_for_actual_ED4_ED6_training_dependency",
+      "bytes": 5278,
+      "sha256": "f4fe394a5f81b1383727227d2fb9741a0c2e93d08d2e432a4bfa70ccc867c342"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/configs/tcn_existing_data_optimization_v1.json",
+      "destination": "project/configs/tcn_existing_data_optimization_v1.json",
+      "reason": "Literal configuration dependency in scripts/register_tcn_existing_data_ed6_postrepair.py",
+      "actual_scope": "configuration_for_seed43_replication_evidence_not_selected_seed42_model",
+      "bytes": 36940,
+      "sha256": "09654e6dfdb10b69feb6ee950c6668e71640bcea1d56fa9691a9564c8641fcf3"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/config.json",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/config.json",
+      "reason": "Actual ED4 feature42 seed42 training recipe",
+      "actual_scope": "selected_ED4_actual_training_config",
+      "bytes": 1046,
+      "sha256": "f48d7b48894178e67295d06c72c45f6db2144d5cc3d45c47aa5857fef91b8c39"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/trials/control43/config.json",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/trials/control43/config.json",
+      "reason": "Original features seed43 paired control recipe",
+      "actual_scope": "ED6_control43_replication_config",
+      "bytes": 766,
+      "sha256": "720b36be7c659dd3c3f442d7173d100fb260c13b0d7ea382a2191e9e6c9f44cf"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/trials/candidate43/config.json",
+      "destination": "project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/trials/candidate43/config.json",
+      "reason": "ED4 feature family seed43 paired candidate recipe",
+      "actual_scope": "ED6_candidate43_replication_config",
+      "bytes": 800,
+      "sha256": "c1af05889e4ca0301422a5fe910528e4799e35a1f661e7bb16e2d7a35cdd1f10"
+    },
+    {
+      "source": "@SOFTWARE_ROOT@/proposals/tcn_screening_rules_v3_draft_20261011.json",
+      "destination": "project/proposals/tcn_screening_rules_v3_draft_20261011.json",
+      "reason": "Exact proposal path bound by P1 research protocol",
+      "actual_scope": "pinned_P1_rules_provenance",
+      "bytes": 8113,
+      "sha256": "438b111e98a5e5addc1110f3599fbb9d2e06ab8b9133ba43331d10d438bd0b2e"
+    }
+  ],
+  "file_count": 99,
+  "selected_ED4_original_run_source_bindings_all_match": true,
+  "successful_original_zip_source_comparison": [
+    {
+      "member": "source/audit_tcn_existing_data_ed7_compat.py",
+      "source": "@SOFTWARE_ROOT@/scripts/audit_tcn_existing_data_ed7_compat.py",
+      "sha256": "514f10235de7f7f420d80462b6e54ed1db676b511a7a9fd4479cfbf001f4f0e2",
+      "current_equal": true
+    },
+    {
+      "member": "source/finalize_tcn_existing_data_ed7_compat.py",
+      "source": "@SOFTWARE_ROOT@/scripts/finalize_tcn_existing_data_ed7_compat.py",
+      "sha256": "728ad8bf2c2d8cdababf31a60e591c9ee61a92cd3d22453c651066c47d3ebe60",
+      "current_equal": true
+    },
+    {
+      "member": "source/run_tcn_existing_data_ed7_compat_capture.py",
+      "source": "@SOFTWARE_ROOT@/scripts/run_tcn_existing_data_ed7_compat_capture.py",
+      "sha256": "d9191e8e386573733b793536418631bb474984f717ae1be6dfe8beea5628b253",
+      "current_equal": true
+    },
+    {
+      "member": "source/tcn_candidate.py",
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_candidate.py",
+      "sha256": "acc9e0b6edfc10793df25c69173d94cd9c6c76c74d73294e327dd91b7c3c45fc",
+      "current_equal": true
+    },
+    {
+      "member": "source/tcn_existing_data_ed4_features.py",
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed4_features.py",
+      "sha256": "76ba74f731b937d9d39ca492cfcaf398968f24edfc139f3ae35fb0471e0a59ab",
+      "current_equal": true
+    },
+    {
+      "member": "source/tcn_existing_data_ed7_compat_contract.py",
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_compat_contract.py",
+      "sha256": "08ac923e180f3c2354dc7ded82aaf2df97b0e7c796f602f681f7d0c20318cc2e",
+      "current_equal": true
+    },
+    {
+      "member": "source/tcn_existing_data_ed7_compat_export.py",
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_compat_export.py",
+      "sha256": "1f7b96ab9dee1d3874ece4552156695f8605e3c0e6a7ad2eb1d2257ca4ddf54f",
+      "current_equal": true
+    },
+    {
+      "member": "source/tcn_existing_data_ed7_compat_runtime.py",
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_existing_data_ed7_compat_runtime.py",
+      "sha256": "cfe0b5fbf504ae5cc9415ff30072bd939e9ea264896a3f42032b8e1b27156aac",
+      "current_equal": true
+    },
+    {
+      "member": "source/tcn_research_p5_model.py",
+      "source": "@SOFTWARE_ROOT@/scripts/tcn_research_p5_model.py",
+      "sha256": "271708434069db9b754f9a0753cdad1b9196329c7fbe640b1ed4c88311167d35",
+      "current_equal": true
+    },
+    {
+      "member": "source/test_tcn_existing_data_ed7_compat.py",
+      "source": "@SOFTWARE_ROOT@/scripts/test_tcn_existing_data_ed7_compat.py",
+      "sha256": "023de8d3373bdb959d4ad1759ab777cdb3a640d49bbe7141aefb3d8808017c6d",
+      "current_equal": true
+    }
+  ],
+  "all_successful_zip_sources_match_current": true,
+  "runtime_package": {
+    "source": "@SOFTWARE_ROOT@/artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package",
+    "root_responsible_for_copy": true,
+    "scope": "Preserve existing successful 31-file runtime package unmodified; native/TS/golden binary files are not parsed by this inventory."
+  },
+  "pending_dependencies": [
+    {
+      "kind": "external_data_and_frozen_state",
+      "reason": "Archival training entrypoints retain original SHA-bound P1/P2 manifests, raw/prepared data paths, acceptance/reservation/budget checks and consumed historical state. These are intentionally not supplied as a new executable training campaign; archive does not authorize restarting or change old budgets."
+    },
+    {
+      "kind": "external_dependencies",
+      "reason": "Successful frozen package/requirements_snapshot.txt records original inference environment. Upstream raw adaptation additionally needs databento_dbn; original W3 tooling may require requests/tqdm from static external import list. Root should classify upstream optional origin tools separately from CPU inference requirements."
+    }
+  ],
+  "excluded_scopes": [
+    "No ED3 stationary-bias or ED5 learning-rate candidate as primary selected algorithm",
+    "No H20/mean50/mean20/CLA/CSTA/quantization software mixed into selected ED4 software",
+    "No raw records, market array payload, other checkpoint, runtime environment, historical budget or approval state copied by this agent"
+  ],
+  "warnings": [
+    "Original ED7 failed exporter sources are retained for preserved failure source bindings and history only; selected successful export entry is tcn_existing_data_ed7_compat_export.py.",
+    "Original seed43 audit path-admission failure helper independent_audit.py is history; successful corrected audit helper independent_audit_v2.py is also archived.",
+    "Static import closure does not imply new numerical/ML acceptance or a portable full retraining package."
+  ]
+}

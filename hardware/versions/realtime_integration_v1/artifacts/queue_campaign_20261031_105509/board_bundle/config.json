@@ -1,0 +1,13 @@
+{
+  "output_id": 250,
+  "model_sha256": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+  "raw_sha256": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+  "files": {
+    "configure_phy.py": "c3c5c84c39874086cd6ed6403c66a949dbfa8391d6e360fea7001ddc798ff50e",
+    "d_npu_native.c": "2daaf28a98db69860095ae2f6d68f6d1c4b9bdfa4dff8697de4e01be8023c843",
+    "golden_input.i8": "72cfe441425e55ff00df426d32e51524f6c5e894555a7ea6c49f2e9a4785a1b9",
+    "golden_logits.f32": "51fbe78c881f0bbe494c586c157ea056e04ca1930bffd3b03638ced68dadb62f",
+    "model.json": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+    "model.raw": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa"
+  }
+}

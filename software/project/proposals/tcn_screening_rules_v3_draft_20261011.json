@@ -1,0 +1,118 @@
+{
+  "version": "TCN-screening-proposal-3.0-draft",
+  "project_date": "2026-10-11",
+  "status": "draft_only_not_executable_not_adopted",
+  "authorization_quote": "现在先进行第1步 准备新版筛选规则草案",
+  "draft_preparation_authorized": true,
+  "user_approved_for_adoption": false,
+  "active_mode": null,
+  "training_ready": false,
+  "training_authorized": false,
+  "parent_protocol": "configs/tcn_data_protocol_v2.json",
+  "parent_protocol_sha256": "db2fe2b61f2dd83bd29a2725955bb63955c79e50080a1244bb3cfe7b1b15937d",
+  "human_readable_rules": "docs/TCN_新版筛选规则草案_2026-10-11.txt",
+  "symbol": "AAPL",
+  "dataset": "XNAS.ITCH",
+  "date_roles": {
+    "2025-12-08": "train", "2025-12-09": "train", "2025-12-10": "train",
+    "2025-12-11": "train", "2025-12-12": "train",
+    "2025-12-15": "tuning_validation", "2025-12-16": "tuning_validation",
+    "2025-12-17": "comparison_validation", "2025-12-18": "final_test", "2025-12-19": "final_test"
+  },
+  "modes": {
+    "A_native_verified": {
+      "recommended_priority": 1,
+      "enabled": false,
+      "control_requirement": "Complete native S initialization/Q/M, AAPL H, Nasdaq h, global W and proven shared ordering domain",
+      "calendar_replaces_native_phase": false,
+      "segment_rules": "Preserve parent protocol native control contract",
+      "unknown_coverage": "block",
+      "normalizer_reuse": "only if training record set and content identity unchanged"
+    },
+    "B_calendar_observed_research": {
+      "recommended_priority": 2,
+      "enabled": false,
+      "requires_explicit_acceptance_of_unobserved_control_risk": true,
+      "source_control_verified": false,
+      "calendar": {
+        "timezone": "America/New_York",
+        "planned_regular_start": "09:30:00", "planned_regular_end": "16:00:00",
+        "screen_start_inclusive": "09:35:00", "screen_end_exclusive": "15:55:00",
+        "target_dates_utc_start": "14:35:00", "target_dates_utc_end": "20:55:00",
+        "buffers_minutes": 5,
+        "buffer_basis": "Predeclared engineering choice, not empirically optimized or a guarantee against auctions/halts",
+        "apply_to_all_ten_dates": true,
+        "unknown_or_nonstandard_schedule": "quarantine_day_pending_separate_rule_review"
+      },
+      "old_training_source": "Intersection with existing native-valid segments only; never readmit invalid native rows",
+      "new_source_required": "Accepted MBO engineering provenance plus corresponding status and locked enum semantics",
+      "state": {
+        "enum_version": "databento-dbn 0.71.0",
+        "initial_phase": "unknown", "initial_is_trading": "unknown", "initial_is_quoting": "unknown",
+        "eligible_phase": "TRADING", "eligible_is_trading": "Y", "eligible_is_quoting": "Y",
+        "blocking_actions": ["PRE_OPEN", "PRE_CROSS", "QUOTING", "CROSS", "ROTATION", "PRE_CLOSE", "CLOSE", "POST_CLOSE", "HALT", "PAUSE", "SUSPEND", "NOT_AVAILABLE_FOR_TRADING"],
+        "phase_preserving_actions": ["NONE", "SSR_CHANGE", "NEW_PRICE_INDICATION"],
+        "trading_or_quoting_N_or_unknown": "latch_block_until_later_explicit_TRADING_group_with_all_records_Y_Y",
+        "unknown_is_not_carry_forward": true,
+        "unknown_ssr_alone_blocks": false,
+        "ordinary_resume": "After any negative/unknown/conflict block, later group must have TRADING as its only distinct phase update and all records Y/Y; repeated identical TRADING allowed; new segment",
+        "phase_preserving_group_can_release_block": false,
+        "operational_or_marketwide_event": "Quarantine rest of day; generic TRADING cannot release",
+        "unknown_enum_missing_status_or_unexplained_sequence": "quarantine_day",
+        "provider_coverage_unknown": "Residual limitation only if specifically approved; never verified",
+        "reason_zero_proves_no_halt": false
+      },
+      "ordering": {
+        "calendar_and_status_clock": "ts_event",
+        "book_order": "Original provider/native message order; never reorder by ts_event",
+        "each_status_timestamp": "Cut segment and reject every MBO row with equal ts_event, including repeated status",
+        "same_timestamp_controls": "Aggregate without order assumptions; contradictory/unknown/negative state blocks",
+        "resume_condition": "ts_event strictly greater than boundary and unambiguous eligible state",
+        "ts_recv_proves_native_cross_schema_order": false,
+        "new_source_event_time_regression": "quarantine_day",
+        "sequence_gaps_in_symbol_filter_prove_loss": false,
+        "silence_proves_halt_or_resume": false
+      },
+      "flags": {
+        "source_rows_unchanged": true, "source_flag64_cleared": false,
+        "native_rows_flags_1_16": "Real control rejects remain rejects",
+        "engineering_rows_flags_1_16": "Unverified gate placeholders only when exact accepted adapter provenance is bound",
+        "engineering_adapter_version": "Databento-MBO-engineering-adapter-2.0",
+        "engineering_quality_reject_bits": [2, 4, 8, 32, 128],
+        "unexpected_row_bits": "reject",
+        "provider_and_row_flags_are_distinct_namespaces": true,
+        "new_sidecar_fields": ["source_row_index", "research_eligible", "source_control_verified", "coverage_unknown", "research_segment_id", "protocol_identity", "reject_reasons"]
+      },
+      "normalization": "Independent five-TRAIN unique eligible record mean/population std; zero std=1; no tuning/comparison/final records; reuse only on identical set/content",
+      "control_evidence_difference": "Old native training gate is stronger than new observed-status research gate even with identical calendar"
+    }
+  },
+  "shared_quality": {
+    "required": ["Correct source identity", "Complete initialized book", "Ten levels each side", "Positive ordered prices and legal sizes", "No locked/crossed book", "Complete native groups and snapshot boundaries"],
+    "known_bad_book_gap_or_reset": "Reject/cut; no sample from reset/snapshot; new accepted book and fresh window required",
+    "native_old_boundaries": "Honor already accepted strict segments; never join across rejected rows"
+  },
+  "samples": {
+    "feature_count": 40, "window_length": 100, "horizon_records": 50,
+    "feature_order": "ask_price,ask_size,bid_price,bid_size for each level 1..10",
+    "trigger": "Every target visible-book mutation, including unchanged top ten",
+    "input_offsets_inclusive": [-99, 0], "label_offset": 50,
+    "required_full_footprint_inclusive": [-99, 50], "required_footprint_records": 150,
+    "footprint_requirement": "All original consecutive records same day/instrument/accepted segment; no compression of invalid records",
+    "segment_window_formula": "max(0, L - 149)",
+    "label": "Integer future ask1+bid1 versus current ask1+bid1, no smoothing, zero threshold",
+    "classes": {"down": 0, "stationary": 1, "up": 2}
+  },
+  "access_and_comparison": {
+    "labels_or_model_scores_computed_in_this_task": false,
+    "sealed_dates": ["2025-12-17", "2025-12-18", "2025-12-19"],
+    "no_normalizer_fit_on_15_to_19": true,
+    "any_required_date_missing_or_zero_windows": "block; do not silently drop or reassign",
+    "old_model_normalizer": "Keep TCN01 original bound two-day normalizer",
+    "new_model_normalizer": "Bind independently accepted five-day normalizer",
+    "fair_tuning_comparison": "Same selected endpoint set on December 15-16; do not attribute screening and date changes solely to more training days"
+  },
+  "pending_acceptance": ["User review/adoption of specific mode and residual risk", "Immutable source/protocol binding", "State/ordering/window functional tests", "Real ten-day screening engineering acceptance without sealed labels", "Train-only statistics independent recomputation", "Independent training entry and finite experiment budget"],
+  "current_new_metrics": {"records": null, "windows": null, "label_distribution": null, "accuracy": null, "macro_f1": null},
+  "scope_counts": {"data_orders": 0, "downloads": 0, "data_decodes": 0, "record_conversions": 0, "normalizer_fits": 0, "functional_tests_run": 0, "model_forwards": 0, "optimizer_updates": 0, "training_runs": 0}
+}

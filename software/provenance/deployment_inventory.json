@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "task_id": "ED4_H50_SOURCE_SUBMISSION_20261101",
+  "review_scope": "源码与小元静态定位；仅读报告提取元、既有源码、明确历史ZIP目录及4个小文本成员；未执行交付源码。",
+  "main_identity": {
+    "selected_family": "ED4_feature42_lr0.001_seed42",
+    "epoch": 3,
+    "horizon": 50,
+    "target": "未来第50条记录的端点中间价方向，零阈值，无未来均价平滑",
+    "package_manifest_sha256": "bf8244237ac5fc4726b33fe2aee49a15b6f5ac2fdb46485bbd6289933fbdabee"
+  },
+  "conclusion": "用户本人TCN软件源可确定；报告硬件组的ARM常驻C、MBO UDP/QPC行情源、GUI及Icraft混合部署源码在本次有界来源定位中未提供，不能用描述补写冒充原工程，也不阻塞用户TCN源码交付。",
+  "sources_to_deliver": [
+    {
+      "source": "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/verify_reference.py",
+      "destination": "reference/raw1024_handoff/package/verify_reference.py",
+      "bytes": 4503,
+      "sha256": "6d61fc2eff5ee28aed6eb6b6d6948a405e7ec2d5970394cfefec5b7eb28c51ed",
+      "reason": "本ED4原始价量1024条/6个参考窗便携校验程序",
+      "certain_this_edition": true,
+      "role": "supplemental_raw1024_verifier",
+      "original_alias": "scripts/verify_tcn_raw_handoff.py",
+      "execution_note": "默认会导入NumPy并解析原样例数值；--run-model才载入TorchScript。此次仅读源码，不执行。"
+    },
+    {
+      "source": "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/provenance/build_tcn_raw_handoff_20261020.py",
+      "destination": "reference/raw1024_handoff/historical_source/build_tcn_raw_handoff_20261020.py",
+      "bytes": 25504,
+      "sha256": "53e07de0c27abeb06f2e8ad5526e358d7debf4858a6fa9e9469c63064abd258a",
+      "reason": "原1024条TRAIN连续记录/6参考窗构建程序的封存副本，精确绑定本ED4 manifest及norm",
+      "certain_this_edition": true,
+      "role": "historical_builder",
+      "original_alias": "scripts/build_tcn_raw_handoff_20261020.py",
+      "execution_note": "原源码通过__file__.parents[1]依赖原项目布局，并读取历史E盘源、筛选mask、ED4 cache及模型；源码交付不等于允许重做原执行或可直接脱离数据运行。"
+    },
+    {
+      "source": "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/provenance/package_tcn_raw_handoff_20261020.py",
+      "destination": "reference/raw1024_handoff/historical_source/package_tcn_raw_handoff_20261020.py",
+      "bytes": 6251,
+      "sha256": "6c88c2ca992e0e92adc31b6cac71b4b8679727da5bb5156980f9e6741d0b690e",
+      "reason": "原RAW1024包出版/字节ZIP核验程序",
+      "certain_this_edition": true,
+      "role": "historical_publisher",
+      "original_alias": "scripts/package_tcn_raw_handoff_20261020.py",
+      "execution_note": "依赖原项目目录和既有package/independent_audit.json等，保留源码不触发重出版。"
+    },
+    {
+      "source": "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/provenance/independent_audit_check.py",
+      "destination": "reference/raw1024_handoff/historical_source/independent_audit_check.py",
+      "bytes": 13728,
+      "sha256": "1d9d5f8bc739de97d997aefd37743117e7e98bed9da72804d973a3eb5ddea6bf",
+      "reason": "原RAW1024独立数值/布局审计源码封存副本",
+      "certain_this_edition": true,
+      "role": "historical_independent_auditor",
+      "original_alias": "artifacts/tcn_hardware_raw_handoff_2026-10-20/independent_audit_check.py",
+      "execution_note": "源码将STAGE设为脚本所在目录、PKG=STAGE/package。provenance副本为归档，若未来授权执行须维持原stage/package布局。此次未导入NumPy或执行。"
+    }
+  ],
+  "source_hash_observation": "以上4个源码此次实际Get-FileHash所得SHA/字节与原completion_acceptance.json逐项一致；没有重读模型或数组payload。",
+  "frozen_dependencies": [
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/runtime.py",
+      "role": "raw1024 verifier --run-model直接载入的冻结推理入口",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_existing_data_ed4_features.py",
+      "role": "raw1024 builder静态load_module引用；逐record相对价、原quantity处理",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_candidate.py",
+      "role": "ED4源包模型/训练基础依赖",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_research_p5_model.py",
+      "role": "ED4源包模型依赖",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_research_data_p2.py",
+      "role": "ED4源包数据定义/准备依赖",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/requirements_snapshot.txt",
+      "role": "既有依赖快照",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/normalization.json",
+      "role": "冻结逐通道mean/std小元",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/train_config.json",
+      "role": "冻结seed42/epoch3配置小元",
+      "certainty": "同本ED4源包"
+    },
+    {
+      "source": "configs/tcn_research_protocol_b_v1.json",
+      "role": "raw1024 builder原protocol引用",
+      "certainty": "历史构建来源，不另执行"
+    },
+    {
+      "source": "artifacts/tcn_research_p2_2026-10-14/data_20261014T020631_732415/manifest.json",
+      "role": "raw1024 builder原source/screening身份链元",
+      "certainty": "历史构建来源，不读取其数组"
+    },
+    {
+      "source": "artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/prepared/cache_manifest.json",
+      "role": "raw1024 builder原ED4 cache元身份",
+      "certainty": "历史构建来源，不读取其数组"
+    }
+  ],
+  "original_raw1024_reference_metadata": [
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/README_先读我.txt",
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/manifest.json",
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/acceptance.json",
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/independent_audit.json",
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/execution_receipts.json",
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/package/source_review.txt",
+    "artifacts/tcn_hardware_raw_handoff_2026-10-20/completion_acceptance.json"
+  ],
+  "raw1024_scope_note": "该包为2025-12-08 TRAIN的1024条连续原始记录和6个模型参考窗；不是硬件报告的另选1024个同日量化配对评价窗口，不是量化校准集。",
+  "report_input_provenance": {
+    "source_inventory": "artifacts/h50_integrated_report_20261101/hardware_inventory.json",
+    "primary_hardware_report": "@EXTERNAL_ROOT@/技术报告_硬件部分_H50版本.docx",
+    "primary_hardware_sha256": "c286684aa40d3d5b84a498d8972e01034fcf59f28ea9c584a41f7cd3845941c1",
+    "identified_path_information": "H185–190仅描述opset11静态batch1 ONNX→Icraft、混合精度及映射；H196仅提供两个启动cmd文件名，没有绝对工程目录、源码文件名或源码附件引用。",
+    "known_cmd_names": [
+      "启动行情源与窗口追踪演示.cmd",
+      "查看行情源与窗口追踪记录.cmd"
+    ],
+    "source_report_contract": "artifacts/h50_integrated_report_20261101/artifact.md；指定源为桌面软件/硬件DOCX，不含代码工程附件"
+  },
+  "historical_peer_archive": {
+    "path": "@EXTERNAL_ROOT@/FinEdge_模型优化交接包_20261021.zip",
+    "located_by": "scripts/register_tcn_feature_structure_fs1_v2.py:21",
+    "bytes_from_metadata": 1081302,
+    "inspected": "只列ZIP成员名称/大小，读取sources.json、evidence/onnx_verification.json、deployment_reference/当前接口参考.md及evidence/队友原交付结论_20261018.txt小文本；未读取ONNX/RAW/模型/数组成员。",
+    "source_root_label": "finedge_host_demo (sources.json仅给相对路径，没有绝对工程位置)",
+    "prior_model_ancestry": "evidence/onnx_verification.json声明model_manifest_sha256=bf8244237ac5fc4726b33fe2aee49a15b6f5ac2fdb46485bbd6289933fbdabee",
+    "prior_onnx": "deployment_reference/tcn_ed4.onnx",
+    "prior_vendor_artifacts": [
+      "deployment_reference/tcn_ed4_ZG.json",
+      "deployment_reference/tcn_ed4_ZG.raw"
+    ],
+    "prior_runtime_evidence": "opset11; Python3.12.15/Torch2.7.1+cpu/ONNX1.17.0/ORT1.22.1为10/20转换记录；接口参考记Icraft3.36.1，不能作为11/01报告当前版本确认。",
+    "source_availability": "ZIP包含原TCN baseline的runtime/source与一个verify_handoff.py；未含C/C++、GUI/行情源或Icraft转换生成源码。没有报告所述两个cmd。",
+    "version_note": "接口参考明确当时是CPU预处理+板载NPU，自研FPGA尚未加入；是历史转换证据，不是11/01 FPGA前端/32槽/混合部署完整工程，建议不混入主源码。"
+  },
+  "missing_external_components": [
+    {
+      "component": "TorchScript到opset11 ONNX导出及Icraft INT8/TF32编译/尺度嵌入源码与配置",
+      "report_rows": [
+        185,
+        188,
+        189
+      ],
+      "status": "报告硬件组组件，本机已检查的来源未提供原源码",
+      "blocking_user_tcn_package": false
+    },
+    {
+      "component": "ARM Linux常驻C调度、32DDR地址映射、SDK初始化及逐槽自检",
+      "report_rows": [
+        190,
+        192,
+        193
+      ],
+      "status": "报告硬件组组件，本机已检查的来源未提供原源码",
+      "blocking_user_tcn_package": false
+    },
+    {
+      "component": "独立MBO UDP行情源、前缀恢复、QPC绝对时刻调度",
+      "report_rows": [
+        171,
+        173,
+        175,
+        176
+      ],
+      "status": "报告硬件组组件，本机已检查的来源未提供原源码",
+      "blocking_user_tcn_package": false
+    },
+    {
+      "component": "全景/行情源/单窗追踪GUI、CSV复盘及两个cmd入口",
+      "report_rows": [
+        194,
+        196,
+        206
+      ],
+      "status": "报告硬件组组件，本机已检查的来源未提供原源码",
+      "blocking_user_tcn_package": false
+    },
+    {
+      "component": "量化配对1024窗的端点清单、实际校准来源/参数及完整跨格式身份链",
+      "report_rows": [
+        185,
+        189,
+        216
+      ],
+      "status": "报告及本次小元来源不足以补齐；不以RAW1024的6参考窗替代",
+      "blocking_user_tcn_package": false
+    }
+  ],
+  "search_limits": "限定报告工程、其明确软件/raw handoff来源、scripts/docs/configs文本、引用的单个10/21组员ZIP及其同目录FinEdge文件名；未全盘搜索，不能据此断言其他磁盘或组员环境不存在源码。",
+  "actual_new_operations": {
+    "metadata_read": true,
+    "source_static_read": true,
+    "source_sha4": true,
+    "zip_member_name_listing": true,
+    "original_source_executed": false,
+    "numpy_or_torch_imported": false,
+    "model_or_market_array_payload_interpreted": false,
+    "training": false,
+    "GPU_or_OS_process_or_capture_queries": false,
+    "original_files_modified": false,
+    "source_copied": false
+  }
+}

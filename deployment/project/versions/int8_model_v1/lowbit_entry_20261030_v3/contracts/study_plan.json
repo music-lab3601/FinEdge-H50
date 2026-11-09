@@ -1,0 +1,29 @@
+{
+  "schema": "D_lowbit_external_entry_study_v3",
+  "date": "2026-10-30",
+  "source_review": "G D_v2_acceptance_20261030_214231",
+  "goal": "Real compiler-supported integer external tensor, fixed per-feature/time-invariant quantization and complete encoding goldens",
+  "base_model": "Accepted v2 mixed graph; learned/quantized body parameters frozen",
+  "primary": "signed INT8 affine per-feature; external tensor time-major [1,100,40]",
+  "fallback": "signed INT16 only if INT8 is unsupported or calibration screening quality fails; no claim of native INT16 model compute",
+  "scale_fit": "Inputs of the already observed v2 512 engineering windows, no labels used to fit scales",
+  "scale_rule": "include zero in each feature range, affine min-max, round-to-nearest-even, fixed scale and zero point per feature for all time positions",
+  "model_training": false,
+  "normalization_refit": false,
+  "body_requantization": false,
+  "calibration_screen": "already observed v2 windows, compare original FP32 and base mixed; no fresh labels",
+  "budget": {"accuracy_drop_pp_max": 1.0, "macro_f1_drop_pp_max": 1.0},
+  "new_holdout": {
+    "date": "2025-12-15",
+    "count": 1024,
+    "endpoints": "numpy.linspace(250099,450210,1024,dtype=int64)",
+    "first_input_accepted_index": 250000,
+    "last_label_accepted_index": 450260,
+    "history": 100,
+    "horizon": 50,
+    "nonoverlapping_full_footprints": true,
+    "evaluate_after_candidate_and_codec_freeze": true
+  },
+  "board_access": "G only; this task stays offline",
+  "runtime_speedup": "not inferred from reduced input byte size"
+}

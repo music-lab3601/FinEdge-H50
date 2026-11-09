@@ -1,0 +1,105 @@
+> 来源交付文档快照。公开仓库的实际目录、资产身份和验收状态见根目录README及provenance。
+
+# 代码入口及文件用途
+
+文件原样保留，下面的路径以本包根目录为起点。actual_scope区分主训练、复核、历史依赖和冻结推理。
+
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/checkpoint_validation.py` — selected_ED4_independent_audit_and_checkpoint_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/independent_audit.py` — selected_ED4_independent_audit_and_checkpoint_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/test_postrun_helpers.py` — selected_ED4_independent_audit_and_checkpoint_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/checkpoint_validation.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/independent_audit.py` — seed43_replication_independent_audit_and_resource_QA; historical_path_admission_failure_preserved；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/independent_audit_v2.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/capture.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/guard.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/postrun_tests_capture.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/test_guard.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_audit_v2.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_postrun_helpers.py` — seed43_replication_independent_audit_and_resource_QA；Artifact-local ED4/ED6 helper retained at original relative depth for ROOT/STAGE calculations
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/runtime.py` — selected_frozen_runtime_asset_or_source；Unmodified original successful ED4 inference package
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_candidate.py` — selected_frozen_runtime_asset_or_source；Unmodified original successful ED4 inference package
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_existing_data_ed4_features.py` — selected_frozen_runtime_asset_or_source；Unmodified original successful ED4 inference package
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_research_data_p2.py` — selected_frozen_runtime_asset_or_source；Unmodified original successful ED4 inference package
+- `project/artifacts/tcn_existing_data_optimization_2026-10-17/step07_delivery/torchscript_compatibility_v3/package/source/tcn_research_p5_model.py` — selected_frozen_runtime_asset_or_source；Unmodified original successful ED4 inference package
+- `project/artifacts/tcn_hardware_raw_handoff_2026-10-20/independent_audit_check.py` — historical_independent_auditor；Original project-layout alias of raw interface source
+- `project/artifacts/tcn_hardware_raw_handoff_2026-10-20/package/provenance/build_tcn_raw_handoff_20261020.py` — historical_builder；原1024条TRAIN连续记录/6参考窗构建程序的封存副本，精确绑定本ED4 manifest及norm
+- `project/artifacts/tcn_hardware_raw_handoff_2026-10-20/package/provenance/independent_audit_check.py` — historical_independent_auditor；原RAW1024独立数值/布局审计源码封存副本
+- `project/artifacts/tcn_hardware_raw_handoff_2026-10-20/package/provenance/package_tcn_raw_handoff_20261020.py` — historical_publisher；原RAW1024包出版/字节ZIP核验程序
+- `project/artifacts/tcn_hardware_raw_handoff_2026-10-20/package/verify_reference.py` — supplemental_raw1024_verifier；本ED4原始价量1024条/6个参考窗便携校验程序
+- `project/scripts/audit_tcn_existing_data_ed6_resource_supplement.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/audit_tcn_existing_data_ed7.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/audit_tcn_existing_data_ed7_compat.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/audit_tcn_research_p2.py` — upstream_P2_audit_provenance；Independent P2 label/statistics and source-contract audit implementation
+- `project/scripts/audit_tcn_research_screening_p1.py` — upstream_P1_audit_provenance；Independent P1 screened-range audit behind accepted P2 input contract
+- `project/scripts/build_tcn_raw_handoff_20261020.py` — historical_builder；Original project-layout alias of raw interface source
+- `project/scripts/databento_mbo_v2.py` — actual_upstream_DEV15_16_record_origin_reference；MBO engineering order-book replay adapter behind DEV15/16 record source contract
+- `project/scripts/databento_status_check.py` — upstream_status_timeline_provenance；STATUS timeline parsing used as P1 eligibility provenance for DEV15/16
+- `project/scripts/finalize_tcn_existing_data_ed4.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/finalize_tcn_existing_data_ed6.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/finalize_tcn_existing_data_ed6_v2.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/finalize_tcn_existing_data_ed7.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/finalize_tcn_existing_data_ed7_compat.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/itch_book.py` — actual_upstream_record_origin_reference_not_ED4_train_import；Native ITCH message decoder, order-book mutations, 352-byte top10 snapshot schema; also used by MBO adapter
+- `project/scripts/itch_book_w3.py` — actual_upstream_native_TRAIN_record_origin_reference；W3 native decoder extension and framed raw iteration used for TRAIN08-12 record origin
+- `project/scripts/package_tcn_raw_handoff_20261020.py` — historical_publisher；Original project-layout alias of raw interface source
+- `project/scripts/prepare_tcn_existing_data_ed7_compat.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/read_tcn_existing_data_ed6_progress.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/register_tcn_existing_data_ed6.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/register_tcn_existing_data_ed6_postrepair.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed4_capture.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/run_tcn_existing_data_ed4_checkpoint_capture.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/run_tcn_existing_data_ed6_audit_v2_capture.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed6_capture.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed6_finalizer_tests_capture.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed6_finalizer_v2_tests_capture.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed6_postrun_capture.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed6_resource_publication_gate.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/run_tcn_existing_data_ed7_capture.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/run_tcn_existing_data_ed7_compat_capture.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/run_tcn_existing_data_ed7_tests_v2_capture.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/tcn_candidate.py` — actual_selected_model_definition；TemporalConvCandidate, causal blocks and model constants used by builder/export
+- `project/scripts/tcn_data_v2.py` — actual_upstream_DEV15_16_record_origin_reference；MBO engineering adapter and source metadata for DEV15/16 records.bin referenced by P2 contract
+- `project/scripts/tcn_existing_data_ed4_features.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/tcn_existing_data_ed4_train.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/tcn_existing_data_ed6_data.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/tcn_existing_data_ed6_train.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/tcn_existing_data_ed7_compat_contract.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/tcn_existing_data_ed7_compat_export.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/tcn_existing_data_ed7_compat_runtime.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/tcn_existing_data_ed7_contract.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/tcn_existing_data_ed7_export.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/tcn_existing_data_ed7_runtime.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/tcn_research_data_p2.py` — actual_ED4_P2_input_contract；P2 L100/H50 endpoint threshold-zero labels, unique TRAIN normalization, admitted-range window construction
+- `project/scripts/tcn_research_evaluate_p2.py` — actual_ED4_ED6_training_dependency；Shared runtime, metrics and state digests imported by ED4/ED6 training
+- `project/scripts/tcn_research_p5_model.py` — actual_selected_model_builder；Original weight-normalized TCN builder used by selected ED4 checkpoint
+- `project/scripts/tcn_research_screening_core.py` — upstream_P1_research_range_provenance_not_ED4_train_import；P1 eligibility, phase/status and valid range screening implementation
+- `project/scripts/tcn_research_screening_p1.py` — upstream_P1_research_range_provenance_not_ED4_train_import；P1 screened range/source-registry production behind the explicitly pinned P2 input contract
+- `project/scripts/tcn_screening_reference.py` — upstream_P1_research_range_provenance_not_ED4_train_import；Independent screening/reference rules used by P1 source chain
+- `project/scripts/test_finalize_tcn_existing_data_ed6.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/test_finalize_tcn_existing_data_ed6_v2.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/test_tcn_existing_data_ed4_features.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/test_tcn_existing_data_ed4_train.py` — selected_ED4_seed42_training_or_QA；ED4 primary training, relative feature preparation, checkpoint/finalization or its tests
+- `project/scripts/test_tcn_existing_data_ed6_data.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/test_tcn_existing_data_ed6_resource_supplement.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/test_tcn_existing_data_ed6_train.py` — seed43_replication_evidence_not_selected_seed42_model；ED6 paired seed43 candidate/control replication and resource/audit support
+- `project/scripts/test_tcn_existing_data_ed7.py` — historical_original_ED7_failed_export_not_primary；Original ED7 source retained because v3 compatibility admission verifies the preserved original failure and its source identity
+- `project/scripts/test_tcn_existing_data_ed7_compat.py` — selected_ED7_compatibility_v3_delivery；Successful v3 TorchScript compatibility export/runtime/independent audit and tests
+- `project/scripts/verify_tcn_raw_handoff.py` — supplemental_raw1024_verifier；Original project-layout alias of raw interface source
+- `project/scripts/w1.py` — static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution；Required local import of scripts/w3_download.py
+- `project/scripts/w2.py` — static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution；Required local import of tests/test_w2.py
+- `project/scripts/w2_reference.py` — static_import_dependency_for_static_import_dependency_for_static_import_dependency_for_archived_test_source_no_new_test_execution；Required local import of scripts/w2.py
+- `project/scripts/w3.py` — upstream_native_book_CLI_reference；W3 book preparation CLI used by native record provenance chain
+- `project/scripts/w3_download.py` — static_import_dependency_for_archived_test_source_no_new_test_execution；Required local import of tests/test_w3.py
+- `project/scripts/w3_engine.py` — actual_upstream_native_TRAIN_record_origin_reference；W3 native ITCH replay/book building producing TRAIN08-12 records.bin referenced by P2 contract
+- `project/scripts/w3_samples.py` — upstream_original_support_not_selected_ED4_sampler；Original W3 source registration/sampling helper imported by data_v2 train-source adapter
+- `project/tests/test_audit_tcn_research_p2.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_databento_mbo_v2.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_databento_status_check.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_tcn_candidate.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_tcn_research_data_p2.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_tcn_research_evaluate_p2.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_tcn_research_p5_model.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_tcn_research_screening_core.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_tcn_research_screening_p1.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain
+- `project/tests/test_w2.py` — static_import_dependency_for_archived_test_source_no_new_test_execution；Required local import of tests/test_w3.py
+- `project/tests/test_w3.py` — archived_test_source_no_new_test_execution；Existing focused unit/regression test source for selected model/data/upstream record chain

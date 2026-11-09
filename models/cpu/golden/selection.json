@@ -1,0 +1,7 @@
+{
+  "schema": "synthetic_public_fixture_v1",
+  "seed": 20261109,
+  "windows": 32,
+  "distribution": "normal(0, 0.25)",
+  "purpose": "Interface and numerical regression"
+}

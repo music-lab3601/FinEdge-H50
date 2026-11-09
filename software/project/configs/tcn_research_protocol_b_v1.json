@@ -1,0 +1,219 @@
+{
+  "version": "TCN-research-data-protocol-B-1.0",
+  "registered_utc": "2026-10-14T01:24:13.783645+00:00",
+  "status": "adopted_for_P1_screening_engineering_acceptance",
+  "authorization_quote": "帮我完成第1步",
+  "user_direction_accepted": true,
+  "scope": "Research registration and ten-day real screening only; no labels/norm/model/training",
+  "parent_protocol": "@SOFTWARE_ROOT@/configs/tcn_data_protocol_v2.json",
+  "parent_protocol_sha256": "db2fe2b61f2dd83bd29a2725955bb63955c79e50080a1244bb3cfe7b1b15937d",
+  "proposal_path": "@SOFTWARE_ROOT@/proposals/tcn_screening_rules_v3_draft_20261011.json",
+  "proposal_sha256": "438b111e98a5e5addc1110f3599fbb9d2e06ab8b9133ba43331d10d438bd0b2e",
+  "source_registry_path": "@SOFTWARE_ROOT@/artifacts/tcn_research_screening_p1_2026-10-14/source_registry.json",
+  "source_registry_sha256": "891ab6f049edce1e4817c399e7eae2cdf07a108e68c0c55e28ade23dbda9ced3",
+  "dataset": "XNAS.ITCH",
+  "symbol": "AAPL",
+  "date_roles": {
+    "2025-12-08": "train",
+    "2025-12-09": "train",
+    "2025-12-10": "train",
+    "2025-12-11": "train",
+    "2025-12-12": "train",
+    "2025-12-15": "tuning_validation",
+    "2025-12-16": "tuning_validation",
+    "2025-12-17": "comparison_validation",
+    "2025-12-18": "final_test",
+    "2025-12-19": "final_test"
+  },
+  "research_mode": {
+    "recommended_priority": 1,
+    "enabled": true,
+    "requires_explicit_acceptance_of_unobserved_control_risk": true,
+    "source_control_verified": false,
+    "calendar": {
+      "timezone": "America/New_York",
+      "planned_regular_start": "09:30:00",
+      "planned_regular_end": "16:00:00",
+      "screen_start_inclusive": "09:35:00",
+      "screen_end_exclusive": "15:55:00",
+      "target_dates_utc_start": "14:35:00",
+      "target_dates_utc_end": "20:55:00",
+      "buffers_minutes": 5,
+      "buffer_basis": "Predeclared engineering choice, not empirically optimized or a guarantee against auctions/halts",
+      "apply_to_all_ten_dates": true,
+      "unknown_or_nonstandard_schedule": "quarantine_day_pending_separate_rule_review"
+    },
+    "old_training_source": "Intersection with existing native-valid segments only; never readmit invalid native rows",
+    "new_source_required": "Accepted MBO engineering provenance plus corresponding status and locked enum semantics",
+    "state": {
+      "enum_version": "databento-dbn 0.71.0",
+      "initial_phase": "unknown",
+      "initial_is_trading": "unknown",
+      "initial_is_quoting": "unknown",
+      "eligible_phase": "TRADING",
+      "eligible_is_trading": "Y",
+      "eligible_is_quoting": "Y",
+      "blocking_actions": [
+        "PRE_OPEN",
+        "PRE_CROSS",
+        "QUOTING",
+        "CROSS",
+        "ROTATION",
+        "PRE_CLOSE",
+        "CLOSE",
+        "POST_CLOSE",
+        "HALT",
+        "PAUSE",
+        "SUSPEND",
+        "NOT_AVAILABLE_FOR_TRADING"
+      ],
+      "phase_preserving_actions": [
+        "NONE",
+        "SSR_CHANGE",
+        "NEW_PRICE_INDICATION"
+      ],
+      "trading_or_quoting_N_or_unknown": "latch_block_until_later_explicit_TRADING_group_with_all_records_Y_Y",
+      "unknown_is_not_carry_forward": true,
+      "unknown_ssr_alone_blocks": false,
+      "ordinary_resume": "After any negative/unknown/conflict block, later group must have TRADING as its only distinct phase update and all records Y/Y; repeated identical TRADING allowed; new segment",
+      "phase_preserving_group_can_release_block": false,
+      "operational_or_marketwide_event": "Quarantine rest of day; generic TRADING cannot release",
+      "unknown_enum_missing_status_or_unexplained_sequence": "quarantine_day",
+      "provider_coverage_unknown": "Residual limitation only if specifically approved; never verified",
+      "reason_zero_proves_no_halt": false
+    },
+    "ordering": {
+      "calendar_and_status_clock": "ts_event",
+      "book_order": "Original provider/native message order; never reorder by ts_event",
+      "each_status_timestamp": "Cut segment and reject every MBO row with equal ts_event, including repeated status",
+      "same_timestamp_controls": "Aggregate without order assumptions; contradictory/unknown/negative state blocks",
+      "resume_condition": "ts_event strictly greater than boundary and unambiguous eligible state",
+      "ts_recv_proves_native_cross_schema_order": false,
+      "new_source_event_time_regression": "quarantine_day",
+      "sequence_gaps_in_symbol_filter_prove_loss": false,
+      "silence_proves_halt_or_resume": false
+    },
+    "flags": {
+      "source_rows_unchanged": true,
+      "source_flag64_cleared": false,
+      "native_rows_flags_1_16": "Real control rejects remain rejects",
+      "engineering_rows_flags_1_16": "Unverified gate placeholders only when exact accepted adapter provenance is bound",
+      "engineering_adapter_version": "Databento-MBO-engineering-adapter-2.0",
+      "engineering_quality_reject_bits": [
+        2,
+        4,
+        8,
+        32,
+        128
+      ],
+      "unexpected_row_bits": "reject",
+      "provider_and_row_flags_are_distinct_namespaces": true,
+      "new_sidecar_fields": [
+        "source_row_index",
+        "research_eligible",
+        "source_control_verified",
+        "coverage_unknown",
+        "research_segment_id",
+        "protocol_identity",
+        "reject_reasons"
+      ]
+    },
+    "normalization": "Independent five-TRAIN unique eligible record mean/population std; zero std=1; no tuning/comparison/final records; reuse only on identical set/content",
+    "control_evidence_difference": "Old native training gate is stronger than new observed-status research gate even with identical calendar"
+  },
+  "samples": {
+    "feature_count": 40,
+    "window_length": 100,
+    "horizon_records": 50,
+    "feature_order": "ask_price,ask_size,bid_price,bid_size for each level 1..10",
+    "trigger": "Every target visible-book mutation, including unchanged top ten",
+    "input_offsets_inclusive": [
+      -99,
+      0
+    ],
+    "label_offset": 50,
+    "required_full_footprint_inclusive": [
+      -99,
+      50
+    ],
+    "required_footprint_records": 150,
+    "footprint_requirement": "All original consecutive records same day/instrument/accepted segment; no compression of invalid records",
+    "segment_window_formula": "max(0, L - 149)",
+    "label": "Integer future ask1+bid1 versus current ask1+bid1, no smoothing, zero threshold",
+    "classes": {
+      "down": 0,
+      "stationary": 1,
+      "up": 2
+    }
+  },
+  "timezone_profile": {
+    "version": "target-date-fixed-EST-1.0",
+    "timezone_method": "fixed_offset_target_dates",
+    "rule_location": "America/New_York",
+    "offset_seconds": -18000,
+    "IANA_database_loaded": false,
+    "allowed_dates": [
+      "2025-12-08",
+      "2025-12-09",
+      "2025-12-10",
+      "2025-12-11",
+      "2025-12-12",
+      "2025-12-15",
+      "2025-12-16",
+      "2025-12-17",
+      "2025-12-18",
+      "2025-12-19"
+    ],
+    "UTC_screen_start": "14:35:00",
+    "UTC_screen_end_exclusive": "20:55:00",
+    "basis": "Registered December 2025 dates are EST; integer nanoseconds; unknown dates refused"
+  },
+  "public_sources": [
+    {
+      "url": "https://www.nasdaqtrader.com/content/technicalsupport/2025tradingcalendar.pdf",
+      "verified_on": "2026-10-14",
+      "scope": "2025 calendar target dates, normal planned sessions"
+    },
+    {
+      "url": "https://www.nasdaq.com/market-activity/stock-market-holiday-schedule",
+      "verified_on": "2026-10-14",
+      "scope": "General regular session 09:30-16:00; 2026 holiday table not used for 2025 dates"
+    },
+    {
+      "url": "https://www.nist.gov/pml/time-and-frequency-division/local-time-faqs",
+      "verified_on": "2026-10-14",
+      "scope": "Eastern standard time UTC-5 and first-Sunday-November DST end"
+    }
+  ],
+  "implementation_bindings": [
+    {
+      "path": "@SOFTWARE_ROOT@/scripts/tcn_research_screening_p1.py",
+      "sha256": "f69a1f3fc018b955274314649a36721bf7de7ef16b01c837fb5020ac1de2cde7",
+      "bytes": 31909
+    },
+    {
+      "path": "@SOFTWARE_ROOT@/scripts/tcn_research_screening_core.py",
+      "sha256": "a7137ebc01cbedcb72b331fa4bd213cdbb62088d5cd3527f6c296346185fb477",
+      "bytes": 15272
+    },
+    {
+      "path": "@SOFTWARE_ROOT@/scripts/tcn_screening_reference.py",
+      "sha256": "c16fe9cd87bd60e5338b57022cc2bf2be6fda8025d0b490735929a47c22deacf",
+      "bytes": 12550
+    }
+  ],
+  "result_wording": "基于当前可观察数据和既定筛选规则的表现",
+  "unobserved_halt_coverage_risk_accepted": true,
+  "source_control_verified": false,
+  "coverage_unknown": true,
+  "original_flag64_cleared": false,
+  "labels_computed": false,
+  "normalization_computed": false,
+  "training_ready": false,
+  "sealed_dates": [
+    "2025-12-17",
+    "2025-12-18",
+    "2025-12-19"
+  ],
+  "no_future_vendor_reply_or_fix_required": true
+}

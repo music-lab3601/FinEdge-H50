@@ -1,0 +1,20 @@
+{
+  "status": "frozen_before_fresh_evaluation",
+  "model_sha256": "97a802ee5791c0a2adc0b7e34884566bef09b8e04fd749d0ab14211c8e8caa75",
+  "params_sha256": "986add6bc3479c41559a97902133ddf249fabf43a1930e4be600317b98033af8",
+  "study_plan_sha256": "66a6b28a4c58a373b92e1dcb7dc1406ca8c68dac5dffacfb0b7a1de46d9e3284",
+  "mix_sha256": "58e90b2cf78b6ad61ef7e702663f315d543f53d2d32b2f1128aeadb8dd6b6e5c",
+  "precision": "INT8 middle blocks plus TF32 sensitive boundaries",
+  "model_path": "artifacts/mixed_tf32_compat/tcn_d_ZG.json",
+  "failed_fp16_candidate_compile": true,
+  "calibration_class_changes_int8": 19,
+  "calibration_class_changes_mixed": 9,
+  "calibration_logits_max_abs_int8": 0.5858145952224731,
+  "calibration_logits_max_abs_mixed": 0.7645323276519775,
+  "calibration_logits_mean_abs_int8": 0.07657452672719955,
+  "calibration_logits_mean_abs_mixed": 0.05879161134362221,
+  "new_candidate_count": 1,
+  "board_accessed": false,
+  "selection": "Single evidence-based mixed candidate, no search. Fresh evaluation not generated/observed before this freeze.",
+  "final_acceptance_data": "later same-day fresh 512 nonoverlapping footprints per study_plan"
+}

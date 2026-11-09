@@ -1,0 +1,21 @@
+{
+  "version": "W2-audit-1.0",
+  "purpose": "2019 single-day engineering audit only; not frozen training protocol",
+  "symbol": "AAPL",
+  "trading_date": "2019-01-30",
+  "exchange_timezone": "America/New_York",
+  "smoke_message_limit": 1000000,
+  "snapshot_trigger_candidate": "after every target A/F/E/C/X/D/U message, including unchanged top ten",
+  "feature_order_candidate": "ask_price,ask_size,bid_price,bid_size for levels 1..10",
+  "price_divisor": 10000,
+  "quantity_unit": "shares",
+  "regular_session_candidate": "system event Q inclusive to M exclusive, stock state T, Nasdaq operational halt off",
+  "formal_training_protocol_frozen": false,
+  "expected_sample_messages": 368366634,
+  "expected_sample_target_messages": 1668775,
+  "count_reference_source": "teammate 01302019_full_day.json; comparative evidence only",
+  "spec_sources": [
+    "https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification_5.0.pdf",
+    "https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHspecification.pdf"
+  ]
+}

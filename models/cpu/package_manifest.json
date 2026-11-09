@@ -1,0 +1,116 @@
+{
+  "version": "TCN-ED7-package-manifest-1.0",
+  "created_utc": "2026-10-18T14:50:27.292812+00:00",
+  "compatibility_case": "ScriptModule_requires_grad_Module_API_unsupported",
+  "initial_failed_primary_sha256": "496ac01c7c60343c1059ec9a936b661d8dc6b1657ee80c257dab12eaf67a6fd2",
+  "saved_golden_input_sha256": "3ae1c36b90ddd0c0bb7d6e6e14f228da7d445fdd349b486ff565b36acaf3774e",
+  "saved_golden_selection_sha256": "8e8f182eed8325a729dc8ce2e5e69ccb11311f976860014adc8121b200822375",
+  "selected_family": "ED4_feature42_lr0.001_seed42",
+  "epoch": 3,
+  "seed": 42,
+  "model_format": "TorchScript",
+  "execution_device": "cpu",
+  "semantic_contract": {
+    "version": "TCN-ED7-relative-price-inference-1.0",
+    "feature_id": "same_record_mid_relative_prices_raw_quantities_v1",
+    "raw_shape": [
+      "B",
+      100,
+      40
+    ],
+    "normalized_shape": [
+      "B",
+      40,
+      100
+    ],
+    "raw_dtype": "uint64",
+    "normalized_dtype": "float32",
+    "maximum_batch_size": 32,
+    "raw_price_units": "original_uint64_price_units_no_divide_10000",
+    "price_formula": "(raw_price - (raw_ask1 + raw_bid1)/2) / ((raw_ask1 + raw_bid1)/2)",
+    "quantity_formula": "raw_quantity_unchanged_no_log",
+    "transform_precision": "float64_then_frozen_float64_normalization_then_float32",
+    "feature_order": "ask_price,ask_size,bid_price,bid_size for each level1..10",
+    "class_order": [
+      "down",
+      "stationary",
+      "up"
+    ],
+    "decision": "original_argmax_first_index_tie",
+    "stationary_logit_bias": 0,
+    "device": "cpu",
+    "training": false
+  },
+  "native_parameter_count": 33539,
+  "folded_parameter_count": 33219,
+  "checkpoint_sha256": "a3564cdc2e34c30ea170f851a24502f6a7f7ed08b27f8852c7fedceae809e764",
+  "normalization_sha256": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf",
+  "training_started": false,
+  "new_independent_test": false,
+  "historical_final_quality_changed": false,
+  "files": {
+    "golden/effective_batch1.f32": {
+      "bytes": 12,
+      "sha256": "b205a0d54c4ee13d1310e789095d4fdccdf93a4f9feb2c222b1cad78c91a0dfd"
+    },
+    "golden/effective_batch32.f32": {
+      "bytes": 384,
+      "sha256": "c01cd66b88d61e09949629218ade491699ef3101b52529f026bc1a91d9694bd3"
+    },
+    "golden/inputs.f32": {
+      "bytes": 512000,
+      "sha256": "6f8babc3b7e8a02b79f31233de6d0e31afd461e171cde80ae1a580998f168d06"
+    },
+    "golden/native_batch1.f32": {
+      "bytes": 12,
+      "sha256": "b205a0d54c4ee13d1310e789095d4fdccdf93a4f9feb2c222b1cad78c91a0dfd"
+    },
+    "golden/native_batch32.f32": {
+      "bytes": 384,
+      "sha256": "c01cd66b88d61e09949629218ade491699ef3101b52529f026bc1a91d9694bd3"
+    },
+    "golden/script_batch1.f32": {
+      "bytes": 12,
+      "sha256": "b205a0d54c4ee13d1310e789095d4fdccdf93a4f9feb2c222b1cad78c91a0dfd"
+    },
+    "golden/script_batch32.f32": {
+      "bytes": 384,
+      "sha256": "c01cd66b88d61e09949629218ade491699ef3101b52529f026bc1a91d9694bd3"
+    },
+    "golden/selection.json": {
+      "bytes": 178,
+      "sha256": "fc071a390529f8725725737f89802f8743b4da896895886b5a2cd7198a0da845"
+    },
+    "model_cpu.ts": {
+      "bytes": 155616,
+      "sha256": "a9d35c4ede7e6619001b1fc6a316c19c9b691ad2660e7daef0febbb6b081267d"
+    },
+    "native/best.pt": {
+      "bytes": 462907,
+      "sha256": "a3564cdc2e34c30ea170f851a24502f6a7f7ed08b27f8852c7fedceae809e764"
+    },
+    "normalization.json": {
+      "bytes": 2833,
+      "sha256": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf"
+    },
+    "runtime.py": {
+      "bytes": 12063,
+      "sha256": "a4d40b81db5bc7c92eb4310bba3182e53d3e4d5eb33404e77368a7e867af2a54"
+    },
+    "train_config.json": {
+      "bytes": 1046,
+      "sha256": "f48d7b48894178e67295d06c72c45f6db2144d5cc3d45c47aa5857fef91b8c39"
+    }
+  },
+  "public_asset_provenance": {
+    "original_model_sha256": "32bd7f710f764c6e89d3b61fea95dc481af15c7ab93510ccfde7b5212d76aee5",
+    "original_checkpoint_sha256": "c480db50073dbb099c5374dc5df9f942044e2ab09f8d6bcff396b7bc4cb6dc60",
+    "transformations": [
+      "TorchScript debug records removed",
+      "Checkpoint workstation metadata paths tokenized",
+      "Golden fixtures generated independently from seeded synthetic tensors"
+    ],
+    "model_tensors_equal": true,
+    "synthetic_output_max_abs_error": 0.0
+  }
+}

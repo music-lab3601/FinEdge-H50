@@ -1,0 +1,15 @@
+{
+  "family": "ED4_feature42_lr0.001_seed42",
+  "epoch": 3,
+  "L": 100,
+  "H": 50,
+  "class_order": [
+    "down",
+    "stationary",
+    "up"
+  ],
+  "CPU_manifest_sha256": "291aa9debe517b040c1e46d00b470ba8cc41f08dd22a2bed878446cf5649240d",
+  "normalization_sha256": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf",
+  "NPU_model_sha256": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+  "NPU_raw_sha256": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa"
+}

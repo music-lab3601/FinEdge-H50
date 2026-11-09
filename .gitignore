@@ -1,0 +1,12 @@
+/.local/
+/build/
+/data/
+/vendor_cache/
+/generated/
+/validation/
+**/__pycache__/
+**/.pytest_cache/
+*.py[cod]
+.env
+.env.*
+!*.env.example

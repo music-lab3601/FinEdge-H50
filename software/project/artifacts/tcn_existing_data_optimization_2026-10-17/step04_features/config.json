@@ -1,0 +1,22 @@
+{
+  "version": "TCN-ED4-feature42-config-1.0",
+  "slot_id": "feature42",
+  "seed": 42,
+  "device": "cuda",
+  "precision": "float32",
+  "train_batch_size": 256,
+  "evaluation_batch_size": 256,
+  "max_epochs": 10,
+  "early_stop_patience": 3,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "loss": "unweighted_cross_entropy",
+  "window_length": 100,
+  "horizon": 50,
+  "dropout": 0,
+  "weight_norm": true,
+  "decision": "original_argmax",
+  "feature_family": "relative_midprice_replaces_absolute_prices_odd_raw_quantities_unchanged",
+  "description": "Only even price channels change: (raw_price-current_record_raw_mid)/current_record_raw_mid, raw_mid=(raw_bid1+raw_ask1)/2 in float64; odd raw quantities unchanged. Refit normalization on the same unique full TRAIN research ranges as original P2, population std and zero-variance scale1. No DEV fit, no ED3 bias; no extra history. Per-record centering removes midprice path as a preregistered tradeoff. Comparison development only; original frozen WN42 preserved."
+}

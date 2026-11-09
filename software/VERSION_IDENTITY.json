@@ -1,0 +1,23 @@
+{
+  "selected_family": "ED4_feature42_lr0.001_seed42",
+  "seed": 42,
+  "epoch": 3,
+  "L": 100,
+  "H": 50,
+  "target": "endpoint midpoint change, zero threshold, no future-average smoothing",
+  "feature_id": "same_record_mid_relative_prices_raw_quantities_v1",
+  "class_order": [
+    "down",
+    "stationary",
+    "up"
+  ],
+  "native_parameters": 33539,
+  "folded_parameters": 33219,
+  "development_accuracy": 0.468784020942,
+  "original_package_manifest_sha256": "bf8244237ac5fc4726b33fe2aee49a15b6f5ac2fdb46485bbd6289933fbdabee",
+  "reference_report": {
+    "path": "@EXTERNAL_ROOT@/技术报告_H50软硬件完整汇总版_修订版.docx",
+    "sha256": "171a52f3e70aa2d2bc70309d094d417354b8547f67e25f8a1e432c3629ebf140"
+  },
+  "current_collection_does_not_retrain_or_reassess": true
+}

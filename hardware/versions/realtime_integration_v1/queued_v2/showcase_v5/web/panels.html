@@ -1,0 +1,29 @@
+<div class="evidence-only replay-bar">
+  <div><b id="evidence-mode">真实记录</b><span id="replay-explainer">回放与步进只改变观看节奏，原始延时保持不变。</span></div>
+  <div class="replay-actions"><button id="replay-zero">回到开头</button><button id="replay-play" class="primary">播放记录</button><button id="replay-pause">暂停观察</button><select id="replay-speed"><option value="0.1">0.1倍慢放</option><option value="0.25">0.25倍慢放</option><option value="0.5">0.5倍慢放</option><option value="1" selected>1倍观看</option><option value="2">2倍观看</option><option value="4">4倍观看</option></select><button id="replay-end">查看结尾</button><button id="focus-mode">录屏聚焦</button></div>
+  <input id="replay-seek" type="range" min="0" max="25" step="0.001" value="0"><span id="replay-position">0.000 / 0.000 s</span>
+</div>
+
+<div class="source-only">
+ <section class="source-banner panel"><div><span class="eyebrow">MARKET DATA PUBLISHER</span><h2>订单从这里进入系统</h2><p>2025-12-15 · AAPL · 原始 MBO事件 · 按原事件间隔1倍派发</p></div><span class="status-pill" id="source-status">等待记录</span></section>
+ <section class="source-metrics">
+  <article class="panel"><label>历史市场时钟 · 纽约时间</label><strong id="source-clock">—</strong><small>事件时间独立于电脑当前日期</small></article>
+  <article class="panel"><label>实际已派发 / 本片段事件</label><strong id="source-sent">—</strong><div class="meter"><i id="source-progress"></i></div><small>基于真实UDP提交完成记录</small></article>
+  <article class="panel"><label>FPGA已确认处理</label><strong id="source-committed">—</strong><small id="source-pending">等待回执</small></article>
+  <article class="panel"><label>当前位置派发速率 · 100ms桶折算</label><strong id="source-rate">—</strong><small id="source-peak">峰值桶 — 条 / 100ms</small></article>
+ </section>
+ <section class="panel source-flow"><div><span class="flow-icon">01</span><b>历史原始订单</b><small>新增 · 撤单 · 修改 · 成交</small></div><span class="flow-arrow">→</span><div><span class="flow-icon">02</span><b>独立派发进程</b><small>原始事件时钟 · 单TX线程</small></div><span class="flow-arrow">→</span><div><span class="flow-icon">03</span><b>PL物理千兆网</b><small>192.168.126.50:20001</small></div><span class="flow-arrow">→</span><div><span class="flow-icon">04</span><b>FPGA在线处理</b><small>解析 · 建簿 · 预处理 · 组窗</small></div></section>
+ <section class="panel"><div class="panelhead"><div><h2>行情到达节奏</h2><p>每根柱为100ms内实际提交的事件数，能够看到密集派发与间歇。</p></div><span id="source-packets">— 个UDP包</span></div><svg id="source-bursts" viewBox="0 0 1200 220" role="img" aria-label="每100毫秒实际派发事件数"></svg><div class="chart-caption"><span>横轴：本片段经过时间 / 秒</span><span>纵轴：实际派发事件 / 100ms</span></div></section>
+ <section class="panel source-orders"><div class="panelhead"><div><h2>原始订单事件流</h2><p>最近已派发事件的抽样显示；这里的输入尚未建立订单簿。</p></div><span id="source-last">原始记录 —</span></div><div class="prediction-table"><table><thead><tr><th>原始记录</th><th>行情序号</th><th>市场时间</th><th>事件</th><th>方向</th><th>委托编号</th><th>价格 / USD</th><th>数量</th></tr></thead><tbody id="source-events"></tbody></table></div></section>
+ <p class="view-footnote">“待确认”包含网络和ACK回报间隔，不等同于FPGA内部FIFO积压。派发日志由独立观察线程约20ms发布；界面不会改变行情时钟。</p>
+</div>
+
+<div class="track-only">
+ <section class="panel track-heading"><div><span class="eyebrow">ONE WINDOW, ONE IDENTITY</span><h2>锁定一份窗口，看预测如何兑现</h2><p id="track-identity">等待真实预测；默认固定首个返回的预测。</p></div><div class="track-select"><label>机会编号 <input id="track-input" type="number" min="1" max="500000" value="1"></label><button id="track-pin" class="primary">锁定窗口</button><button id="track-first">首个预测</button></div></section>
+ <div class="track-jumps"><span>按真实记录逐步观察：</span><button id="jump-source">① 订单派发</button><button id="jump-prediction">② 预测返回</button><button id="jump-outcome">③ 后续50条兑现</button></div>
+ <section class="track-context"><article class="panel"><label>本窗口历史</label><strong id="track-history">— / 100</strong><small id="track-range">100条有效盘口，40维价量特征</small></article><article class="panel"><label>NPU原生输入</label><strong>INT8 · 4800 B</strong><small>100 × 40逻辑元素，含原生布局填充</small></article><article class="panel"><label>实际DDR槽 / 分配代次</label><strong id="track-slot">—</strong><small>从同窗口、同原始记录的板端trace匹配</small></article></section>
+ <section class="panel"><div class="panelhead"><h2>同一窗口的数据通路</h2><span id="track-state">等待记录</span></div><div id="track-steps" class="track-steps"></div><p class="view-footnote">节点由真实派发、FPGA提交确认和预测回执点亮；未单独采集时间戳的内部阶段不显示虚构耗时。</p></section>
+ <section class="outcome-layout"><article class="panel prediction-card"><span class="eyebrow">PREDICTION</span><h2>NPU给出的方向</h2><strong id="track-prediction">等待返回</strong><p id="track-logits">logits —</p><small id="track-raw-event">原始订单尚未派发</small></article><div class="horizon-bridge"><b>后续50条有效盘口</b><span>→</span><div class="meter"><i id="track-future-progress"></i></div><small id="track-future-count">0 / 50 已确认</small><small>H50按有效盘口条数计</small></div><article class="panel actual-card"><span class="eyebrow">OBSERVED OUTCOME</span><h2>实际中间价方向</h2><strong id="track-actual">等待兑现</strong><p id="track-prices">未来价格未到达前保持隐藏</p><b id="track-hit">—</b><small id="track-future-event">实际派发并被FPGA提交后揭示</small></article></section>
+ <section class="panel"><div class="panelhead"><h2>这份窗口的真实延时</h2><span>数值不随慢放速度缩放</span></div><div class="track-timings"><div><label>计划事件 → 上位机收到预测</label><strong id="track-total-time">—</strong></div><div><label>板内接收 → 结果产生</label><strong id="track-board-time">—</strong></div><div><label>NPU启动等待</label><strong id="track-npu-time">—</strong></div></div></section>
+ <p class="view-footnote">实际涨跌采用同源重建参考，仅用于方向兑现。FPGA使用原始订单在线建簿；显示参考不作为推理输入。会话、窗口、原始记录、DDR槽与代次保持关联。</p>
+</div>

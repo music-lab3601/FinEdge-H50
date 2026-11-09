@@ -1,0 +1,2 @@
+set_device JFMQL30TAI676H
+increment_bit_cfg_v3  @HARDWARE_ROOT@/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/fpai_demo_vivado.runs/impl_1/ai7030_edif_top_disable_icap.bit -disable_icap
