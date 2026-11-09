@@ -1,5 +1,5 @@
 {
-  "stage": "directory_migration_and_unified_entry",
+  "stage": "FPGA_full_source_build_verified",
   "team_license": "MIT",
   "scope": "Full H50",
   "production_directory_migration": "completed",
@@ -8,13 +8,14 @@
   "unified_entry": "finedge.py",
   "model_export_and_TF32_compile": "passed",
   "model_mixed_native_recompile": "passed_bit_equal_JSON_RAW_and_1024_Host_outputs",
-  "vendor_reference_reconstruction": "pending",
-  "full_FPGA_build": "pending",
+  "vendor_reference_reconstruction": "passed_manifest_vendor_inputs",
+  "full_FPGA_build": "passed_fresh_clone_single_command_with_physical_audit_and_BOOT",
   "board_validation": "pending",
   "GitHub_remote_created": false,
   "GitHub_pushed": false,
   "validation": "docs/migration_validation.json",
   "clean_Python_environment": "passed_after_databento_dependency_correction",
   "clean_environment_validation": "docs/clean_environment_validation.json",
-  "model_rebuild_validation": "docs/int8_rebuild_validation.json"
+  "model_rebuild_validation": "docs/int8_rebuild_validation.json",
+  "fpga_build_validation": "docs/fpga_build_validation.json"
 }

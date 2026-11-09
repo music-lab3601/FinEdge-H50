@@ -1,0 +1,181 @@
+{
+  "status": "passed_pending_board_validation",
+  "source_commit": "f218ebc44443f41fa94413ed41b141b2aad8a0d0",
+  "input_files": 209,
+  "source_changes_since_staging": [],
+  "vendor_assets": 756,
+  "project_inputs": 273,
+  "vendor_IP_checkpoints": 24,
+  "vendor_AI_EDIF": true,
+  "previous_whole_design_checkpoint_imported": false,
+  "ordinary_timing_ns": {
+    "max": 0.03,
+    "min": 0.014
+  },
+  "timing_TNS_THS_ns": 0,
+  "no_clock_pins": 0,
+  "unconstrained_active_max_delay_pins": 0,
+  "constant_clock_exclusions": 2,
+  "routing_errors": 0,
+  "DRC_error_count": 0,
+  "resources": {
+    "Slice LUTs": {
+      "used": 55853.0,
+      "available": 78600.0,
+      "utilization_percent": 71.06
+    },
+    "Slice Registers": {
+      "used": 89512.0,
+      "available": 157200.0,
+      "utilization_percent": 56.94
+    },
+    "Slice": {
+      "used": 19639.0,
+      "available": 19650.0,
+      "utilization_percent": 99.94
+    },
+    "Block RAM Tile": {
+      "used": 216.0,
+      "available": 265.0,
+      "utilization_percent": 81.51
+    },
+    "DSPs": {
+      "used": 18.0,
+      "available": 400.0,
+      "utilization_percent": 4.5
+    },
+    "Bonded IOB": {
+      "used": 147.0,
+      "available": 250.0,
+      "utilization_percent": 58.8
+    },
+    "BUFGCTRL": {
+      "used": 11.0,
+      "available": 32.0,
+      "utilization_percent": 34.38
+    },
+    "MMCME2_ADV": {
+      "used": 3.0,
+      "available": 5.0,
+      "utilization_percent": 60.0
+    },
+    "PLLE2_ADV": {
+      "used": 3.0,
+      "available": 5.0,
+      "utilization_percent": 60.0
+    }
+  },
+  "power_estimate": {
+    "total_W": 3.842,
+    "dynamic_W": 3.683,
+    "static_W": 0.159,
+    "method": "vectorless_default_activity",
+    "ambient_C": 25,
+    "process": "typical",
+    "confidence": "Low",
+    "PS7_power_unspecified": true,
+    "measured": false
+  },
+  "metadata_FIFO_paths": [
+    {
+      "fifo": "U_window_ddr/prediction/memory/complete_fifo",
+      "write_clock_pins": "336",
+      "capture_registers": "250",
+      "requirement_ns": "5.000",
+      "slack_ns": "2.907",
+      "hold_exception": "False Path",
+      "startpoint": "U_window_ddr/prediction/memory/complete_fifo/mem_reg_0_7_192_197/RAMC/CLK",
+      "endpoint": "U_window_ddr/prediction/memory/complete_fifo/r_data_reg[196]/D"
+    },
+    {
+      "fifo": "U_window_ddr/prediction/memory/window_fifo",
+      "write_clock_pins": "240",
+      "capture_registers": "180",
+      "requirement_ns": "5.000",
+      "slack_ns": "2.996",
+      "hold_exception": "False Path",
+      "startpoint": "U_window_ddr/prediction/memory/window_fifo/mem_reg_0_7_30_35/RAMC/CLK",
+      "endpoint": "U_window_ddr/prediction/memory/window_fifo/r_data_reg[34]/D"
+    }
+  ],
+  "outputs": {
+    "market_synth.dcp": {
+      "bytes": 32244730,
+      "sha256": "8925b2d1652b925c1223a14e64f031611563fe263b30ea74736127d67fbf6674"
+    },
+    "market_routed.dcp": {
+      "bytes": 68023178,
+      "sha256": "8982936117430c4acf6be3384c7f5ae62d81a4de575e3376568b1160b6221346"
+    },
+    "boot/BOOT.bin": {
+      "bytes": 7023552,
+      "sha256": "2f217f4677bd9fc3858c6b5a546d75e8a9640163939cc9845ed4782c66243b1e"
+    },
+    "boot/BOOT.bin.gz": {
+      "bytes": 2590070,
+      "sha256": "cfe867438e3fa307097c8c625366023cef8e2d9811d8826b4e9a29be68fe1006"
+    },
+    "project/fpai_demo_vivado.runs/impl_1/ai7030_edif_top.bit": {
+      "bytes": 5980025,
+      "sha256": "cacf14e51e9c4f2faf18535aed53f482726a9e4ff9db41321b9b9b2ad7bb8460"
+    },
+    "project/fpai_demo_vivado.runs/impl_1/ai7030_edif_top_disable_icap.bit": {
+      "bytes": 5980609,
+      "sha256": "d010188585b0b17df19fe3693af06091fa3e0eddc3cf4e6eb870a146aaf97765"
+    }
+  },
+  "board_access": false,
+  "board_validation": "pending",
+  "schema": "finedge_fpga_source_build_validation_v1",
+  "date": "2026-11-10",
+  "scope": "H50 Wujing FMQL30TAI full board",
+  "tools": {
+    "Vivado": "2018.3 build 2405991",
+    "Procise": "2025.1.1 temp",
+    "JFM_distribution_label": "5.3.2.1_100AI_LV",
+    "JFM_loaded_patch": "5.3.1.8"
+  },
+  "fresh_clone": true,
+  "single_uninterrupted_command": true,
+  "command": "python -B finedge.py fpga --work-dir <new_short_ascii_directory> --package-boot",
+  "vendor_manifest_sha256": "6642b1eeb1e34dfecae676ec6685668f300dad198fb7e0e92db1c87fb8141eba",
+  "generated_local_clock_IP_from_RTL": true,
+  "regenerated_MIG_with_vendor_patch": true,
+  "RTL_parse_files": 172,
+  "RTL_parse_status": "passed",
+  "RTL_simulations_passed": 4,
+  "unit_tests": {
+    "executed": 669,
+    "passed": 643,
+    "skipped": 26,
+    "failed": 0,
+    "skip_reason": "Unavailable historical SDK or data receipts"
+  },
+  "fixes": [
+    "Project-relative vendor hooks and IP repository staging",
+    "756 manifest assets imported with explicit FPGA and BOOT scope",
+    "Absolute work directory resolution",
+    "Restore reset-deleted manifest IP outputs and synthesize local clock RTL",
+    "Repair CRCRLF macro continuations in 134 Ethernet library files",
+    "Remove undefined unused SDR wrapper parameter forwarding",
+    "Connect the public mailbox and shared DDR port sources directly",
+    "Preload Tcl scripts before checkpoint initialization",
+    "Bound leaf RAM publication paths with exact Gray-FIFO CDC constraints",
+    "Check two FIFO 5ns publication paths during physical audit"
+  ],
+  "vendor_minimum_period_exceptions": [
+    "U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/AI_CORE_CLK/inst/clkout1_buf/I",
+    "U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/AI_CORE_CLK/inst/plle2_adv_inst/CLKOUT0"
+  ],
+  "vendor_input_DRC_severity_overrides": [
+    "REQP-44",
+    "REQP-46",
+    "REQP-52",
+    "REQP-56"
+  ],
+  "PHY_RX_extra_delay_ps": 750,
+  "PHY_timing_validated_on_this_board_run": false,
+  "earlier_attempts": "Failure logs and the successful staged candidate are retained in the local build audit",
+  "board_acceptance": false,
+  "earlier_successful_candidate_BOOT_byte_equal": true
+}

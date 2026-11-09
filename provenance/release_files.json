@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7213,
-      "sha256": "7c20d03c2d93529405148491085ae83c9697a827df0e94ded2e006d3dada10fe"
+      "bytes": 7446,
+      "sha256": "c3ea45c595326f803aeabde78ddf20d57e7c0e7eff850cfc85e5af1ce185f7b1"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -748,8 +748,8 @@
     },
     {
       "path": "docs/FPGA_BUILD.md",
-      "bytes": 5198,
-      "sha256": "152e58df039e31e73e98c2f590bb03cb74b68383e5a35ae7e8cf1cebfb38ecc9"
+      "bytes": 6394,
+      "sha256": "af8eee94a7473920615e1c48c351543079773b2421da8b1db9290490d3d3a5aa"
     },
     {
       "path": "docs/MODEL_BUILD.md",
@@ -767,6 +767,11 @@
       "sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef"
     },
     {
+      "path": "docs/fpga_build_validation.json",
+      "bytes": 6096,
+      "sha256": "dddc4917484d7a4061cccb9c7b18137e87eba707420ea3d9758bcad11dc6acf1"
+    },
+    {
       "path": "docs/int8_rebuild_validation.json",
       "bytes": 4334,
       "sha256": "6cd4d2410b68af7209516cad0c2aa175cf6a1baefdd465f97c6106737121eced"
@@ -778,8 +783,8 @@
     },
     {
       "path": "docs/release_status.json",
-      "bytes": 863,
-      "sha256": "37d064e033dd48907a480f85fe77e1881225bf188250cecba3ecc50db2b4fe35"
+      "bytes": 997,
+      "sha256": "84739236d5cc5a32698aca8d4339694595b5796373ba7475ddcdc04974fe6d9c"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -2098,13 +2103,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 405572,
-      "sha256": "0e185118881b531324f8e18bba03712805e54343480b70a8b9e1220639032d05"
+      "bytes": 405690,
+      "sha256": "f61a331e4a81a69d5d67fd18a21862963327519eac87c24058bc6bfad56229bc"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "08fb9f4bc77dd2d683c183b36d4aea2064ddf9638bc47187df48409bdc3e0acf"
+      "sha256": "eb11694bf8f87f3dcba37e6435cf22b0dd9f18bfe9e6383ed33df3d7b376daed"
     },
     {
       "path": "requirements.txt",

@@ -8,7 +8,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "7c20d03c2d93529405148491085ae83c9697a827df0e94ded2e006d3dada10fe"
+      "public_sha256": "c3ea45c595326f803aeabde78ddf20d57e7c0e7eff850cfc85e5af1ce185f7b1"
     },
     {
       "old": "deployment/project/scripts/build_polyphase_model.py",
@@ -157,7 +157,7 @@
         "VIVADO_INSTALL"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "37d064e033dd48907a480f85fe77e1881225bf188250cecba3ecc50db2b4fe35"
+      "public_sha256": "84739236d5cc5a32698aca8d4339694595b5796373ba7475ddcdc04974fe6d9c"
     },
     {
       "old": "hardware/artifacts/fpga_reference_20261021/boot_candidate_UNVERIFIED_20261021/manifest.json",
