@@ -36,6 +36,21 @@ class FpgaBuildTests(unittest.TestCase):
         with self.assertRaises(ConfigurationError):
             build.stage(Path('build with spaces'))
 
+    def test_restore_deleted_checkpoint_checks_manifest_identity(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            cache = root / 'vendor.dcp'
+            cache.write_bytes(b'IP-checkpoint')
+            (root / 'staging.json').write_text('{}', encoding='utf-8')
+            row = dict(target='vendor://fpga/rtl/ip/a.dcp', sha256=hashlib.sha256(cache.read_bytes()).hexdigest())
+            with patch.object(build, 'required_assets', return_value=[row]), patch.object(build, 'resolve_path', return_value=cache):
+                result = build.restore_vendor_outputs(root)
+                self.assertEqual(result['restored'], [row['target']])
+                self.assertEqual(result['verified_IP_checkpoints'], [row['target']])
+                (root / 'project/rtl/ip/a.dcp').write_bytes(b'changed')
+                with self.assertRaises(ConfigurationError):
+                    build.restore_vendor_outputs(root)
+
 
 if __name__ == '__main__':
     unittest.main()
