@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -11,13 +12,41 @@ import xml.etree.ElementTree as ET
 
 from shared.io import atomic_json
 from shared.paths import ConfigurationError, ROOT, environment, load_settings, resolve_path, tool_executable, work_path
+from shared.resources import ResourceLock
 from tools.configuration import URI
 
 
-def dependencies():
+def required_assets():
     rows = json.loads((ROOT / 'external/dependencies.json').read_text('utf-8'))['files']
-    required = [row for row in rows if row['target'].startswith('vendor://') and
-                not row['target'].startswith('vendor://source_reference/')]
+    return [row for row in rows if row['target'].startswith(('vendor://fpga/', 'vendor://boot/'))]
+
+
+def import_assets(source):
+    """Import exact manifest inputs from an extracted original delivery tree."""
+    source = source.resolve(strict=True)
+    inputs = []
+    for row in required_assets():
+        path = source / row['original_target'].removeprefix('hardware/')
+        if not path.is_file() or path.stat().st_size != row['bytes'] or hashlib.sha256(path.read_bytes()).hexdigest() != row['sha256']:
+            raise ConfigurationError('Original vendor input missing or changed: ' + row['target'])
+        target = resolve_path(row['target'])
+        if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+            raise ConfigurationError('Existing vendor cache differs: ' + row['target'])
+        inputs.append((path, target, row))
+    for path, target, row in inputs:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if not target.exists():
+            shutil.copy2(path, target)
+        if hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+            raise ConfigurationError('Vendor import verification failed: ' + row['target'])
+    result = dict(status='passed', source=str(source), checked=len(inputs),
+                  files=[dict(target=row['target'], sha256=row['sha256']) for _, _, row in inputs], board_access=False)
+    atomic_json(resolve_path('vendor://import_receipt.json'), result)
+    return result
+
+
+def dependencies():
+    required = required_assets()
     missing, changed = [], []
     for row in required:
         path = resolve_path(row['target'])
@@ -45,17 +74,12 @@ def stage(directory):
     directory.mkdir(parents=True)
     for folder in ('hardware', 'third_party/verilog-ethernet'):
         shutil.copytree(ROOT / folder, directory / folder, ignore=shutil.ignore_patterns('__pycache__'))
-    shutil.copytree(resolve_path('vendor://fpga'), directory / 'vendor/fpga')
+    # Vendor hooks infer the project root from <project>/<name>.runs/<run>.
+    # Their RTL, IP repository and patch files must share that project root.
+    shutil.copytree(resolve_path('vendor://fpga'), directory / 'project')
 
     def replace(match):
-        reference = match.group()
-        if reference.startswith(('repo://hardware/', 'repo://third_party/')):
-            return (directory / reference.removeprefix('repo://')).as_posix()
-        if reference.startswith('vendor://fpga/'):
-            return (directory / 'vendor' / reference.removeprefix('vendor://')).as_posix()
-        if reference.startswith('work://'):
-            return (directory / reference.removeprefix('work://')).as_posix()
-        return resolve_path(reference).as_posix()
+        return replace_value(match.group(), directory)
 
     for path in directory.rglob('*'):
         if path.is_file() and path.suffix in {'.sv', '.v', '.xdc', '.tcl', '.xpr', '.xci', '.xml', '.bd'}:
@@ -63,20 +87,47 @@ def stage(directory):
                 text = path.read_text('utf-8-sig')
             except UnicodeError:
                 continue
-            path.write_text(URI.sub(replace, text), encoding='utf-8')
+            if not URI.search(text):
+                continue
+            if path.suffix in {'.xpr', '.xci', '.xml', '.bd'} and text.lstrip().startswith('<'):
+                # XML references may contain spaces, including "PS_AI IP".
+                document = ET.fromstring(text)
+                changed = False
+                for element in document.iter():
+                    for key, value in list(element.attrib.items()):
+                        if value.startswith(('repo://', 'vendor://', 'work://', 'data://', 'tool://')):
+                            element.set(key, replace_value(value, directory))
+                            changed = True
+                if changed:
+                    ET.ElementTree(document).write(path, encoding='utf-8', xml_declaration=True)
+            else:
+                rewritten = URI.sub(replace, text)
+                if rewritten != text:
+                    path.write_text(rewritten, encoding='utf-8')
     project = directory / 'project/fpai_demo_vivado.xpr'
-    project.parent.mkdir()
     document = ET.parse(directory / 'hardware/project/reference.xpr')
     document.getroot().set('Path', project.as_posix())
     for option in document.findall('.//Option'):
         if option.get('Name') == 'IPRepoPath':
-            option.set('Val', (directory / 'vendor/fpga/PS_AI IP').as_posix())
+            option.set('Val', (directory / 'project/PS_AI IP').as_posix())
     document.write(project, encoding='utf-8', xml_declaration=True)
+    patch_config = directory / 'project/ip_patch/ip_patch.cfg'
+    patch_config.write_text('vvd_path ' + tool_executable('vivado').parent.parent.as_posix() + '\n', encoding='utf-8')
     tcl = (directory / 'hardware/scripts/build.tcl').read_text('utf-8')
     tcl = tcl.replace('__PROJECT__', project.as_posix()).replace('__BUILD__', directory.as_posix())
     (directory / 'build.tcl').write_text(tcl, encoding='utf-8')
     atomic_json(directory / 'staging.json', dict(status='staged', dependency_check=status, board_access=False))
     return project
+
+
+def replace_value(reference, directory):
+    if reference.startswith(('repo://hardware/', 'repo://third_party/')):
+        return (directory / reference.removeprefix('repo://')).as_posix()
+    if reference.startswith('vendor://fpga/'):
+        return (directory / 'project' / reference.removeprefix('vendor://fpga/')).as_posix()
+    if reference.startswith('work://'):
+        return (directory / reference.removeprefix('work://')).as_posix()
+    return resolve_path(reference).as_posix()
 
 
 def main():
@@ -85,7 +136,12 @@ def main():
     parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--work-dir', type=Path)
     parser.add_argument('--package-boot', action='store_true')
+    parser.add_argument('--import-source', type=Path, help='Extracted original delivery root containing the manifest original_target paths')
     args = parser.parse_args()
+    if args.import_source:
+        result = import_assets(args.import_source)
+        print(json.dumps(dict(status=result['status'], imported=result['checked'], board_access=False)))
+        return 0
     if args.check:
         status = dependencies()
         print(json.dumps(status, indent=2))
@@ -103,9 +159,12 @@ def main():
     env = environment()
     env.update(FINEDGE_PYTHON=sys.executable, FINEDGE_VIVADO=str(vivado),
                FMSH_PROCISE_PATH=str(resolve_path('tool://procise/')), JFM_PATH=str(resolve_path('tool://jfm/')))
+    procise = resolve_path('tool://procise/')
+    env['PATH'] = os.pathsep.join([str(procise / 'dll'), str(procise / 'bin'), env['PATH']])
+    env.pop('TCL_LIBRARY', None)
     state = dict(status='running', project=str(project), board_access=False)
     atomic_json(directory / 'result.json', state)
-    with (directory / 'build.log').open('xb') as log:
+    with ResourceLock(work_path('state/locks'), 'full_vivado'), (directory / 'build.log').open('xb') as log:
         result = subprocess.run([str(vivado), '-mode', 'batch', '-source', str(directory / 'build.tcl')],
                                 cwd=directory, env=env, stdout=log, stderr=subprocess.STDOUT)
     complete = result.returncode == 0 and (directory / 'market_routed.dcp').is_file()

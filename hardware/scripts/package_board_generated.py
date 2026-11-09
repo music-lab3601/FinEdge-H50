@@ -10,7 +10,7 @@ def main():
     a=ap.parse_args();out=a.build.resolve()
     recipe=a.cdc_recipe.resolve() if a.cdc_recipe else out/'network_cdc_frozen.tcl'
     if not recipe.is_relative_to(out):raise ValueError('CDC recipe must be frozen under this build')
-    r={**json.loads((out/'result.json').read_text()),**json.loads((out/'execution_result.json').read_text())};project=Path(r['project']);runs=project.parent/'fpai_demo_vivado.runs/impl_1'
+    r={**json.loads((out/'result.json').read_text(encoding='utf-8')),**json.loads((out/'execution_result.json').read_text(encoding='utf-8'))};project=Path(r['project']);runs=project.parent/'fpai_demo_vivado.runs/impl_1'
     if r['status']!='build_finished_requires_validation':raise RuntimeError('A completed candidate build is required')
     audit=out/'physical_audit'
     if audit.exists():audit=out/('physical_audit_'+time.strftime('%Y%m%d_%H%M%S'))
@@ -18,10 +18,10 @@ def main():
     # Keep the exact final constraints with the audit. Late-added upstream MAC
     # synchronizer rules alter analysis/placement metadata only, not logic or
     # routing; ordinary data paths must still close on the real routed design.
-    cdc=recipe.read_text().replace(
+    cdc=recipe.read_text(encoding='utf-8').replace(
         '[file normalize [file join [file dirname [info script]] ../vendor/verilog-ethernet]]',
         '{'+(P/'third_party/verilog-ethernet').as_posix()+'}')
-    (audit/'applied_cdc.tcl').write_text(cdc)
+    (audit/'applied_cdc.tcl').write_text(cdc, encoding='utf-8')
     tcl=f'''open_checkpoint {{{(out/'market_routed.dcp').as_posix()}}}
 source {{{(audit/'applied_cdc.tcl').as_posix()}}}
 # 750ps additional PHY RX delay. The physical FPGA clock/data routes are kept;
@@ -55,7 +55,7 @@ check_timing -override_defaults {{no_clock unconstrained_internal_endpoints}} -f
 report_exceptions -ignored -file {{{(audit/'ignored_exceptions.txt').as_posix()}}}
 exit
 '''
-    (audit/'audit.tcl').write_text(tcl)
+    (audit/'audit.tcl').write_text(tcl, encoding='utf-8')
     env = dict(os.environ)
     procise = Path(env['FMSH_PROCISE_PATH'])
     vivado = Path(env['FINEDGE_VIVADO'])
@@ -63,17 +63,17 @@ exit
     with (audit/'console.txt').open('wb') as f:
         proc=subprocess.run([str(vivado),'-mode','batch','-source',str(audit/'audit.tcl')],cwd=audit,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=300)
     if proc.returncode:raise RuntimeError('Audit tool failed')
-    slack={row.split()[0]:float(row.split()[1]) for row in (audit/'slack.txt').read_text().splitlines()}
+    slack={row.split()[0]:float(row.split()[1]) for row in (audit/'slack.txt').read_text(encoding='utf-8').splitlines()}
     if slack['max']<0 or slack['min']<0:raise RuntimeError('Ordinary setup/hold timing has not closed: '+repr(slack))
-    if re.search(r'(?im)^\s*\|.*\|\s*Error\s*\|',(out/'drc.txt').read_text()):raise RuntimeError('DRC errors remain')
-    route=(audit/'route.txt').read_text()
+    if re.search(r'(?im)^\s*\|.*\|\s*Error\s*\|',(out/'drc.txt').read_text(encoding='utf-8')):raise RuntimeError('DRC errors remain')
+    route=(audit/'route.txt').read_text(encoding='utf-8')
     errors=re.search(r'nets with routing errors\.*\s*:\s*(\d+)',route)
     if not errors or int(errors[1]):raise RuntimeError('Routing errors or missing coverage')
-    coverage=(audit/'clock_coverage.txt').read_text()
+    coverage=(audit/'clock_coverage.txt').read_text(encoding='utf-8')
     for pattern in (r'There are (\d+) register/latch pins with no clock\.',r'There are (\d+) pins that are not constrained for maximum delay\.'):
         count=re.search(pattern,coverage)
         if not count or int(count[1]):raise RuntimeError('Active clock/timing coverage is incomplete')
-    pulse=(audit/'pulse_width.txt').read_text()
+    pulse=(audit/'pulse_width.txt').read_text(encoding='utf-8')
     rows=[line.strip() for line in pulse.splitlines() if re.match(r'^(Min|Max)\s+',line)]
     allowed={
         'U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/AI_CORE_CLK/inst/clkout1_buf/I':(1.409,1.000,-0.409),
@@ -91,7 +91,7 @@ exit
     bit=runs/'ai7030_edif_top_disable_icap.bit'
     if not bit.is_file():raise RuntimeError('Vendor disable_icap bit is required')
     dest=out/'boot';dest.mkdir()
-    rows=json.loads((P/'external/dependencies.json').read_text())['files']
+    rows=json.loads((P/'external/dependencies.json').read_text(encoding='utf-8'))['files']
     for row in [v for v in rows if v['target'].startswith('vendor://boot/')]:
         src=resolve_path(row['target'])
         if sha(src)!=row['sha256']:raise RuntimeError('Bootloader identity changed')
@@ -100,11 +100,11 @@ exit
     bif='the_ROM_image:\n{\n'+''.join(' '+tag+(dest/name).as_posix()+'\n' for tag,name in (
         ('[bootloader, destination_device = ps]','FSBL251210_ddr400_demo.out'),('[destination_device = pl]',bit.name),
         ('[destination_cpu = apu_0, destination_device = ps]','bl31.elf'),('[destination_cpu = apu_0, destination_device = ps]','u-boot')))+' [fsbl_config]apu_x32\n}\n'
-    (dest/'market.bif').write_text(bif)
+    (dest/'market.bif').write_text(bif, encoding='utf-8')
     (dest/'package.tcl').write_text('if {[catch {create_boot_image {'+(dest/'market.bif').as_posix()+'} {'+(dest/'BOOT.bin').as_posix()+'}} e]} {puts stderr $e;exit 1}\nputs MARKET_BOOT_PACKAGED\nexit\n')
     env.update(PROCISE_DIR=str(procise),TCL_LIBRARY=str(procise/'tcl8.4'),ICTIME_HOME=str(procise),APP_DIR=str(procise),FMSH_DB=str(procise/'db'))
     with (dest/'console.txt').open('wb') as f:proc=subprocess.run([str(procise/'bin/procise.exe'),str(dest/'package.tcl')],cwd=dest,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=180)
-    if proc.returncode or 'MARKET_BOOT_PACKAGED' not in (dest/'console.txt').read_text():raise RuntimeError('BOOT packaging failed')
+    if proc.returncode or 'MARKET_BOOT_PACKAGED' not in (dest/'console.txt').read_text(encoding='utf-8'):raise RuntimeError('BOOT packaging failed')
     boot=dest/'BOOT.bin';(dest/'BOOT.bin.gz').write_bytes(gzip.compress(boot.read_bytes(),compresslevel=6))
     release=dict(status='packaged_pending_board_validation',slack_ns=slack,boot_sha256=sha(boot),
                  bit_sha256=sha(bit),compressed_sha256=sha(dest/'BOOT.bin.gz'),

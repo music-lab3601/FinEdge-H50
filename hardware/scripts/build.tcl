@@ -6,7 +6,7 @@ set_param general.maxThreads 4
 open_project $project
 set_property include_dirs [file join $source rom] [get_filesets sources_1]
 set_property STEPS.OPT_DESIGN.TCL.POST [file join $source scripts opt_post.tcl] [get_runs impl_1]
-set_property STEPS.WRITE_BITSTREAM.TCL.PRE [file join $build vendor fpga ip_patch process_control write_bitstream_pre.tcl] [get_runs impl_1]
+set_property STEPS.WRITE_BITSTREAM.TCL.PRE [file join $build project ip_patch process_control write_bitstream_pre.tcl] [get_runs impl_1]
 set_property STEPS.PLACE_DESIGN.ARGS.DIRECTIVE Default [get_runs impl_1]
 set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
 set_property STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE AggressiveExplore [get_runs impl_1]
