@@ -1,0 +1,41 @@
+{
+  "version": "W1-kit-1.0",
+  "purpose": "W1 acquisition and framing sample; NOT a frozen formal training dataset",
+  "data_root": "data://research/FinEdge_LOB_Data",
+  "sample": {
+    "filename": "01302019.NASDAQ_ITCH50.gz",
+    "url": "https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/01302019.NASDAQ_ITCH50.gz",
+    "expected_bytes": 4764426091,
+    "reference_sha256": "8c97b5b13bc451c012c2466fb7e258da134dab29aa47b67fe7b0088c78e870be",
+    "reference_sha256_source": "teammate audit report dated 2026-09-26; not an official publisher checksum",
+    "official_checksum_url": "https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/01302019.NASDAQ_ITCH50.gz.md5sum"
+  },
+  "candidate_only": [
+    {
+      "filename": "S120825-v50.txt.gz",
+      "expected_bytes": 8775891119
+    },
+    {
+      "filename": "S120925-v50.txt.gz",
+      "expected_bytes": 7929915419
+    },
+    {
+      "filename": "S121025-v50.txt.gz",
+      "expected_bytes": 11557662295
+    },
+    {
+      "filename": "S121125-v50.txt.gz",
+      "expected_bytes": 10471034001
+    },
+    {
+      "filename": "S121225-v50.txt.gz",
+      "expected_bytes": 12551644054
+    }
+  ],
+  "teammate_parser_received": false,
+  "teammate_raw_received": false,
+  "training_dataset_frozen": false,
+  "label_protocol_frozen": false,
+  "parser_source_strategy": "independent_implementation_authorized_2026-10-02",
+  "teammate_source_required": false
+}

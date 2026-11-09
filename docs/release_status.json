@@ -1,21 +1,17 @@
 {
-  "stage": "fresh_clone_inventory",
+  "stage": "directory_migration_and_unified_entry",
   "team_license": "MIT",
   "scope": "Full H50",
-  "production_directory_migration": "pending",
-  "model_recompile": "pending",
+  "production_directory_migration": "completed",
+  "configuration_templates": 57,
+  "configuration_runtime_resolution": "connected",
+  "unified_entry": "finedge.py",
+  "model_export_and_TF32_compile": "passed",
+  "model_mixed_native_recompile": "pending",
   "vendor_reference_reconstruction": "pending",
   "full_FPGA_build": "pending",
   "board_validation": "pending",
   "GitHub_remote_created": false,
   "GitHub_pushed": false,
-  "retained_relative_layout": true,
-  "configuration_tokens": [
-    "@HARDWARE_ROOT@",
-    "@SOFTWARE_ROOT@",
-    "@ICRAFT_INSTALL@",
-    "@VIVADO_INSTALL@",
-    "@PROCISE_ROOT@",
-    "@EXTERNAL_ROOT@"
-  ]
+  "validation": "docs/migration_validation.json"
 }

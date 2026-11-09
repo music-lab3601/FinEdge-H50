@@ -1,0 +1,94 @@
+{
+  "status": "candidate_frozen_before_evaluation",
+  "candidate": "int8",
+  "chosen_using": "calibration_only",
+  "calibration_original_fp32": {
+    "samples": 256,
+    "accuracy": 0.46875,
+    "macro_f1": 0.43476572953118203,
+    "class_recall": [
+      0.5795454545454546,
+      0.15853658536585366,
+      0.6511627906976745
+    ],
+    "class_f1": [
+      0.5483870967741935,
+      0.23008849557522124,
+      0.5258215962441315
+    ],
+    "label_counts": [
+      88,
+      82,
+      86
+    ],
+    "confusion_actual_rows_predicted_columns": [
+      [
+        51,
+        9,
+        28
+      ],
+      [
+        26,
+        13,
+        43
+      ],
+      [
+        21,
+        9,
+        56
+      ]
+    ]
+  },
+  "calibration_int8": {
+    "samples": 256,
+    "accuracy": 0.46875,
+    "macro_f1": 0.43275158195550106,
+    "class_recall": [
+      0.5795454545454546,
+      0.14634146341463414,
+      0.6627906976744186
+    ],
+    "class_f1": [
+      0.5543478260869565,
+      0.20869565217391303,
+      0.5352112676056338
+    ],
+    "label_counts": [
+      88,
+      82,
+      86
+    ],
+    "confusion_actual_rows_predicted_columns": [
+      [
+        51,
+        11,
+        26
+      ],
+      [
+        26,
+        12,
+        44
+      ],
+      [
+        19,
+        10,
+        57
+      ]
+    ]
+  },
+  "calibration_budget_passed": true,
+  "class_changes": 19,
+  "max_abs_logits": 0.5858145952224731,
+  "mixed_candidate_used": false,
+  "mixed_candidate_decision": "No extra candidate: calibration accuracy loss 0 and macro-F1 loss within the 1pp budget.",
+  "compiled_json_sha256": "04162220abcc97e2a232f21676a621b0d397cc87632c59ef379f1761c9b1c572",
+  "compiled_params_sha256": "75d7744bb50fcf00f582fe264787d4f4521390135ad76e3298ae2b6aa2756192",
+  "evaluation_inputs_sha256": "2b3bc219b7962deba8274697ad540e5d82fb6bfd9ce3bdde2bbf2f58136e4985",
+  "evaluation_labels_sha256": "c8dd66bc365730e1de3d545c1fad007e08165fd4471f649cccf25adabccc6195",
+  "quality_budget": {
+    "accuracy_drop_percentage_points_max": 1.0,
+    "macro_f1_drop_percentage_points_max": 1.0
+  },
+  "policy": "Evaluate frozen candidate once; do not tune against this evaluation split.",
+  "board_accessed": false
+}

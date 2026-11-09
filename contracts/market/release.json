@@ -1,0 +1,27 @@
+{
+  "contract_version": "finedge_realtime_r1",
+  "contract_sha256": "81ffd0d31b348281160ca2d8f0d94ec2f9b5cc511cfb19425727b9584928a73c",
+  "files": {
+    "contract.json": "81ffd0d31b348281160ca2d8f0d94ec2f9b5cc511cfb19425727b9584928a73c",
+    "finedge_contract.h": "000f84885fd6baa990b2b58d0fa8f3def0a76d6b34831425ce9c82d94e37cda8",
+    "finedge_contract.py": "63044c7f0d239381bea95f0c60361b404b4b702cc22db70aa38ee7ce38cc9391",
+    "finedge_contract.sv": "f65c3e1aa6f50084411af412b560ae9b5e4b694c96b310fdc8abee7230c6a822",
+    "golden/bookrow.bin": "3cea1bb20d0d0c9ba2f341594e64c62bf2ab9f7cb38b1607be56c54bb194a55a",
+    "golden/bookrow.hex": "2b1eb849c09d781ac4b86c6488e0ee1d902e064c2d699ba64ffd019b8e99c1fb",
+    "golden/event_1.bin": "baa6cce0b7e9274c0f7d14c05cfe46ba8239eda8ef6c2e07fd8f8a53974c3be3",
+    "golden/event_1.hex": "4a5964de6da168ca6aac22e21d8cd9ecacbd9564e4a90e32a47a51b541ce9e89",
+    "golden/event_24.bin": "95f6425342893c08a56c171652bea90e2640ca2405cba238923913f28c715097",
+    "golden/event_24.hex": "e3476cee0f74ec9016f927f39024f480248cfe9e914c29c8f0bafd2e1d9797a6",
+    "golden/expected.json": "3543f22259fd7e66e7d148334bea863294a8d10b2f5ba298a74298d87b9ab1d3",
+    "golden/raw56.bin": "3e350323a3fecf65afb1a7896b68ecfd35a3af5689361b8782d71b2a86e10607",
+    "golden/raw56.hex": "8e4672bc0c253f6e7b4024f28a2193c896a06b79693cb3e1e25ec8a9c2377ebe"
+  },
+  "adoption": {
+    "A": "pending",
+    "B": "pending"
+  },
+  "future_quant_tensor_contract": "not_frozen",
+  "hardware_validation": "not_run",
+  "bindings_revision": 2,
+  "binding_fix": "SystemVerilog reserved keyword sequence renamed to supplier_sequence; wire offsets and contract.json unchanged"
+}

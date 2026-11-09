@@ -1,0 +1,34 @@
+{
+  "paths": {
+    "work_root": ".local",
+    "data_root": ".local/data",
+    "vendor_root": ".local/vendor"
+  },
+  "tools": {
+    "icraft": null,
+    "vivado": null,
+    "procise": null,
+    "jfm": null,
+    "cmake": null
+  },
+  "inputs": {
+    "replay_raw": "data://replay/raw_mbo56_prefix.bin",
+    "replay_rows": "data://replay/rows.bin",
+    "replay_ranges": "data://replay/ranges.json",
+    "startup": "data://startup",
+    "firmware_release": "vendor://firmware/release.json",
+    "calibration": "data://calibration/inputs.npy",
+    "training_manifest": "data://training/manifest.json"
+  },
+  "board": {
+    "serial_port": "COM3",
+    "baud": 115200,
+    "host_ip": "192.168.126.1",
+    "device_ip": "192.168.126.50",
+    "input_port": 20001,
+    "output_port": 20002,
+    "slots": 32,
+    "max_age_us": 2000,
+    "horizon": 50
+  }
+}

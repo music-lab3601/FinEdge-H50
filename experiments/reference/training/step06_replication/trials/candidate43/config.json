@@ -1,0 +1,22 @@
+{
+  "version": "TCN-ED6-paired-config-1.0",
+  "slot_id": "candidate43",
+  "seed": 43,
+  "device": "cuda",
+  "precision": "float32",
+  "train_batch_size": 256,
+  "evaluation_batch_size": 256,
+  "max_epochs": 10,
+  "early_stop_patience": 3,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "loss": "unweighted_cross_entropy",
+  "window_length": 100,
+  "horizon": 50,
+  "dropout": 0,
+  "weight_norm": true,
+  "decision": "original_argmax",
+  "feature_family": "relative_midprice_replaces_absolute_prices_odd_raw_quantities_unchanged",
+  "description": "Fresh seed43 replication of the locked ED4 relative-midprice family and ED4 TRAIN normalization; same L100/H50/all original anchors/WN32/lr0.001/batch256/max10/pat3; no bias, old checkpoint initialization or new data."
+}

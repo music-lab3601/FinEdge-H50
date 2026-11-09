@@ -1,0 +1,7 @@
+{
+  "schema": "source-review-package-v1",
+  "BOOT_sha256": "b02313e7d993fba78ea3e1b58480122b5bb26fa20d343c50765de27683e3e4d0",
+  "source_tree": "repo://hardware",
+  "current_acceptance": "work://checks/board_validation.json",
+  "market_data_included": false
+}

@@ -1,7 +1,0 @@
-{
-  "source": "@HARDWARE_ROOT@/versions/network_fast_v1/native/fast.cpp",
-  "source_sha256": "f3f951ace13eee4ae22c50140af4499b3370607f999d9b6c668039ed279bbba5",
-  "frozen_sha256": "b7e1def1f8c8dee39ee736470e7e5f7990d3cf21a6b1dff2c80a1a2d6e981925",
-  "purpose": "offline fresh-holdout reconstruction; not a real-time benchmark",
-  "book_class_copied_without_logic_changes": true
-}

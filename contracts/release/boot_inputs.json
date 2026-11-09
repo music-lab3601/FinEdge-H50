@@ -1,0 +1,41 @@
+{
+  "status": "packaged_timing_unresolved_do_not_deploy",
+  "deployment_allowed": false,
+  "reason": "NPU clock minimum-period timing violations unresolved",
+  "build": "build/20261021_174452_build",
+  "inputs": [
+    {
+      "name": "FSBL251210_ddr400_demo.out",
+      "source": "vendor://boot/FSBL251210_ddr400_demo.out",
+      "sha256": "5501c470e07537a8fb369ae40641c20c16ab403fad558e65e0a4bbf380f2396f",
+      "matches_actual_SD_backup": true
+    },
+    {
+      "name": "bl31.elf",
+      "source": "vendor://boot/bl31.elf",
+      "sha256": "fdcf0af48a7f9716f73a477c3cc1b4cd90c914fe0e5ad7acc5ab282660802303",
+      "matches_actual_SD_backup": true
+    },
+    {
+      "name": "u-boot",
+      "source": "vendor://boot/u-boot",
+      "sha256": "c4570e3e51128211905bdf20c7b7e0ea9cb7ca1492652a070ebdd985bc213e97",
+      "matches_actual_SD_backup": true
+    },
+    {
+      "name": "ai7030_edif_top_disable_icap.bit",
+      "source": "vendor://source_reference/hardware/wujing_fpai/work/full_reference/fpai_demo_vivado.runs/impl_1/ai7030_edif_top_disable_icap.bit",
+      "sha256": "2177c2c3d3afd3a20ff128f8829ed6593f4e33f1558d4862968b885d3d18a615",
+      "bytes": 5980609
+    }
+  ],
+  "packager": "Procise 2025.1.1 temp Create Boot Image / create_boot_image",
+  "output": {
+    "name": "BOOT_UNVERIFIED.bin",
+    "bytes": 7023552,
+    "sha256": "ea7e6a2ad7ecebc8893a6b8a4656652fb547a5621e7d2bd4acf65e477bab68e3"
+  },
+  "bif_sha256": "f9f2fa5bcb79f591ec86f55aad75b7d02d9c839937524318a57427ca55eed566",
+  "all_input_hashes_reverified": true,
+  "board_validation": "not_attempted"
+}

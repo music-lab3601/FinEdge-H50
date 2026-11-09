@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     package = ROOT / 'models/cpu'
     identity = json.loads((ROOT / 'models/identity.json').read_text(encoding='utf-8'))
-    spec = importlib.util.spec_from_file_location('public_cpu_runtime', package / 'runtime.py')
+    spec = importlib.util.spec_from_file_location('public_cpu_runtime', ROOT / 'software/runtime/cpu.py')
     runtime = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(runtime)
     predictor = runtime.Predictor(package, identity['CPU_manifest_sha256'])

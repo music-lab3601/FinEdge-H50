@@ -1,0 +1,29 @@
+{
+  "schema": "finedge-integer-whole-window-showcase-v5",
+  "hardware_release": "vendor://firmware/release.json",
+  "BOOT_sha256": "b02313e7d993fba78ea3e1b58480122b5bb26fa20d343c50765de27683e3e4d0",
+  "bundle": "repo://models/npu",
+  "raw_source": "data://replay/raw_mbo56_prefix.bin",
+  "raw_source_sha256": "99054880e83babc3468d0a7419d43866a39d9727defbfae9461824ab7dd12661",
+  "reference": "data://replay/rows.bin",
+  "reference_sha256": "6733c8ea9d95e4063752e7c4a97f0618308431ccbb227cc5255a16ee36d6d854",
+  "reference_scope": "same-source reconstructed book for display and delayed evaluation only; never model input",
+  "seed_run": "work://runs/empty",
+  "default_minutes": 5,
+  "demo_start_ordinal": 165868,
+  "duration_data": "data://replay/ranges.json",
+  "default_speed": 1,
+  "allowed_dispatch_speeds": [
+    1,
+    2,
+    4
+  ],
+  "initial_record": "work://runs/empty",
+  "preprocessing_version": "fixed_preprocess_v1",
+  "transport_version": "window_stream_v1",
+  "full_snapshot_RAM_copies": 0,
+  "rollback_hardware_release": "vendor://firmware/release.json",
+  "rollback_BOOT_sha256": "b02313e7d993fba78ea3e1b58480122b5bb26fa20d343c50765de27683e3e4d0",
+  "candidate_manifest": "repo://contracts/release/h50_candidate.json",
+  "display_name": "整数预处理 · 整窗FIFO · 共享输入"
+}

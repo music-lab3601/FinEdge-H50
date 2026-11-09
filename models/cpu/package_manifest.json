@@ -1,5 +1,5 @@
 {
-  "version": "TCN-ED7-package-manifest-1.0",
+  "version": "FinEdge-H50-model-package-1.0",
   "created_utc": "2026-10-18T14:50:27.292812+00:00",
   "compatibility_case": "ScriptModule_requires_grad_Module_API_unsupported",
   "initial_failed_primary_sha256": "496ac01c7c60343c1059ec9a936b661d8dc6b1657ee80c257dab12eaf67a6fd2",
@@ -43,7 +43,7 @@
   },
   "native_parameter_count": 33539,
   "folded_parameter_count": 33219,
-  "checkpoint_sha256": "a3564cdc2e34c30ea170f851a24502f6a7f7ed08b27f8852c7fedceae809e764",
+  "checkpoint_sha256": "29d5c8fea62cdd6b1f8eebeed772373cf7f9048de8e7d220883884cab54e281a",
   "normalization_sha256": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf",
   "training_started": false,
   "new_independent_test": false,
@@ -87,19 +87,11 @@
     },
     "native/best.pt": {
       "bytes": 462907,
-      "sha256": "a3564cdc2e34c30ea170f851a24502f6a7f7ed08b27f8852c7fedceae809e764"
-    },
-    "normalization.json": {
-      "bytes": 2833,
-      "sha256": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf"
-    },
-    "runtime.py": {
-      "bytes": 12063,
-      "sha256": "a4d40b81db5bc7c92eb4310bba3182e53d3e4d5eb33404e77368a7e867af2a54"
+      "sha256": "29d5c8fea62cdd6b1f8eebeed772373cf7f9048de8e7d220883884cab54e281a"
     },
     "train_config.json": {
-      "bytes": 1046,
-      "sha256": "f48d7b48894178e67295d06c72c45f6db2144d5cc3d45c47aa5857fef91b8c39"
+      "bytes": 1068,
+      "sha256": "4ab2b57033a477e01e62aad1f1a7b4c03b988d0baf85ad0ad54680b097f5546e"
     }
   },
   "public_asset_provenance": {
@@ -108,9 +100,11 @@
     "transformations": [
       "TorchScript debug records removed",
       "Checkpoint workstation metadata paths tokenized",
-      "Golden fixtures generated independently from seeded synthetic tensors"
+      "Golden fixtures generated independently from seeded synthetic tensors",
+      "Repository migration to canonical model/runtime paths and URI checkpoint metadata"
     ],
     "model_tensors_equal": true,
     "synthetic_output_max_abs_error": 0.0
-  }
+  },
+  "runtime_sha256": "72b5a49a09457c972c551a07268e09e0697e1a05a41d19a62551eac6278dbef8"
 }

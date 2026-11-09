@@ -1,0 +1,14 @@
+{
+  "reason": "FP16 mixed-precision graph code generation crashes with 0xC0000409 using both default and documented conservative options.",
+  "preserved_failures": [
+    "artifacts/mixed/stage_results.json",
+    "artifacts/codegen_conservative/result.json"
+  ],
+  "change": "Use TF32 instead of FP16 on the exact same calibration-selected sensitive op IDs; middle blocks remain INT8.",
+  "scope": "one sensitive-regions design; two precision encodings attempted because first did not produce deployable instructions",
+  "precision_configurations_attempted": 2,
+  "successful_generated_candidate_target_max": 1,
+  "weights_or_normalization_changes": false,
+  "fresh_holdout_observed_at_amendment": false,
+  "no_further_precision_search": true
+}

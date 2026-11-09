@@ -1,0 +1,91 @@
+{
+  "candidate": "sensitive_boundary_tf32_middle_int8",
+  "candidate_design_count": 1,
+  "selected_using": "original calibration tensors only",
+  "layer_diagnostic_sha256": "287c720f72f40cd026dba096d65495a35f1883a33cdc1e1c08ecd6d3914e7b19",
+  "evidence": {
+    "3": {
+      "op_id": 3,
+      "type": "Conv2d",
+      "samples": 16,
+      "max_abs": 5.383716583251953,
+      "rmse": 0.043305971891030755,
+      "relative_l2": 0.05000376293908924,
+      "cosine": 0.9987490591451184
+    },
+    "4": {
+      "op_id": 4,
+      "type": "ReLU",
+      "samples": 16,
+      "max_abs": 5.383716583251953,
+      "rmse": 0.03880699256736693,
+      "relative_l2": 0.10581973311390738,
+      "cosine": 0.994485323741224
+    },
+    "5": {
+      "op_id": 5,
+      "type": "Conv2d",
+      "samples": 16,
+      "max_abs": 5.888839244842529,
+      "rmse": 0.06818593613386262,
+      "relative_l2": 0.07844340500227426,
+      "cosine": 0.9969604509010052
+    },
+    "6": {
+      "op_id": 6,
+      "type": "ReLU",
+      "samples": 16,
+      "max_abs": 5.888839244842529,
+      "rmse": 0.05720689234606174,
+      "relative_l2": 0.17608633759116768,
+      "cosine": 0.9847928442338839
+    },
+    "35": {
+      "op_id": 35,
+      "type": "Conv2d",
+      "samples": 16,
+      "max_abs": 4.606510877609253,
+      "rmse": 0.7302662116895209,
+      "relative_l2": 0.3662683126156135,
+      "cosine": 0.9518847734978826
+    },
+    "42": {
+      "op_id": 42,
+      "type": "Matmul",
+      "samples": 16,
+      "max_abs": 0.24445152282714844,
+      "rmse": 0.08583223508705794,
+      "relative_l2": 0.12966543224698548,
+      "cosine": 0.9936009843554796
+    }
+  },
+  "interpretation": "Early clipping/error appears before subsequent blocks; last temporal convolution has high propagated relative error. Preserve first/last blocks and classifier, including adjoining layout and nonlinear operations.",
+  "protected_precision": "tf32",
+  "protected_op_ids": [
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    41,
+    42,
+    45,
+    46
+  ],
+  "unchanged_calibration": true,
+  "unchanged_weights": true,
+  "unchanged_normalization": true,
+  "unchanged_onnx_structure": true,
+  "fresh_holdout_not_read": true,
+  "previous_512_evaluation_not_used_for_layer_selection": true
+}

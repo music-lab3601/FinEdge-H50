@@ -1,6 +1,0 @@
-{
-  "contract": "input_contract.json",
-  "sha256": "28f1aba094aa4b2b7d8170f33b07505d3d348e87354671f9c45ba2e4550ed64e",
-  "verification": "golden/codec_verification.json",
-  "board_accessed": false
-}

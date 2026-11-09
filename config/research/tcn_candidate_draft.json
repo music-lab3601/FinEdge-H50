@@ -1,0 +1,96 @@
+{
+  "seed": 42,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0,
+  "loss": "unweighted_cross_entropy",
+  "train_batch_size": 256,
+  "evaluation_batch_size": 256,
+  "deployment_batch_size": 1,
+  "max_epochs": 10,
+  "early_stop_patience": 3,
+  "device": "cuda",
+  "precision": "float32",
+  "shuffle_train_windows": true,
+  "drop_last": false,
+  "formal_training_uses_all_training_windows": true,
+  "validation_split": "tuning_validation",
+  "forbidden_splits": [
+    "comparison_validation",
+    "final_test"
+  ],
+  "selection_rules_path": "configs/w4_selection_rules.json",
+  "selection_rules_version": "W4-selection-1.0",
+  "version": "TCN01-candidate-draft-1.0",
+  "experiment": "TCN01",
+  "status": "review_only_not_training_approved",
+  "implementation_version": "causal-lagwise-pointwise-1.1",
+  "approved_for_formal_training": false,
+  "inherit_training_approval": false,
+  "resume_old_cnn_checkpoint": false,
+  "approval_date": null,
+  "approval_evidence": null,
+  "formal_training_budget": {
+    "approved": false,
+    "maximum_runs": null,
+    "proposed_maximum_runs": 1,
+    "proposed_maximum_epochs_per_run": 10,
+    "proposed_seeds": [
+      42
+    ],
+    "decision": null
+  },
+  "model": {
+    "version": "temporal-tcn-candidate-1.0",
+    "feature_count": 40,
+    "window_length": 100,
+    "hidden_channels": 32,
+    "blocks": 5,
+    "convolutions_per_block": 2,
+    "kernel_size": 3,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "stride": 1,
+    "padding": "causal_left_zero",
+    "activation": "ReLU",
+    "residual_projection": "1x1_when_channels_differ",
+    "readout": "last_time",
+    "classes": 3,
+    "dropout": 0,
+    "weight_norm": false,
+    "bias": true,
+    "initialization": "pytorch_default"
+  },
+  "data_contract": {
+    "protocol_version": "W3-data-protocol-1.0",
+    "protocol_path": "configs/w3_protocol_frozen_v1.json",
+    "symbol": "AAPL",
+    "train_dates": [
+      "2025-12-08",
+      "2025-12-09"
+    ],
+    "tuning_date": "2025-12-10",
+    "feature_count": 40,
+    "window_length": 100,
+    "feature_order": "ask_price,ask_size,bid_price,bid_size for each level 1..10",
+    "sampling": "every target visible-book change, including unchanged top ten",
+    "label": "future endpoint mid-price relative to current mid-price; no smoothing",
+    "horizon": 50,
+    "threshold": 0.0,
+    "class_mapping": {
+      "down": 0,
+      "stationary": 1,
+      "up": 2
+    },
+    "normalization": "existing per-feature mean/std fitted on training records only; zero variance std=1",
+    "cross_date_or_segment_windows": false,
+    "additional_factors": false,
+    "adaptive_input_normalization": false
+  }
+}

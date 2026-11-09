@@ -1,0 +1,110 @@
+{
+  "schema": "finedge-public-layout-validation-1",
+  "date": "2026-11-09",
+  "baseline": "e88e674b8dbc564c106a0503d9b34de675149a2d",
+  "original_files_mapped": 584,
+  "changed_path_mappings": 549,
+  "unique_migrated_targets": 579,
+  "python_syntax_and_internal_targets_checked": 316,
+  "configuration_templates_resolved": 57,
+  "repeated_configuration": "byte_stable",
+  "unit_tests": {
+    "executed": 654,
+    "passed": 628,
+    "skipped": 26,
+    "failed": 0,
+    "skip_reason": "Optional historical SDK/data receipts absent"
+  },
+  "cpu_model": {
+    "synthetic_windows": 32,
+    "max_abs_error": 0
+  },
+  "cpu_network_loop": {
+    "input": "generated synthetic MBO over UDP",
+    "events": 180,
+    "eligible_records": 160,
+    "windows": 61,
+    "incremental_vs_batch": "elementwise_equal",
+    "status": "passed"
+  },
+  "HTTP_dashboard": "idle static resources and authenticated API passed",
+  "native_market_source": "CMake/VS2022 build passed",
+  "Icraft_native_helpers": "three C++ utilities built",
+  "onnx_export": {
+    "windows": 32,
+    "max_abs_error": 3.5762786865234375e-07,
+    "class_mismatches": 0
+  },
+  "polyphase": {
+    "windows": 96,
+    "max_abs_error": 1.430511474609375e-06,
+    "class_mismatches": 0
+  },
+  "Icraft_TF32_compile": {
+    "status": "compiled",
+    "stages": [
+      {
+        "stage": "parse",
+        "exit_code": 0
+      },
+      {
+        "stage": "optimize",
+        "exit_code": 0
+      },
+      {
+        "stage": "quantize",
+        "exit_code": 0
+      },
+      {
+        "stage": "adapt",
+        "exit_code": 0
+      },
+      {
+        "stage": "generate",
+        "exit_code": 0
+      }
+    ]
+  },
+  "ROM_regeneration": {
+    "files": [
+      "fixed_lane0.hex",
+      "fixed_lane1.hex",
+      "fixed_lane2.hex",
+      "fixed_lane3.hex",
+      "fixed_parameters.vh"
+    ],
+    "byte_equal": true
+  },
+  "RTL_simulations": {
+    "passed": [
+      "fifo",
+      "window_bridge",
+      "history",
+      "window_bridge_earliest"
+    ],
+    "tool": "Vivado 2018.3 XSim"
+  },
+  "board_input_preflight": {
+    "minutes": [
+      1,
+      2,
+      5
+    ],
+    "opportunities": [
+      23113,
+      46833,
+      107174
+    ],
+    "runtime_bundle": "passed",
+    "board_access": false
+  },
+  "CPU_checkpoint_metadata": "Portable URI references; all 138 tensor values preserved",
+  "NPU_assets": "JSON/RAW restored to frozen byte identities",
+  "pending": [
+    "Complete mixed/native Icraft rebuild with explicit calibration and diagnostics",
+    "Vendor dependency import and complete source synthesis/route/BOOT build",
+    "Board smoke and replay acceptance of this relocated source tree"
+  ],
+  "fresh_clone_receipt": "Run tools/verify_checkout and the README checks on the committed snapshot; operator receipt stored outside public source",
+  "board_access": false
+}

@@ -1,4 +1,5 @@
 """Verify the files actually tracked by Git, their identities and public metadata."""
+from shared.paths import resolve_path
 from pathlib import Path
 import argparse
 import ast
@@ -53,6 +54,12 @@ REQUIRED += [RELATIVE_BUILD + '/project/rtl/bench/' + name for name in (
     'g_queue_scheduler.sv', 'g_predict_control.sv', 'g_predict_path.sv',
     'g_result_packet.sv', 'fixed_parameters.vh',
     'fixed_lane0.hex', 'fixed_lane1.hex', 'fixed_lane2.hex', 'fixed_lane3.hex')]
+
+# Required identities follow the recorded relocation map.
+LAYOUT = json.loads((ROOT/'provenance/layout_map.json').read_text(encoding='utf-8'))['files']
+REQUIRED = [LAYOUT.get(name,name) for name in REQUIRED]
+REQUIRED += ['finedge.py', 'config/default.json', 'models/normalization.json',
+             'hardware/project/reference.xpr', 'tools/configuration.py', 'requirements.txt']
 
 
 def sha(path):
@@ -164,25 +171,27 @@ def verify(git):
     # Resolve the source project inputs against tracked files or explicit external assets.
     external = json.loads((ROOT / 'external/dependencies.json').read_text(encoding='utf-8'))
     declared = {row['target'] for row in external['files']}
-    xpr = ROOT / RELATIVE_BUILD / 'project/fpai_demo_vivado.xpr'
+    xpr = ROOT / 'hardware/project/reference.xpr'
     xpr_inputs = 0
     for item in ET.parse(xpr).findall('.//File'):
-        ref = item.get('Path', '').replace('@HARDWARE_ROOT@', str(ROOT / 'hardware'))
-        ref = ref.replace('$PPRDIR', str(xpr.parent)).replace('$PSRCDIR', str(xpr.parent / 'fpai_demo_vivado.srcs'))
-        if '$' in ref or '@' in ref:
-            errors.append('Unresolved XPR input: ' + ref)
-            continue
-        path = Path(ref).resolve()
-        if not path.is_relative_to(ROOT):
-            errors.append('XPR input outside repository: ' + item.get('Path', ''))
-            continue
-        name = path.relative_to(ROOT).as_posix()
-        if name not in tracked and name not in declared:
-            errors.append('Undeclared XPR input: ' + name)
+        reference=item.get('Path','')
+        if reference.startswith('repo://'):
+            name=reference.removeprefix('repo://')
+            if name not in tracked or not (ROOT/name).is_file():
+                errors.append('XPR repository input missing: '+name)
+        elif reference.startswith('vendor://'):
+            if reference not in declared:
+                errors.append('Undeclared XPR vendor input: '+reference)
+        else:
+            errors.append('XPR input must use a declared resource URI: '+reference)
         xpr_inputs += 1
+    for row in json.loads((ROOT/'provenance/source_map.json').read_text(encoding='utf-8')):
+        path=ROOT/row['path']
+        if row['path'] not in tracked or not path.is_file() or sha(path)!=row['public_sha256']:
+            errors.append('Source provenance mismatch: '+row['path'])
     identity = json.loads((ROOT / 'models/identity.json').read_text(encoding='utf-8'))
     for filename, key in (('models/cpu/package_manifest.json', 'CPU_manifest_sha256'),
-                          ('models/cpu/normalization.json', 'normalization_sha256'),
+                          ('models/normalization.json', 'normalization_sha256'),
                           ('models/npu/model.json', 'NPU_model_sha256'), ('models/npu/model.raw', 'NPU_raw_sha256')):
         if sha(ROOT / filename) != identity[key]:
             errors.append('Model identity differs: ' + filename)
@@ -199,10 +208,10 @@ def verify(git):
                 full_build_verified=False, board_access=False)
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--git', default=shutil.which('git'))
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if not args.git:
         parser.error('Install Git or specify --git')
     result = verify(args.git)

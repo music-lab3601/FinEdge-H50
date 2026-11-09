@@ -1,61 +1,115 @@
 # FinEdge H50
 
-面向逐笔订单事件的FPGA前端与板载NPU协同预测工程。
+逐笔订单流的FPGA前端与板载NPU协同预测工程。最近100条有效十档盘口构成一个窗口，预测未来第50条有效盘口的中间价方向。三类输出依次为跌、平、涨。
 
 ```text
-订单事件派发 → PL千兆网 → FPGA建簿 → 整数INT8预处理
-→ 100条滑窗 → 整窗FIFO → 32槽共享DDR → NPU → FPGA结果UDP
+历史订单事件按事件间隔派发
+  → PL千兆网 → FPGA解析与建簿 → 整数归一化与INT8编码
+  → 100条滑窗 → 整窗FIFO → 32槽共享DDR → 板载NPU
+  → FPGA封装结果 → UDP → 上位机界面与日志
 ```
-
-## 当前准备阶段
-
-本分支处于公开源码整理和新检出检查阶段。已收集H50硬件、训练、CPU参考、模型转换和板端运行源码。内部保留必要的历史相对层级，源码对应关系见`provenance/source_map.json`。
-
-完整应用的路径迁移、模型重新编译、厂商工程重建和板测由后续验收阶段分别记录。`@HARDWARE_ROOT@`等标记为显式配置模板，渲染流程仍待接入新的目录。来源脚本中的历史阶段门槛属于原实现上下文。
 
 ## 目录
 
-| 目录 | 内容 |
-|---|---|
-| hardware | 当前H50 RTL、ROM、约束、主机和板端程序，以及必要的相对源码层级 |
-| software | 模型训练、数据处理、评估和对应支持源码 |
-| deployment | ONNX导出、图变换、量化与Icraft编译来源代码 |
-| models/cpu | 清理调试元数据后的冻结模型、训练检查点、归一化、运行接口和合成样本 |
-| models/npu | 已验收JSON、RAW、输入布局、尺度及归一化 |
-| models/onnx | 导出模型与图变换模型，已清理导出栈文档路径 |
-| third_party | 附加许可证；以太网组件保留在hardware内的原相对位置 |
-| external | 逐文件外部依赖、身份及处理状态 |
-| provenance | 来源映射和Git交付清单 |
-| tools | 新检出审计与公开模型检查 |
-
-## 新检出检查
-
-使用Python3.12和Git。
-
-```shell
-git clone <repository-url> finedge
-cd finedge
-python -B tools/verify_checkout.py
+```text
+finedge.py                 统一命令入口
+config/                    默认参数与研究配置
+contracts/                 行情协议、模型输入、量化与发布规范
+hardware/
+  rtl/                     按network/orderbook/preprocess/window等功能分组
+  rom/                     定点阈值ROM与位宽参数
+  constraints/             时钟、IO与CDC约束
+  ip/                      自研时钟IP配置
+  project/                 厂商集成工程的可配置XPR
+  scripts/                 构建、依赖检查与BOOT打包
+software/
+  data/                    ITCH/DBN接入、建簿、样本准备
+  model/                   TCN结构
+  training/                特征、训练与评估
+  runtime/                 冻结CPU模型、增量预处理与窗口接口
+deployment/
+  export/                  ONNX导出与因果图变换
+  icraft/{base,mixed,native}/  编译阶段及C++辅助工具
+  quantization/            定点阈值ROM生成
+board/{runtime,native,management}/  板端所有者、原生调用与串口管理
+host/{market_source,dashboard,telemetry}/  行情派发、界面与统计
+models/{cpu,onnx,npu}/     冻结模型工件
+models/normalization.json  唯一冻结归一化参数
+shared/                    配置、路径、文件IO与资源队列
+tests/                     软件、主机、编译编码及RTL测试
+experiments/               历史研究辅助源码与分析工具
+third_party/               以太网RTL与Lightweight Charts原许可
+external/                  外部文件的获取说明、目标位置与哈希
+provenance/                来源、目录映射与发布文件清单
+.local/                    本机配置、数据与生成物，由Git忽略
 ```
 
-检查覆盖Git实际收录、文件哈希、关键源码/模型/ROM/许可证、5份时序Tcl、XPR输入归属、敏感信息和Windows电脑路径。报告只输出命中位置和规则名称。
+正式入口统一使用仓库根目录的`finedge.py`。`experiments/reference/`保留历史辅助实现及其来源身份。当前可执行路径与验证范围见下文。
 
-## 冻结CPU模型检查
+## 无板卡验证
 
-安装NumPy2.2.6与PyTorch2.7.1后执行。
+使用Python 3.12。PyTorch CPU版可先从官方CPU索引安装，然后安装其余依赖。
 
 ```shell
-python -B tools/check_cpu_model.py
+python -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
+python -B finedge.py check checkout
+python -B finedge.py configure --render
+python -B finedge.py check imports
+python -B finedge.py cpu check
+python -B finedge.py cpu smoke --records 160
+python -B finedge.py check tests
 ```
 
-样本由种子20261109生成，用于接口和数值回归。公开模型的来源、清理范围和哈希见`models/cpu/package_manifest.json`及`models/identity.json`。
+`cpu check`验证随仓库提供的32个人工合成窗口。`cpu smoke`独立生成MBO事件，通过本机UDP发送，接收方建簿、增量预处理、组窗并调用冻结CPU模型。160条有效盘口产生61窗，每窗同时对照批量预处理结果。输出保存在`.local/checks/`。此命令的输入和后端均在日志中标明。
 
-## 依赖与复现阶段
+`check tests`会显示需要额外历史SDK记录或真实数据的跳过项。缺失项及其原因作为验收结果保留。
 
-FPGA工具为Vivado2018.3、匹配Procise及JFM器件补丁，NPU编译对应Icraft3.36.1。精确外部文件逐项列在`external/dependencies.json`。官方包到当前修改后集成工程的重建仍待验证。
+## 配置
 
-真实行情按提供方条款独立获取。合成接口样本、市场性能实验及模型开发集分别记录，实验指标按运行批次关联。
+`config/default.json`保存公开默认值。`configure`保存覆盖项到`.local/config.json`，可重复执行。通过环境变量`FINEDGE_CONFIG`可选择另一份覆盖文件。
 
-## 开源范围
+```shell
+python -B finedge.py configure --data-root <data_directory> --vendor-root <vendor_directory>
+python -B finedge.py configure --icraft <sdk_directory> --vivado <vivado_executable>
+python -B finedge.py configure --procise <procise_directory> --jfm <jfm_directory> --cmake <cmake_executable>
+python -B finedge.py configure --serial-port <serial_device> --host-ip <host_ip> --device-ip <board_ip>
+python -B finedge.py check config
+```
 
-自研代码使用MIT。第三方许可证见`THIRD_PARTY_NOTICES.md`。当前为本地准备版本，发布验收状态见`docs/release_status.json`。
+路径引用采用`repo://`、`work://`、`data://`、`vendor://`和`tool://`五种前缀。57份原模板的路径解析结果写入`.local/rendered/result.json`。模板解析与外部文件是否齐备分别记录，依赖缺失时可从预检报告定位。
+
+## 界面与板卡演示
+
+```shell
+python -B finedge.py native
+python -B finedge.py demo
+python -B finedge.py demo --review <saved_run_directory>
+```
+
+空闲界面可以直接打开。运行真实行情需按`external/dependencies.json`准备原始MBO、显示参考、片段范围、四份启动向量及已验收固件，并配置`--replay-raw`、`--replay-rows`、`--replay-ranges`、`--startup`和`--firmware-release`。终端环境变量`FINEDGE_BOARD_PASSWORD`用于串口登录。管理采用PS串口，行情与结果采用PL网口。资源队列串行化板卡操作，正常软件重启后核验新的boot_id和控制器状态。详细步骤见[运行说明](docs/RUNNING.md)。
+
+## 模型与FPGA
+
+```shell
+python -B finedge.py model export
+python -B finedge.py model polyphase --label trial01 --preserve-taps
+python -B finedge.py model calibration --input <normalized_calibration.npy>
+python -B finedge.py model compile --kind int8
+python -B finedge.py fpga --check
+python -B finedge.py fpga --prepare-only --work-dir <new_ascii_build_directory>
+python -B finedge.py fpga --work-dir <another_new_ascii_build_directory> --package-boot
+python -B finedge.py simulate
+```
+
+模型编译阶段及所需收据见[模型构建说明](docs/MODEL_BUILD.md)。FPGA采用Vivado 2018.3、匹配的Procise/JFM及悟净完整版参考输入。厂商文件按清单导入并核对哈希。构建入口将源文件和厂商输入复制到独立英文路径工作目录，随后综合、布局布线、物理审计和BOOT打包。
+
+## 当前验收
+
+目录迁移、57份模板解析、CPU网络功能闭环、HTTP界面、行情源编译、ONNX导出和图变换、定点ROM再生成、四项RTL仿真已进行本地验证。精确结果以`docs/migration_validation.json`为准。
+
+完整Icraft混合精度重编译、厂商集成工程全构建、该次构建固件的板卡验收仍待执行。冻结NPU JSON/RAW保留已验收字节和身份。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
+
+## 许可
+
+自研代码采用MIT。以太网组件采用MIT，图表组件采用Apache-2.0。厂商SDK/IP及行情输入的获取与再分发依据各自条款。逐项说明见[许可与来源](THIRD_PARTY_NOTICES.md)。

@@ -1,0 +1,131 @@
+{
+  "version": "TCN01-training-1.0",
+  "experiment": "TCN01",
+  "status": "approved_single_run_startup_preparation",
+  "prepared_on": "2026-10-06",
+  "implementation_version": "causal-lagwise-pointwise-1.1",
+  "implementation_detail": "For dilation>1, compute the same causal k3 operation by summing three lagged 1x1 convolutions and adding bias once; dilation=1 retains the native k3 Conv1d. Same weights and architecture; small FP32 accumulation differences are tolerance-checked.",
+  "approved_for_formal_training": true,
+  "approval_date": "2026-10-06",
+  "approval_evidence": {
+    "source": "current human user message, following the TCN01 structure and one-run budget proposal",
+    "quote": "可以 那我们准备先用这个模型进行训练 开始训练前还要干点什么",
+    "scope": "TCN01 only: one seed42 run, max10 epochs, patience3; current turn prepares startup only, no automatic formal training"
+  },
+  "formal_training_budget": {
+    "approved": true,
+    "maximum_runs": 1,
+    "maximum_epochs_per_run": 10,
+    "seeds": [
+      42
+    ],
+    "decision": "current_user_approval_TCN01_only"
+  },
+  "seed": 42,
+  "model": {
+    "version": "temporal-tcn-candidate-1.0",
+    "feature_count": 40,
+    "window_length": 100,
+    "hidden_channels": 32,
+    "blocks": 5,
+    "convolutions_per_block": 2,
+    "kernel_size": 3,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "stride": 1,
+    "padding": "causal_left_zero",
+    "activation": "ReLU",
+    "residual_projection": "1x1_when_channels_differ",
+    "readout": "last_time",
+    "classes": 3,
+    "dropout": 0,
+    "weight_norm": false,
+    "bias": true,
+    "initialization": "pytorch_default"
+  },
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0,
+  "loss": "unweighted_cross_entropy",
+  "train_batch_size": 256,
+  "evaluation_batch_size": 256,
+  "deployment_batch_size": 1,
+  "max_epochs": 10,
+  "early_stop_patience": 3,
+  "device": "cuda",
+  "precision": "float32",
+  "shuffle_train_windows": true,
+  "drop_last": false,
+  "formal_training_uses_all_training_windows": true,
+  "validation_split": "tuning_validation",
+  "forbidden_splits": [
+    "comparison_validation",
+    "final_test"
+  ],
+  "data_contract": {
+    "protocol_version": "W3-data-protocol-1.0",
+    "protocol_path": "configs/w3_protocol_frozen_v1.json",
+    "symbol": "AAPL",
+    "train_dates": [
+      "2025-12-08",
+      "2025-12-09"
+    ],
+    "tuning_date": "2025-12-10",
+    "feature_count": 40,
+    "window_length": 100,
+    "feature_order": "ask_price,ask_size,bid_price,bid_size for each level 1..10",
+    "sampling": "every target visible-book change, including unchanged top ten",
+    "label": "future endpoint mid-price relative to current mid-price; no smoothing",
+    "horizon": 50,
+    "threshold": 0.0,
+    "class_mapping": {
+      "down": 0,
+      "stationary": 1,
+      "up": 2
+    },
+    "normalization": "existing per-feature mean/std fitted on training records only; zero variance std=1",
+    "cross_date_or_segment_windows": false,
+    "additional_factors": false,
+    "adaptive_input_normalization": false
+  },
+  "selection_rules_path": "configs/w4_selection_rules.json",
+  "selection_rules_version": "W4-selection-1.0",
+  "inherit_training_approval": false,
+  "resume_old_cnn_checkpoint": false,
+  "implementation_scope": "Independent TCN01 formal runner; no W4/W5 replacement, grid search, extra seed or held-out evaluation entry.",
+  "research_reference": {
+    "paper": "An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling",
+    "paper_url": "https://arxiv.org/abs/1803.01271",
+    "author_repository": "https://github.com/locuslab/TCN",
+    "author_repository_license": "MIT",
+    "implementation": "Independent implementation of causal dilated residual convolutions; no source copied. Weight normalization and dropout from the generic reference are deliberately omitted in this draft.",
+    "evidence_limit": "The generic TCN paper does not report this AAPL H50 endpoint three-class task or promise an accuracy improvement."
+  },
+  "unverified": [
+    "TCN01 trained predictive quality and stationary recall",
+    "full formal training runtime",
+    "E run-directory write permission (preflight is read-only on E)",
+    "ONNX export and NPU operator compilation, quantization and board execution"
+  ],
+  "run_root": "data://research/tcn01",
+  "report_directory": "artifacts/tcn_training_2026-10-06",
+  "review_evidence": {
+    "path": "artifacts/tcn_preparation_2026-10-06/preparation_acceptance.json",
+    "sha256": "75e99111fb4c554e24a6cbd6b981c7a8f00ebc0d4672ae2aee2791583dc515b3",
+    "draft_path": "configs/tcn_candidate_draft.json",
+    "draft_sha256": "b83463dc2f9b2223eb9864e39f215acc440ef3a865126ec712ef7a01077a99cf",
+    "model_path": "scripts/tcn_candidate.py",
+    "model_sha256": "acc9e0b6edfc10793df25c69173d94cd9c6c76c74d73294e327dd91b7c3c45fc"
+  },
+  "prepared_manifest_sha256": "e8402f0ea730c0dbdb1727f8c300e8b453ca68e3e8fd80fa9698fb7ffdf27bad",
+  "allowed_sample_counts": {
+    "train": 4254686,
+    "tuning_validation": 2849592
+  }
+}

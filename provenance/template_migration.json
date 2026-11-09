@@ -1,0 +1,533 @@
+{
+  "original_files": 57,
+  "files": [
+    {
+      "old": "README.md",
+      "new": "README.md",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423"
+    },
+    {
+      "old": "deployment/project/scripts/build_polyphase_model.py",
+      "new": "deployment/export/polyphase.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "01c78fcc099ac98fe1ff4083d32b1ad8c61993679c5009ad88504447b45b80be"
+    },
+    {
+      "old": "deployment/project/src/finedge_host/backends.py",
+      "new": "software/runtime/backends.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "345e8446c92e074edf930b76ee9beb9d9195a55524005786fb6df71cff096550"
+    },
+    {
+      "old": "deployment/project/src/finedge_host/export_model.py",
+      "new": "deployment/export/onnx.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "3ffddf2b579554148bcfedbf3baf3291602da8d2c6f400873dbad648953b81f7"
+    },
+    {
+      "old": "deployment/project/src/finedge_host/udw_e_release.py",
+      "new": "experiments/reference/runtime/udw_e_release.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "fd362b7cf364f4aa98bcb6ea656ee4cd38052531ffbfde436afead01bb5f0d79"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/improvement_20261030_v2/contracts/offline_book_sources.json",
+      "new": "contracts/quantization/mixed/offline_book_sources.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "88873d6c893ff7066f62d8b4e66b2b8d11b473ff98ac0fae921160a29e7cfd11"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/improvement_20261030_v2/scripts/common2.py",
+      "new": "deployment/icraft/mixed/common2.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "3aa3c1a2c29a8da954de674143eb195c3370fa8f0859a39c7461d85b2d3d99df"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/contracts/quantization_int8.json",
+      "new": "contracts/quantization/native/quantization_int8.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "737b8ffaa6877c033b58de8745fffe43a3408144ba3b717067f5bde402919b13"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/contracts/quantization_int8_f64.json",
+      "new": "contracts/quantization/native/quantization_int8_f64.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "3c76fe6695c8bde949bd1e507b839e36849fbac4246698f901285cf25b20045e"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/contracts/quantization_int8_f64_sym.json",
+      "new": "contracts/quantization/native/quantization_int8_f64_sym.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "8cd9a437ee483bc8e829dc99805309e5fde4b691018125b80b7bdb7e4e658d1b"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/contracts/quantization_int8_f64_sym_fold.json",
+      "new": "contracts/quantization/native/quantization_int8_f64_sym_fold.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "7830c3266d86e0db5d3981dbfc3448ffa72d12f4e2b6b5f0b10c61cfa139ed2d"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/contracts/quantization_int8_folded.json",
+      "new": "contracts/quantization/native/quantization_int8_folded.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "7161f1ceb424da9de492573e792789a2a689d2aec88dc127d75f8c8f5fccd907"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/scripts/common3.py",
+      "new": "deployment/icraft/native/common3.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "fcb56d34d5f67807ce1158f67a5531d4efada5f0cd864d7b7c6c068faade4bfb"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/scripts/package3.py",
+      "new": "deployment/icraft/native/package3.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "8a2b0d4f98ae39b022d7f9fdbffc0b4b895d7c162da7cebce096ff8f76b03fea"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/scripts/build_host.ps1",
+      "new": "deployment/icraft/base/build_host.ps1",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "c570897ab52b30131465afd4adbf3d00d856d95e8e17f3e655849bfa2be92e41"
+    },
+    {
+      "old": "deployment/project/versions/int8_model_v1/scripts/common.py",
+      "new": "deployment/icraft/base/common.py",
+      "tokens": [
+        "ICRAFT_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "41b3954922313ab796c89ac9776f080b065524f7157cb20a2a4a96264e25aec1"
+    },
+    {
+      "old": "docs/release_status.json",
+      "new": "docs/release_status.json",
+      "tokens": [
+        "EXTERNAL_ROOT",
+        "HARDWARE_ROOT",
+        "ICRAFT_INSTALL",
+        "PROCISE_ROOT",
+        "SOFTWARE_ROOT",
+        "VIVADO_INSTALL"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9"
+    },
+    {
+      "old": "hardware/artifacts/fpga_reference_20261021/boot_candidate_UNVERIFIED_20261021/manifest.json",
+      "new": "contracts/release/boot_inputs.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "07ebada644402ce961b33b9c5763087a857d4064077b1bf2ff5394452dd36391"
+    },
+    {
+      "old": "hardware/package_tools/build_fpga.py",
+      "new": "hardware/scripts/build_fpga.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "367efd8c3e1910542efb2f2be7c6a7c70e1e49b293e69bd1397b04031febbf0b"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/build.tcl",
+      "new": "hardware/scripts/build.tcl",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "b62927d33640e9b6f505bed5e2f26ec02319e8c09d75bb2524e5e58ca5515c3f"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/network_cdc_signoff_mcp_v5.tcl",
+      "new": "hardware/constraints/network_cdc.tcl",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "5bd2b0baa1676d49530e7624a4b5a20f63c48debc4b1ecc41bf77685a8acb9fd"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/opt_post.tcl",
+      "new": "hardware/scripts/opt_post.tcl",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "afd3eba5ed53c1c9a5c4330ca66db9c69f96b05cb66993c1acf9e3edf6737921"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/call_procise_disable_icap.bat",
+      "new": "hardware/scripts/call_procise_disable_icap.bat",
+      "tokens": [
+        "HARDWARE_ROOT",
+        "PROCISE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "657eedf53591cb830582db1d9116917b9eaf00e1a73824a11e5491d8d4f22417"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/fpai_demo_vivado.xpr",
+      "new": "hardware/project/reference.xpr",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "6622ac2f246514e0533b7dccea3c65beb150c2dddcaa9b65789bf7be58b82898"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/procise_run_disable_icap.tcl",
+      "new": "hardware/scripts/procise_run_disable_icap.tcl",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "49eae0db77fb01f45f77de6f9720aecf450f4b03b09e79d980167b50766354dc"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/bench/g_bench_endpoint.sv",
+      "new": "hardware/rtl/top/g_bench_endpoint.sv",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "1987d3d780654ff146098c045d51c0761e8f7ecef2b20c05363def7091e6a6bc"
+    },
+    {
+      "old": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/config.json",
+      "new": "config/board_demo.json",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "e88913447a2b0c738b6029768964e50a30dcf7e33cb6e910570fa604ff93c312"
+    },
+    {
+      "old": "software/VERSION_IDENTITY.json",
+      "new": "software/VERSION_IDENTITY.json",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "d0dea8ad96f3507cd88a48a6b4280863fd7f8b163662fb19f75fe99377a5b706"
+    },
+    {
+      "old": "software/project/artifacts/tcn_existing_data_optimization_2026-10-17/step04_features/test_postrun_helpers.py",
+      "new": "experiments/reference/training/step04_features/test_postrun_helpers.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "4dff4bbc9886b9058881b498286451bd0d218b3f495df50f73110641b398ed27"
+    },
+    {
+      "old": "software/project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/resource_supplement/test_guard.py",
+      "new": "experiments/reference/training/step06_replication/resource_supplement/test_guard.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "2fe605506ce38d60c8f5d8fef705fb1684f3a1b3abeb3b071f8ee06af65a2697"
+    },
+    {
+      "old": "software/project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_audit_v2.py",
+      "new": "experiments/reference/training/step06_replication/test_audit_v2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "6fcb8495b6100d0d061ad43b0997d976cd5c3cb4ba71134c1d175ebc168b4426"
+    },
+    {
+      "old": "software/project/artifacts/tcn_existing_data_optimization_2026-10-17/step06_replication/test_postrun_helpers.py",
+      "new": "experiments/reference/training/step06_replication/test_postrun_helpers.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "ea1f9f50089b65cb12d22723a91a2361292c05e5a3e3001711645b5a83a48f48"
+    },
+    {
+      "old": "software/project/configs/tcn01_train.json",
+      "new": "config/research/tcn01_train.json",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "deed7b865be5aa9729cff76b8e129788eda172282eee332f36bf35e48294cf94"
+    },
+    {
+      "old": "software/project/configs/tcn_data_protocol_v2.json",
+      "new": "config/research/tcn_data_protocol_v2.json",
+      "tokens": [
+        "EXTERNAL_ROOT",
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "a7d4ea04f2bc4f00ddf418d72c2b04f014ba4f53b3f1145cf2baaf804df0bcb8"
+    },
+    {
+      "old": "software/project/configs/tcn_existing_data_optimization_v1.json",
+      "new": "config/research/tcn_existing_data_optimization_v1.json",
+      "tokens": [
+        "EXTERNAL_ROOT",
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "ba2dab473a2c4ea6a37ec73caf23c03871f858cb3c4814c1abd8f30557074616"
+    },
+    {
+      "old": "software/project/configs/tcn_research_protocol_b_v1.json",
+      "new": "config/research/tcn_research_protocol_b_v1.json",
+      "tokens": [
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "4404a44a249822a01a6c936cbb1a2a52a6e06f72d8a0cb35a64e6c458d6c9bba"
+    },
+    {
+      "old": "software/project/configs/w1_data.json",
+      "new": "config/research/w1_data.json",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "b4a6111bffff799d034fed882f2b2a739f3b4ee9ba56e61e482b85e7e1a3133c"
+    },
+    {
+      "old": "software/project/configs/w3_protocol_draft.json",
+      "new": "config/research/w3_protocol_draft.json",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "deac788a6181bbc270dc1d316685dbe6124c0115b94dd2f22e8323083a1909dd"
+    },
+    {
+      "old": "software/project/configs/w3_protocol_frozen_v1.json",
+      "new": "config/research/w3_protocol_frozen_v1.json",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "deac788a6181bbc270dc1d316685dbe6124c0115b94dd2f22e8323083a1909dd"
+    },
+    {
+      "old": "software/project/docs/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
+      "new": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
+      "tokens": [
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "893677b22a90cb441f3ec254c6161fb84668bb399d90a98336ef2a9e9e6b13b4"
+    },
+    {
+      "old": "software/project/docs/TCN_现有数据优化第6步配对稳定性复核报告_2026-10-18.txt",
+      "new": "docs/research/TCN_现有数据优化第6步配对稳定性复核报告_2026-10-18.txt",
+      "tokens": [
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "2f1e83fd3fd7c06e3171ea6a55f2f1f6a4d5123fb980f0f0cdf7380f289ef84d"
+    },
+    {
+      "old": "software/project/docs/TCN_现有数据优化第7步交付与本轮结论报告_2026-10-18.txt",
+      "new": "docs/research/TCN_现有数据优化第7步交付与本轮结论报告_2026-10-18.txt",
+      "tokens": [
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "759aac42a3fbc84be1a5b93072ae57c280961e80316fadb6653edb0427955e9f"
+    },
+    {
+      "old": "software/project/scripts/tcn_data_v2.py",
+      "new": "software/data/tcn_data_v2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "c83a208bbc1b1938aec8838a138bb6fb314cc944454ea440c288148192dd4211"
+    },
+    {
+      "old": "software/project/scripts/tcn_research_data_p2.py",
+      "new": "software/training/tcn_research_data_p2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "a22548ba016aaca14385cfd667fa7911bc064871be6b778ca5629b721471a28a"
+    },
+    {
+      "old": "software/project/scripts/tcn_research_evaluate_p2.py",
+      "new": "software/training/tcn_research_evaluate_p2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "4f8b501faab4f13ec550007f6aca9e97712c591fe812ba28e99bf23851be64f3"
+    },
+    {
+      "old": "software/project/scripts/tcn_research_screening_p1.py",
+      "new": "software/data/tcn_research_screening_p1.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "81e491429a68c27111b0e67398acc6781fe0db3c422afc51aec8a12d8b0c1ef3"
+    },
+    {
+      "old": "software/project/scripts/test_tcn_existing_data_ed4_features.py",
+      "new": "tests/software/test_tcn_existing_data_ed4_features.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "18f9cc8e77ba2948a298ec783b3b5514853ab13b87d51f9a12f787f91e2c42fc"
+    },
+    {
+      "old": "software/project/scripts/test_tcn_existing_data_ed6_data.py",
+      "new": "tests/software/test_tcn_existing_data_ed6_data.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "0cec43266979ead30e40ad1c5f2429def7da94f4eaf983947356c2a9592c48bf"
+    },
+    {
+      "old": "software/project/scripts/test_tcn_existing_data_ed7.py",
+      "new": "tests/software/test_tcn_existing_data_ed7.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "9dd2d5a6f5a444008cdde7f0d66f4915b647b58d123d169a994eb7e23b5fd640"
+    },
+    {
+      "old": "software/project/scripts/test_tcn_existing_data_ed7_compat.py",
+      "new": "tests/software/test_tcn_existing_data_ed7_compat.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "c8c2c5a8f68d85cfc497b60640bc9e1923bf058e89b09903e2fb8738afbbf904"
+    },
+    {
+      "old": "software/project/tests/test_audit_tcn_research_p2.py",
+      "new": "tests/software/test_audit_tcn_research_p2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "c6247ebbd610f542da7be8062b1ffbddf586f37d4ae3d99a51c5bf4edc23a503"
+    },
+    {
+      "old": "software/project/tests/test_databento_status_check.py",
+      "new": "tests/software/test_databento_status_check.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "1ecab27e8d6b1bdb3275b4ac734160f1146630b00212aba16ea5bf51e137fab1"
+    },
+    {
+      "old": "software/project/tests/test_tcn_research_data_p2.py",
+      "new": "tests/software/test_tcn_research_data_p2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "657d8ae0278cd7d5b03bb7b26bbe96f578de994f4911a4fe0f912a74283f68c5"
+    },
+    {
+      "old": "software/project/tests/test_tcn_research_evaluate_p2.py",
+      "new": "tests/software/test_tcn_research_evaluate_p2.py",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "e3caf7acb554f116d00f6362d851aa03c1387e7c4aef09cfeefed4e8c7d04ae8"
+    },
+    {
+      "old": "software/provenance/deployment_inventory.json",
+      "new": "provenance/legacy_software/deployment_inventory.json",
+      "tokens": [
+        "EXTERNAL_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "36bf20176b6584c86430ee3dc84cf75d33cb587fc3e1851630dde3980eeb4f33"
+    },
+    {
+      "old": "software/provenance/training_inventory.json",
+      "new": "provenance/legacy_software/training_inventory.json",
+      "tokens": [
+        "SOFTWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "b58235a0a61e4d40f8bf9b79cf8904673e2dd374e2d1ec338c2ab3344ab48022"
+    },
+    {
+      "old": "tools/verify_checkout.py",
+      "new": "tools/verify_checkout.py",
+      "tokens": [
+        "HARDWARE_ROOT"
+      ],
+      "status": "runtime_resolver_or_unified_entry_connected",
+      "public_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a"
+    }
+  ],
+  "validation": {
+    "original_files": 57,
+    "all_paths_present": true,
+    "render_command": "python finedge.py configure --render",
+    "result": "57/57 resolved; repeat byte stable",
+    "external_assets": "independent preflight"
+  }
+}
