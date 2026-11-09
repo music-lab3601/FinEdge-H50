@@ -6969,12 +6969,13 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "d93da2857320f16ae1de966e1f2965bd758ac1d92217fcfa27b863f90fcf25a5",
+    "public_sha256": "01659adfbc03bf5bef0d2767268a2f65290969a4e81ed14941a4fb678a7ea1f1",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Clean Python acceptance; dependency or installation metadata updated",
-      "Full frozen native INT8 rebuild entry and verification connected"
+      "Full frozen native INT8 rebuild entry and verification connected",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
