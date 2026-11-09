@@ -2914,10 +2914,11 @@
     "path": "hardware/scripts/run_integrated_vivado_step.py",
     "origin": "revised_h50/versions/realtime_integration_v1/scripts/run_integrated_vivado_step.py",
     "source_sha256": "c403021dad9e46a62b42ad9bb5d3a7c3a84bb467b603843a09328c3ac4999cf6",
-    "public_sha256": "8f9841b788bea0076a701a12c72aa892af457fc37d5aea1e7febe10aad6be1e5",
+    "public_sha256": "654c872f6ebfbb662835084f1d86dd559ee6c6c826fdfef89fdaa3984db7f866",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/scripts/run_integrated_vivado_step.py"
   },

@@ -1858,8 +1858,8 @@
     },
     {
       "path": "hardware/scripts/run_integrated_vivado_step.py",
-      "bytes": 3734,
-      "sha256": "8f9841b788bea0076a701a12c72aa892af457fc37d5aea1e7febe10aad6be1e5"
+      "bytes": 4365,
+      "sha256": "654c872f6ebfbb662835084f1d86dd559ee6c6c826fdfef89fdaa3984db7f866"
     },
     {
       "path": "hardware/scripts/simulate.ps1",
@@ -2093,8 +2093,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 404463,
-      "sha256": "45a17462bfd591949fff6c2f3f5a24ace14acb7247264adc0a20e995124f42c0"
+      "bytes": 404551,
+      "sha256": "a20a6961d7cd795ff2faa10b3cbb40acfa33938f2de0d7bb6d03e7865e92f46f"
     },
     {
       "path": "provenance/template_migration.json",

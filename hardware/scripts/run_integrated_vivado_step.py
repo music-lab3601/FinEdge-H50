@@ -37,6 +37,14 @@ def main():
     vivado = Path(os.environ['FINEDGE_VIVADO'])
     tool_scripts = vivado.parent.parent / 'scripts'
     preflight = 'set_param general.maxThreads 2\n'
+    # Vivado 2018.3 on this Windows host can report an existing Tcl hook as
+    # missing after checkpoint loading. Read the staged scripts before design
+    # initialization, as well as the tool retarget scripts used below.
+    input_scripts = sorted({path for folder in (
+        out / 'project/ip_patch', out / 'hardware/scripts', out / 'hardware/constraints',
+        out / 'third_party/verilog-ethernet') for path in folder.rglob('*.tcl')})
+    for path in input_scripts:
+        preflight += 'set f [open {' + path.as_posix() + '} r]; puts "G_INPUT_PREFLIGHT ' + path.name + ' [string length [read $f]]"; close $f\n'
     for relative in ('rt/data/retarget/retarget_vhdl.tcl', 'rt/data/retarget/retarget_verilog.tcl', 'rt/data/unimacro/unimacro_vhdl.tcl', 'rt/data/unimacro/unimacro_verilog.tcl'):
         path = tool_scripts / relative
         if path.is_file():
