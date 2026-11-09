@@ -146,7 +146,7 @@ def main():
         status = dependencies()
         print(json.dumps(status, indent=2))
         return int(status['status'] != 'passed')
-    directory = args.work_dir or work_path('fpga/build_' + time.strftime('%Y%m%d_%H%M%S'))
+    directory = (args.work_dir or work_path('fpga/build_' + time.strftime('%Y%m%d_%H%M%S'))).resolve()
     project = stage(directory)
     if args.prepare_only:
         print(json.dumps(dict(status='staged', project=str(project), board_access=False)))
