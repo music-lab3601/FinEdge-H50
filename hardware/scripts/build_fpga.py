@@ -61,6 +61,33 @@ def dependencies():
                 changed=changed, board_access=False)
 
 
+def restore_vendor_outputs(directory):
+    """Restore manifest IP outputs removed by Vivado reset_run/target generation."""
+    directory = directory.resolve(strict=True)
+    if not (directory / 'staging.json').is_file():
+        raise ConfigurationError('Vendor restoration requires a staged build')
+    restored = []
+    checkpoints = []
+    for row in required_assets():
+        if not row['target'].startswith('vendor://fpga/'):
+            continue
+        target = Path(replace_value(row['target'], directory))
+        if not target.exists():
+            source = resolve_path(row['target'])
+            if hashlib.sha256(source.read_bytes()).hexdigest() != row['sha256']:
+                raise ConfigurationError('Vendor cache identity changed: ' + row['target'])
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+            restored.append(row['target'])
+        if target.suffix == '.dcp':
+            if hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+                raise ConfigurationError('Vendor checkpoint identity changed: ' + row['target'])
+            checkpoints.append(row['target'])
+    receipt = dict(status='passed', restored=restored, verified_IP_checkpoints=checkpoints, board_access=False)
+    atomic_json(directory / ('vendor_outputs_' + time.strftime('%Y%m%d_%H%M%S') + '.json'), receipt)
+    return receipt
+
+
 def stage(directory):
     directory = directory.resolve()
     if not directory.as_posix().isascii() or any(c.isspace() for c in directory.as_posix()):
@@ -137,7 +164,13 @@ def main():
     parser.add_argument('--work-dir', type=Path)
     parser.add_argument('--package-boot', action='store_true')
     parser.add_argument('--import-source', type=Path, help='Extracted original delivery root containing the manifest original_target paths')
+    parser.add_argument('--restore-vendor', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.restore_vendor:
+        receipt = restore_vendor_outputs(args.restore_vendor)
+        print(json.dumps(dict(status=receipt['status'], restored=len(receipt['restored']),
+                              verified_IP_checkpoints=len(receipt['verified_IP_checkpoints']))))
+        return 0
     if args.import_source:
         result = import_assets(args.import_source)
         print(json.dumps(dict(status=result['status'], imported=result['checked'], board_access=False)))

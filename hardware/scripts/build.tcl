@@ -5,6 +5,9 @@ set source [file join $build hardware]
 set_param general.maxThreads 4
 open_project $project
 set_property include_dirs [file join $source rom] [get_filesets sources_1]
+# Build our clock IP from generated RTL in the new top-level synthesis run.
+set_property GENERATE_SYNTH_CHECKPOINT false [get_files *fm_pl_clocks.xci]
+generate_target all [get_ips fm_pl_clocks]
 set_property STEPS.OPT_DESIGN.TCL.POST [file join $source scripts opt_post.tcl] [get_runs impl_1]
 set_property STEPS.WRITE_BITSTREAM.TCL.PRE [file join $build project ip_patch process_control write_bitstream_pre.tcl] [get_runs impl_1]
 set_property STEPS.PLACE_DESIGN.ARGS.DIRECTIVE Default [get_runs impl_1]
@@ -17,6 +20,7 @@ update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs synth_1 -jobs 2 -scripts_only
 close_project
+exec $::env(FINEDGE_PYTHON) -B -m hardware.scripts.build_fpga --restore-vendor $build >@ stdout 2>@ stderr
 exec $::env(FINEDGE_PYTHON) -B -m hardware.scripts.run_integrated_vivado_step --directory $build --step synth_1 >@ stdout 2>@ stderr
 open_project $project
 wait_on_run synth_1
