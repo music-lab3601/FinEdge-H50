@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+from pathlib import Path
 import shutil
 import subprocess
 import sys
@@ -27,6 +28,7 @@ def prepare_calibration(path):
         (target / name).write_bytes(tensor.tobytes())
         names.append(name)
     shutil.copyfile(path, directory / 'inputs.npy')
+    shutil.copyfile(path, directory / 'calibration.inputs.npy')
     (directory / 'forward_list.txt').write_text('\n'.join(names) + '\n', encoding='utf-8')
     atomic_json(directory / 'manifest.json', dict(count=len(samples), source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                                                 normalized=True, synthetic=False, normalization_ref='repo://models/normalization.json'))
@@ -51,7 +53,14 @@ def main():
     compile_model.add_argument('--kind', choices=['tf32', 'int8', 'mixed', 'native'], required=True)
     helpers = commands.add_parser('tools')
     helpers.add_argument('--stage', choices=['base', 'mixed', 'native'], required=True)
+    rebuild = commands.add_parser('rebuild', help='Rebuild and verify the frozen native INT8 deployment')
+    rebuild.add_argument('--raw-mbo', type=Path, required=True)
+    rebuild.add_argument('--work-dir', type=Path, required=True)
     args = parser.parse_args()
+    if args.action == 'rebuild':
+        from deployment.rebuild import rebuild_model
+        print(json.dumps(rebuild_model(args.raw_mbo, args.work_dir), indent=2))
+        return 0
     if args.action == 'tools':
         from tools.build_sdk import build_stage
         build_stage(args.stage)

@@ -7,7 +7,7 @@
   "configuration_runtime_resolution": "connected",
   "unified_entry": "finedge.py",
   "model_export_and_TF32_compile": "passed",
-  "model_mixed_native_recompile": "pending",
+  "model_mixed_native_recompile": "passed_bit_equal_JSON_RAW_and_1024_Host_outputs",
   "vendor_reference_reconstruction": "pending",
   "full_FPGA_build": "pending",
   "board_validation": "pending",
@@ -15,5 +15,6 @@
   "GitHub_pushed": false,
   "validation": "docs/migration_validation.json",
   "clean_Python_environment": "passed_after_databento_dependency_correction",
-  "clean_environment_validation": "docs/clean_environment_validation.json"
+  "clean_environment_validation": "docs/clean_environment_validation.json",
+  "model_rebuild_validation": "docs/int8_rebuild_validation.json"
 }

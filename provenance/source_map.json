@@ -4264,11 +4264,12 @@
     "path": "deployment/export/polyphase.py",
     "origin": "current_project/scripts/build_polyphase_model.py",
     "source_sha256": "66f39839d809771aa3a4b0fc6fefd3eb6714ba8e257587a511abd69e0a1e4a6b",
-    "public_sha256": "01c78fcc099ac98fe1ff4083d32b1ad8c61993679c5009ad88504447b45b80be",
+    "public_sha256": "f50322aa89f6768e0fb1f0233c0bb724a4f9b18292f5d5597efaf9607f29b39c",
     "category": "conversion_source",
     "adaptations": [
       "machine path strings replaced by documented configuration tokens",
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Full frozen native INT8 rebuild entry and verification connected"
     ],
     "pre_migration_public_path": "deployment/project/scripts/build_polyphase_model.py"
   },
@@ -5858,10 +5859,11 @@
     "path": "deployment/icraft/native/physical_entry.py",
     "origin": "current_int8/lowbit_entry_20261030_v3/scripts/physical_entry.py",
     "source_sha256": "ba23430e2deaa8707636efcca018c3d21a69106a49cb1f5dfe7cd88bd13e020f",
-    "public_sha256": "05f0ca453eb0ba23ed1f62b60a24ca506e729a496bda8b263976d041ea42dba5",
+    "public_sha256": "2d1d849c6535c6e7ffe9ea51623e16aef57e664d0a410b3f7477bc92626d5446",
     "category": "conversion_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Full frozen native INT8 rebuild entry and verification connected"
     ],
     "pre_migration_public_path": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/scripts/physical_entry.py"
   },
@@ -5891,10 +5893,11 @@
     "path": "deployment/icraft/native/rebuild_native_models.py",
     "origin": "current_int8/lowbit_entry_20261030_v3/scripts/rebuild_native_models.py",
     "source_sha256": "78430d7734cc0cf28a6d687cd680ffa973f9640bb0735d61711a693bab68f507",
-    "public_sha256": "141fd467243fe91e92a902abf98af41860e14b87f7a6de64417f660f63477706",
+    "public_sha256": "0c86a2727ee573355fd2570dc0b2cb903cb7899cfa3aae0fa364ff52faf6d137",
     "category": "conversion_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Full frozen native INT8 rebuild entry and verification connected"
     ],
     "pre_migration_public_path": "deployment/project/versions/int8_model_v1/lowbit_entry_20261030_v3/scripts/rebuild_native_models.py"
   },
@@ -6371,10 +6374,11 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "7ade737ab182ada8f5050de23a08dd342e8f3c22ccf8e8faee5d603f310a40ac",
+    "public_sha256": "42a50f32c5fed07cb91abb9d464ab15d97ce251b6aff6f0d36ce0e47828d15ed",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Clean Python acceptance; dependency or installation metadata updated"
+      "Clean Python acceptance; dependency or installation metadata updated",
+      "Full frozen native INT8 rebuild entry and verification connected"
     ],
     "pre_migration_public_path": "README.md"
   },
@@ -6472,9 +6476,11 @@
     "path": "deployment/commands.py",
     "origin": "public_repository_migration/deployment/commands.py",
     "source_sha256": "a8c036d9f8d231256e5f6a35a00078c841e1fd7f2898f8297354fe861897be85",
-    "public_sha256": "a8c036d9f8d231256e5f6a35a00078c841e1fd7f2898f8297354fe861897be85",
+    "public_sha256": "cf79b465858c904facde9b9ddc3ca481ca99cfb2fe7566466b150f3c8309c722",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Full frozen native INT8 rebuild entry and verification connected"
+    ],
     "pre_migration_public_path": "deployment/commands.py"
   },
   {
@@ -6544,9 +6550,11 @@
     "path": "docs/MODEL_BUILD.md",
     "origin": "public_repository_migration/docs/MODEL_BUILD.md",
     "source_sha256": "e6e8af7ba266d7d31079d29c28455f0f071e3ff34b4df504368952828d9b431f",
-    "public_sha256": "e6e8af7ba266d7d31079d29c28455f0f071e3ff34b4df504368952828d9b431f",
+    "public_sha256": "7769da9c85fa4e7468fe6f8bc92835336bff77582a22d2adcf02baa28abe5ab2",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Full frozen native INT8 rebuild entry and verification connected"
+    ],
     "pre_migration_public_path": "docs/MODEL_BUILD.md"
   },
   {
@@ -6573,10 +6581,11 @@
     "path": "docs/release_status.json",
     "origin": "public_repository_migration/docs/release_status.json",
     "source_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
-    "public_sha256": "96e852f77f628bc4e182a41f9af1acf9a45f08d826625ee18e54dd8dfa25459c",
+    "public_sha256": "37d064e033dd48907a480f85fe77e1881225bf188250cecba3ecc50db2b4fe35",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Clean Python acceptance; dependency or installation metadata updated"
+      "Clean Python acceptance; dependency or installation metadata updated",
+      "Full frozen native INT8 rebuild entry and verification connected"
     ],
     "pre_migration_public_path": "docs/release_status.json"
   },
@@ -6710,9 +6719,11 @@
     "path": "external/dependencies.json",
     "origin": "public_repository_migration/external/dependencies.json",
     "source_sha256": "5599b8501db384c190a530197b31031ff31c3d9dd9b37abda0d4f5f6c7df3774",
-    "public_sha256": "5599b8501db384c190a530197b31031ff31c3d9dd9b37abda0d4f5f6c7df3774",
+    "public_sha256": "6642b1eeb1e34dfecae676ec6685668f300dad198fb7e0e92db1c87fb8141eba",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Full frozen native INT8 rebuild entry and verification connected"
+    ],
     "pre_migration_public_path": "external/dependencies.json"
   },
   {
@@ -6818,11 +6829,12 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "29d2979ba643d42b731d5f5c65383e4dc316d7027211ef85c3a81ecf9200076f",
+    "public_sha256": "d93da2857320f16ae1de966e1f2965bd758ac1d92217fcfa27b863f90fcf25a5",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
-      "Clean Python acceptance; dependency or installation metadata updated"
+      "Clean Python acceptance; dependency or installation metadata updated",
+      "Full frozen native INT8 rebuild entry and verification connected"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -7072,6 +7084,38 @@
     "source_sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef",
     "public_sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef",
     "category": "validation_receipt",
+    "adaptations": []
+  },
+  {
+    "path": "contracts/model/rebuild_profile.json",
+    "origin": "native_int8_rebuild/contracts/model/rebuild_profile.json",
+    "source_sha256": "49ef531a5242617ea3a74f1f047031b5e7f80481e8eace3f9c9fd426cfc2ac84",
+    "public_sha256": "49ef531a5242617ea3a74f1f047031b5e7f80481e8eace3f9c9fd426cfc2ac84",
+    "category": "model_rebuild_source_or_validation",
+    "adaptations": []
+  },
+  {
+    "path": "deployment/rebuild.py",
+    "origin": "native_int8_rebuild/deployment/rebuild.py",
+    "source_sha256": "0de68471db8b4d704e9d63463bca3c1175e876401e7dcf2f1a2718d6c338dd72",
+    "public_sha256": "0de68471db8b4d704e9d63463bca3c1175e876401e7dcf2f1a2718d6c338dd72",
+    "category": "model_rebuild_source_or_validation",
+    "adaptations": []
+  },
+  {
+    "path": "docs/int8_rebuild_validation.json",
+    "origin": "native_int8_rebuild/docs/int8_rebuild_validation.json",
+    "source_sha256": "05d31fb2ce0238ca1a4f7e8e6f630742589c477b3e47503e6fb6f75603c41412",
+    "public_sha256": "05d31fb2ce0238ca1a4f7e8e6f630742589c477b3e47503e6fb6f75603c41412",
+    "category": "model_rebuild_source_or_validation",
+    "adaptations": []
+  },
+  {
+    "path": "tests/deployment/test_rebuild.py",
+    "origin": "native_int8_rebuild/tests/deployment/test_rebuild.py",
+    "source_sha256": "1b6eb5931e143fbaf3d1d8698dc5f4d2f9730c15464ea757988e57ce47985fa7",
+    "public_sha256": "1b6eb5931e143fbaf3d1d8698dc5f4d2f9730c15464ea757988e57ce47985fa7",
+    "category": "model_rebuild_source_or_validation",
     "adaptations": []
   }
 ]

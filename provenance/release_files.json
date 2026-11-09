@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6935,
-      "sha256": "7ade737ab182ada8f5050de23a08dd342e8f3c22ccf8e8faee5d603f310a40ac"
+      "bytes": 7118,
+      "sha256": "42a50f32c5fed07cb91abb9d464ab15d97ce251b6aff6f0d36ce0e47828d15ed"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -237,6 +237,11 @@
       "sha256": "f437e0378f2102699a1a9a1ebea355aa8b452061841d3da6723af8f87e62b10e"
     },
     {
+      "path": "contracts/model/rebuild_profile.json",
+      "bytes": 915,
+      "sha256": "49ef531a5242617ea3a74f1f047031b5e7f80481e8eace3f9c9fd426cfc2ac84"
+    },
+    {
       "path": "contracts/quantization/base/core_r1.json",
       "bytes": 9833,
       "sha256": "d38f5b6dd0a2064fc9f94d9afa530766f31227ba2981da5476127b4771480be8"
@@ -368,8 +373,8 @@
     },
     {
       "path": "deployment/commands.py",
-      "bytes": 5118,
-      "sha256": "a8c036d9f8d231256e5f6a35a00078c841e1fd7f2898f8297354fe861897be85"
+      "bytes": 5634,
+      "sha256": "cf79b465858c904facde9b9ddc3ca481ca99cfb2fe7566466b150f3c8309c722"
     },
     {
       "path": "deployment/export/__init__.py",
@@ -403,8 +408,8 @@
     },
     {
       "path": "deployment/export/polyphase.py",
-      "bytes": 9307,
-      "sha256": "01c78fcc099ac98fe1ff4083d32b1ad8c61993679c5009ad88504447b45b80be"
+      "bytes": 9365,
+      "sha256": "f50322aa89f6768e0fb1f0233c0bb724a4f9b18292f5d5597efaf9607f29b39c"
     },
     {
       "path": "deployment/export/tcn_existing_data_ed7_compat_contract.py",
@@ -698,8 +703,8 @@
     },
     {
       "path": "deployment/icraft/native/physical_entry.py",
-      "bytes": 1867,
-      "sha256": "05f0ca453eb0ba23ed1f62b60a24ca506e729a496bda8b263976d041ea42dba5"
+      "bytes": 1947,
+      "sha256": "2d1d849c6535c6e7ffe9ea51623e16aef57e664d0a410b3f7477bc92626d5446"
     },
     {
       "path": "deployment/icraft/native/prepare_holdout3.py",
@@ -713,8 +718,8 @@
     },
     {
       "path": "deployment/icraft/native/rebuild_native_models.py",
-      "bytes": 2187,
-      "sha256": "141fd467243fe91e92a902abf98af41860e14b87f7a6de64417f660f63477706"
+      "bytes": 2150,
+      "sha256": "0c86a2727ee573355fd2570dc0b2cb903cb7899cfa3aae0fa364ff52faf6d137"
     },
     {
       "path": "deployment/icraft/native/report3.py",
@@ -737,9 +742,14 @@
       "sha256": "567c01257fc0b60a5af2fc1f0976d6b592bfc4604eef10cb907191b3fedb874b"
     },
     {
+      "path": "deployment/rebuild.py",
+      "bytes": 13969,
+      "sha256": "0de68471db8b4d704e9d63463bca3c1175e876401e7dcf2f1a2718d6c338dd72"
+    },
+    {
       "path": "docs/MODEL_BUILD.md",
-      "bytes": 2458,
-      "sha256": "e6e8af7ba266d7d31079d29c28455f0f071e3ff34b4df504368952828d9b431f"
+      "bytes": 3995,
+      "sha256": "7769da9c85fa4e7468fe6f8bc92835336bff77582a22d2adcf02baa28abe5ab2"
     },
     {
       "path": "docs/RUNNING.md",
@@ -752,14 +762,19 @@
       "sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef"
     },
     {
+      "path": "docs/int8_rebuild_validation.json",
+      "bytes": 4363,
+      "sha256": "05d31fb2ce0238ca1a4f7e8e6f630742589c477b3e47503e6fb6f75603c41412"
+    },
+    {
       "path": "docs/migration_validation.json",
       "bytes": 2818,
       "sha256": "8657929236f023e6eb95a1ad5f550ed1b615b64d64942c713a5e12867147fc94"
     },
     {
       "path": "docs/release_status.json",
-      "bytes": 736,
-      "sha256": "96e852f77f628bc4e182a41f9af1acf9a45f08d826625ee18e54dd8dfa25459c"
+      "bytes": 863,
+      "sha256": "37d064e033dd48907a480f85fe77e1881225bf188250cecba3ecc50db2b4fe35"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -1483,8 +1498,8 @@
     },
     {
       "path": "external/dependencies.json",
-      "bytes": 478257,
-      "sha256": "5599b8501db384c190a530197b31031ff31c3d9dd9b37abda0d4f5f6c7df3774"
+      "bytes": 478869,
+      "sha256": "6642b1eeb1e34dfecae676ec6685668f300dad198fb7e0e92db1c87fb8141eba"
     },
     {
       "path": "finedge.py",
@@ -2068,13 +2083,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 381487,
-      "sha256": "007db30bba981c89806a24a0f86d4dbaedb88a6fefe7fa085920df2600c96e58"
+      "bytes": 383677,
+      "sha256": "a1650dbd96e4b3ac43563506cf8343163708e1aba9b6806408eff200409df828"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21409,
-      "sha256": "29d2979ba643d42b731d5f5c65383e4dc316d7027211ef85c3a81ecf9200076f"
+      "sha256": "d93da2857320f16ae1de966e1f2965bd758ac1d92217fcfa27b863f90fcf25a5"
     },
     {
       "path": "requirements.txt",
@@ -2345,6 +2360,11 @@
       "path": "tests/deployment/native/test_native_entry.py",
       "bytes": 9081,
       "sha256": "69ec5d73ad66cf6cae3140e903ee772ae5fa4ca6642f1d970b3993d79b3cceb2"
+    },
+    {
+      "path": "tests/deployment/test_rebuild.py",
+      "bytes": 4185,
+      "sha256": "1b6eb5931e143fbaf3d1d8698dc5f4d2f9730c15464ea757988e57ce47985fa7"
     },
     {
       "path": "tests/host/__init__.py",

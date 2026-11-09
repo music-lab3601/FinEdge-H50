@@ -8,7 +8,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "7ade737ab182ada8f5050de23a08dd342e8f3c22ccf8e8faee5d603f310a40ac"
+      "public_sha256": "42a50f32c5fed07cb91abb9d464ab15d97ce251b6aff6f0d36ce0e47828d15ed"
     },
     {
       "old": "deployment/project/scripts/build_polyphase_model.py",
@@ -17,7 +17,7 @@
         "ICRAFT_INSTALL"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "01c78fcc099ac98fe1ff4083d32b1ad8c61993679c5009ad88504447b45b80be"
+      "public_sha256": "f50322aa89f6768e0fb1f0233c0bb724a4f9b18292f5d5597efaf9607f29b39c"
     },
     {
       "old": "deployment/project/src/finedge_host/backends.py",
@@ -157,7 +157,7 @@
         "VIVADO_INSTALL"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "96e852f77f628bc4e182a41f9af1acf9a45f08d826625ee18e54dd8dfa25459c"
+      "public_sha256": "37d064e033dd48907a480f85fe77e1881225bf188250cecba3ecc50db2b4fe35"
     },
     {
       "old": "hardware/artifacts/fpga_reference_20261021/boot_candidate_UNVERIFIED_20261021/manifest.json",

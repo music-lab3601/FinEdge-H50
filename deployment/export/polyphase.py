@@ -34,7 +34,9 @@ def main():
         wn=const(name+'_w',w.astype(np.float32));bn=const(name+'_b',b.astype(np.float32))
         return node('Conv',[x,wn,bn],name,kernel_shape=[1,w.shape[-1]],pads=[0,left,0,0],strides=[1,stride],dilations=[1,1],group=1)
     def sliced(x,start,end,name,step=1):
-        return node('Slice',[x,const(name+'_start',np.array([start],np.int64)),const(name+'_end',np.array([end],np.int64)),const(name+'_axes',np.array([3],np.int64)),const(name+'_step',np.array([step],np.int64))],name)
+        inputs=[x,const(name+'_start',np.array([start],np.int64)),const(name+'_end',np.array([end],np.int64)),const(name+'_axes',np.array([3],np.int64))]
+        if step!=1:inputs.append(const(name+'_step',np.array([step],np.int64)))
+        return node('Slice',inputs,name)
     def taps(x,w,b,name,length,left=2):
         if left:
             x=node('Pad',[x,const(name+'_pad',np.array([0,0,0,left,0,0,0,0],np.int64)),const(name+'_zero',np.array(0.,np.float32))],name+'_padded',mode='constant')

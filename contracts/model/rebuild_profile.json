@@ -1,0 +1,24 @@
+{
+  "schema": "finedge-h50-rebuild-profile-1",
+  "date": "2025-12-15",
+  "symbol": "AAPL",
+  "raw_mbo_sha256": "f837fe8870cde83feed2f0ae21c73d778586249790219f976e53d60e0484f9d6",
+  "reconstructed_records": 450261,
+  "reconstructed_rows_sha256": "f4bc3a1a683c490060686de43df51e8fadd48702810946086a4a0555cc63780d",
+  "calibration": {
+    "count": 256,
+    "first_endpoint": 99,
+    "last_endpoint": 4095,
+    "inputs_sha256": "cc182df6b7fbe85a4f32879c3c346424da2b80e26133d27416defae9812e61c1"
+  },
+  "evaluation": {
+    "count": 1024,
+    "first_endpoint": 250099,
+    "last_endpoint": 450210,
+    "inputs_sha256": "94b529ae611a8f7486cebc42aca9babc88292f79e41da3752fb6c0a8dd63d083"
+  },
+  "scope": "Same-day engineering reconstruction and frozen-deployment reproduction",
+  "teammate_validation_cache_row_alignment": false,
+  "accuracy_drop_percentage_points_max": 1.0,
+  "macro_f1_drop_percentage_points_max": 1.0
+}

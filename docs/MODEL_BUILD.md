@@ -8,6 +8,19 @@ H50模型为ED4 feature42 seed42的epoch3，输入`float32[1,40,100]`，输出`[
 
 ## 可执行阶段
 
+完整复现入口如下。使用Icraft 3.36.1、CMake及VS2022 C++编译器，Python依赖按根目录README安装。
+
+```shell
+python finedge.py configure --icraft <icraft_directory> --cmake <cmake_executable>
+python finedge.py model rebuild --raw-mbo <raw_mbo56.bin> --work-dir .local/rebuild01
+```
+
+`--work-dir`选择一个新目录。原始MBO文件的大小、SHA256和获取范围登记在`external/dependencies.json`，窗口选择与重建身份位于`contracts/model/rebuild_profile.json`。本轮使用2025-12-15 AAPL固定工程片段。
+
+入口从原始56字节MBO重新建簿，核对450261条盘口及冻结归一化，生成256个校准窗口和1024个验收窗口。随后构建C++辅助程序、导出TorchScript对应的ONNX、生成冻结的39节点因果图，执行TF32、INT8、逐层诊断、混合精度、首层尺度折叠和原生输入指令生成。计算体沿用已验收的TF32/INT8混合配置。
+
+结果保存在工作目录的`result.json`。全部编译命令日志、校准与验收输入、模型、SDK编码核对及新旧Host输出均独立保存。SDK生成的诊断日志也位于该工作目录。失败记录保留在该次工作目录，再次执行时选择新目录。
+
 | 命令 | 输入 | 输出 |
 |---|---|---|
 | model export | 冻结TorchScript及32窗合成参考 | .local/runtime/export/ONNX与验证报告 |
@@ -17,6 +30,7 @@ H50模型为ED4 feature42 seed42的epoch3，输入`float32[1,40,100]`，输出`[
 | model compile --kind int8 | 同图与明确校准输入 | Icraft INT8编译结果与阶段日志 |
 | model compile --kind mixed | INT8结果及逐层诊断收据 | 首尾敏感层保留高精度的混合图 |
 | model compile --kind native | 混合图、原生C++工具及冻结尺度 | 首层尺度折叠、原生INT8输入布局与指令 |
+| model rebuild --raw-mbo FILE --work-dir DIR | 冻结原始MBO、模型与源码 | 完整编译链、1024窗数值复现及结果清单 |
 
 各编译阶段结果保存在`.local/model_build/{base,mixed,native}/`，C++源码留在`deployment/icraft/`相应目录。CMake通过集中配置选择，SDK从`--icraft`指定位置加载。完整混合精度链需要逐层诊断和冻结收据，入口先检查必要文件并给出缺项位置。
 
@@ -24,7 +38,7 @@ H50模型为ED4 feature42 seed42的epoch3，输入`float32[1,40,100]`，输出`[
 
 混合精度选层逻辑位于`deployment/icraft/mixed/diagnose.py`与`compile_mixed.py`。原生尺度折叠、张量布局和Host核验位于`deployment/icraft/native/`。这些阶段保留模型身份、输入尺度、输出层数及失败记录的核对。
 
-迁移验收已运行ONNX导出和图变换。完整Icraft重编译及实际NPU数值验收保留为待完成项，当前部署工件由`models/identity.json`绑定。
+完整重编译已完成本机验收，生成的JSON和RAW与冻结部署工件逐字节一致。1024窗新旧Host输出逐位一致，64个SDK编码样例一致，首层尺度折叠独立审计通过。指标和范围见`docs/int8_rebuild_validation.json`。实际板卡验收在后续阶段执行，部署工件由`models/identity.json`绑定。
 
 ## 定点ROM
 

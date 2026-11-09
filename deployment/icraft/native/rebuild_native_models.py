@@ -9,7 +9,6 @@ from deployment.icraft.native.common3 import ROOT, V2, SDK, read, save, env
 
 def main():
     out=ROOT/'artifacts/int8_folded';out.mkdir(parents=True,exist_ok=False)
-    x=np.load(V2/'data/inputs.npy')
     from shared.paths import ROOT as REPOSITORY
     s=np.fromfile(REPOSITORY/'models/npu/scales.f32',dtype='<f4')
     if s.shape!=(40,) or not np.isfinite(s).all() or not (s>0).all():raise ValueError('Frozen H50 scales invalid')

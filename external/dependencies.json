@@ -7651,6 +7651,17 @@
       "availability": "external",
       "exact_reconstruction_verified": false,
       "original_target": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/firmware/release.json"
+    },
+    {
+      "target": "data://rebuild/raw_mbo56.bin",
+      "sha256": "f837fe8870cde83feed2f0ae21c73d778586249790219f976e53d60e0484f9d6",
+      "bytes": 328580952,
+      "kind": "licensed_market_input",
+      "acquisition": "2025-12-15 XNAS.ITCH AAPL MBO records, fixed 56-byte cache from licensed source; obtain separately under provider terms",
+      "availability": "external",
+      "validation": "model rebuild --raw-mbo verifies hash and regenerates calibration/evaluation rows",
+      "profile": "repo://contracts/model/rebuild_profile.json",
+      "exact_reconstruction_verified": true
     }
   ],
   "hardware_vendor_integration": "Exact vendor and modified integration files are registered here; official-package reconstruction and integration overlay need verification in the full-build stage",

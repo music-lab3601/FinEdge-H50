@@ -101,6 +101,7 @@ python -B finedge.py model export
 python -B finedge.py model polyphase --label trial01 --preserve-taps
 python -B finedge.py model calibration --input <normalized_calibration.npy>
 python -B finedge.py model compile --kind int8
+python -B finedge.py model rebuild --raw-mbo <raw_mbo56.bin> --work-dir .local/rebuild01
 python -B finedge.py fpga --check
 python -B finedge.py fpga --prepare-only --work-dir <new_ascii_build_directory>
 python -B finedge.py fpga --work-dir <another_new_ascii_build_directory> --package-boot
@@ -113,7 +114,7 @@ python -B finedge.py simulate
 
 目录迁移、57份模板解析、CPU网络功能闭环、HTTP界面、行情源编译、ONNX导出和图变换、定点ROM再生成、四项RTL仿真已进行本地验证。精确结果以`docs/migration_validation.json`为准。
 
-完整Icraft混合精度重编译、厂商集成工程全构建、该次构建固件的板卡验收仍待执行。冻结NPU JSON/RAW保留已验收字节和身份。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
+完整Icraft原生INT8部署重编译已通过本机验收，JSON/RAW与冻结工件逐字节一致，1024窗新旧Host输出逐位一致。结果见`docs/int8_rebuild_validation.json`。厂商集成工程全构建及本轮工件的板卡验收仍待执行。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
 
 ## 许可
 

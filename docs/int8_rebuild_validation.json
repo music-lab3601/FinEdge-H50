@@ -1,0 +1,197 @@
+{
+  "schema": "finedge-native-int8-rebuild-validation-1",
+  "date": "2026-11-09",
+  "status": "passed",
+  "scope": "2025-12-15 AAPL fixed engineering profile; native INT8 input and frozen TF32/INT8 compute body",
+  "raw_MBO_sha256": "f837fe8870cde83feed2f0ae21c73d778586249790219f976e53d60e0484f9d6",
+  "reconstructed_rows": 450261,
+  "normalization": "All reconstructed rows checked against frozen float64 preprocessing",
+  "calibration_windows": 256,
+  "evaluation_windows": 1024,
+  "regenerated_ONNX_graph": "39 nodes; equal to frozen graph",
+  "SDK": "Icraft 3.36.1",
+  "toolchain": "Windows x64; CMake and VS2022; isolated Python 3.12.15 environment",
+  "stages": [
+    {
+      "stage": "build_base",
+      "exit_code": 0
+    },
+    {
+      "stage": "build_mixed",
+      "exit_code": 0
+    },
+    {
+      "stage": "build_native",
+      "exit_code": 0
+    },
+    {
+      "stage": "reconstruct",
+      "exit_code": 0
+    },
+    {
+      "stage": "export",
+      "exit_code": 0
+    },
+    {
+      "stage": "polyphase",
+      "exit_code": 0
+    },
+    {
+      "stage": "calibration",
+      "exit_code": 0
+    },
+    {
+      "stage": "tf32",
+      "exit_code": 0
+    },
+    {
+      "stage": "int8",
+      "exit_code": 0
+    },
+    {
+      "stage": "diagnostics",
+      "exit_code": 0
+    },
+    {
+      "stage": "mixed",
+      "exit_code": 0
+    },
+    {
+      "stage": "native",
+      "exit_code": 0
+    },
+    {
+      "stage": "fold_audit",
+      "exit_code": 0
+    },
+    {
+      "stage": "codec",
+      "exit_code": 0
+    },
+    {
+      "stage": "new_native",
+      "exit_code": 0
+    },
+    {
+      "stage": "frozen_native",
+      "exit_code": 0
+    }
+  ],
+  "model": {
+    "json_sha256": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+    "raw_sha256": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+    "frozen_json_byte_equal": true,
+    "frozen_raw_byte_equal": true,
+    "input_shape": [
+      1,
+      3,
+      1,
+      100,
+      16
+    ],
+    "input_bytes": 4800,
+    "output_id": 250,
+    "layers": 30
+  },
+  "model_interface": {
+    "input_shape": [
+      1,
+      3,
+      1,
+      100,
+      16
+    ],
+    "input_bytes": 4800,
+    "input_id": 0,
+    "output_id": 250,
+    "layers": 30,
+    "hardware_operations": 38,
+    "compute_target": "ZG330",
+    "compiler_version": "v3.36.1"
+  },
+  "codec": {
+    "samples": 64,
+    "bytes_compared": 307200,
+    "byte_equal": true
+  },
+  "scale_fold_audit": {
+    "status": "passed",
+    "parameters_checked": 30,
+    "changed_tensors": 2
+  },
+  "reproduction": {
+    "samples": 1024,
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "class_changes": 0,
+    "bit_equal": true
+  },
+  "error_vs_cpu": {
+    "samples": 1024,
+    "max_abs": 1.0771573781967163,
+    "mean_abs": 0.0685657188296318,
+    "class_changes": 82,
+    "bit_equal": false
+  },
+  "quality_cpu": {
+    "correct": 470,
+    "samples": 1024,
+    "accuracy": 0.458984375,
+    "macro_f1": 0.45544071871800473,
+    "confusion": [
+      [
+        169,
+        63,
+        107
+      ],
+      [
+        126,
+        119,
+        112
+      ],
+      [
+        72,
+        74,
+        182
+      ]
+    ]
+  },
+  "quality_native": {
+    "correct": 461,
+    "samples": 1024,
+    "accuracy": 0.4501953125,
+    "macro_f1": 0.44646373695763636,
+    "confusion": [
+      [
+        167,
+        64,
+        108
+      ],
+      [
+        124,
+        115,
+        118
+      ],
+      [
+        72,
+        77,
+        179
+      ]
+    ]
+  },
+  "quality_drop": {
+    "accuracy_percentage_points": 0.87890625,
+    "macro_f1_percentage_points": 0.8976981760368374
+  },
+  "quality_budget_percentage_points": 1.0,
+  "original_validation_cache_row_alignment": false,
+  "resolved_findings": [
+    "Calibration alias required by layer diagnostics added",
+    "Unit-step Slice serialization restored to frozen graph convention",
+    "Native code-generation exit failures propagated",
+    "SDK diagnostic working directory isolated"
+  ],
+  "unified_command": "python finedge.py model rebuild --raw-mbo FILE --work-dir NEW_DIRECTORY",
+  "board_validation": "pending",
+  "fresh_clone_full_rebuild": "operator receipt records final commit"
+}

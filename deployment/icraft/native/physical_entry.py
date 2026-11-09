@@ -20,5 +20,6 @@ def main():
  t=time.perf_counter()
  with (out/'generate.log').open('wb') as f:r=subprocess.run(cmd,cwd=out,env=env(),stdout=f,stderr=subprocess.STDOUT)
  save(out/'result.json',dict(exit_code=r.returncode,seconds=time.perf_counter()-t,command=cmd,model_sha256=sha(model),raw_sha256=sha(model.with_suffix('.raw'))))
+ if r.returncode:raise RuntimeError('Native physical input generation failed')
  print(r.returncode)
 if __name__=='__main__':main()
