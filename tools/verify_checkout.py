@@ -185,6 +185,17 @@ def verify(git):
         else:
             errors.append('XPR input must use a declared resource URI: '+reference)
         xpr_inputs += 1
+    xpr_hooks=0
+    for step in ET.parse(xpr).findall('.//Step'):
+        for attribute in ('PreStepTclHook','PostStepTclHook'):
+            reference=step.get(attribute)
+            if not reference:continue
+            xpr_hooks+=1
+            if reference.startswith('repo://'):
+                if reference.removeprefix('repo://') not in tracked:
+                    errors.append('Missing XPR hook: '+reference)
+            elif reference not in declared:
+                errors.append('Undeclared XPR hook: '+reference)
     for row in json.loads((ROOT/'provenance/source_map.json').read_text(encoding='utf-8')):
         path=ROOT/row['path']
         if row['path'] not in tracked or not path.is_file() or sha(path)!=row['public_sha256']:
@@ -201,7 +212,7 @@ def verify(git):
             errors.append('CPU model payload differs: ' + name)
     return dict(status='passed' if not errors and not findings else 'failed',
                 tracked_files=len(tracked), required_files=len(REQUIRED),
-                manifest_files=len(expected), XPR_inputs_accounted_for=xpr_inputs,
+                manifest_files=len(expected), XPR_inputs_accounted_for=xpr_inputs, XPR_hooks_accounted_for=xpr_hooks,
                 external_files_declared=len(declared), configuration_templates=templates,
                 sensitive_findings=findings, errors=errors,
                 verification_scope='Git collection, identities, metadata and declared dependencies',

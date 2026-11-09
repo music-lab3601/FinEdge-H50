@@ -95,7 +95,7 @@
     "path": "hardware/scripts/call_procise_disable_icap.bat",
     "origin": "revised_h50/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/call_procise_disable_icap.bat",
     "source_sha256": "b2589207631c19f2340237c957be3bdfb9fa9e9ff70fcf1f149e1b893ae4d78b",
-    "public_sha256": "657eedf53591cb830582db1d9116917b9eaf00e1a73824a11e5491d8d4f22417",
+    "public_sha256": "a53750ea9aa284047ad7dee89265b90c4f91acdcccc3f8e087985d3b6dca5ede",
     "category": "hardware_source",
     "adaptations": [
       "machine path strings replaced by documented configuration tokens",
@@ -107,7 +107,7 @@
     "path": "hardware/project/reference.xpr",
     "origin": "revised_h50/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/fpai_demo_vivado.xpr",
     "source_sha256": "17bf245fee9d22b8a29ad545c9e2c6d0be5e34a7ec9ccd137c911d0a5f75b6f6",
-    "public_sha256": "6622ac2f246514e0533b7dccea3c65beb150c2dddcaa9b65789bf7be58b82898",
+    "public_sha256": "7ecceccb5a464aef5b6dccf7ef184a6c58181f91deccef7d9b6b3107b860536c",
     "category": "hardware_source",
     "adaptations": [
       "machine path strings replaced by documented configuration tokens",
@@ -119,7 +119,7 @@
     "path": "hardware/scripts/procise_run_disable_icap.tcl",
     "origin": "revised_h50/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/procise_run_disable_icap.tcl",
     "source_sha256": "8a7d20e78a8ea1bafa53daf74425238bf2ec6c8e77859186485346f70310bb60",
-    "public_sha256": "49eae0db77fb01f45f77de6f9720aecf450f4b03b09e79d980167b50766354dc",
+    "public_sha256": "a38a0a19b669d0efb6e3ae7decdaeb55a8a41d0f67e91fc063b32940ca220959",
     "category": "hardware_source",
     "adaptations": [
       "machine path strings replaced by documented configuration tokens",
@@ -6813,9 +6813,11 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
+    "public_sha256": "2e9855384fc4fe0b1da049b8a59cb9385d066061c3f1159a27970b1a5e855b35",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Functional directory migration and portable runtime configuration"
+    ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
   {
@@ -6975,9 +6977,11 @@
     "path": "tests/test_public_entry.py",
     "origin": "public_repository_migration/tests/test_public_entry.py",
     "source_sha256": "caed075e2c2929baab096cb0616b5d54e1a063ef32909744d94641e4f2f106a8",
-    "public_sha256": "caed075e2c2929baab096cb0616b5d54e1a063ef32909744d94641e4f2f106a8",
+    "public_sha256": "3d854bd38d28d9f9c1ea2c7b080cab68cd1d0035a9e05614a6dddf744b908764",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Functional directory migration and portable runtime configuration"
+    ],
     "pre_migration_public_path": "tests/test_public_entry.py"
   },
   {
@@ -7047,9 +7051,11 @@
     "path": "tools/verify_checkout.py",
     "origin": "public_repository_migration/tools/verify_checkout.py",
     "source_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a",
-    "public_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a",
+    "public_sha256": "f4425a484f238cb6cf3656974b4316cc93b342062ed686a65f26c0a15d03604b",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Functional directory migration and portable runtime configuration"
+    ],
     "pre_migration_public_path": "tools/verify_checkout.py"
   }
 ]

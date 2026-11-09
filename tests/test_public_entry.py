@@ -19,6 +19,15 @@ class ConfigurationTests(unittest.TestCase):
             with self.subTest(reference=ref), self.assertRaises(paths.ConfigurationError):
                 paths.resolve_path(ref)
 
+        import xml.etree.ElementTree as ET
+        external=json.loads((paths.ROOT/'external/dependencies.json').read_text('utf-8'))
+        declared={row['target'] for row in external['files']}
+        for step in ET.parse(paths.ROOT/'hardware/project/reference.xpr').findall('.//Step'):
+            for name in ('PreStepTclHook','PostStepTclHook'):
+                reference=step.get(name)
+                if reference:
+                    self.assertTrue(reference in declared or (reference.startswith('repo://') and paths.resolve_path(reference).is_file()))
+
     def test_defaults_follow_relocated_repository(self):
         with tempfile.TemporaryDirectory() as temporary:
             other = Path(temporary)

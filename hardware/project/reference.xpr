@@ -2360,7 +2360,7 @@
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z030ffg676-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018" />
-        <Step Id="synth_design" PreStepTclHook="$PPRDIR/ip_patch/process_control/synthesis_pre.tcl" />
+        <Step Id="synth_design" PreStepTclHook="vendor://fpga/ip_patch/process_control/synthesis_pre.tcl" />
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml" />
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018" />
@@ -2586,7 +2586,7 @@
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Performance_NetDelay_high" Flow="Vivado Implementation 2018" />
         <Step Id="init_design" />
-        <Step Id="opt_design" PreStepTclHook="$PPRDIR/ip_patch/process_control/implementation_opt_pre.tcl" PostStepTclHook="$PPRDIR/../implementation_correction_20261103_224046/opt_post.tcl" />
+        <Step Id="opt_design" PreStepTclHook="vendor://fpga/ip_patch/process_control/implementation_opt_pre.tcl" PostStepTclHook="repo://hardware/scripts/opt_post.tcl" />
         <Step Id="power_opt_design" />
         <Step Id="place_design">
           <Option Id="Directive">6</Option>
@@ -2595,13 +2595,13 @@
         <Step Id="phys_opt_design" EnableStepBool="1">
           <Option Id="Directive">2</Option>
         </Step>
-        <Step Id="route_design" PostStepTclHook="$PPRDIR/ip_patch/process_control/implementation_route_post.tcl">
+        <Step Id="route_design" PostStepTclHook="vendor://fpga/ip_patch/process_control/implementation_route_post.tcl">
           <Option Id="Directive">0</Option>
         </Step>
         <Step Id="post_route_phys_opt_design" EnableStepBool="1">
           <Option Id="Directive">1</Option>
         </Step>
-        <Step Id="write_bitstream" PreStepTclHook="$PPRDIR/ip_patch/process_control/write_bitstream_pre.tcl" PostStepTclHook="$PPRDIR/ip_patch/process_control/write_bitstream_post.tcl" />
+        <Step Id="write_bitstream" PreStepTclHook="vendor://fpga/ip_patch/process_control/write_bitstream_pre.tcl" PostStepTclHook="vendor://fpga/ip_patch/process_control/write_bitstream_post.tcl" />
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml" />
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018" />

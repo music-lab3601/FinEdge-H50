@@ -1,3 +1,5 @@
+@if "%~1"=="" exit /b 2
+@set "FINEDGE_BITSTREAM=%~f1"
 @set PROCISE_DIR=tool://procise/
 @set TCL_LIBRARY=%PROCISE_DIR%/tcl8.4
 @set PATH=%PROCISE_DIR%/dll;%PROCISE_DIR%/bin;%PATH%

@@ -1523,8 +1523,8 @@
     },
     {
       "path": "hardware/project/reference.xpr",
-      "bytes": 145028,
-      "sha256": "6622ac2f246514e0533b7dccea3c65beb150c2dddcaa9b65789bf7be58b82898"
+      "bytes": 145029,
+      "sha256": "7ecceccb5a464aef5b6dccf7ef184a6c58181f91deccef7d9b6b3107b860536c"
     },
     {
       "path": "hardware/rom/fixed_lane0.hex",
@@ -1803,8 +1803,8 @@
     },
     {
       "path": "hardware/scripts/call_procise_disable_icap.bat",
-      "bytes": 285,
-      "sha256": "657eedf53591cb830582db1d9116917b9eaf00e1a73824a11e5491d8d4f22417"
+      "bytes": 341,
+      "sha256": "a53750ea9aa284047ad7dee89265b90c4f91acdcccc3f8e087985d3b6dca5ede"
     },
     {
       "path": "hardware/scripts/check_build_dependencies.py",
@@ -1828,8 +1828,8 @@
     },
     {
       "path": "hardware/scripts/procise_run_disable_icap.tcl",
-      "bytes": 189,
-      "sha256": "49eae0db77fb01f45f77de6f9720aecf450f4b03b09e79d980167b50766354dc"
+      "bytes": 213,
+      "sha256": "a38a0a19b669d0efb6e3ae7decdaeb55a8a41d0f67e91fc063b32940ca220959"
     },
     {
       "path": "hardware/scripts/run_integrated_vivado_step.py",
@@ -2063,13 +2063,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 380462,
-      "sha256": "0a0aef14e32ab568416dc6b2b8fec8b58fb473ee879d94724f74ba7d3122b1eb"
+      "bytes": 380699,
+      "sha256": "842675901ad15684c92f8baacdb8d39402ca95c6575f145e95cfb24cc5ac5349"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21409,
-      "sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1"
+      "sha256": "2e9855384fc4fe0b1da049b8a59cb9385d066061c3f1159a27970b1a5e855b35"
     },
     {
       "path": "requirements.txt",
@@ -2493,8 +2493,8 @@
     },
     {
       "path": "tests/test_public_entry.py",
-      "bytes": 3977,
-      "sha256": "caed075e2c2929baab096cb0616b5d54e1a063ef32909744d94641e4f2f106a8"
+      "bytes": 4632,
+      "sha256": "3d854bd38d28d9f9c1ea2c7b080cab68cd1d0035a9e05614a6dddf744b908764"
     },
     {
       "path": "third_party/lightweight-charts/LICENSE.txt",
@@ -3228,8 +3228,8 @@
     },
     {
       "path": "tools/verify_checkout.py",
-      "bytes": 12238,
-      "sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a"
+      "bytes": 12810,
+      "sha256": "f4425a484f238cb6cf3656974b4316cc93b342062ed686a65f26c0a15d03604b"
     }
   ]
 }
