@@ -42,10 +42,7 @@ def execute(path):
     m=read(path);d=Path(m['directory']);remote=m['remote'];c=None;sent=None
     result=dict(status='failed',owner_started=False,remote=remote,automatic_retry=False)
     qualify(dict(candidate_manifest=str(path),candidate_manifest_sha256=sha(path)))
-    end=time.monotonic()+2
-    while not any(r['state']=='active' and r.get('child_pid')==os.getpid() and r['candidate_manifest']==str(path) for r in Queue()._load()['requests']):
-        if time.monotonic()>end:raise RuntimeError('Not the exclusive G board queue child')
-        time.sleep(.01)
+    Queue().attach_child(path)
     try:
         c=Console(load_settings()['board']['serial_port']);ensure_shell(c);boot=checked(c,'cat /proc/sys/kernel/random/boot_id').strip()
         if boot!=m['loaded_firmware']['boot_id']:raise ValueError('Board boot identity changed')
@@ -141,7 +138,7 @@ def synchronize_observed_boot(d,cfg):
     from board.management.board_lifecycle import process_exists
     q=Queue()
     pending=[r for r in q._load()['requests'] if r['resource']=='board' and r['state'] in ('active','needs_reconciliation','finished_pending_quiescence')]
-    if any(r.get('child_pid') and process_exists(r['child_pid']) for r in pending):raise RuntimeError('板卡有正在运行的G任务，请等待该任务结束。')
+    if any(r.get(key) and process_exists(r[key]) for r in pending for key in ('child_pid','worker_pid')):raise RuntimeError('板卡有正在运行的G任务，请等待该任务结束。')
     with ResourceLock(q.locks,'board'):
         c=Console(load_settings()['board']['serial_port'])
         try:

@@ -144,7 +144,8 @@ class Queue:
                 if earlier[0]['request_id'] != request_id:
                     raise Busy('Earlier queued request must finish or be explicitly cancelled first')
                 qualify(dict(request))
-                request.update(state='active', started_utc=now(), supervisor_pid=os.getpid())
+                request.update(state='active', started_utc=now(), supervisor_pid=os.getpid(),
+                               launch_token=uuid.uuid4().hex)
             run_dir = self.root / 'artifacts/resource_runs' / request_id
             run_dir.mkdir(parents=True, exist_ok=False)
             started = time.perf_counter_ns()
@@ -152,8 +153,11 @@ class Queue:
             state, code, error = 'needs_reconciliation', None, None
             try:
                 with (run_dir / 'stdout.log').open('xb') as stdout, (run_dir / 'stderr.log').open('xb') as stderr:
+                    child_env = environment()
+                    child_env.update(FINEDGE_QUEUE_REQUEST_ID=request_id,
+                                     FINEDGE_QUEUE_LAUNCH_TOKEN=request['launch_token'])
                     process = subprocess.Popen(request['command'], cwd=self.root, stdout=stdout, stderr=stderr,
-                                               shell=False, env=environment())
+                                               shell=False, env=child_env)
                     with self.edit() as data:
                         current = next(r for r in data['requests'] if r['request_id'] == request_id)
                         current.update(child_pid=process.pid, child_started_utc=now())
@@ -177,6 +181,26 @@ class Queue:
                     current = next(r for r in data['requests'] if r['request_id'] == request_id)
                     current.update(result)
             return result
+
+    def attach_child(self, candidate_manifest, timeout_seconds=2):
+        """Bind the Python worker separately from a virtual-environment launcher."""
+        request_id = os.environ.get('FINEDGE_QUEUE_REQUEST_ID')
+        launch_token = os.environ.get('FINEDGE_QUEUE_LAUNCH_TOKEN')
+        if not request_id or not launch_token:
+            raise RuntimeError('Missing queued-child launch identity')
+        candidate = str(Path(candidate_manifest).resolve())
+        deadline = time.monotonic() + timeout_seconds
+        while time.monotonic() < deadline:
+            with self.edit() as data:
+                item = next((row for row in data['requests'] if row['request_id'] == request_id), None)
+                if (item and item['state'] == 'active' and item.get('child_pid')
+                        and item['candidate_manifest'] == candidate and item.get('launch_token') == launch_token):
+                    if item.get('worker_pid') not in (None, os.getpid()):
+                        raise RuntimeError('Queued request already has a different Python worker')
+                    item.update(worker_pid=os.getpid(), worker_attached_utc=now())
+                    return dict(item)
+            time.sleep(.01)
+        raise RuntimeError('Not the active queued Python worker')
 
     def cancel(self, request_id, reason):
         if not reason.strip():

@@ -143,11 +143,7 @@ def main():
     queue=Queue()
     if a.execute:
         path=a.execute.resolve();qualify(dict(candidate_manifest=str(path),candidate_manifest_sha256=sha(path)))
-        end=time.monotonic()+2
-        while not any(r['state']=='active' and r.get('child_pid')==os.getpid() and r['candidate_manifest']==str(path)
-                      for r in queue._load()['requests']):
-            if time.monotonic()>end:raise RuntimeError('Not the active G queue child')
-            time.sleep(.01)
+        queue.attach_child(path)
         print(json.dumps(perform(read(path))),flush=True);return
     if not a.operation:ap.error('--operation required')
     previous=read(ROOT/'state/loaded_firmware.json') if a.operation=='reboot' else None
@@ -175,7 +171,7 @@ def main():
                  ('active','needs_reconciliation','finished_pending_quiescence')]
         # This is explicit recovery of a parked run, never a concurrent test.
         for request in pending:
-            if request.get('child_pid') and process_exists(request['child_pid']):
+            if any(request.get(key) and process_exists(request[key]) for key in ('child_pid','worker_pid')):
                 raise RuntimeError('Prior board child still exists; inspect before recovery')
         with ResourceLock(queue.locks,'board'):
             result=perform(plan)

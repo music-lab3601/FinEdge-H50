@@ -43,8 +43,8 @@
     },
     {
       "path": "board/management/board_lifecycle.py",
-      "bytes": 9653,
-      "sha256": "c0308a81908a5faa7b622418bcd9d172293ae6186d6a669be705fed56099c314"
+      "bytes": 9386,
+      "sha256": "18100888f9b704b743c24b929ba8f9bc07cef8c062bd55511919e38b2b18201f"
     },
     {
       "path": "board/management/configure_phy.py",
@@ -2003,8 +2003,8 @@
     },
     {
       "path": "host/pipeline.py",
-      "bytes": 18689,
-      "sha256": "48dc2bed6f32ed2c9ba1d3921924158b82a393f3058a54ee13859e447a1d6698"
+      "bytes": 18443,
+      "sha256": "3fefb7f04ec7554b7a196d207185eb9a6a8a2a412c3793f371bdac61ce3bcda4"
     },
     {
       "path": "host/telemetry/__init__.py",
@@ -2148,8 +2148,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 412526,
-      "sha256": "c65844e25511b1f6806f68fc8a67158950ad24de7e13632bafdec07fe39dab5a"
+      "bytes": 413096,
+      "sha256": "d5841793fe600fd6c4e0bb4b8352e5a493195d70d8a0ce0335868f025eedaf4d"
     },
     {
       "path": "provenance/template_migration.json",
@@ -2188,8 +2188,8 @@
     },
     {
       "path": "shared/resources.py",
-      "bytes": 11551,
-      "sha256": "d612ed4a998203b3d543c536c44330ca5a4c6ef140ebcf8aa4df28ca1dc90a44"
+      "bytes": 13128,
+      "sha256": "72e246a60b82545ae610e6731e741f6d5fc84e620574b716e03eafae98e4e015"
     },
     {
       "path": "software/CODE_INDEX.md",
@@ -2595,6 +2595,11 @@
       "path": "tests/test_public_entry.py",
       "bytes": 4632,
       "sha256": "3d854bd38d28d9f9c1ea2c7b080cab68cd1d0035a9e05614a6dddf744b908764"
+    },
+    {
+      "path": "tests/test_queue_worker.py",
+      "bytes": 3451,
+      "sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195"
     },
     {
       "path": "tests/test_synthetic_inputs.py",

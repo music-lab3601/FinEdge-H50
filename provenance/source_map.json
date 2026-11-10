@@ -2568,10 +2568,11 @@
     "path": "shared/resources.py",
     "origin": "revised_h50/versions/realtime_integration_v1/integration/resource_queue.py",
     "source_sha256": "3b732367cee7b4a282a4baa5e2e3881ad5a2708fc4a5e1ac0c20ade4dbb414e6",
-    "public_sha256": "d612ed4a998203b3d543c536c44330ca5a4c6ef140ebcf8aa4df28ca1dc90a44",
+    "public_sha256": "72e246a60b82545ae610e6731e741f6d5fc84e620574b716e03eafae98e4e015",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/integration/resource_queue.py"
   },
@@ -2705,11 +2706,12 @@
     "path": "host/pipeline.py",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/runner.py",
     "source_sha256": "b2f7f138f3b774b5c6929592de6a542c0c25e4f4eb89f09db85f23f0190d480a",
-    "public_sha256": "48dc2bed6f32ed2c9ba1d3921924158b82a393f3058a54ee13859e447a1d6698",
+    "public_sha256": "3fefb7f04ec7554b7a196d207185eb9a6a8a2a412c3793f371bdac61ce3bcda4",
     "category": "hardware_source",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/runner.py"
   },
@@ -2883,10 +2885,11 @@
     "path": "board/management/board_lifecycle.py",
     "origin": "revised_h50/versions/realtime_integration_v1/scripts/board_lifecycle.py",
     "source_sha256": "608aaa46f641ddf140fc6bb073886c2bbcd43ee53ab08bf444e05202f71b8e69",
-    "public_sha256": "c0308a81908a5faa7b622418bcd9d172293ae6186d6a669be705fed56099c314",
+    "public_sha256": "18100888f9b704b743c24b929ba8f9bc07cef8c062bd55511919e38b2b18201f",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/scripts/board_lifecycle.py"
   },
@@ -7445,6 +7448,14 @@
     "origin": "CI_source_or_evidence/docs/ci_validation.json",
     "source_sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87",
     "public_sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tests/test_queue_worker.py",
+    "origin": "CI_source_or_evidence/tests/test_queue_worker.py",
+    "source_sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195",
+    "public_sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195",
     "category": "CI_source_or_evidence",
     "adaptations": []
   }
