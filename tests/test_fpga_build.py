@@ -13,8 +13,14 @@ from shared.paths import ConfigurationError
 class FpgaBuildTests(unittest.TestCase):
     def test_full_build_inputs_exclude_frozen_firmware(self):
         rows = build.required_assets()
-        self.assertEqual(len(rows), 756)
+        self.assertEqual(len(rows), 746)
         self.assertTrue(all(row['target'].startswith(('vendor://fpga/', 'vendor://boot/')) for row in rows))
+
+    def test_build_excludes_unused_legacy_and_generated_logs(self):
+        targets = {row['target'] for row in build.required_assets()}
+        self.assertFalse(any('/finedge_ddr/' in name for name in targets))
+        self.assertNotIn('vendor://fpga/ip_patch/ip_patch.cfg', targets)
+        self.assertNotIn('vendor://fpga/ip_patch/time_check.txt', targets)
 
     def test_vendor_paths_keep_project_layout_and_spaces(self):
         root = Path('build').resolve()
@@ -75,16 +81,20 @@ class FpgaBuildTests(unittest.TestCase):
             original = b'\xef\xbb\xbf// vendor bytes\r\n'
             (vendor / 'unchanged.v').write_bytes(original)
             (vendor / 'design.bd').write_text('{"design": {}}', encoding='utf-8')
+            (vendor / 'hidden.v').write_bytes(b'undeclared cache file')
             (source / 'hardware/project/reference.xpr').write_text(
                 '<Project><File Path="vendor://fpga/PS_AI IP/a.xml"/>'
                 '<Option Name="IPRepoPath" Val="$PPRDIR/PS_AI IP"/></Project>', encoding='utf-8')
             (source / 'hardware/scripts/build.tcl').write_text('set p {__PROJECT__}', encoding='utf-8')
-            with patch.object(build, 'ROOT', source), patch.object(build, 'resolve_path', return_value=vendor), \
+            rows = [dict(target='vendor://fpga/' + name) for name in ('unchanged.v', 'design.bd', 'ip_patch/ip_patch.cfg')]
+            with patch.object(build, 'ROOT', source), \
+                    patch.object(build, 'resolve_path', side_effect=lambda ref: vendor / ref.removeprefix('vendor://fpga/')), \
                     patch.object(build, 'dependencies', return_value={'status': 'passed'}), \
-                    patch.object(build, 'required_assets', return_value=[]), \
+                    patch.object(build, 'required_assets', return_value=rows), \
                     patch.object(build, 'tool_executable', return_value=root / 'tool/bin/vivado.bat'):
                 project = build.stage(root / 'output')
             self.assertEqual((project.parent / 'unchanged.v').read_bytes(), original)
+            self.assertFalse((project.parent / 'hidden.v').exists())
             self.assertEqual(ET.parse(project).find('.//File').get('Path'),
                              (project.parent / 'PS_AI IP/a.xml').as_posix())
 

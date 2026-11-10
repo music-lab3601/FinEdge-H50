@@ -1,5 +1,6 @@
 """Verify the files actually tracked by Git, their identities and public metadata."""
 from shared.paths import resolve_path
+from tools.source_closure import check as source_closure
 from pathlib import Path
 import argparse
 import ast
@@ -64,6 +65,8 @@ REQUIRED += ['finedge.py', 'config/default.json', 'models/normalization.json',
              'contracts/examples/synthetic_startup.json', 'docs/PUBLIC_REPRODUCTION.md',
              'docs/EVIDENCE.md', 'docs/evidence_index.json', 'external/README.md',
              '.github/workflows/ci.yml', 'tools/ci_check.py', 'docs/CI.md']
+REQUIRED += ['hardware/integration/vendor_edits.json', 'hardware/scripts/integrate_vendor.py',
+             'tools/source_closure.py', 'tests/test_vendor_integration.py']
 
 
 def sha(path):
@@ -214,10 +217,19 @@ def verify(git):
     for name, reference in cpu['files'].items():
         if not (ROOT / 'models/cpu' / name).is_file() or sha(ROOT / 'models/cpu' / name) != reference['sha256']:
             errors.append('CPU model payload differs: ' + name)
+    closure = source_closure(ROOT, tracked)
+    errors.extend(closure['errors'])
+    recipe = json.loads((ROOT/'hardware/integration/vendor_edits.json').read_text('utf-8'))
+    by_target = {row['target']: row for row in external['files']}
+    for row in recipe['files']:
+        target = by_target.get(row['target'], {})
+        if target.get('sha256') != row['output_sha256'] or target.get('bytes') != row['output_bytes']:
+            errors.append('Integration output differs from dependency manifest: ' + row['target'])
     return dict(status='passed' if not errors and not findings else 'failed',
                 tracked_files=len(tracked), required_files=len(REQUIRED),
                 manifest_files=len(expected), XPR_inputs_accounted_for=xpr_inputs, XPR_hooks_accounted_for=xpr_hooks,
                 external_files_declared=len(declared), configuration_templates=templates,
+                source_closure=closure, integration_recipe_files=len(recipe['files']),
                 sensitive_findings=findings, errors=errors,
                 verification_scope='Git collection, identities, metadata and declared dependencies',
                 full_build_verified=False, board_access=False)

@@ -3034,12 +3034,13 @@
     "path": "hardware/scripts/build_fpga.py",
     "origin": "revised_packaging/build_fpga.py",
     "source_sha256": "53f507c583ac1596873b56f75a8e2f22a9b9a066e4c06fbdcb57329a1b3c0047",
-    "public_sha256": "72501520f00802e5627cfdc1a6916777db617af836e2cdd0d9f83d19a5b9eb0a",
+    "public_sha256": "8389c8026be269dc75f93fd7a8ac14597e54d408cde5a96d83f3a3e667386399",
     "category": "migration_source",
     "adaptations": [
       "machine path strings replaced by documented configuration tokens",
       "Functional directory migration and portable runtime configuration",
-      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "hardware/package_tools/build_fpga.py"
   },
@@ -6522,7 +6523,7 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "153be3512851b479af622dca3d2ce1d5c0bb67b57beac683a8850b664006239c",
+    "public_sha256": "2667f2ffc468d4494a3c5cb401111b27454c0894f43f5763748318e20e737d1e",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
@@ -6531,7 +6532,8 @@
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
       "Isolated CI checks and portable RTL simulation",
       "Queued Python worker identity and actual board acceptance",
-      "GitHub publication and canonical Windows test paths"
+      "GitHub publication and canonical Windows test paths",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "README.md"
   },
@@ -6706,10 +6708,11 @@
     "path": "docs/MODEL_BUILD.md",
     "origin": "public_repository_migration/docs/MODEL_BUILD.md",
     "source_sha256": "e6e8af7ba266d7d31079d29c28455f0f071e3ff34b4df504368952828d9b431f",
-    "public_sha256": "7769da9c85fa4e7468fe6f8bc92835336bff77582a22d2adcf02baa28abe5ab2",
+    "public_sha256": "300f09ff010095e3ee31d2d58cebff7eaf1a5e2de32638f64f695c93eca2bad1",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Full frozen native INT8 rebuild entry and verification connected"
+      "Full frozen native INT8 rebuild entry and verification connected",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "docs/MODEL_BUILD.md"
   },
@@ -6882,10 +6885,11 @@
     "path": "external/dependencies.json",
     "origin": "public_repository_migration/external/dependencies.json",
     "source_sha256": "5599b8501db384c190a530197b31031ff31c3d9dd9b37abda0d4f5f6c7df3774",
-    "public_sha256": "6642b1eeb1e34dfecae676ec6685668f300dad198fb7e0e92db1c87fb8141eba",
+    "public_sha256": "c030a49d1a4521da80c0ada3b6dbb1bd9838d0890b14ec11dfdeb1ff8e66ab7e",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Full frozen native INT8 rebuild entry and verification connected"
+      "Full frozen native INT8 rebuild entry and verification connected",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "external/dependencies.json"
   },
@@ -6893,11 +6897,12 @@
     "path": "finedge.py",
     "origin": "public_repository_migration/finedge.py",
     "source_sha256": "b7580f4e7947eeb424cb86916b2fd50ec807514e891ef6f78c3ffea4f5a8bd1f",
-    "public_sha256": "e1658cf46b16b86cd04d417a17e28bfcc38a29da1e803778ec8de96b17bf7a65",
+    "public_sha256": "0ee41b4c37198b11a9fbfd5805826f4b233ed06b228404449d2faa4483a2cf9c",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "finedge.py"
   },
@@ -6995,7 +7000,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "a315ed4fcea0d38bc64c6b0c76699402ee86bba6f690fda82f7b1e624c55982e",
+    "public_sha256": "8094ec2db11591099aec8c5161fe866fb9f6ccc962bea646bdc6f41b1d529fcf",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
@@ -7005,7 +7010,8 @@
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
       "Isolated CI checks and portable RTL simulation",
       "Queued Python worker identity and actual board acceptance",
-      "GitHub publication and canonical Windows test paths"
+      "GitHub publication and canonical Windows test paths",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -7230,9 +7236,11 @@
     "path": "tools/configuration.py",
     "origin": "public_repository_migration/tools/configuration.py",
     "source_sha256": "9190c0fa0fe0ab1aee272e725871a42f62b0749ba8031708a4161db75226ee5f",
-    "public_sha256": "9190c0fa0fe0ab1aee272e725871a42f62b0749ba8031708a4161db75226ee5f",
+    "public_sha256": "1f3de8f4b7e274fd0a4b9228da28e3a28755e31840cbfeb08b3d3ef7c0dc5b6e",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ],
     "pre_migration_public_path": "tools/configuration.py"
   },
   {
@@ -7250,13 +7258,14 @@
     "path": "tools/verify_checkout.py",
     "origin": "public_repository_migration/tools/verify_checkout.py",
     "source_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a",
-    "public_sha256": "86b34e54a614705da0f08cbb9d3e033e4af2c20cf0a33b3bc355dbce2e98d23a",
+    "public_sha256": "ddc84dff7bf229f2d9f39c97bb2687bfa38aa6dd8ac6a376615f930b1fe0e2b9",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Completeness audit and deterministic vendor integration"
     ],
     "pre_migration_public_path": "tools/verify_checkout.py"
   },
@@ -7308,19 +7317,22 @@
     "path": "tests/test_fpga_build.py",
     "origin": "fpga_source_build/tests/test_fpga_build.py",
     "source_sha256": "cf595babe535006bdbfa736d846057f36456fbac0b34f7822b562bde34d238bf",
-    "public_sha256": "cf595babe535006bdbfa736d846057f36456fbac0b34f7822b562bde34d238bf",
+    "public_sha256": "3a57f8877f702052b804057c18468742b6577d5f4348659313c2ca1ac0fcd3d8",
     "category": "FPGA_build_source_or_validation",
-    "adaptations": []
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ]
   },
   {
     "path": "docs/FPGA_BUILD.md",
     "origin": "fpga_source_build/docs/FPGA_BUILD.md",
     "source_sha256": "d1b178bad4c6a9db8639184190c90551635f5e601882398dca7aab1567c418be",
-    "public_sha256": "6f209c32f437b3a1b87451f35af41697d0d045c6ebc7086be4b25efcf04f91c1",
+    "public_sha256": "6eaec7e2e6368689bb51b5a822f46bb99e39edc64fd8d3eb108a507f70378168",
     "category": "FPGA_build_source_or_validation",
     "adaptations": [
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "Completeness audit and deterministic vendor integration"
     ]
   },
   {
@@ -7416,9 +7428,11 @@
     "path": "external/README.md",
     "origin": "public_reproduction/external/README.md",
     "source_sha256": "e3e4d6bd88cf05c61aa2c1f1890a06ae0445bf9dc49385be87b92cc4cf33f017",
-    "public_sha256": "e3e4d6bd88cf05c61aa2c1f1890a06ae0445bf9dc49385be87b92cc4cf33f017",
+    "public_sha256": "4730efe06eef5e3653f8be10a15192937faae22d3f76f6f29c0a0a29119846bb",
     "category": "public_reproduction_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ]
   },
   {
     "path": "docs/public_reproduction_validation.json",
@@ -7442,9 +7456,11 @@
     "path": "tools/ci_check.py",
     "origin": "CI_source_or_evidence/tools/ci_check.py",
     "source_sha256": "3c930a0da41e26f53c03e14e7307485d85865996e77cbd5345c0d993a197a58b",
-    "public_sha256": "3c930a0da41e26f53c03e14e7307485d85865996e77cbd5345c0d993a197a58b",
+    "public_sha256": "c1dad3185ed980a17eaebcef17b08f438b3cc44b3a0920d6900786d222ea4f74",
     "category": "CI_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ]
   },
   {
     "path": "tests/test_ci_check.py",
@@ -7511,5 +7527,53 @@
     "adaptations": [
       "GitHub publication and canonical Windows test paths"
     ]
+  },
+  {
+    "path": "hardware/integration/vendor_edits.json",
+    "origin": "public_reaudit/hardware/integration/vendor_edits.json",
+    "source_sha256": "c14e7acae45615473eaf3883e1ed4dc0f02eaccf9946bd61049432bb17d7a3b6",
+    "public_sha256": "c14e7acae45615473eaf3883e1ed4dc0f02eaccf9946bd61049432bb17d7a3b6",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "hardware/scripts/integrate_vendor.py",
+    "origin": "public_reaudit/hardware/scripts/integrate_vendor.py",
+    "source_sha256": "023561817c3e2fd38f7a7dd4a18d83d4dd2fdfa60ddfdc83daa6726b70e8ed94",
+    "public_sha256": "023561817c3e2fd38f7a7dd4a18d83d4dd2fdfa60ddfdc83daa6726b70e8ed94",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tools/source_closure.py",
+    "origin": "public_reaudit/tools/source_closure.py",
+    "source_sha256": "394391804b186c353db11fd8dbaef369f31ccf0abff23b76826c71d1e6b561f3",
+    "public_sha256": "394391804b186c353db11fd8dbaef369f31ccf0abff23b76826c71d1e6b561f3",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tests/test_source_closure.py",
+    "origin": "public_reaudit/tests/test_source_closure.py",
+    "source_sha256": "dbaeab98ced13c12271724ac08ec6bb479ef107bd00dcfe4849d6635594edcf4",
+    "public_sha256": "dbaeab98ced13c12271724ac08ec6bb479ef107bd00dcfe4849d6635594edcf4",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tests/test_vendor_integration.py",
+    "origin": "public_reaudit/tests/test_vendor_integration.py",
+    "source_sha256": "126d8d5b48e1170a602baaf3d79dd950c878efba845ea47ae71af28a7fe748a9",
+    "public_sha256": "126d8d5b48e1170a602baaf3d79dd950c878efba845ea47ae71af28a7fe748a9",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/VENDOR_INTEGRATION.md",
+    "origin": "public_reaudit/docs/VENDOR_INTEGRATION.md",
+    "source_sha256": "43bda38e2a6f116009d5e117cf5933be7f126a068c261bc309f62a38839c1336",
+    "public_sha256": "43bda38e2a6f116009d5e117cf5933be7f126a068c261bc309f62a38839c1336",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
   }
 ]

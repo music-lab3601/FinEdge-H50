@@ -1,0 +1,167 @@
+{
+  "schema": "finedge-vendor-edits-1",
+  "description": "Byte-offset edits against licensed original inputs. Unchanged vendor content stays in the original package.",
+  "files": [
+    {
+      "target": "vendor://fpga/rtl/ai7030_edif_top.v",
+      "base_package": "fpai_demo_fpga",
+      "base_path": "rtl/ai7030_edif_top.v",
+      "base_bytes": 11964,
+      "base_sha256": "ff8cf767eb8e54c5d5eeb93870cb6e369440d233ad1fe1cc8abaa1cf6caf395f",
+      "output_bytes": 11889,
+      "output_sha256": "b7c95eb43e8e95a453ef306e7a9889505a0a4de07ef0e00cc0fa52ff0182715e",
+      "line_endings": "crlf",
+      "edits": [
+        {
+          "start": 547,
+          "end": 547,
+          "replacement": "  input PL_PHY_RX_CLK, input [3:0] PL_PHY_RXD, input PL_PHY_RX_CTRL,\r\n  output PL_PHY_TX_CLK, output [3:0] PL_PHY_TXD, output PL_PHY_TX_CTRL,\r\n  output PL_PHY_MDC, output PL_PHY_RESET, inout PL_PHY_MDIO,\r\n"
+        },
+        {
+          "start": 9788,
+          "end": 10901,
+          "replacement": "assign cam_hs=0;assign cam_vs=0;assign cam_rgb=0;assign cam_clk=0;assign cam_data_en=0;assign led1=0;assign led2=0;assign led3=1;\r\n"
+        },
+        {
+          "start": 10905,
+          "end": 12227,
+          "replacement": "// Cold-session initialization only: latch startup after GP/HP resets settle.\r\n// Later software/domain reset is a fault, never a new DDR completion proof.\r\n(* ASYNC_REG=\"TRUE\" *) reg [1:0] user_hp_reset_sync=2'b11;\r\nreg [3:0] user_boot_count=0;\r\nreg user_session_up=0;\r\nalways @(posedge gp_clk or posedge sys_rst)begin\r\n if(sys_rst)begin user_hp_reset_sync<=2'b11;user_boot_count<=0;user_session_up<=0;end\r\n else begin\r\n  user_hp_reset_sync<={user_hp_reset_sync[0],hp_clk_rst};\r\n  if(!user_session_up)begin\r\n   if(gp_clk_rst || user_hp_reset_sync[1])user_boot_count<=0;\r\n   else if(user_boot_count==15)user_session_up<=1;\r\n   else user_boot_count<=user_boot_count+1;\r\n  end\r\n end\r\nend\r\ng_bench_endpoint U_window_ddr(\r\n .por_n(user_session_up && !sys_rst),.c_clk(gp_clk),.d_clk(hp_clk),\r\n .fault_event(gp_clk_rst|hp_clk_rst),\r\n .reg_awaddr(User_Reg_awwaddr),.reg_awdata(User_Reg_awwdata),\r\n .reg_awvalid(User_Reg_awwvalid),.reg_awready(User_Reg_awwready),\r\n .reg_araddr(User_Reg_araddr),.reg_arvalid(User_Reg_arvalid),.reg_arready(User_Reg_arready),\r\n .reg_rdata(User_Reg_rdata),.reg_rvalid(User_Reg_rvalid),.reg_rready(User_Reg_rready),\r\n .awwaddr(User_Ddr_awwaddr),.awwdata(User_Ddr_awwdata),.awwinfo(User_Ddr_awwinfo),\r\n .awwvalid(User_Ddr_awwvalid),.awwready(User_Ddr_awwready),\r\n .araddr(User_Ddr_araddr),.arinfo(User_Ddr_arinfo),.arvalid(User_Ddr_arvalid),.arready(User_Ddr_arready),\r\n .rdata(User_Ddr_rdata),.rinfo(User_Ddr_rinfo),.rvalid(User_Ddr_rvalid),.rready(User_Ddr_rready),\r\n .PL_PHY_RX_CLK(PL_PHY_RX_CLK),.PL_PHY_RXD(PL_PHY_RXD),.PL_PHY_RX_CTRL(PL_PHY_RX_CTRL),\r\n .PL_PHY_TX_CLK(PL_PHY_TX_CLK),.PL_PHY_TXD(PL_PHY_TXD),.PL_PHY_TX_CTRL(PL_PHY_TX_CTRL),\r\n .PL_PHY_MDC(PL_PHY_MDC),.PL_PHY_MDIO(PL_PHY_MDIO),.PL_PHY_RESET(PL_PHY_RESET));\r\n"
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/rtl/ps_ai_peripheral.sv",
+      "base_package": "fpai_demo_fpga",
+      "base_path": "rtl/ps_ai_peripheral.sv",
+      "base_bytes": 91758,
+      "base_sha256": "f04ddbdf681cda2c893c9a1176cb2010c2bb847d806c2aa4815ba7b5081967f2",
+      "output_bytes": 88650,
+      "output_sha256": "e34aa2ef0bda32708e5f81eb9e216a9c3b4e1b4e8c309efc93acd0b14b76e4ae",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 36801,
+          "end": 37116,
+          "replacement": ""
+        },
+        {
+          "start": 37118,
+          "end": 40932,
+          "replacement": ""
+        },
+        {
+          "start": 91747,
+          "end": 91747,
+          "replacement": "OBUFDS market_hdmi_clk(.I(1'b0),.O(HDMI_CLK_P),.OB(HDMI_CLK_N));\r\ngenerate for(genvar h=0;h<3;h=h+1)begin:market_hdmi_idle\r\n OBUFDS idle(.I(1'b0),.O(HDMI_TX_P[h]),.OB(HDMI_TX_N[h]));\r\nend endgenerate\r\n\r\nassign wr_done_pulse=0;assign wr_wfifo_err=0;assign rd_rfifo_err=0;\r\nassign S_AXI_HP2_AWID='0;\r\nassign S_AXI_HP2_AWADDR='0;\r\nassign S_AXI_HP2_AWLEN='0;\r\nassign S_AXI_HP2_AWSIZE='0;\r\nassign S_AXI_HP2_AWBURST='0;\r\nassign S_AXI_HP2_AWLOCK='0;\r\nassign S_AXI_HP2_AWCACHE='0;\r\nassign S_AXI_HP2_AWPROT='0;\r\nassign S_AXI_HP2_AWQOS='0;\r\nassign S_AXI_HP2_AWVALID='0;\r\nassign S_AXI_HP2_WDATA='0;\r\nassign S_AXI_HP2_WSTRB='0;\r\nassign S_AXI_HP2_WLAST='0;\r\nassign S_AXI_HP2_WVALID='0;\r\nassign S_AXI_HP2_BREADY='0;\r\nassign S_AXI_HP2_ARID='0;\r\nassign S_AXI_HP2_ARADDR='0;\r\nassign S_AXI_HP2_ARLEN='0;\r\nassign S_AXI_HP2_ARSIZE='0;\r\nassign S_AXI_HP2_ARBURST='0;\r\nassign S_AXI_HP2_ARLOCK='0;\r\nassign S_AXI_HP2_ARCACHE='0;\r\nassign S_AXI_HP2_ARPROT='0;\r\nassign S_AXI_HP2_ARQOS='0;\r\nassign S_AXI_HP2_ARVALID='0;\r\nassign S_AXI_HP2_RREADY='0;\r\n"
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/constrs_1/ai7030.xdc",
+      "base_package": "fpai_demo_fpga",
+      "base_path": "constrs_1/ai7030.xdc",
+      "base_bytes": 2945,
+      "base_sha256": "6fd7b68da8e4e9ae30ca9a868ad38ca43a1d1ab44e3b23435cdf072fbc4b29d9",
+      "output_bytes": 1486,
+      "output_sha256": "6674d077175a94a47e1d72b10a50ddeaabe8a006eb1ab83bc27be59c69056cd3",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 683,
+          "end": 2945,
+          "replacement": "# UDW1 scoped GP/HP exceptions; retain legacy endpoints, exclude UDW1.\r\n# Replace ONLY inherited GP<->HP whole-clock false paths in the candidate.\r\n# Keep the original exception for every non-UDW1 sequential endpoint, including\r\n# vendor IP/video logic. UDW1 is governed by its per-synchronizer and payload XDC.\r\nset udw_scope_root U_window_ddr\r\nset udw_gp_clock [get_clocks -quiet clk_out1_clk_wiz_0]\r\nset udw_hp_clock [get_clocks -quiet clk_pll_i]\r\nset udw_gp_all [all_registers -clock $udw_gp_clock]\r\nset udw_hp_all [all_registers -clock $udw_hp_clock]\r\nset udw_gp_legacy [filter $udw_gp_all \"NAME !~ $udw_scope_root/*\"]\r\nset udw_hp_legacy [filter $udw_hp_all \"NAME !~ $udw_scope_root/*\"]\r\nset_false_path -from $udw_hp_clock -to $udw_gp_legacy\r\nset_false_path -from $udw_gp_clock -to $udw_hp_legacy\r\n"
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/constrs_1/impl_constraints.xdc",
+      "base_package": "fpai_demo_fpga",
+      "base_path": "constrs_1/impl_constraints.xdc",
+      "base_bytes": 2559,
+      "base_sha256": "7ca36176517418511de6c34fab93a1fdfe787bf3bb560b31143988881193696f",
+      "output_bytes": 2558,
+      "output_sha256": "c2eb034085ad1a6b024ae692af223cb29a71b56cc5e0b4ad22f494571f81768b",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 1386,
+          "end": 1688,
+          "replacement": "set_property PACKAGE_PIN U6 [get_ports FMC_HPC_GBTCLK0_M2C_C_P]; # WUJING BOARD\r\nset_property PACKAGE_PIN U5 [get_ports FMC_HPC_GBTCLK0_M2C_C_N]\r\n##set_property PACKAGE_PIN R6 [get_ports FMC_HPC_GBTCLK0_M2C_C_P] ## WUJING LITE BOARD\r\n##set_property PACKAGE_PIN R5 [get_ports FMC_HPC_GBTCLK0_M2C_C_N]\r\n"
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/ip_patch/process_control/synthesis_pre.tcl",
+      "base_package": "JFM_Kits",
+      "base_path": "ip_patch/process_control/synthesis_pre.tcl",
+      "base_bytes": 452,
+      "base_sha256": "500b3ac294b443a051c7c1f74f83bd94cf1231bfd263079be4c74dc38bab23e8",
+      "output_bytes": 454,
+      "output_sha256": "3d3098c9acfb2d2bf7b982165d89ef7c06906101f96cefd0a9a71f0356a9cc03",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 427,
+          "end": 437,
+          "replacement": "runEco 0 0\r\n"
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/ip_patch/process_control/implementation_opt_post.tcl",
+      "base_package": "JFM_Kits",
+      "base_path": "ip_patch/process_control/implementation_opt_post.tcl",
+      "base_bytes": 1271,
+      "base_sha256": "dc35a4451504fd327114e85940c6e3bee71fbdd63532c48b2423f4895265a850",
+      "output_bytes": 1267,
+      "output_sha256": "c53d469c8c220c131b0e6b4d7316bfed3fb664ea1391c51a0888741fd79217dd",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 1267,
+          "end": 1271,
+          "replacement": ""
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/ip_patch/process_control/write_bitstream_pre.tcl",
+      "base_package": "JFM_Kits",
+      "base_path": "ip_patch/process_control/write_bitstream_pre.tcl",
+      "base_bytes": 796,
+      "base_sha256": "5b03d7decc3ee3c339c844b0facd7711c16ab7c5ec2ff014d8d918dc20ca6fb3",
+      "output_bytes": 1194,
+      "output_sha256": "74366f4e9e98048c27e114070f3b3469b84eff09abc70d4ab3334ca99d56ecb2",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 337,
+          "end": 501,
+          "replacement": "\tputs \"FMSH-->Current IP PATCH version is $::ip_patch::version,set userID to 32'h$::ip_patch::user_id \"\r\n\tset_property BITSTREAM.CONFIG.USERID 32'h$::ip_patch::user_id  [get_designs [current_design]]\r\n"
+        },
+        {
+          "start": 792,
+          "end": 792,
+          "replacement": "\r\nset device_part [get_property PART [current_project]]\r\nif {[regexp {xc7z030} $device_part] || [regexp {xc7z100_jfmql} $device_part]} {\r\n\t\tset_property IS_ENABLED 0 [get_drc_checks  REQP-44]\r\n\t\tset_property IS_ENABLED 0 [get_drc_checks  REQP-46]\r\n\t\tset_property IS_ENABLED 0 [get_drc_checks  REQP-52]\r\n\t\tset_property IS_ENABLED 0 [get_drc_checks  REQP-56]\r\n}\r\n"
+        }
+      ]
+    },
+    {
+      "target": "vendor://fpga/ip_patch/process_control/write_bitstream_post.tcl",
+      "base_package": "JFM_Kits",
+      "base_path": "ip_patch/process_control/write_bitstream_post.tcl",
+      "base_bytes": 167,
+      "base_sha256": "85b57b6b0077f90e90e5ca06b49e51e669b3f676848e3121077ed625e0266d70",
+      "output_bytes": 166,
+      "output_sha256": "ca97ba9301f37d6b13e022712fbbb558f40f136868c368d14ba46563fc7688be",
+      "line_endings": "preserve",
+      "edits": [
+        {
+          "start": 137,
+          "end": 167,
+          "replacement": "post_write_bitstream_patch \r\n"
+        }
+      ]
+    }
+  ]
+}

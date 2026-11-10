@@ -121,6 +121,10 @@ def main():
         skipped = re.search(r'OK \(skipped=(\d+)\)', test_log)
         skips = int(skipped.group(1)) if skipped else 0
         result['tests'] = dict(executed=count, passed=count - skips, skipped=skips, failed=0)
+        result['tests']['skipped_cases'] = [dict(test=match.group(1), reason=match.group(2))
+            for match in re.finditer(r"^(.+?) \.\.\. skipped ['\"](.+?)['\"]$", test_log, re.MULTILINE)]
+        if len(result['tests']['skipped_cases']) != skips:
+            raise ValueError('Skipped-test accounting differs from unittest summary')
         result['status'] = 'passed'
     except Exception as exc:
         result.update(status='failed', error=type(exc).__name__ + '. ' + str(exc))

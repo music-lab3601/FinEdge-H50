@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9981,
-      "sha256": "153be3512851b479af622dca3d2ce1d5c0bb67b57beac683a8850b664006239c"
+      "bytes": 10066,
+      "sha256": "2667f2ffc468d4494a3c5cb401111b27454c0894f43f5763748318e20e737d1e"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -773,13 +773,13 @@
     },
     {
       "path": "docs/FPGA_BUILD.md",
-      "bytes": 6402,
-      "sha256": "6f209c32f437b3a1b87451f35af41697d0d045c6ebc7086be4b25efcf04f91c1"
+      "bytes": 7185,
+      "sha256": "6eaec7e2e6368689bb51b5a822f46bb99e39edc64fd8d3eb108a507f70378168"
     },
     {
       "path": "docs/MODEL_BUILD.md",
-      "bytes": 3995,
-      "sha256": "7769da9c85fa4e7468fe6f8bc92835336bff77582a22d2adcf02baa28abe5ab2"
+      "bytes": 4027,
+      "sha256": "300f09ff010095e3ee31d2d58cebff7eaf1a5e2de32638f64f695c93eca2bad1"
     },
     {
       "path": "docs/PUBLIC_REPRODUCTION.md",
@@ -790,6 +790,11 @@
       "path": "docs/RUNNING.md",
       "bytes": 4155,
       "sha256": "6ae671e560f80da0680123a834564b9a528fc54c65446f54dd545ca4520d4462"
+    },
+    {
+      "path": "docs/VENDOR_INTEGRATION.md",
+      "bytes": 3802,
+      "sha256": "43bda38e2a6f116009d5e117cf5933be7f126a068c261bc309f62a38839c1336"
     },
     {
       "path": "docs/board_validation.json",
@@ -1563,18 +1568,18 @@
     },
     {
       "path": "external/README.md",
-      "bytes": 3847,
-      "sha256": "e3e4d6bd88cf05c61aa2c1f1890a06ae0445bf9dc49385be87b92cc4cf33f017"
+      "bytes": 4215,
+      "sha256": "4730efe06eef5e3653f8be10a15192937faae22d3f76f6f29c0a0a29119846bb"
     },
     {
       "path": "external/dependencies.json",
-      "bytes": 478869,
-      "sha256": "6642b1eeb1e34dfecae676ec6685668f300dad198fb7e0e92db1c87fb8141eba"
+      "bytes": 480013,
+      "sha256": "c030a49d1a4521da80c0ada3b6dbb1bd9838d0890b14ec11dfdeb1ff8e66ab7e"
     },
     {
       "path": "finedge.py",
-      "bytes": 5261,
-      "sha256": "e1658cf46b16b86cd04d417a17e28bfcc38a29da1e803778ec8de96b17bf7a65"
+      "bytes": 5267,
+      "sha256": "0ee41b4c37198b11a9fbfd5805826f4b233ed06b228404449d2faa4483a2cf9c"
     },
     {
       "path": "hardware/README.md",
@@ -1605,6 +1610,11 @@
       "path": "hardware/constraints/verify_multicycle.tcl",
       "bytes": 1693,
       "sha256": "bd3824e3712b40494ffa5d82d80c4b6de259b0174011ed29daa7571689804840"
+    },
+    {
+      "path": "hardware/integration/vendor_edits.json",
+      "bytes": 10391,
+      "sha256": "c14e7acae45615473eaf3883e1ed4dc0f02eaccf9946bd61049432bb17d7a3b6"
     },
     {
       "path": "hardware/ip/fm_pl_clocks.xci",
@@ -1888,8 +1898,8 @@
     },
     {
       "path": "hardware/scripts/build_fpga.py",
-      "bytes": 12182,
-      "sha256": "72501520f00802e5627cfdc1a6916777db617af836e2cdd0d9f83d19a5b9eb0a"
+      "bytes": 13074,
+      "sha256": "8389c8026be269dc75f93fd7a8ac14597e54d408cde5a96d83f3a3e667386399"
     },
     {
       "path": "hardware/scripts/build_source.ps1",
@@ -1910,6 +1920,11 @@
       "path": "hardware/scripts/configure_package.py",
       "bytes": 194,
       "sha256": "ae03ed6d4f27cae54513780e6128952ec168345c8fa024dfb4b71218e8737dd0"
+    },
+    {
+      "path": "hardware/scripts/integrate_vendor.py",
+      "bytes": 3008,
+      "sha256": "023561817c3e2fd38f7a7dd4a18d83d4dd2fdfa60ddfdc83daa6726b70e8ed94"
     },
     {
       "path": "hardware/scripts/opt_post.tcl",
@@ -2163,13 +2178,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 415663,
-      "sha256": "86a89239d72ba746c03fd057bcdd86eefba5613b07000d6db182a42da53b6840"
+      "bytes": 418701,
+      "sha256": "d222f1a68878eea07b0b1d3e72d4f6cdd7b1a3f25b209aeff374402e1f64ee6b"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "a315ed4fcea0d38bc64c6b0c76699402ee86bba6f690fda82f7b1e624c55982e"
+      "sha256": "8094ec2db11591099aec8c5161fe866fb9f6ccc962bea646bdc6f41b1d529fcf"
     },
     {
       "path": "requirements.txt",
@@ -2603,8 +2618,8 @@
     },
     {
       "path": "tests/test_fpga_build.py",
-      "bytes": 5224,
-      "sha256": "cf595babe535006bdbfa736d846057f36456fbac0b34f7822b562bde34d238bf"
+      "bytes": 5922,
+      "sha256": "3a57f8877f702052b804057c18468742b6577d5f4348659313c2ca1ac0fcd3d8"
     },
     {
       "path": "tests/test_public_entry.py",
@@ -2617,9 +2632,19 @@
       "sha256": "cf457701a0e7cefa845473deda6efe47216a43bd292ad05d4335ef594c7ccac8"
     },
     {
+      "path": "tests/test_source_closure.py",
+      "bytes": 1817,
+      "sha256": "dbaeab98ced13c12271724ac08ec6bb479ef107bd00dcfe4849d6635594edcf4"
+    },
+    {
       "path": "tests/test_synthetic_inputs.py",
       "bytes": 8282,
       "sha256": "965ac33e0832edfc699103c076574097fa8e34f1701dc42b7164a0db2c2a8d41"
+    },
+    {
+      "path": "tests/test_vendor_integration.py",
+      "bytes": 5347,
+      "sha256": "126d8d5b48e1170a602baaf3d79dd950c878efba845ea47ae71af28a7fe748a9"
     },
     {
       "path": "third_party/lightweight-charts/LICENSE.txt",
@@ -3343,18 +3368,23 @@
     },
     {
       "path": "tools/ci_check.py",
-      "bytes": 6751,
-      "sha256": "3c930a0da41e26f53c03e14e7307485d85865996e77cbd5345c0d993a197a58b"
+      "bytes": 7094,
+      "sha256": "c1dad3185ed980a17eaebcef17b08f438b3cc44b3a0920d6900786d222ea4f74"
     },
     {
       "path": "tools/configuration.py",
-      "bytes": 3223,
-      "sha256": "9190c0fa0fe0ab1aee272e725871a42f62b0749ba8031708a4161db75226ee5f"
+      "bytes": 3282,
+      "sha256": "1f3de8f4b7e274fd0a4b9228da28e3a28755e31840cbfeb08b3d3ef7c0dc5b6e"
     },
     {
       "path": "tools/simulate.py",
       "bytes": 2955,
       "sha256": "14b904fef456a4e1f3e2c886f63c6b49d7805eff731b873265813f7fee80c525"
+    },
+    {
+      "path": "tools/source_closure.py",
+      "bytes": 3032,
+      "sha256": "394391804b186c353db11fd8dbaef369f31ccf0abff23b76826c71d1e6b561f3"
     },
     {
       "path": "tools/synthetic_inputs.py",
@@ -3363,8 +3393,8 @@
     },
     {
       "path": "tools/verify_checkout.py",
-      "bytes": 13148,
-      "sha256": "86b34e54a614705da0f08cbb9d3e033e4af2c20cf0a33b3bc355dbce2e98d23a"
+      "bytes": 13998,
+      "sha256": "ddc84dff7bf229f2d9f39c97bb2687bfa38aa6dd8ac6a376615f930b1fe0e2b9"
     }
   ]
 }

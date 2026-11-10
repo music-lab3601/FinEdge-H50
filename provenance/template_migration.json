@@ -8,7 +8,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "153be3512851b479af622dca3d2ce1d5c0bb67b57beac683a8850b664006239c"
+      "public_sha256": "2667f2ffc468d4494a3c5cb401111b27454c0894f43f5763748318e20e737d1e"
     },
     {
       "old": "deployment/project/scripts/build_polyphase_model.py",
@@ -175,7 +175,7 @@
         "EXTERNAL_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "72501520f00802e5627cfdc1a6916777db617af836e2cdd0d9f83d19a5b9eb0a"
+      "public_sha256": "8389c8026be269dc75f93fd7a8ac14597e54d408cde5a96d83f3a3e667386399"
     },
     {
       "old": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/build.tcl",
@@ -520,7 +520,7 @@
         "HARDWARE_ROOT"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "86b34e54a614705da0f08cbb9d3e033e4af2c20cf0a33b3bc355dbce2e98d23a"
+      "public_sha256": "ddc84dff7bf229f2d9f39c97bb2687bfa38aa6dd8ac6a376615f930b1fe0e2b9"
     }
   ],
   "validation": {

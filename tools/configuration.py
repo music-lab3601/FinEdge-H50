@@ -38,7 +38,8 @@ def render_templates():
 def check_configuration():
     templates = render_templates()
     external = json.loads((ROOT / 'external/dependencies.json').read_text('utf-8'))['files']
-    missing = sorted({row['target'] for row in external if not resolve_path(row['target']).is_file()})
+    missing = sorted({row['target'] for row in external if row.get('build_required', True)
+                      and not resolve_path(row['target']).is_file()})
     return dict(status='passed', templates=templates['rendered_templates'],
                 configured=load_settings(), external_missing=len(missing),
                 external_missing_examples=missing[:12], full_build_ready=not missing,

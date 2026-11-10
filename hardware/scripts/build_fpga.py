@@ -14,11 +14,13 @@ from shared.io import atomic_json
 from shared.paths import ConfigurationError, ROOT, environment, load_settings, resolve_path, tool_executable, work_path
 from shared.resources import ResourceLock
 from tools.configuration import URI
+from hardware.scripts.integrate_vendor import integrate
 
 
 def required_assets():
     rows = json.loads((ROOT / 'external/dependencies.json').read_text('utf-8'))['files']
-    return [row for row in rows if row['target'].startswith(('vendor://fpga/', 'vendor://boot/'))]
+    return [row for row in rows if row['target'].startswith(('vendor://fpga/', 'vendor://boot/'))
+            and row.get('build_required', True)]
 
 
 def import_assets(source):
@@ -103,7 +105,12 @@ def stage(directory):
         shutil.copytree(ROOT / folder, directory / folder, ignore=shutil.ignore_patterns('__pycache__'))
     # Vendor hooks infer the project root from <project>/<name>.runs/<run>.
     # Their RTL, IP repository and patch files must share that project root.
-    shutil.copytree(resolve_path('vendor://fpga'), directory / 'project')
+    # Copy only declared build inputs. A local cache must not supply hidden files.
+    for row in required_assets():
+        if row['target'].startswith('vendor://fpga/'):
+            target = Path(replace_value(row['target'], directory))
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(resolve_path(row['target']), target)
 
     def replace(match):
         return replace_value(match.group(), directory)
@@ -170,8 +177,14 @@ def main():
     parser.add_argument('--work-dir', type=Path)
     parser.add_argument('--package-boot', action='store_true')
     parser.add_argument('--import-source', type=Path, help='Extracted original delivery root containing the manifest original_target paths')
+    parser.add_argument('--integrate-reference', type=Path, help='Extracted licensed original fpai_demo_fpga directory')
+    parser.add_argument('--jfm-source', type=Path, help='Original JFM_Kits directory, defaults to configured JFM')
     parser.add_argument('--restore-vendor', type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.integrate_reference:
+        result = integrate(args.integrate_reference, args.jfm_source or resolve_path('tool://jfm/'))
+        print(json.dumps(dict(status=result['status'], reconstructed=len(result['files']), board_access=False)))
+        return 0
     if args.restore_vendor:
         receipt = restore_vendor_outputs(args.restore_vendor)
         print(json.dumps(dict(status=receipt['status'], restored=len(receipt['restored']),

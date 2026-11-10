@@ -1,6 +1,6 @@
 # 外部依赖与获取方式
 
-`dependencies.json` 逐项记录目标 URI、字节数、SHA256 和原始交付路径。当前共 766 项登记，其中 FPGA 与启动组件为 756 项。模型 RAW 同时通过 `repo://` 指向 Git 内的冻结工件。
+`dependencies.json` 逐项记录目标 URI、字节数、SHA256 和原始交付路径。当前共 766 项登记，其中 FPGA 与启动组件的必需输入为 746 项，另外10项历史辅助文件已标记`build_required=false`。模型 RAW 同时通过 `repo://` 指向 Git 内的冻结工件。
 
 ## 可直接生成的公开输入
 
@@ -16,10 +16,14 @@
 | Vivado | 2018.3 build 2405991 | 从厂商软件分发渠道取得，配置 `--vivado` |
 | Procise | 2025.1.1 temp | 使用匹配器件数据库与工具许可，配置 `--procise` |
 | JFM | 分发标签 5.3.2.1_100AI_LV，脚本实际报告 5.3.1.8 | 使用配套补丁目录，配置 `--jfm` |
-| FPGA 输入 | 753 项，含 AI_Mate.edif、24 份 IP DCP、顶层、约束及补丁 | 按 `vendor://fpga/` 布置并逐项核验 |
+| FPGA 输入 | 743 项，含 AI_Mate.edif、24 份 IP DCP、顶层、约束及补丁 | 按 `vendor://fpga/` 布置并逐项核验 |
 | BOOT 输入 | FSBL、BL31、U-Boot 共 3 项 | 按 `vendor://boot/` 布置并逐项核验 |
 
-756 项输入对应本项目已验证的匹配集成快照。其中包括厂商基底、生成的 IP 输出和集成版本的顶层及约束。项目自研功能模块位于 `hardware/rtl/`，厂商原工程相关文件按原组件条款配套提供。获取资料时应核对完整清单中的版本、路径和哈希。
+746 项输入对应本项目已验证的匹配集成快照。其中包括厂商基底、生成的 IP 输出和集成版本的顶层及约束。项目自研功能模块位于 `hardware/rtl/`。8项集成文件可由原始`fpai_demo_fpga`和`JFM_Kits`通过Git内配方精确重建。厂商生成的IP输出仍按匹配工具和原组件条款取得，获取资料时应核对完整清单中的版本、路径和哈希。[集成重建步骤](../docs/VENDOR_INTEGRATION.md)
+
+```shell
+python -B finedge.py fpga --integrate-reference <original_fpai_demo_fpga_directory> --jfm-source <original_JFM_Kits_directory>
+```
 
 已有本项目原修订交付解压目录时，可以自动导入。`--import-source` 指向包含 `versions/` 和 `hardware/` 的原始 `finedge_host_demo` 根目录。
 
@@ -29,7 +33,7 @@ python -B finedge.py fpga --import-source <extracted_original_delivery_root>
 python -B finedge.py fpga --check
 ```
 
-直接取得匹配文件时，按目标 URI 放入厂商缓存。最终检查结果应为 `checked=756`，`missing=[]`、`changed=[]`。源码构建及 BOOT 生成步骤见 `docs/FPGA_BUILD.md`。
+直接取得匹配文件时，按目标 URI 放入厂商缓存。最终检查结果应为 `checked=746`，`missing=[]`、`changed=[]`。源码构建及 BOOT 生成步骤见 `docs/FPGA_BUILD.md`。
 
 ## 行情数据
 

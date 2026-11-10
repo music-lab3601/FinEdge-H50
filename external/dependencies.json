@@ -35,41 +35,45 @@
       "target": "vendor://fpga/constrs_1/ai7030.xdc",
       "sha256": "6674d077175a94a47e1d72b10a50ddeaabe8a006eb1ab83bc27be59c69056cd3",
       "bytes": 1486,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/ai7030.xdc"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/ai7030.xdc",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/constrs_1/impl_constraints.xdc",
       "sha256": "c2eb034085ad1a6b024ae692af223cb29a71b56cc5e0b4ad22f494571f81768b",
       "bytes": 2558,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/impl_constraints.xdc"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/impl_constraints.xdc",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/constrs_1/user_ddr_window_legacy_scope.xdc",
       "sha256": "28c44c7107f26bd2a0e592afb50d3c4c5718aba9215d570cbb8a5e74ffc51d27",
       "bytes": 719,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/user_ddr_window_legacy_scope.xdc"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/user_ddr_window_legacy_scope.xdc",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/constrs_1/user_ddr_window_por_input_v1.xdc",
       "sha256": "19d7bfbc04e1b7b454bafabb03026f653f73d4b15a4f929c4324874dcc240d0e",
       "bytes": 625,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/user_ddr_window_por_input_v1.xdc"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/constrs_1/user_ddr_window_por_input_v1.xdc",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/fpai_demo_vivado.ip_user_files/ipstatic/hdl/fifo_generator_v13_2_rfs.v",
@@ -2235,11 +2239,12 @@
       "target": "vendor://fpga/ip_patch/ip_patch.cfg",
       "sha256": "45ab7c002538b282fca0b3cde207f1e5e7b120c1b14a5a2002da071395909693",
       "bytes": 34,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "generated_configuration_or_log",
+      "acquisition": "Build entry writes tool configuration. Vendor tools generate their own diagnostics.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/ip_patch.cfg"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/ip_patch.cfg",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/ip_patch/paspd/fmsh/030ai/zynq.lib",
@@ -2605,11 +2610,12 @@
       "target": "vendor://fpga/ip_patch/process_control/implementation_opt_post.tcl",
       "sha256": "c53d469c8c220c131b0e6b4d7316bfed3fb664ea1391c51a0888741fd79217dd",
       "bytes": 1267,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/implementation_opt_post.tcl"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/implementation_opt_post.tcl",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/ip_patch/process_control/implementation_opt_pre.tcl",
@@ -2635,31 +2641,34 @@
       "target": "vendor://fpga/ip_patch/process_control/synthesis_pre.tcl",
       "sha256": "3d3098c9acfb2d2bf7b982165d89ef7c06906101f96cefd0a9a71f0356a9cc03",
       "bytes": 454,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/synthesis_pre.tcl"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/synthesis_pre.tcl",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/ip_patch/process_control/write_bitstream_post.tcl",
       "sha256": "ca97ba9301f37d6b13e022712fbbb558f40f136868c368d14ba46563fc7688be",
       "bytes": 166,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/write_bitstream_post.tcl"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/write_bitstream_post.tcl",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/ip_patch/process_control/write_bitstream_pre.tcl",
       "sha256": "74366f4e9e98048c27e114070f3b3469b84eff09abc70d4ab3334ca99d56ecb2",
       "bytes": 1194,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/write_bitstream_pre.tcl"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/process_control/write_bitstream_pre.tcl",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/ip_patch/procise_incr_cfg.txt",
@@ -2685,11 +2694,12 @@
       "target": "vendor://fpga/ip_patch/time_check.txt",
       "sha256": "58053fc79e611a4bccacc227030352be95d8264030f317ce9dfe80c494220617",
       "bytes": 127,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "generated_configuration_or_log",
+      "acquisition": "Build entry writes tool configuration. Vendor tools generate their own diagnostics.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/time_check.txt"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/ip_patch/time_check.txt",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/ip_patch/tools/bitfile_replace.tcl",
@@ -3245,11 +3255,12 @@
       "target": "vendor://fpga/rtl/ai7030_edif_top.v",
       "sha256": "b7c95eb43e8e95a453ef306e7a9889505a0a4de07ef0e00cc0fa52ff0182715e",
       "bytes": 11889,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/ai7030_edif_top.v"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/ai7030_edif_top.v",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/rtl/AI_Mate_stub.v",
@@ -3515,61 +3526,67 @@
       "target": "vendor://fpga/rtl/finedge_ddr/b1_mailbox.sv",
       "sha256": "dcb87849dd0b67180c60a869f32952618ed9dadedd916d2f7ee55f47326a80c8",
       "bytes": 1456,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/b1_mailbox.sv"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/b1_mailbox.sv",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/rtl/finedge_ddr/user_ddr_beat_port_v1.sv",
       "sha256": "48eb4b32e68c64d5d26fd673bab2750f4bb67e9a8ee057792db276d71a1f84bf",
       "bytes": 4146,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/user_ddr_beat_port_v1.sv"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/user_ddr_beat_port_v1.sv",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/rtl/finedge_ddr/user_ddr_window_ctrl_v1.sv",
       "sha256": "b0dff20efec8b2b729e040c709ab6f9d9e0f3da27249f3959fdf07e2efc7b10c",
       "bytes": 7441,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/user_ddr_window_ctrl_v1.sv"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/user_ddr_window_ctrl_v1.sv",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/rtl/finedge_ddr/user_ddr_window_engine_v1.sv",
       "sha256": "9ee0cbbff39739189b9f0fa4786e4ac4644ed111849072a513650e937cdf2334",
       "bytes": 11800,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/user_ddr_window_engine_v1.sv"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/user_ddr_window_engine_v1.sv",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/rtl/finedge_ddr/window_core_v1.sv",
       "sha256": "a4f8246ee47b98a1e0df93d1e6ff8ed7099d55f11b5ede17769578622e3ce1f0",
       "bytes": 5918,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/window_core_v1.sv"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/window_core_v1.sv",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/rtl/finedge_ddr/window_ddr_integrated_cdc.xdc",
       "sha256": "ab4c750b2e88820992d98db33575d4a89ec43123345f5b12d15ed85e1a83f9f4",
       "bytes": 1126,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "unused_historical_integration_asset",
+      "acquisition": "Historical identity only. Current XPR and hooks use hardware/rtl and hardware/constraints from Git.",
       "availability": "external",
       "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/window_ddr_integrated_cdc.xdc"
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/finedge_ddr/window_ddr_integrated_cdc.xdc",
+      "build_required": false
     },
     {
       "target": "vendor://fpga/rtl/gp/gp0_manager.sv",
@@ -6595,11 +6612,12 @@
       "target": "vendor://fpga/rtl/ps_ai_peripheral.sv",
       "sha256": "e34aa2ef0bda32708e5f81eb9e216a9c3b4e1b4e8c309efc93acd0b14b76e4ae",
       "bytes": 88650,
-      "kind": "vendor_or_firmware_asset",
-      "acquisition": "Matching vendor reference/IP package or independently prepared licensed input",
+      "kind": "licensed_base_with_repository_edits",
+      "acquisition": "Original package plus hardware/integration/vendor_edits.json",
       "availability": "external",
-      "exact_reconstruction_verified": false,
-      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/ps_ai_peripheral.sv"
+      "exact_reconstruction_verified": true,
+      "original_target": "hardware/versions/realtime_integration_v1/artifacts/integrated_full_20261103_214358/project/rtl/ps_ai_peripheral.sv",
+      "reconstruction": "repo://hardware/integration/vendor_edits.json"
     },
     {
       "target": "vendor://fpga/rtl/ps_ai_wrapper.sv",

@@ -4,7 +4,9 @@
 
 H50 工程的顶层为 `ai7030_edif_top`，兼容工具器件映射为 `xc7z030ffg676-2`，实际目标板为悟净 FMQL30TAI 完整版。自研行情解析、建簿、定点归一化、INT8 组窗、32 槽调度、DDR 传输及结果输出逻辑从当前 Git 源码重新综合、布局布线。
 
-厂商 AI 网表、PS 外设、DDR 和视频相关 IP 通过 `external/dependencies.json` 登记。构建需要 753 项 FPGA 输入及 3 项启动组件，逐项核对 SHA256。其中包含厂商 `AI_Mate.edif` 和 24 份 IP 检查点。构建入口另外生成本项目时钟 IP 的 RTL，并将其并入顶层综合。
+厂商 AI 网表、PS 外设、DDR 和视频相关 IP 通过 `external/dependencies.json` 登记。当前构建需要 743 项 FPGA 输入及 3 项启动组件，逐项核对 SHA256。其中包含厂商 `AI_Mate.edif` 和 24 份 IP 检查点。清单中另外10项保留历史身份并标记为非构建必需，包括未使用的旧模块、旧约束、工具配置和日志。构建入口另外生成本项目时钟 IP 的 RTL，并将其并入顶层综合。
+
+本项目对厂商文件的8项集成修改由Git中的`hardware/integration/vendor_edits.json`完整记录。原始文件哈希、修改区间、增补内容和结果哈希均冻结。包括PL网口及User_Ddr接线、视频通路关闭、GP/HP时序例外范围、完整版引脚和匹配JFM的构建钩子。操作说明见[集成重建](VENDOR_INTEGRATION.md)。
 
 ## 工具和资料准备
 
@@ -22,7 +24,12 @@ python finedge.py fpga --import-source <extracted_original_delivery_root>
 python finedge.py fpga --check
 ```
 
-自行取得匹配官方资料时，也可按清单的 `vendor://fpga/` 和 `vendor://boot/` 相对层级放入厂商缓存。检查命令应返回 `checked=756`，且 `missing`、`changed` 均为空。具体的厂商文件许可范围见 `THIRD_PARTY_NOTICES.md`。
+自行取得匹配官方资料时，先从原始参考文件重建8项集成文件，再按清单的 `vendor://fpga/` 和 `vendor://boot/` 相对层级放入其余匹配的厂商文件。检查命令应返回 `checked=746`，且 `missing`、`changed` 均为空。具体的厂商文件许可范围见 `THIRD_PARTY_NOTICES.md`。
+
+```shell
+python finedge.py fpga --integrate-reference <original_fpai_demo_fpga_directory> --jfm-source <original_JFM_Kits_directory>
+python finedge.py fpga --check
+```
 
 ## 执行构建
 
@@ -33,7 +40,7 @@ python finedge.py fpga --prepare-only --work-dir <new_short_ascii_preparation_di
 python finedge.py fpga --work-dir <another_new_short_ascii_build_directory> --package-boot
 ```
 
-准备命令仅生成独立工程副本。完整命令会重新准备另一个新目录，并依次完成综合、布局布线、位流、物理审计和 BOOT 打包。相同工作目录只执行一次，失败日志保存在原目录。
+准备命令仅生成独立工程副本，并仅复制清单中的必需厂商文件。完整命令会重新准备另一个新目录，并依次完成综合、布局布线、位流、物理审计和 BOOT 打包。相同工作目录只执行一次，失败日志保存在原目录。
 
 工程副本包含以下层级。厂商脚本根据运行目录向上推导工程根目录，因此这些层级是构建接口的一部分。
 

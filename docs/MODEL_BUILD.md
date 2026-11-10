@@ -38,7 +38,7 @@ python finedge.py model rebuild --raw-mbo <raw_mbo56.bin> --work-dir .local/rebu
 
 混合精度选层逻辑位于`deployment/icraft/mixed/diagnose.py`与`compile_mixed.py`。原生尺度折叠、张量布局和Host核验位于`deployment/icraft/native/`。这些阶段保留模型身份、输入尺度、输出层数及失败记录的核对。
 
-完整重编译已完成本机验收，生成的JSON和RAW与冻结部署工件逐字节一致。1024窗新旧Host输出逐位一致，64个SDK编码样例一致，首层尺度折叠独立审计通过。指标和范围见`docs/int8_rebuild_validation.json`。实际板卡验收在后续阶段执行，部署工件由`models/identity.json`绑定。
+完整重编译已完成本机验收，生成的JSON和RAW与冻结部署工件逐字节一致。1024窗新旧Host输出逐位一致，64个SDK编码样例一致，首层尺度折叠独立审计通过。指标和范围见`docs/int8_rebuild_validation.json`。部署工件由`models/identity.json`绑定，并已完成真机验收，记录见[板卡验证](BOARD_VALIDATION.md)。
 
 ## 定点ROM
 

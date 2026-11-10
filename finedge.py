@@ -70,7 +70,7 @@ def main(argv=None):
                 return int(result['status'] != 'passed')
             if args.scope == 'tests':
                 return subprocess.call([sys.executable, '-B', '-m', 'unittest', 'discover',
-                                        '-s', 'tests', '-t', '.'], cwd=ROOT, env=environment())
+                                        '-s', 'tests', '-t', '.', '-v'], cwd=ROOT, env=environment())
             from tools.verify_checkout import main as verify
             return verify(['--git',args.git] if args.git else [])
         if args.command == 'cpu':

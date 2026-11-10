@@ -21,6 +21,7 @@ hardware/
   constraints/             时钟、IO与CDC约束
   ip/                      自研时钟IP配置
   project/                 厂商集成工程的可配置XPR
+  integration/             厂商顶层、约束及工具钩子的精确重建配方
   scripts/                 构建、依赖检查与BOOT打包
 software/
   data/                    ITCH/DBN接入、建簿、样本准备
