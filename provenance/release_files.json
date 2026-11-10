@@ -7,6 +7,11 @@
       "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
     },
     {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 2282,
+      "sha256": "796046b6e3b8ae73825a9817870e0bdc9d763f67bbc5318e1f202909f6f54c89"
+    },
+    {
       "path": ".gitignore",
       "bytes": 147,
       "sha256": "9a0e5f625b04901356a61c011da26f1a697c64a5e79705d192d8032821d910d0"
@@ -18,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8855,
-      "sha256": "0ab5497a295ef92548f27edb7d9979a510001d51da196b919ec6f521b88536d5"
+      "bytes": 9382,
+      "sha256": "04124be6d3935ab99337986419e4ae275e6398db39ac2b48430d18880bf1319d"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -750,6 +755,11 @@
       "path": "deployment/rebuild.py",
       "bytes": 14001,
       "sha256": "02d31338fd23369a554a7d87b1de64e1f5039a02027babe748e6c960fff9eccc"
+    },
+    {
+      "path": "docs/CI.md",
+      "bytes": 2901,
+      "sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a"
     },
     {
       "path": "docs/EVIDENCE.md",
@@ -1543,8 +1553,8 @@
     },
     {
       "path": "finedge.py",
-      "bytes": 5123,
-      "sha256": "c0c557cb4953a1f8c2ab110da405f1db47af20066b2520d348b916b03437dd6b"
+      "bytes": 5261,
+      "sha256": "e1658cf46b16b86cd04d417a17e28bfcc38a29da1e803778ec8de96b17bf7a65"
     },
     {
       "path": "hardware/README.md",
@@ -2133,13 +2143,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 410179,
-      "sha256": "0cce20b8fa5d6536cf6a59fb39e009e44fbb98157972ad43b8fdf5fa4a873458"
+      "bytes": 411928,
+      "sha256": "5eeebf95ca684d814d0ddff21ee88d2e636a1495073ce6e5cb5f6914010bee20"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "4a9c3503a79bd9e870c9761706f16e2864ea87a951710cd2f03bde7c628f5b5a"
+      "sha256": "d44a705a8eb7ffc28690881e5ac267ec1accb4a56df758380395040b7ef2c084"
     },
     {
       "path": "requirements.txt",
@@ -2443,8 +2453,8 @@
     },
     {
       "path": "tests/rtl/tb_fifo.sv",
-      "bytes": 1436,
-      "sha256": "3ab1923894b8711b6b74d4a22452fe8005b5daa6d1371d4b7d222e4b3d5fe66c"
+      "bytes": 1513,
+      "sha256": "8421b2b77cdb47ce6e9cd9eddf45aa47779eab0430a9ba57ca31ce144ce22aa8"
     },
     {
       "path": "tests/rtl/tb_history.sv",
@@ -2565,6 +2575,11 @@
       "path": "tests/software/test_w3.py",
       "bytes": 12978,
       "sha256": "7b9f8db83b36cd4f59fbacd558a2d75b207a2074e96d0e3b9dc9d513aa80a0d6"
+    },
+    {
+      "path": "tests/test_ci_check.py",
+      "bytes": 1434,
+      "sha256": "da8ecf04ae57e0d5858caa16641bffeb70334e52f6a3b8512c79f67f5dd09343"
     },
     {
       "path": "tests/test_fpga_build.py",
@@ -3302,14 +3317,19 @@
       "sha256": "c0007af9c406a2419e38ccb3dd836dac3d4931916cebd03be9fc277e6aca3791"
     },
     {
+      "path": "tools/ci_check.py",
+      "bytes": 6751,
+      "sha256": "3c930a0da41e26f53c03e14e7307485d85865996e77cbd5345c0d993a197a58b"
+    },
+    {
       "path": "tools/configuration.py",
       "bytes": 3223,
       "sha256": "9190c0fa0fe0ab1aee272e725871a42f62b0749ba8031708a4161db75226ee5f"
     },
     {
       "path": "tools/simulate.py",
-      "bytes": 2233,
-      "sha256": "8d5ef85a1a20ea3eff4d48988a9cf47581ce1d5a7426f4d78225b98b8e78a1bd"
+      "bytes": 2955,
+      "sha256": "14b904fef456a4e1f3e2c886f63c6b49d7805eff731b873265813f7fee80c525"
     },
     {
       "path": "tools/synthetic_inputs.py",
@@ -3318,8 +3338,8 @@
     },
     {
       "path": "tools/verify_checkout.py",
-      "bytes": 13071,
-      "sha256": "33a496c74dd91e47bb85326e8153726f1e0d1cb227e8bd4ae39f95b348959305"
+      "bytes": 13148,
+      "sha256": "86b34e54a614705da0f08cbb9d3e033e4af2c20cf0a33b3bc355dbce2e98d23a"
     }
   ]
 }

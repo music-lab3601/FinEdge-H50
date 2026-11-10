@@ -9,7 +9,8 @@ module tb_fifo;
  always @(negedge rc)rr=reset_n&&$urandom_range(0,4)>1;
  always @(posedge wc)if(reset_n)begin
   if(level>16)$fatal(1,"FIFO write level overflow");
-  if(wv&&wr)sent=sent+1;
+  // Keep the input sequence stable while the DUT samples this clock edge.
+  if(wv&&wr)sent<=sent+1;
  end
  always @(posedge rc)begin
   if(!reset_n)stalled=0;

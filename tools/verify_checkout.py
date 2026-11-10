@@ -62,7 +62,8 @@ REQUIRED += ['finedge.py', 'config/default.json', 'models/normalization.json',
              'hardware/project/reference.xpr', 'tools/configuration.py', 'requirements.txt',
              'hardware/scripts/audit_metadata_fifo.tcl', 'tools/synthetic_inputs.py',
              'contracts/examples/synthetic_startup.json', 'docs/PUBLIC_REPRODUCTION.md',
-             'docs/EVIDENCE.md', 'docs/evidence_index.json', 'external/README.md']
+             'docs/EVIDENCE.md', 'docs/evidence_index.json', 'external/README.md',
+             '.github/workflows/ci.yml', 'tools/ci_check.py', 'docs/CI.md']
 
 
 def sha(path):

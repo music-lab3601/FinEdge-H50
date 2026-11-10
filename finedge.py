@@ -18,7 +18,7 @@ def main(argv=None):
     configure.add_argument('--render', action='store_true', help='Resolve all 57 migrated templates')
     check = groups.add_parser('check', help='Check source collection or run local tests')
     check.add_argument('--git', help='Git executable when absent from PATH')
-    check.add_argument('scope', choices=['checkout', 'config', 'tests', 'imports'], default='config', nargs='?')
+    check.add_argument('scope', choices=['checkout', 'config', 'tests', 'imports', 'ci'], default='config', nargs='?')
     cpu = groups.add_parser('cpu', help='Frozen CPU model checks and network smoke loop')
     cpu.add_argument('action', choices=['check', 'smoke'], default='check', nargs='?')
     cpu.add_argument('--records', type=int, default=160)
@@ -55,6 +55,9 @@ def main(argv=None):
             print(json.dumps(render_templates() if args.render else load_settings(), indent=2))
             return 0
         if args.command == 'check':
+            if args.scope == 'ci':
+                from tools.ci_check import main as check_ci
+                return check_ci()
             if args.scope == 'config':
                 from tools.configuration import check_configuration
                 result = check_configuration()

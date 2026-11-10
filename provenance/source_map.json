@@ -2975,10 +2975,11 @@
     "path": "tests/rtl/tb_fifo.sv",
     "origin": "revised_h50/versions/window_stream_v1/tests/tb_fifo.sv",
     "source_sha256": "f367fdbac875e6f0870f35dc6e26db706de06075a36168c974711034a5408c16",
-    "public_sha256": "3ab1923894b8711b6b74d4a22452fe8005b5daa6d1371d4b7d222e4b3d5fe66c",
+    "public_sha256": "8421b2b77cdb47ce6e9cd9eddf45aa47779eab0430a9ba57ca31ce144ce22aa8",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Isolated CI checks and portable RTL simulation"
     ],
     "pre_migration_public_path": "hardware/versions/window_stream_v1/tests/tb_fifo.sv"
   },
@@ -6518,13 +6519,14 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "0ab5497a295ef92548f27edb7d9979a510001d51da196b919ec6f521b88536d5",
+    "public_sha256": "04124be6d3935ab99337986419e4ae275e6398db39ac2b48430d18880bf1319d",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Isolated CI checks and portable RTL simulation"
     ],
     "pre_migration_public_path": "README.md"
   },
@@ -6883,10 +6885,11 @@
     "path": "finedge.py",
     "origin": "public_repository_migration/finedge.py",
     "source_sha256": "b7580f4e7947eeb424cb86916b2fd50ec807514e891ef6f78c3ffea4f5a8bd1f",
-    "public_sha256": "c0c557cb4953a1f8c2ab110da405f1db47af20066b2520d348b916b03437dd6b",
+    "public_sha256": "e1658cf46b16b86cd04d417a17e28bfcc38a29da1e803778ec8de96b17bf7a65",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Isolated CI checks and portable RTL simulation"
     ],
     "pre_migration_public_path": "finedge.py"
   },
@@ -6984,14 +6987,15 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "4a9c3503a79bd9e870c9761706f16e2864ea87a951710cd2f03bde7c628f5b5a",
+    "public_sha256": "d44a705a8eb7ffc28690881e5ac267ec1accb4a56df758380395040b7ef2c084",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Isolated CI checks and portable RTL simulation"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -7223,21 +7227,24 @@
     "path": "tools/simulate.py",
     "origin": "public_repository_migration/tools/simulate.py",
     "source_sha256": "8d5ef85a1a20ea3eff4d48988a9cf47581ce1d5a7426f4d78225b98b8e78a1bd",
-    "public_sha256": "8d5ef85a1a20ea3eff4d48988a9cf47581ce1d5a7426f4d78225b98b8e78a1bd",
+    "public_sha256": "14b904fef456a4e1f3e2c886f63c6b49d7805eff731b873265813f7fee80c525",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Isolated CI checks and portable RTL simulation"
+    ],
     "pre_migration_public_path": "tools/simulate.py"
   },
   {
     "path": "tools/verify_checkout.py",
     "origin": "public_repository_migration/tools/verify_checkout.py",
     "source_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a",
-    "public_sha256": "33a496c74dd91e47bb85326e8153726f1e0d1cb227e8bd4ae39f95b348959305",
+    "public_sha256": "86b34e54a614705da0f08cbb9d3e033e4af2c20cf0a33b3bc355dbce2e98d23a",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Isolated CI checks and portable RTL simulation"
     ],
     "pre_migration_public_path": "tools/verify_checkout.py"
   },
@@ -7393,6 +7400,38 @@
     "source_sha256": "5c1cb36ec2e622836fa42c3bfd5265a432ecb9d694ba8de7a05f9e89a7293d29",
     "public_sha256": "5c1cb36ec2e622836fa42c3bfd5265a432ecb9d694ba8de7a05f9e89a7293d29",
     "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": ".github/workflows/ci.yml",
+    "origin": "CI_source_or_evidence/.github/workflows/ci.yml",
+    "source_sha256": "796046b6e3b8ae73825a9817870e0bdc9d763f67bbc5318e1f202909f6f54c89",
+    "public_sha256": "796046b6e3b8ae73825a9817870e0bdc9d763f67bbc5318e1f202909f6f54c89",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tools/ci_check.py",
+    "origin": "CI_source_or_evidence/tools/ci_check.py",
+    "source_sha256": "3c930a0da41e26f53c03e14e7307485d85865996e77cbd5345c0d993a197a58b",
+    "public_sha256": "3c930a0da41e26f53c03e14e7307485d85865996e77cbd5345c0d993a197a58b",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tests/test_ci_check.py",
+    "origin": "CI_source_or_evidence/tests/test_ci_check.py",
+    "source_sha256": "da8ecf04ae57e0d5858caa16641bffeb70334e52f6a3b8512c79f67f5dd09343",
+    "public_sha256": "da8ecf04ae57e0d5858caa16641bffeb70334e52f6a3b8512c79f67f5dd09343",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/CI.md",
+    "origin": "CI_source_or_evidence/docs/CI.md",
+    "source_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
+    "public_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
+    "category": "CI_source_or_evidence",
     "adaptations": []
   }
 ]

@@ -129,6 +129,17 @@ python -B finedge.py simulate
 
 完整Icraft原生INT8部署重编译已通过本机验收，JSON/RAW与冻结工件逐字节一致，1024窗新旧Host输出逐位一致。结果见`docs/int8_rebuild_validation.json`。H50厂商集成工程已在全新克隆中通过单次完整构建、物理审计及BOOT打包，结果见`docs/fpga_build_validation.json`。本轮新固件的板卡验收待执行。公开合成输入已在新克隆中验证，677项测试中651项通过、26项历史收据缺失跳过。CPU的160条盘口产生61窗，原生派发器180条UDP事件的身份和原始字节全部一致，HTTP界面正常启动退出，两组Icraft Host启动输出逐字节一致。结果见[公开复现验收](docs/public_reproduction_validation.json)。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
 
+## 自动检查
+
+每次推送和Pull Request会触发软件与RTL检查。Windows任务运行完整测试、CPU网络闭环、模型导出、ROM再生成及原生行情源验证。Linux任务使用Icarus Verilog运行四个RTL测试台。日志作为Actions工件保留14天。
+
+```shell
+python -B finedge.py check ci
+python -B finedge.py simulate --simulator iverilog
+```
+
+本地运行需准备相应的Python依赖、CMake/C++编译器或Icarus工具。配置隔离、验收范围和结果说明见[CI说明](docs/CI.md)。
+
 ## 许可
 
 自研代码采用MIT。以太网组件采用MIT，图表组件采用Apache-2.0。厂商SDK/IP及行情输入的获取与再分发依据各自条款。逐项说明见[许可与来源](THIRD_PARTY_NOTICES.md)。
