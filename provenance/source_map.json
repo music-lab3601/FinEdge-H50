@@ -6984,7 +6984,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "ab8670840176249831ef4570e1ea4aa2b33c3d8991caab79c7128311ae31a50f",
+    "public_sha256": "6751be541a023ba3e347764f2486871638965d11871a735837a319a22a46ce53",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",

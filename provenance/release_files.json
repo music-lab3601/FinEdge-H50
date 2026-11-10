@@ -2128,13 +2128,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 402190,
-      "sha256": "c52cb216c15fc4b29f586b1a381124032225c0f304f70e2794ecc0d10a0399a4"
+      "bytes": 409576,
+      "sha256": "ebe08caa312276c44118f8de8039c095804060fc7781163b55e5f66e0611724d"
     },
     {
       "path": "provenance/template_migration.json",
-      "bytes": 21409,
-      "sha256": "ab8670840176249831ef4570e1ea4aa2b33c3d8991caab79c7128311ae31a50f"
+      "bytes": 21942,
+      "sha256": "6751be541a023ba3e347764f2486871638965d11871a735837a319a22a46ce53"
     },
     {
       "path": "requirements.txt",
