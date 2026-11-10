@@ -8,8 +8,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 2282,
-      "sha256": "796046b6e3b8ae73825a9817870e0bdc9d763f67bbc5318e1f202909f6f54c89"
+      "bytes": 2829,
+      "sha256": "03f1dcd43f0eac06abacb454dbcc69285433ff22ae0a05a011bb8fc456b20e15"
     },
     {
       "path": ".gitignore",
@@ -758,8 +758,8 @@
     },
     {
       "path": "docs/CI.md",
-      "bytes": 2901,
-      "sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a"
+      "bytes": 2975,
+      "sha256": "e45a334c6bce57dc15f09b7aca6aa1e7013759f74f6edfcd0fe05271db66b42a"
     },
     {
       "path": "docs/EVIDENCE.md",
@@ -2143,8 +2143,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 411928,
-      "sha256": "5eeebf95ca684d814d0ddff21ee88d2e636a1495073ce6e5cb5f6914010bee20"
+      "bytes": 412052,
+      "sha256": "27d4ddaf96fe2d8154c664bce93b4da85b6005ed5036da026639d0fed273fd93"
     },
     {
       "path": "provenance/template_migration.json",

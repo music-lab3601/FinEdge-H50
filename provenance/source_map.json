@@ -7406,9 +7406,11 @@
     "path": ".github/workflows/ci.yml",
     "origin": "CI_source_or_evidence/.github/workflows/ci.yml",
     "source_sha256": "796046b6e3b8ae73825a9817870e0bdc9d763f67bbc5318e1f202909f6f54c89",
-    "public_sha256": "796046b6e3b8ae73825a9817870e0bdc9d763f67bbc5318e1f202909f6f54c89",
+    "public_sha256": "03f1dcd43f0eac06abacb454dbcc69285433ff22ae0a05a011bb8fc456b20e15",
     "category": "CI_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Isolated CI checks and portable RTL simulation"
+    ]
   },
   {
     "path": "tools/ci_check.py",
@@ -7430,8 +7432,10 @@
     "path": "docs/CI.md",
     "origin": "CI_source_or_evidence/docs/CI.md",
     "source_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
-    "public_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
+    "public_sha256": "e45a334c6bce57dc15f09b7aca6aa1e7013759f74f6edfcd0fe05271db66b42a",
     "category": "CI_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Isolated CI checks and portable RTL simulation"
+    ]
   }
 ]

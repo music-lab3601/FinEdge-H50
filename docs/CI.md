@@ -27,7 +27,7 @@ python -B finedge.py check ci
 
 ## Linux RTL 仿真
 
-任务使用 Ubuntu 24.04、Python 3.12 和发行版提供的 Icarus Verilog。安装后运行以下命令。
+任务使用 Ubuntu 24.04、Python 3.12 和发行版提供的 Icarus Verilog。先用固定版本及 SHA256 的 actionlint 检查工作流，再安装仿真器并运行以下命令。
 
 ```shell
 python -B finedge.py simulate --simulator iverilog
