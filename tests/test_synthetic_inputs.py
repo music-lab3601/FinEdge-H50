@@ -16,7 +16,7 @@ class SyntheticInputTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
         self.inputs = self.root / 'inputs'
         sample.generate(self.inputs)
         self.profile = self.inputs / 'manifest.json'

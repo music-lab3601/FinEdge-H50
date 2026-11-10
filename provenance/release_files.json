@@ -2158,8 +2158,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 414660,
-      "sha256": "7913456fad8613c3930d74c115c9be99b4cc5bb727882cb2fe23338738ad01d8"
+      "bytes": 414851,
+      "sha256": "56fff8b0ed3f4bc89d0f510e976977c2a988b5714edc1eaed4555ad2c3fb229d"
     },
     {
       "path": "provenance/template_migration.json",
@@ -2603,18 +2603,18 @@
     },
     {
       "path": "tests/test_public_entry.py",
-      "bytes": 4632,
-      "sha256": "3d854bd38d28d9f9c1ea2c7b080cab68cd1d0035a9e05614a6dddf744b908764"
+      "bytes": 4642,
+      "sha256": "30f9a7564b346bdfaeca4ca95ee318507cfd1939a45da3bfea1310364825f565"
     },
     {
       "path": "tests/test_queue_worker.py",
-      "bytes": 3451,
-      "sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195"
+      "bytes": 3461,
+      "sha256": "cf457701a0e7cefa845473deda6efe47216a43bd292ad05d4335ef594c7ccac8"
     },
     {
       "path": "tests/test_synthetic_inputs.py",
-      "bytes": 8272,
-      "sha256": "bec69ddab2594642dfdd360a20ae87b1906029a3c5146f1f80ce3907fd5fface"
+      "bytes": 8282,
+      "sha256": "965ac33e0832edfc699103c076574097fa8e34f1701dc42b7164a0db2c2a8d41"
     },
     {
       "path": "third_party/lightweight-charts/LICENSE.txt",

@@ -30,7 +30,7 @@ class ConfigurationTests(unittest.TestCase):
 
     def test_defaults_follow_relocated_repository(self):
         with tempfile.TemporaryDirectory() as temporary:
-            other = Path(temporary)
+            other = Path(temporary).resolve()
             (other/'config').mkdir()
             (other/'config/default.json').write_bytes(paths.DEFAULT_CONFIG.read_bytes())
             with patch.object(paths, 'ROOT', other), patch.object(paths, 'DEFAULT_CONFIG', other/'config/default.json'), patch.dict('os.environ', {'FINEDGE_CONFIG': str(other/'absent.json')}):

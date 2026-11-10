@@ -7167,10 +7167,11 @@
     "path": "tests/test_public_entry.py",
     "origin": "public_repository_migration/tests/test_public_entry.py",
     "source_sha256": "caed075e2c2929baab096cb0616b5d54e1a063ef32909744d94641e4f2f106a8",
-    "public_sha256": "3d854bd38d28d9f9c1ea2c7b080cab68cd1d0035a9e05614a6dddf744b908764",
+    "public_sha256": "30f9a7564b346bdfaeca4ca95ee318507cfd1939a45da3bfea1310364825f565",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "GitHub publication and canonical Windows test paths"
     ],
     "pre_migration_public_path": "tests/test_public_entry.py"
   },
@@ -7367,10 +7368,11 @@
     "path": "tests/test_synthetic_inputs.py",
     "origin": "public_reproduction/tests/test_synthetic_inputs.py",
     "source_sha256": "75e6bcecf0e1d72e0b3329d2c3be1cb3417a4a51291b86ebf16df10f65456e94",
-    "public_sha256": "bec69ddab2594642dfdd360a20ae87b1906029a3c5146f1f80ce3907fd5fface",
+    "public_sha256": "965ac33e0832edfc699103c076574097fa8e34f1701dc42b7164a0db2c2a8d41",
     "category": "public_reproduction_source_or_evidence",
     "adaptations": [
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "GitHub publication and canonical Windows test paths"
     ]
   },
   {
@@ -7471,9 +7473,11 @@
     "path": "tests/test_queue_worker.py",
     "origin": "CI_source_or_evidence/tests/test_queue_worker.py",
     "source_sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195",
-    "public_sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195",
+    "public_sha256": "cf457701a0e7cefa845473deda6efe47216a43bd292ad05d4335ef594c7ccac8",
     "category": "CI_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "GitHub publication and canonical Windows test paths"
+    ]
   },
   {
     "path": "docs/board_validation.json",
