@@ -77,6 +77,24 @@
         "min": 0.014
       },
       "board_validation": "deferred"
+    },
+    {
+      "id": "public_synthetic_reproduction_20261110",
+      "kind": "fresh_clone_software_and_Host_validation",
+      "source_commit": "c8267d54ca501d048e4a6efc4e2b71f2a9cd8d21",
+      "validation": "docs/public_reproduction_validation.json",
+      "input_manifest_sha256": "06a1a6a37476bfd096ffc70bc5f07d76dae3d2c79e4b03d186983779c9446b77",
+      "model_identity": {
+        "model": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+        "parameters": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+        "normalization": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf",
+        "scales": "f0a88606055d99342f074161670cefa051f60cc52c6a83e5b6768e6d45b5427d"
+      },
+      "synthetic_input_archive_sha256": "ed800a8e0e926a63a2976e76f67b66c1853a6b49b5d787ae6bd8dc13d6d77a2c",
+      "data_kind": "synthetic",
+      "market_accuracy_evaluated": false,
+      "board_access": false,
+      "board_validation": "deferred"
     }
   ]
 }

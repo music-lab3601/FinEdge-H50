@@ -74,3 +74,7 @@ python -B finedge.py model rebuild --raw-mbo <matching_raw_mbo56.bin> --work-dir
 训练实现位于 `software/training/`，研究协议位于 `config/research/`，类别、特征和权重身份由模型契约固定。训练复跑需要 2025-12-08 至 12 日的授权数据、登记文件和缓存。相关输入按训练协议外部准备。
 
 当前公开验收覆盖冻结权重的 CPU 推理、ONNX 导出、Icraft 完整重编译和部署构建。各阶段验证记录位于 `docs/`。历史板测数据与新构建产物的对应关系见 `docs/EVIDENCE.md`。
+
+## 本轮验收记录
+
+公开示例已在独立新克隆及Python环境中运行。160条有效盘口产生61窗，原生派发器180条UDP事件逐包核对通过，57份配置模板渲染通过，界面经正常入口启动并关闭。两组启动输入重新调用Icraft Host，六个输出与冻结参考逐字节一致。677项测试中651项通过，26项因历史收据缺失跳过。各项输入身份与结果见[公开复现验收](public_reproduction_validation.json)。

@@ -1,0 +1,85 @@
+{
+  "schema": "finedge-public-reproduction-validation-v1",
+  "date": "2026-11-10",
+  "status": "passed",
+  "source_commit": "c8267d54ca501d048e4a6efc4e2b71f2a9cd8d21",
+  "release_scope": "source_and_build_verified",
+  "environment": {
+    "platform": "Windows x64",
+    "python": "3.12.15",
+    "independent_application_venv": true,
+    "dependency_install_receipt": "docs/clean_environment_validation.json"
+  },
+  "fresh_clone": true,
+  "input_generation": {
+    "events": 3070,
+    "rows": 3050,
+    "windows_5m": 2901,
+    "files": 7,
+    "relocated_input_verified": true
+  },
+  "CPU_UDP_replay": {
+    "status": "passed",
+    "data_kind": "synthetic",
+    "backend": "CPU",
+    "network": "loopback UDP",
+    "events": 180,
+    "records": 160,
+    "windows": 61,
+    "speed": 20,
+    "model_identity": {
+      "model": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+      "parameters": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+      "normalization": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf",
+      "scales": "f0a88606055d99342f074161670cefa051f60cc52c6a83e5b6768e6d45b5427d"
+    },
+    "input_manifest_sha256": "06a1a6a37476bfd096ffc70bc5f07d76dae3d2c79e4b03d186983779c9446b77",
+    "CPU_manifest_sha256": "eeed581d994e5de1db2a65981bffb42f395e74ed573fdfe4e9a94d6e61c46a0e",
+    "CPU_model_sha256": "a9d35c4ede7e6619001b1fc6a316c19c9b691ad2660e7daef0febbb6b081267d",
+    "market_accuracy_evaluated": false,
+    "board_access": false
+  },
+  "input_manifest_sha256": "06a1a6a37476bfd096ffc70bc5f07d76dae3d2c79e4b03d186983779c9446b77",
+  "configuration_templates_rendered": 57,
+  "board_runtime_bundle": {
+    "manifest_files": 11,
+    "total_files": 12,
+    "standalone_Python_syntax": "3.8",
+    "status": "prepared"
+  },
+  "native_market_source": {
+    "built_from_source": true,
+    "UDP_events_verified": 180,
+    "event_identity_and_raw_bytes_equal": true
+  },
+  "dashboard": "passed_idle_synthetic_and_clean_shutdown",
+  "SDK_Host_reference": {
+    "sdk": "Icraft 3.36.1",
+    "backend": "HostBackend",
+    "regenerated_inputs": 2,
+    "output_floats": 6,
+    "output_bytes_equal": true,
+    "reference_contract": "contracts/examples/synthetic_startup.json"
+  },
+  "tests": {
+    "executed": 677,
+    "passed": 651,
+    "skipped": 26,
+    "failed": 0,
+    "skip_reason": "Unavailable historical SDK or data receipts"
+  },
+  "synthetic_input_archive": {
+    "filename": "public_synthetic_inputs.zip",
+    "bytes": 106377,
+    "sha256": "ed800a8e0e926a63a2976e76f67b66c1853a6b49b5d787ae6bd8dc13d6d77a2c",
+    "generation": "Deterministic ZIP of example generate output"
+  },
+  "board_access": false,
+  "new_firmware_board_validation": "deferred_for_initial_source_release",
+  "external_inputs": {
+    "FPGA_and_BOOT": "Matching licensed vendor dependency snapshot and build tools",
+    "market_validation": "Independently acquired authorized real market data",
+    "training_reproduction": "2025-12-08 to 2025-12-12 data, registration and caches from training handoff"
+  },
+  "guide": "docs/PUBLIC_REPRODUCTION.md"
+}

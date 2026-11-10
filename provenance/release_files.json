@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8495,
-      "sha256": "a4da3b5f664a18975c895d75966dfc529db87537b3c22fa243428a14ccd1bdf0"
+      "bytes": 8855,
+      "sha256": "0ab5497a295ef92548f27edb7d9979a510001d51da196b919ec6f521b88536d5"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -768,8 +768,8 @@
     },
     {
       "path": "docs/PUBLIC_REPRODUCTION.md",
-      "bytes": 5793,
-      "sha256": "a8e9176425c68bd6c7b34abd4f34bbbb4361029c296ee898b816fb49bc3a8b3a"
+      "bytes": 6276,
+      "sha256": "93d4ab66ac9e0adf6ecf4eb6eadc26db13ca82c591c74926db4be9c419376d51"
     },
     {
       "path": "docs/RUNNING.md",
@@ -783,8 +783,8 @@
     },
     {
       "path": "docs/evidence_index.json",
-      "bytes": 3457,
-      "sha256": "03a7d4fd7930a78c2b07103681f4785e0629497e30cc0fa0772d0802dca69a11"
+      "bytes": 4448,
+      "sha256": "4e59116a47fd9d9633877e632a12d283a3747b0d3e0dcfe3e1151395ffef2096"
     },
     {
       "path": "docs/fpga_build_validation.json",
@@ -802,9 +802,14 @@
       "sha256": "8657929236f023e6eb95a1ad5f550ed1b615b64d64942c713a5e12867147fc94"
     },
     {
+      "path": "docs/public_reproduction_validation.json",
+      "bytes": 3096,
+      "sha256": "5c1cb36ec2e622836fa42c3bfd5265a432ecb9d694ba8de7a05f9e89a7293d29"
+    },
+    {
       "path": "docs/release_status.json",
-      "bytes": 1270,
-      "sha256": "e9cde0398ed2bd69bebd041b4d4d4f7810ea0e84f831048a5207169dc20854d6"
+      "bytes": 1384,
+      "sha256": "6a9f444590a58cf5317a9c0de60e0d2c20cd8cc31042803025a4fb0029b065d2"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -2128,13 +2133,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 409576,
-      "sha256": "ebe08caa312276c44118f8de8039c095804060fc7781163b55e5f66e0611724d"
+      "bytes": 410179,
+      "sha256": "0cce20b8fa5d6536cf6a59fb39e009e44fbb98157972ad43b8fdf5fa4a873458"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "6751be541a023ba3e347764f2486871638965d11871a735837a319a22a46ce53"
+      "sha256": "4a9c3503a79bd9e870c9761706f16e2864ea87a951710cd2f03bde7c628f5b5a"
     },
     {
       "path": "requirements.txt",

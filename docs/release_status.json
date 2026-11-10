@@ -1,5 +1,5 @@
 {
-  "stage": "public_reproduction_materials",
+  "stage": "public_reproduction_verified_pending_CI_and_GitHub_publication",
   "team_license": "MIT",
   "scope": "Full H50",
   "production_directory_migration": "completed",
@@ -21,5 +21,6 @@
   "initial_release_scope": "source_and_build_verified",
   "public_inputs": "generated_synthetic_with_frozen_Icraft_Host_startup_reference",
   "reproduction_guide": "docs/PUBLIC_REPRODUCTION.md",
-  "evidence_index": "docs/evidence_index.json"
+  "evidence_index": "docs/evidence_index.json",
+  "public_reproduction_validation": "docs/public_reproduction_validation.json"
 }
