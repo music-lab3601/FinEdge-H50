@@ -73,7 +73,7 @@ python -B finedge.py model rebuild --raw-mbo <matching_raw_mbo56.bin> --work-dir
 
 ## 训练入口与交付边界
 
-训练实现位于 `software/training/`，研究协议位于 `config/research/`，类别、特征和权重身份由模型契约固定。训练复跑需要 2025-12-08 至 12 日的授权数据、登记文件和缓存。相关输入按训练协议外部准备。
+训练实现位于 `software/training/`，研究协议位于 `config/research/`，类别、特征和权重身份由模型契约固定。`train prepare/admit/run`接通当前目录中的预处理、模型和训练循环，使用显式清单与哈希。完整训练复跑需要2025-12-08至12日TRAIN及15—16日开发验证数据和清单。原注册式入口保留历史登记约束。具体字段、命令及实际小样本训练见[训练复现](TRAINING.md)。
 
 当前公开验收覆盖冻结权重的 CPU 推理、ONNX 导出、Icraft 完整重编译和部署构建。各阶段验证记录位于 `docs/`。历史板测数据与新构建产物的对应关系见 `docs/EVIDENCE.md`。
 

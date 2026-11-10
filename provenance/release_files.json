@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10323,
-      "sha256": "61f264910d624ba37f59e9a7614c0299095e4e7a6d84f627fe1d8b91a69d6c68"
+      "bytes": 10545,
+      "sha256": "667a10de26dbe2fe25ba602f67b9aacf7adc3925348f299d0845b8530ce8aab1"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -788,13 +788,18 @@
     },
     {
       "path": "docs/PUBLIC_REPRODUCTION.md",
-      "bytes": 6551,
-      "sha256": "8befd614ecd618d4b9a19235efef824052e60a5cc2a5559431ef8845959e5980"
+      "bytes": 6755,
+      "sha256": "6720fc3151089914ba0b831a14c23af049ea22314a25166063b69ed7b8f8358a"
     },
     {
       "path": "docs/RUNNING.md",
-      "bytes": 4155,
-      "sha256": "6ae671e560f80da0680123a834564b9a528fc54c65446f54dd545ca4520d4462"
+      "bytes": 4200,
+      "sha256": "e0807534ab9c1215335ba9741c89d26ed13c1149daac4084fb1091a3f05c0866"
+    },
+    {
+      "path": "docs/TRAINING.md",
+      "bytes": 5081,
+      "sha256": "e76d9341575924b0192c9a506ee26ba616fd38f2ec56904a9c4b9a7e879eeb59"
     },
     {
       "path": "docs/VENDOR_INTEGRATION.md",
@@ -1588,8 +1593,8 @@
     },
     {
       "path": "finedge.py",
-      "bytes": 5267,
-      "sha256": "0ee41b4c37198b11a9fbfd5805826f4b233ed06b228404449d2faa4483a2cf9c"
+      "bytes": 5265,
+      "sha256": "bf8a9a05c9fe96b207ec262bbe52f0e60977241837189e61042c5125fbf8ca4b"
     },
     {
       "path": "hardware/README.md",
@@ -2188,13 +2193,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 419647,
-      "sha256": "101cfd21319b165282f04c534f31a041368c795c07f933aedbb3e1351ba915a7"
+      "bytes": 420553,
+      "sha256": "94f1c14737ad904a1eb78ca6391339c96f240c76e12c7ca5ad6d71950f18d9e8"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "e7921ed60741a141ff149d6e0890b0cf60c39df99240f377bc6b8b5fd0d775c0"
+      "sha256": "41454bceee01c1557885652fdd8347ab496e5ec17814d2ab8e846447b99cdd97"
     },
     {
       "path": "requirements.txt",
@@ -2407,9 +2412,14 @@
       "sha256": "8c7126102159ae0450f5a188df7120c679788417d004095a4bc888bfd2d67148"
     },
     {
+      "path": "software/training/entry.py",
+      "bytes": 10399,
+      "sha256": "9e9388ed7f77d694dc86b7bd84775f81ae180a8ac6845494d283a7b7bd1bb75a"
+    },
+    {
       "path": "software/training/tcn_existing_data_ed4_features.py",
-      "bytes": 25292,
-      "sha256": "05db587a90a3154ed541fd503ec85e42551f4a0778497c0c18259dad936254e8"
+      "bytes": 25667,
+      "sha256": "343d1e214bcc6374d0a65848859b0cfffe022bc5dce96648bda06934cd83e6b8"
     },
     {
       "path": "software/training/tcn_existing_data_ed4_train.py",
@@ -2650,6 +2660,11 @@
       "path": "tests/test_synthetic_inputs.py",
       "bytes": 8282,
       "sha256": "965ac33e0832edfc699103c076574097fa8e34f1701dc42b7164a0db2c2a8d41"
+    },
+    {
+      "path": "tests/test_training_entry.py",
+      "bytes": 5584,
+      "sha256": "bdbf3d066c210a9b98271e6cf56c0a82c654ed13d53d51870640b958e59b63be"
     },
     {
       "path": "tests/test_vendor_integration.py",
@@ -3403,8 +3418,8 @@
     },
     {
       "path": "tools/verify_checkout.py",
-      "bytes": 13998,
-      "sha256": "ddc84dff7bf229f2d9f39c97bb2687bfa38aa6dd8ac6a376615f930b1fe0e2b9"
+      "bytes": 14094,
+      "sha256": "9745fbf6a2cc85b28e2e9b3a582d5f22c6d9352411255a68515c7221aed3e199"
     }
   ]
 }

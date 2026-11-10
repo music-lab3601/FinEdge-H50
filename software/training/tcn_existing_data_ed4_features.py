@@ -200,12 +200,13 @@ def _label_hashes(data):
     return result
 
 
-def prepare(data, outdir):
-    """Called only by root after ED4 registration; never reserves training slots."""
+def prepare(data, outdir, *, cache_root=None):
+    """Prepare a new row cache after the caller validates the data manifest."""
     started = time.perf_counter()
     validate_prepared(data)
     outdir = Path(outdir).resolve()
-    need(outdir.is_relative_to(STAGE.resolve()) and outdir != STAGE.resolve(),
+    root = Path(cache_root).resolve() if cache_root is not None else STAGE.resolve()
+    need(outdir.is_relative_to(root) and outdir != root,
          'Feature cache must be a new ED4 child directory')
     need(not outdir.exists(), 'Feature cache already exists; no overwrite/retry')
     before = _source_hashes(data)
@@ -290,7 +291,7 @@ def prepare(data, outdir):
     return result
 
 
-def validate_cache(data, prepared):
+def validate_cache(data, prepared, *, cache_root=None, data_root=None):
     """Metadata-only cache contract, before any numeric cache/label mapping."""
     validate_prepared(data)
     need(prepared.get('version') == 'TCN-ED4-relative-row-cache-1.0'
@@ -316,15 +317,17 @@ def validate_cache(data, prepared):
         need(type(cached.get('cache_offset')) is int and cached['cache_offset'] == offsets[day],
              'Cache range offset differs')
         offsets[day] += original['stop_row'] - original['start_row']
+    root = Path(cache_root).resolve() if cache_root is not None else STAGE.resolve()
+    source_root = Path(data_root).resolve() if data_root is not None else ROOT.resolve()
     for day in TRAIN + TUNE:
         ref = prepared['cache_files'][day]
         need(ref.get('dtype') == '<f4' and ref.get('shape') == [offsets[day], 40]
              and ref.get('role') == ROLES[day] and ref.get('bytes') == offsets[day] * 160,
              'Cache array geometry differs')
-        need(Path(ref['path']).resolve().is_relative_to(STAGE.resolve()),
-             'Cache payload outside ED4 stage')
-        need(Path(data['day_label_reports'][day]['label_path']).resolve().is_relative_to(ROOT.resolve()),
-             'Labels outside D workspace')
+        need(Path(ref['path']).resolve().is_relative_to(root),
+             'Cache payload outside selected cache root')
+        need(Path(data['day_label_reports'][day]['label_path']).resolve().is_relative_to(source_root),
+             'Labels outside selected data root')
     return prepared
 
 
@@ -378,11 +381,11 @@ class RelativeResearchWindows:
 
 
 class CachedRelativeWindows:
-    """D-cache-only arbitrary window gather; never maps E records."""
-    def __init__(self, data, prepared, role):
+    """Gather windows from normalized row caches and label streams."""
+    def __init__(self, data, prepared, role, *, cache_root=None, data_root=None):
         import numpy as np
         admitted_days(role)
-        validate_cache(data, prepared)
+        validate_cache(data, prepared, cache_root=cache_root, data_root=data_root)
         self.data = data
         self.prepared = prepared
         self.role = role

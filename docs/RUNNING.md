@@ -58,4 +58,4 @@ python finedge.py data --help
 python finedge.py train --help
 ```
 
-`data`提供已有ITCH审计、重建与检查命令，配置位于`config/research/`。`train`接入H50注册式训练入口，需要明确的注册文件、哈希、样本缓存和预算记录。公开仓库提供人工合成数学/结构测试及冻结权重。实际训练数据与登记收据按数据来源独立准备。
+`data`提供已有ITCH审计、重建与检查命令，配置位于`config/research/`。`train`使用显式P2数据清单和哈希，提供缓存准备、准入及CPU/CUDA训练，结果输出到新目录。命令、数据字段、历史登记接口和已执行小样本训练见[训练复现](TRAINING.md)。实际训练数据与登记收据按数据来源独立准备。

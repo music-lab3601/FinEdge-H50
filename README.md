@@ -47,6 +47,8 @@ provenance/                来源、目录映射与发布文件清单
 
 正式入口统一使用仓库根目录的`finedge.py`。`experiments/reference/`保留历史辅助实现及其来源身份。当前可执行路径与验证范围见下文。
 
+训练通过`finedge.py train prepare/admit/run`执行，使用明确的数据与缓存清单，输出独立的新权重和记录。输入格式、CPU/CUDA命令及合成训练验收见[训练复现](docs/TRAINING.md)。
+
 当前开源版本已完成源码、完整构建与新固件真机闭环验收。实验与固件对应关系见[证据索引说明](docs/EVIDENCE.md)。
 
 v1.0.1补齐厂商顶层、约束和工具钩子的集成重建配方，并增加源码引用检查。本轮独立克隆执行696项测试，670项通过，26项按依赖和CUDA条件跳过。结果见[交付完整性复核](docs/COMPLETENESS_AUDIT.md)。

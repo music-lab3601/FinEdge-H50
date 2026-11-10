@@ -66,7 +66,8 @@ REQUIRED += ['finedge.py', 'config/default.json', 'models/normalization.json',
              'docs/EVIDENCE.md', 'docs/evidence_index.json', 'external/README.md',
              '.github/workflows/ci.yml', 'tools/ci_check.py', 'docs/CI.md']
 REQUIRED += ['hardware/integration/vendor_edits.json', 'hardware/scripts/integrate_vendor.py',
-             'tools/source_closure.py', 'tests/test_vendor_integration.py']
+             'tools/source_closure.py', 'tests/test_vendor_integration.py',
+             'software/training/entry.py', 'tests/test_training_entry.py', 'docs/TRAINING.md']
 
 
 def sha(path):

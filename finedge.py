@@ -25,7 +25,7 @@ def main(argv=None):
     demo = groups.add_parser('demo', help='Launch the local dashboard')
     demo.add_argument('--review', help='Directory of a saved board run')
     demo.add_argument('--no-browser', action='store_true')
-    for name, description in [('data', 'ITCH reconstruction'), ('train', 'Registered H50 training'),
+    for name, description in [('data', 'ITCH reconstruction'), ('train', 'Portable H50 cache preparation and training'),
                               ('native', 'Build the native network source'),
                               ('simulate', 'Run four RTL simulations'),
                               ('example', 'Generate and verify public synthetic inputs'),
@@ -34,7 +34,7 @@ def main(argv=None):
         p = groups.add_parser(name, help=description)
         p.add_argument('arguments', nargs=argparse.REMAINDER)
     raw = list(sys.argv[1:] if argv is None else argv)
-    modules = {'data': 'software.data.w2', 'train': 'software.training.tcn_existing_data_ed4_train',
+    modules = {'data': 'software.data.w2', 'train': 'software.training.entry',
                'native': 'tools.build_native', 'simulate': 'tools.simulate',
                'fpga': 'hardware.scripts.build_fpga', 'model': 'deployment.commands',
                'example': 'tools.synthetic_inputs'}
