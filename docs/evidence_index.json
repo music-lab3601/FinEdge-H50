@@ -1,0 +1,82 @@
+{
+  "schema": "finedge-published-evidence-v1",
+  "release_scope": "source_and_build_verified",
+  "new_firmware_board_validation": "deferred",
+  "records": [
+    {
+      "id": "historical_board_20261104",
+      "kind": "actual_board_replay",
+      "date": "2026-11-04",
+      "source_snapshot": "pre-public-repository recorded runtime snapshot",
+      "run_name": "board_five_minutes_fixture_20261104_120716",
+      "analysis_sha256": "849082afd0d325ee60cd773200e4464605e4e3c803796e6e53f89aa05d00aa8d",
+      "run_manifest_sha256": "a467718eff88ebf422d679857bed24f1e72258f49a6a3526b2408acf2a17bd03",
+      "runtime_archive_sha256": "fff4c0778f764123eff45ce071a71e993025f24d54dadcfb5cbe896e7e0141da",
+      "BOOT_sha256": "b02313e7d993fba78ea3e1b58480122b5bb26fa20d343c50765de27683e3e4d0",
+      "model_sha256": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+      "model_raw_sha256": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+      "raw_source_sha256": "f837fe8870cde83feed2f0ae21c73d778586249790219f976e53d60e0484f9d6",
+      "reference_sha256": "6733c8ea9d95e4063752e7c4a97f0618308431ccbb227cc5255a16ee36d6d854",
+      "fixture": {
+        "minutes": 5,
+        "duration_ns": 300000000000,
+        "first_raw_ordinal": 165868,
+        "last_raw_ordinal": 280393,
+        "measured_events": 114526,
+        "bootstrap_events": 165867,
+        "event_span_ns": 299575672389,
+        "eligible_rows": 107273,
+        "opportunities": 107174,
+        "id": "duration_5m"
+      },
+      "config": {
+        "slots": 32,
+        "max_age_us": 2000,
+        "h50_records": 50,
+        "speed": 1
+      },
+      "metrics": {
+        "raw_events": 114526,
+        "predictions": 79029,
+        "session_opportunities": 107174,
+        "five_ms_completed": 78970,
+        "five_ms_completion_ratio": 0.7368391587511897,
+        "DDR_queue_peak": 32,
+        "expired_total": 2732,
+        "session_full_rejected": 25413,
+        "event_due_to_prediction_PC": {
+          "count": 79029,
+          "mean_us": 651.3729202697743,
+          "p50_us": 564.677,
+          "p95_us": 1442.6479999999997,
+          "p99_us": 1753.8743200000006,
+          "max_us": 16004.895
+        }
+      },
+      "fixture_manifest_sha256": "b990dd020eb9c367be0f14f2eb4adf1cb3ac6d1cbe8409c9ca087a18ea79e130",
+      "trace_sha256": "33599c3c00edcc13c0bd4eb0a084f588d0d31412d5a0f644fec8ffd2bd2fd5c5",
+      "prediction_packets_sha256": "4816e60b286437dbb89b7eb68f74cef833c351edaa92a9e10f89f721de879d6c",
+      "public_runtime_prefix": {
+        "sha256": "99054880e83babc3468d0a7419d43866a39d9727defbfae9461824ab7dd12661",
+        "bytes": 15702008,
+        "records": 280393,
+        "relationship": "byte-equal contiguous prefix of the historical full MBO source",
+        "byte_equality_verified": true
+      }
+    },
+    {
+      "id": "source_build_20261110",
+      "kind": "fresh_clone_build_and_physical_audit",
+      "source_commit": "f218ebc44443f41fa94413ed41b141b2aad8a0d0",
+      "validation": "docs/fpga_build_validation.json",
+      "BOOT_sha256": "2f217f4677bd9fc3858c6b5a546d75e8a9640163939cc9845ed4782c66243b1e",
+      "model_sha256": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+      "model_raw_sha256": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+      "ordinary_timing_ns": {
+        "max": 0.03,
+        "min": 0.014
+      },
+      "board_validation": "deferred"
+    }
+  ]
+}

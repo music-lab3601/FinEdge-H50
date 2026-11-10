@@ -1,5 +1,5 @@
 {
-  "stage": "FPGA_full_source_build_verified",
+  "stage": "public_reproduction_materials",
   "team_license": "MIT",
   "scope": "Full H50",
   "production_directory_migration": "completed",
@@ -10,12 +10,16 @@
   "model_mixed_native_recompile": "passed_bit_equal_JSON_RAW_and_1024_Host_outputs",
   "vendor_reference_reconstruction": "passed_manifest_vendor_inputs",
   "full_FPGA_build": "passed_fresh_clone_single_command_with_physical_audit_and_BOOT",
-  "board_validation": "pending",
+  "board_validation": "deferred_for_initial_source_release",
   "GitHub_remote_created": false,
   "GitHub_pushed": false,
   "validation": "docs/migration_validation.json",
   "clean_Python_environment": "passed_after_databento_dependency_correction",
   "clean_environment_validation": "docs/clean_environment_validation.json",
   "model_rebuild_validation": "docs/int8_rebuild_validation.json",
-  "fpga_build_validation": "docs/fpga_build_validation.json"
+  "fpga_build_validation": "docs/fpga_build_validation.json",
+  "initial_release_scope": "source_and_build_verified",
+  "public_inputs": "generated_synthetic_with_frozen_Icraft_Host_startup_reference",
+  "reproduction_guide": "docs/PUBLIC_REPRODUCTION.md",
+  "evidence_index": "docs/evidence_index.json"
 }

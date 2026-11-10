@@ -28,6 +28,7 @@ def main(argv=None):
     for name, description in [('data', 'ITCH reconstruction'), ('train', 'Registered H50 training'),
                               ('native', 'Build the native network source'),
                               ('simulate', 'Run four RTL simulations'),
+                              ('example', 'Generate and verify public synthetic inputs'),
                               ('fpga', 'Materialize or build the vendor FPGA project'),
                               ('model', 'Export ONNX, transform or compile')]:
         p = groups.add_parser(name, help=description)
@@ -35,7 +36,8 @@ def main(argv=None):
     raw = list(sys.argv[1:] if argv is None else argv)
     modules = {'data': 'software.data.w2', 'train': 'software.training.tcn_existing_data_ed4_train',
                'native': 'tools.build_native', 'simulate': 'tools.simulate',
-               'fpga': 'hardware.scripts.build_fpga', 'model': 'deployment.commands'}
+               'fpga': 'hardware.scripts.build_fpga', 'model': 'deployment.commands',
+               'example': 'tools.synthetic_inputs'}
     if raw and raw[0] in modules:
         return subprocess.call([sys.executable, '-B', '-m', modules[raw[0]], *raw[1:]],
                                cwd=ROOT, env=environment())

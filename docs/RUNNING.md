@@ -25,6 +25,8 @@ python -B finedge.py cpu smoke --records 160
 
 ## 板卡输入
 
+公开合成示例与板端运行包的离线组装步骤见 `PUBLIC_REPRODUCTION.md`。通过 `configure --demo-profile <manifest.json>` 选择输入清单，界面及运行记录显示 SYNTH 身份。固件与回退固件分别使用 `--firmware-release` 和 `--rollback-firmware-release` 指定，BOOT 身份读取对应发布记录。
+
 外部依赖文件列出每个目标URI、字节数和SHA256。真实演示需准备以下输入。
 
 - 原始56字节MBO记录文件，保留重建盘口所需的订单前缀。

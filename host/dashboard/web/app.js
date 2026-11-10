@@ -32,8 +32,10 @@ function render(s){state=s;const t=s.telemetry||{},pred=t.recent_predictions||[]
  $('start').disabled=s.busy||s.review||s.closing;for(const id of ['slots','duration','dispatch-speed','age-limit'])$(id).disabled=s.busy||s.review;
  $('export').disabled=!done;$('close').textContent=s.busy?'本轮结束后退出':'退出演示服务';$('round').textContent=s.review?'保存记录复盘':'第 '+(s.round||0)+' 轮';
  const dispatchSpeed=s.source?.speed||s.dispatch_speed||1;
- $('run-description').textContent='2025-12-15 · AAPL 原始 MBO · '+dispatchSpeed+'倍实际派发 · 历史市场回放';
- $('source-schedule').textContent='2025-12-15 · AAPL · 原始 MBO事件 · '+dispatchSpeed+'倍实际派发';
+ const dataset=s.dataset||{date:'2025-12-15',symbol:'AAPL',label:'历史市场回放',data_kind:'historical'};
+ $('run-description').textContent=dataset.date+' · '+dataset.symbol+' · '+dispatchSpeed+'倍实际派发 · '+dataset.label;
+ $('source-schedule').textContent=dataset.date+' · '+dataset.symbol+' · '+dataset.label+' · '+dispatchSpeed+'倍实际派发';
+ for(const option of $('duration').options)option.textContent=option.value+'分钟 · '+(dataset.data_kind==='synthetic'?'公开合成订单':'连续真实行情');
  if(s.busy||s.review)$('dispatch-speed').value=String(dispatchSpeed);updateDispatchHint();
  if(s.directory!==lastDirectory){candles.setData([]);lastBars='';finishedFit=false;lastDirectory=s.directory;}
  $('age').textContent=p&&p.age_ms!==null?num(p.age_ms)+' ms':'—';$('npu').textContent=t.NPU?num(t.NPU.mean_us,2)+' μs':'—';$('npu-title').textContent=done?'NPU启动等待 · 全窗均值':'NPU启动等待 · 采样均值';$('npu-note').textContent=done?'完整逐窗原生计时均值':'按窗口身份匹配的最近原生计时样本';

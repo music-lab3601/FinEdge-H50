@@ -60,7 +60,9 @@ LAYOUT = json.loads((ROOT/'provenance/layout_map.json').read_text(encoding='utf-
 REQUIRED = [LAYOUT.get(name,name) for name in REQUIRED]
 REQUIRED += ['finedge.py', 'config/default.json', 'models/normalization.json',
              'hardware/project/reference.xpr', 'tools/configuration.py', 'requirements.txt',
-             'hardware/scripts/audit_metadata_fifo.tcl']
+             'hardware/scripts/audit_metadata_fifo.tcl', 'tools/synthetic_inputs.py',
+             'contracts/examples/synthetic_startup.json', 'docs/PUBLIC_REPRODUCTION.md',
+             'docs/EVIDENCE.md', 'docs/evidence_index.json', 'external/README.md']
 
 
 def sha(path):

@@ -16,7 +16,9 @@
     "replay_rows": "data://replay/rows.bin",
     "replay_ranges": "data://replay/ranges.json",
     "startup": "data://startup",
+    "demo_profile": null,
     "firmware_release": "vendor://firmware/release.json",
+    "rollback_firmware_release": null,
     "calibration": "data://calibration/inputs.npy",
     "training_manifest": "data://training/manifest.json"
   },

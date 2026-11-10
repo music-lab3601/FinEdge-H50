@@ -3,9 +3,9 @@ from shared.paths import environment
 raw market data and FPGA results use the physical PL network. No CPU model.
 """
 from pathlib import Path
-import argparse, ast, json, os, shlex, shutil, subprocess, sys, tarfile, time, uuid
+import argparse, json, os, shlex, shutil, subprocess, sys, tarfile, time, uuid
 import numpy as np
-from shared.paths import ROOT as P, work_path, load_settings, resolve_path
+from shared.paths import ROOT as P, work_path, load_settings
 from shared.config import board_config
 U=Path(__file__).resolve().parent;G=work_path('board');Q=work_path('runtime')
 SENDER=U/'market_source/sender.py'
@@ -189,18 +189,15 @@ def run(minutes=5,slots=32,max_age_us=2000,on_directory=lambda d:None,note=lambd
         run_tool(d,'prepare_board',args,1900)
         loaded=read(G/'state/loaded_firmware.json')
         if loaded['boot_sha256']!=cfg['BOOT_sha256']:raise ValueError('当前固件不是整数预处理与整窗FIFO版本。')
-        from tools.board_bundle import prepare_bundle
-        bundle=d/'bundle';base=prepare_bundle(bundle,cfg)
-        for src,name in [(P/'board/runtime/integrated_owner.py','integrated_owner.py'),(P/'board/runtime/startup_input.py','startup_input.py'),(P/'board/native/integrated_native.c','integrated_native.c')]:shutil.copyfile(src,bundle/name)
-        for name in ('dual_slot_input.i8','dual_slot_logits.f32'):shutil.copyfile(resolve_path(load_settings()['inputs']['startup'])/name,bundle/name)
-        for p in bundle.glob('*.py'):ast.parse(p.read_text(encoding='utf-8'),feature_version=(3,8))
-        base['files']={p.name:sha(p) for p in bundle.iterdir() if p.is_file()};atomic_json(bundle/'config.json',base)
+        from tools.board_bundle import prepare_integrated_bundle
+        bundle=d/'bundle';prepare_integrated_bundle(bundle,cfg)
         archive=d/'runtime.tar.gz'
         with tarfile.open(archive,'w:gz') as tar:
             for p in bundle.iterdir():tar.add(p,arcname=p.name)
-        m=dict(directory=str(d),remote='/root/finedge_integrated/runs/'+d.name,archive=str(archive),session=uuid.uuid4().int&((1<<63)-1) or 1,fixture=fixture,fixture_path=str(fixture_path),loaded_firmware=loaded,functional=False,audit_inputs=0,rate=0,speed=speed,slots=slots,max_age_us=max_age_us,h50_records=50,GUI_monitor=True,CPU_reference=False,Host_simulation=False,reference=cfg['reference'],reference_sha256=cfg['reference_sha256'],preprocessing_version=cfg['preprocessing_version'],transport_version=cfg['transport_version'],full_snapshot_RAM_copies=0,per_window_ARM_input_copy=False)
+        m=dict(directory=str(d),remote='/root/finedge_integrated/runs/'+d.name,archive=str(archive),session=uuid.uuid4().int&((1<<63)-1) or 1,fixture=fixture,fixture_path=str(fixture_path),loaded_firmware=loaded,functional=False,audit_inputs=0,rate=0,speed=speed,slots=slots,max_age_us=max_age_us,h50_records=50,GUI_monitor=True,CPU_reference=False,Host_simulation=False,reference=cfg['reference'],reference_sha256=cfg['reference_sha256'],preprocessing_version=cfg['preprocessing_version'],transport_version=cfg['transport_version'],full_snapshot_RAM_copies=0,per_window_ARM_input_copy=False,dataset=cfg['dataset'])
         build=read(work_path('native/source_build.json'))
         m['files']={str(p):sha(p) for p in (archive,Path(__file__).resolve(),fixture_path,SENDER,P/'host/telemetry/storage.py',P/'board/management/console_login.py',P/'host/telemetry/dispatch_timing.py',work_path('native/source_build.json'),Path(build['executable']),P/'config/board_demo.json',ANALYZER,Path(cfg['candidate_manifest']),Path(cfg['hardware_release']),P/'board/management/serial_console.py')}
+        if cfg.get('demo_profile'):m['files'][cfg['demo_profile']]=cfg['demo_profile_sha256']
         manifest=d/'run_manifest.json';atomic_json(manifest,m)
         q=Queue();request=q.submit(resource='board',stage='tensor_transport',candidate_manifest=manifest,candidate_sha256=sha(manifest),command=[sys.executable,'-B',str(Path(__file__).resolve()),'--execute',str(manifest)])
         atomic_json(d/'queue_request.json',request)

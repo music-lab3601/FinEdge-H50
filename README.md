@@ -46,6 +46,8 @@ provenance/                来源、目录映射与发布文件清单
 
 正式入口统一使用仓库根目录的`finedge.py`。`experiments/reference/`保留历史辅助实现及其来源身份。当前可执行路径与验证范围见下文。
 
+首个开源版本按源码与构建验证范围发布，最新固件的真机验收列为后续验证项。实验与固件对应关系见[证据索引说明](docs/EVIDENCE.md)。
+
 ## 无板卡验证
 
 使用64位Python 3.12和Git。Windows PowerShell先创建独立环境，再通过该环境的解释器安装依赖与运行检查。
@@ -70,6 +72,17 @@ $finedgePython = (Resolve-Path .local/python_env/Scripts/python.exe).Path
 
 `check tests`会显示需要额外历史SDK记录或真实数据的跳过项。缺失项及其原因作为验收结果保留。
 
+## 公开合成输入
+
+```shell
+python -B finedge.py example generate --directory .local/public_example
+python -B finedge.py example verify --profile .local/public_example/manifest.json
+python -B finedge.py example cpu --profile .local/public_example/manifest.json --directory .local/example_cpu --records 160 --speed 10
+python -B finedge.py example bundle --profile .local/public_example/manifest.json --directory .local/example_arm_bundle
+```
+
+生成 3,070 条人工订单、3,050 条盘口、1/2/5分钟范围和四份启动向量。CPU 示例经 UDP 在线建簿、组窗和推理，160 条盘口产生61窗。合成数据、CPU后端和Icraft Host启动参考均明确记录身份。板端运行包可独立组装，真机验收状态为待验证。完整步骤见[公开复现说明](docs/PUBLIC_REPRODUCTION.md)，外部组件取得方式见[依赖说明](external/README.md)。
+
 ## 配置
 
 `config/default.json`保存公开默认值。`configure`保存覆盖项到`.local/config.json`，可重复执行。通过环境变量`FINEDGE_CONFIG`可选择另一份覆盖文件。
@@ -92,7 +105,7 @@ python -B finedge.py demo
 python -B finedge.py demo --review <saved_run_directory>
 ```
 
-空闲界面可以直接打开。运行真实行情需按`external/dependencies.json`准备原始MBO、显示参考、片段范围、四份启动向量及已验收固件，并配置`--replay-raw`、`--replay-rows`、`--replay-ranges`、`--startup`和`--firmware-release`。终端环境变量`FINEDGE_BOARD_PASSWORD`用于串口登录。管理采用PS串口，行情与结果采用PL网口。资源队列串行化板卡操作，正常软件重启后核验新的boot_id和控制器状态。详细步骤见[运行说明](docs/RUNNING.md)。
+空闲界面可以直接打开。运行真实行情需按`external/dependencies.json`准备原始MBO、显示参考、片段范围、四份启动向量及对应固件，并配置`--replay-raw`、`--replay-rows`、`--replay-ranges`、`--startup`和`--firmware-release`。公开合成输入通过`--demo-profile`选择，回退固件使用`--rollback-firmware-release`指定。终端环境变量`FINEDGE_BOARD_PASSWORD`用于串口登录。管理采用PS串口，行情与结果采用PL网口。资源队列串行化板卡操作，正常软件重启后核验新的boot_id和控制器状态。详细步骤见[运行说明](docs/RUNNING.md)。
 
 ## 模型与FPGA
 

@@ -1,0 +1,27 @@
+{
+  "schema": "finedge-public-synthetic-startup-v1",
+  "data_kind": "synthetic",
+  "model_identity": {
+    "model": "44cc9f2925513aebcff80fc26464a3332c053fbe38d965651a44cecb2b82a4a9",
+    "parameters": "a5752c1e101f7efbe83fc4e92b82f1f69cfb487c16c986cd4f8cd399dab4befa",
+    "normalization": "709114d09b2dd581bd9481e180973fdf1553452b644d24dcb211da7ea394caaf",
+    "scales": "f0a88606055d99342f074161670cefa051f60cc52c6a83e5b6768e6d45b5427d"
+  },
+  "input_generation": [
+    "int8 zeros [1,40,100]",
+    "int8 (arange(4000) % 127) - 63 reshaped [1,40,100]"
+  ],
+  "layout": "[1,3,1,100,16] with 8 zero padding channels",
+  "Host_logits_f32le_hex": "0060cdbf0080cd3e0060adbf00a0723e00a0ebbf00e023c0",
+  "reference_backend": "Icraft 3.36.1 HostBackend",
+  "reference_tool_source": "deployment/icraft/native/cpp/integer_host.cpp",
+  "reference_tool_source_sha256": "35f38bbbbdef059342b363222b4ce9cec2cd62304246649866afc3e7d028c2b8",
+  "reference_tool_binary_sha256": "8c485f761bd711e21489937faeaed2f6aa9fbdba24e6812289bd14e8fc3a99b1",
+  "NPU_board_validation": "deferred",
+  "artifact_sha256": {
+    "golden_input": "24ddaa4710480313757f965c38d60208a334556cb244f830d5006a893edd8da7",
+    "golden_logits": "3427406eb32feafadc9092e02a6b28246becacc97b172a50534f20b2072be3dc",
+    "dual_input": "e5e2db2ac597695946348ab189d0c14aa86fed3d94f250a2351fc3396e421a4c",
+    "dual_logits": "3c97cae6aa28af7ab599f951076fd555d9fdec7f3fd0c1728d923bfefc19aa61"
+  }
+}

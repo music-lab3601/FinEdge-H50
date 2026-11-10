@@ -120,7 +120,8 @@ class Evidence:
         status='preparing' if not self.start else 'completed' if sent==target and cutoff>=self.start+duration else 'holding' if sent==target else 'dispatching'
         final=read_json(self.d/'sender/source/source.json')
         if final and final['status']!='passed':status='failed'
-        return dict(status=status,symbol='AAPL',date='2025-12-15',schedule=f'原事件间隔{speed}倍派发',speed=speed,destination='192.168.126.50:20001 · PL千兆网',
+        dataset=getattr(self,'cfg',{}).get('dataset',dict(symbol='AAPL',date='2025-12-15',data_kind='historical'))
+        return dict(status=status,symbol=dataset['symbol'],date=dataset['date'],data_kind=dataset['data_kind'],schedule=f'原事件间隔{speed}倍派发',speed=speed,destination='192.168.126.50:20001 · PL千兆网',
                     market_clock=market_time(anchor_event+market_elapsed),sent=sent,total=target,packets=len(pub),committed=committed_measured,
                     awaiting_confirmation=max(0,sent-committed_measured),last_ordinal=last_sent if sent else None,progress=sent/target,
                     current_bucket_events=int(counts[bin_last]),current_rate=int(counts[bin_last])*10,peak_bucket_events=int(counts.max()) if len(counts) else 0,

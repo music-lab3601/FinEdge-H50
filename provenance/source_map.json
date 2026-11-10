@@ -2626,10 +2626,11 @@
     "path": "host/dashboard/app.py",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/dashboard.py",
     "source_sha256": "e3aac33ceb4202bd754bc115f1278349e4c070b72bb8e9da30b9c5b52e78ac80",
-    "public_sha256": "2c39f9fa28cd4449b04e1b9046f6e1d473e198d9448ecc8a9c7226488850a3d3",
+    "public_sha256": "49509b86018541e3ab9e30b2350b1f3e74e448d1a785da4560888c6d051ef49b",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/dashboard.py"
   },
@@ -2648,10 +2649,11 @@
     "path": "host/telemetry/evidence.py",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/evidence.py",
     "source_sha256": "66e78e48017ef083d85b685bb77abb1b2ee20f8bd00d581b3514aa7fd94e01c1",
-    "public_sha256": "da3b3bc07b8f78a9774d7aa44358a79090c323c9ba76f9367466765ae187fb0d",
+    "public_sha256": "0b294eefd2e5a709fc2946eb9b78b7d2683aaa81e1609bde302447f8814c2053",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/evidence.py"
   },
@@ -2703,10 +2705,11 @@
     "path": "host/pipeline.py",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/runner.py",
     "source_sha256": "b2f7f138f3b774b5c6929592de6a542c0c25e4f4eb89f09db85f23f0190d480a",
-    "public_sha256": "ca840dfc4cfe721cac52d5300ea0cd29e93c518fd5a551a9aa1095ed4af85e08",
+    "public_sha256": "48dc2bed6f32ed2c9ba1d3921924158b82a393f3058a54ee13859e447a1d6698",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/runner.py"
   },
@@ -2802,10 +2805,11 @@
     "path": "host/dashboard/web/app.js",
     "origin": "revised_h50/versions/realtime_integration_v1/queued_v2/showcase_v5/web/app.js",
     "source_sha256": "1ee8118b87e17a25d020c5145d5e2ec9471408a1c5e8317f02a09a53809c4c21",
-    "public_sha256": "20ecc2a6994599472f260d9ca8b668680e14951c28c8cff388edffe5dfe9bc15",
+    "public_sha256": "c953edb8862c26f006efefa49496a912b018840fa513c5ae6ebb874ac1e912ff",
     "category": "hardware_source",
     "adaptations": [
-      "Functional directory migration and portable runtime configuration"
+      "Functional directory migration and portable runtime configuration",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "hardware/versions/realtime_integration_v1/queued_v2/showcase_v5/web/app.js"
   },
@@ -6514,12 +6518,13 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "0defb36b2e3c3d2595cb3dfad16c50b6281bdfb788cbb6b494ae5ce301e8e8fe",
+    "public_sha256": "a4da3b5f664a18975c895d75966dfc529db87537b3c22fa243428a14ccd1bdf0",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
-      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "README.md"
   },
@@ -6563,9 +6568,11 @@
     "path": "config/default.json",
     "origin": "public_repository_migration/config/default.json",
     "source_sha256": "e6915c0d2bcb35e68c2734a8ef6aa3478bca898e09d110707eff33c11f6db242",
-    "public_sha256": "e6915c0d2bcb35e68c2734a8ef6aa3478bca898e09d110707eff33c11f6db242",
+    "public_sha256": "9ecbc83a8dd1e1485caeefa70e10a5eff0299feff008a5d6ab4bb71ea2a5c5d2",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+    ],
     "pre_migration_public_path": "config/default.json"
   },
   {
@@ -6703,9 +6710,11 @@
     "path": "docs/RUNNING.md",
     "origin": "public_repository_migration/docs/RUNNING.md",
     "source_sha256": "bc5f64a130b1f9c79ffeb369d9addb868e79c8041bde7c065d31a1862737205c",
-    "public_sha256": "bc5f64a130b1f9c79ffeb369d9addb868e79c8041bde7c065d31a1862737205c",
+    "public_sha256": "6ae671e560f80da0680123a834564b9a528fc54c65446f54dd545ca4520d4462",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+    ],
     "pre_migration_public_path": "docs/RUNNING.md"
   },
   {
@@ -6723,12 +6732,13 @@
     "path": "docs/release_status.json",
     "origin": "public_repository_migration/docs/release_status.json",
     "source_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
-    "public_sha256": "84739236d5cc5a32698aca8d4339694595b5796373ba7475ddcdc04974fe6d9c",
+    "public_sha256": "e9cde0398ed2bd69bebd041b4d4d4f7810ea0e84f831048a5207169dc20854d6",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
-      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "docs/release_status.json"
   },
@@ -6873,9 +6883,11 @@
     "path": "finedge.py",
     "origin": "public_repository_migration/finedge.py",
     "source_sha256": "b7580f4e7947eeb424cb86916b2fd50ec807514e891ef6f78c3ffea4f5a8bd1f",
-    "public_sha256": "b7580f4e7947eeb424cb86916b2fd50ec807514e891ef6f78c3ffea4f5a8bd1f",
+    "public_sha256": "c0c557cb4953a1f8c2ab110da405f1db47af20066b2520d348b916b03437dd6b",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+    ],
     "pre_migration_public_path": "finedge.py"
   },
   {
@@ -6972,13 +6984,14 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "73295d6a24b8c9f3e069bed44fb0356d52d039c8673f2a5402320a26be61bed3",
+    "public_sha256": "ab8670840176249831ef4570e1ea4aa2b33c3d8991caab79c7128311ae31a50f",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
-      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -6997,9 +7010,11 @@
     "path": "shared/config.py",
     "origin": "public_repository_migration/shared/config.py",
     "source_sha256": "9f515ffbb0bbd648f0a7d522ada4ae94767942532b19295830ede0811591e418",
-    "public_sha256": "9f515ffbb0bbd648f0a7d522ada4ae94767942532b19295830ede0811591e418",
+    "public_sha256": "a1675b1589a11998dfaca3170b319c00f45e6a1ab6e0bf097e4b5e04dca6dc87",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+    ],
     "pre_migration_public_path": "shared/config.py"
   },
   {
@@ -7161,9 +7176,11 @@
     "path": "tools/board_bundle.py",
     "origin": "public_repository_migration/tools/board_bundle.py",
     "source_sha256": "9c8561363e47e273a8ea405a8d9eb0b812d98f9faf19a22599794b519029fa26",
-    "public_sha256": "9c8561363e47e273a8ea405a8d9eb0b812d98f9faf19a22599794b519029fa26",
+    "public_sha256": "4f78b4123781fcd3f2bd6950a51a3f426d19f409fbb7d52c51280d6f3b6b6475",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+    ],
     "pre_migration_public_path": "tools/board_bundle.py"
   },
   {
@@ -7215,11 +7232,12 @@
     "path": "tools/verify_checkout.py",
     "origin": "public_repository_migration/tools/verify_checkout.py",
     "source_sha256": "57fbc2fe8742aa49f80f8e2965f974496ff2c7c577aadb2c04ee7d878feee36a",
-    "public_sha256": "41dd3151e2b3de5f48730f857748c702788a9e6b2fb92547127d64564760a0b8",
+    "public_sha256": "33a496c74dd91e47bb85326e8153726f1e0d1cb227e8bd4ae39f95b348959305",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
-      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
+      "Public synthetic inputs, portable runtime profile and release-scope documentation"
     ],
     "pre_migration_public_path": "tools/verify_checkout.py"
   },
@@ -7307,6 +7325,62 @@
     "source_sha256": "dddc4917484d7a4061cccb9c7b18137e87eba707420ea3d9758bcad11dc6acf1",
     "public_sha256": "dddc4917484d7a4061cccb9c7b18137e87eba707420ea3d9758bcad11dc6acf1",
     "category": "FPGA_build_source_or_validation",
+    "adaptations": []
+  },
+  {
+    "path": "tools/synthetic_inputs.py",
+    "origin": "public_reproduction/tools/synthetic_inputs.py",
+    "source_sha256": "e682cbd1e2aafb933ee34542cc776611ca127be068ed5f19f6462de847f5faa5",
+    "public_sha256": "e682cbd1e2aafb933ee34542cc776611ca127be068ed5f19f6462de847f5faa5",
+    "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "contracts/examples/synthetic_startup.json",
+    "origin": "public_reproduction/contracts/examples/synthetic_startup.json",
+    "source_sha256": "2061588d55ba1f7e9dd307767c4256bfc229272aea306ba4758fa769b7a0eb63",
+    "public_sha256": "2061588d55ba1f7e9dd307767c4256bfc229272aea306ba4758fa769b7a0eb63",
+    "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "tests/test_synthetic_inputs.py",
+    "origin": "public_reproduction/tests/test_synthetic_inputs.py",
+    "source_sha256": "75e6bcecf0e1d72e0b3329d2c3be1cb3417a4a51291b86ebf16df10f65456e94",
+    "public_sha256": "75e6bcecf0e1d72e0b3329d2c3be1cb3417a4a51291b86ebf16df10f65456e94",
+    "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/PUBLIC_REPRODUCTION.md",
+    "origin": "public_reproduction/docs/PUBLIC_REPRODUCTION.md",
+    "source_sha256": "a8e9176425c68bd6c7b34abd4f34bbbb4361029c296ee898b816fb49bc3a8b3a",
+    "public_sha256": "a8e9176425c68bd6c7b34abd4f34bbbb4361029c296ee898b816fb49bc3a8b3a",
+    "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/EVIDENCE.md",
+    "origin": "public_reproduction/docs/EVIDENCE.md",
+    "source_sha256": "13b7acbb4bcbd7878966ac2178f005e60472bbcb6dd0b8d8c17fa1c33389a7a5",
+    "public_sha256": "13b7acbb4bcbd7878966ac2178f005e60472bbcb6dd0b8d8c17fa1c33389a7a5",
+    "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/evidence_index.json",
+    "origin": "public_reproduction/docs/evidence_index.json",
+    "source_sha256": "03a7d4fd7930a78c2b07103681f4785e0629497e30cc0fa0772d0802dca69a11",
+    "public_sha256": "03a7d4fd7930a78c2b07103681f4785e0629497e30cc0fa0772d0802dca69a11",
+    "category": "public_reproduction_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "external/README.md",
+    "origin": "public_reproduction/external/README.md",
+    "source_sha256": "e3e4d6bd88cf05c61aa2c1f1890a06ae0445bf9dc49385be87b92cc4cf33f017",
+    "public_sha256": "e3e4d6bd88cf05c61aa2c1f1890a06ae0445bf9dc49385be87b92cc4cf33f017",
+    "category": "public_reproduction_source_or_evidence",
     "adaptations": []
   }
 ]

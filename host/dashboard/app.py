@@ -9,7 +9,7 @@ from shared.config import board_config
 U=Path(__file__).resolve().parent;G=work_path('board')
 STATE=work_path('dashboard')
 sys.dont_write_bytecode=True
-from shared.io import read
+from shared.io import read, sha
 from host.telemetry.storage import atomic_json
 from shared.resources import ResourceLock, Busy
 from host.telemetry.telemetry import Telemetry, read_json
@@ -24,7 +24,12 @@ class App:
         self.error=None;self.directory=None;self.telemetry=None;self.review=bool(review);self.round=0
         self.config=board_config();self.last=None;self.evidence=None;self.dispatch_speed=1;self.clock_metadata=None;self.final_telemetry=None
         if review:
-            self.directory=Path(review).resolve();self.telemetry=Telemetry(self.directory,self.config['reference'])
+            self.directory=Path(review).resolve()
+            saved=read_json(self.directory/'run_manifest.json',{})
+            if saved.get('reference_sha256') and sha(self.config['reference'])!=saved['reference_sha256']:
+                raise ValueError('复盘参考与该运行身份不一致，请选择对应的数据配置。')
+            self.config['dataset']=saved.get('dataset',self.config['dataset'])
+            self.telemetry=Telemetry(self.directory,self.config['reference'])
             self.phase='review';self.message='真实板测记录复盘，当前未连接开发板。'
         else:
             current=read_json(STATE/'artifacts/CURRENT.json',dict(directory=self.config.get('initial_record',self.config['seed_run'])))
@@ -86,6 +91,7 @@ class App:
             try:evidence=self.evidence.snapshot(final=phase in ('finished','review')) if self.evidence else {}
             except Exception as exc:evidence={};error='源与窗口证据核验失败：'+str(exc)
             return dict(schema='finedge-integer-stream-gui-v5',dispatch_speed=self.dispatch_speed,phase=phase,message=message,error=error,review=self.review,
+                        dataset=self.config['dataset'],
                         busy=bool(self.worker and self.worker.is_alive()),closing=self.closing,round=self.round,
                         telemetry=self.last,directory=str(self.directory) if self.directory else None,
                         book_source='同源重建参考，仅用于显示与方向兑现，不作为板端输入',CPU_reference=False,Host_simulation=False,
