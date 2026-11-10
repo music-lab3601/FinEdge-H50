@@ -4,7 +4,7 @@
 
 `hardware/rtl/`保存行情解析、建簿、整数归一化、滑窗、DDR队列及结果通路。`hardware/project/reference.xpr`将这些模块与厂商PS、DDR和NPU接口连接。厂商顶层、PS外设包装及约束还需要应用本项目的集成改动。
 
-`hardware/integration/vendor_edits.json`保存8个文件的重建配方。每项记录原文件字节数与SHA256、按原文件字节偏移执行的编辑，以及最终文件字节数与SHA256。未修改的内容从用户取得的原厂文件读取。补充内容与重建程序随Git交付。
+`hardware/integration/vendor_edits.json`保存8个文件的重建配方。每项记录原文件字节数与SHA256、按字节偏移执行的编辑，以及最终文件字节数与SHA256。顶层先按配方将换行转换为CRLF，随后执行编辑，其余文件保留原换行。未修改的内容从用户取得的原厂文件读取。补充内容与重建程序随Git交付。
 
 | 基底文件 | 集成内容 |
 |---|---|

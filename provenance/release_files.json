@@ -23,13 +23,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 10066,
-      "sha256": "2667f2ffc468d4494a3c5cb401111b27454c0894f43f5763748318e20e737d1e"
+      "bytes": 10323,
+      "sha256": "61f264910d624ba37f59e9a7614c0299095e4e7a6d84f627fe1d8b91a69d6c68"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1020,
-      "sha256": "77b06378375dc03e9f6175201e61c8a69f5092db453ec3d708a55e6f4d3bac21"
+      "bytes": 1288,
+      "sha256": "1a327980c20ae33edf964cbc66c77b91926e9696a2ba1995fd8d49735ede7bad"
     },
     {
       "path": "board/__init__.py",
@@ -763,8 +763,13 @@
     },
     {
       "path": "docs/CI.md",
-      "bytes": 3064,
-      "sha256": "417046a7789ec87fa817f206c6682cb51f6dce4755440bfc8badb2aa13afce28"
+      "bytes": 3145,
+      "sha256": "34f4f67997e21eec540ad5854914ae8bd3bb43f0c84a8841ce3c33f6d0ca7a9f"
+    },
+    {
+      "path": "docs/COMPLETENESS_AUDIT.md",
+      "bytes": 2951,
+      "sha256": "9cabdd6d7bd98dbfc84a34b04d133558144c34412d1dccf8196d223e7b209a7f"
     },
     {
       "path": "docs/EVIDENCE.md",
@@ -793,8 +798,8 @@
     },
     {
       "path": "docs/VENDOR_INTEGRATION.md",
-      "bytes": 3802,
-      "sha256": "43bda38e2a6f116009d5e117cf5933be7f126a068c261bc309f62a38839c1336"
+      "bytes": 3887,
+      "sha256": "2d573b2ea05dc593e0c738c3f557dd02b38053cdaab7470721b1a389cb4cb1a3"
     },
     {
       "path": "docs/board_validation.json",
@@ -810,6 +815,11 @@
       "path": "docs/clean_environment_validation.json",
       "bytes": 2482,
       "sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef"
+    },
+    {
+      "path": "docs/completeness_validation.json",
+      "bytes": 12724,
+      "sha256": "d98cfdda5a6461fc62a1db737f4ec4a90bf147e3e53d45e9fe514e9bc6dfae77"
     },
     {
       "path": "docs/evidence_index.json",
@@ -2178,13 +2188,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 418701,
-      "sha256": "d222f1a68878eea07b0b1d3e72d4f6cdd7b1a3f25b209aeff374402e1f64ee6b"
+      "bytes": 419647,
+      "sha256": "101cfd21319b165282f04c534f31a041368c795c07f933aedbb3e1351ba915a7"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "8094ec2db11591099aec8c5161fe866fb9f6ccc962bea646bdc6f41b1d529fcf"
+      "sha256": "e7921ed60741a141ff149d6e0890b0cf60c39df99240f377bc6b8b5fd0d775c0"
     },
     {
       "path": "requirements.txt",

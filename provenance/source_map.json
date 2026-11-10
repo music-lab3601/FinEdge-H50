@@ -6523,7 +6523,7 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "2667f2ffc468d4494a3c5cb401111b27454c0894f43f5763748318e20e737d1e",
+    "public_sha256": "61f264910d624ba37f59e9a7614c0299095e4e7a6d84f627fe1d8b91a69d6c68",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
@@ -6541,9 +6541,11 @@
     "path": "THIRD_PARTY_NOTICES.md",
     "origin": "public_repository_migration/THIRD_PARTY_NOTICES.md",
     "source_sha256": "77b06378375dc03e9f6175201e61c8a69f5092db453ec3d708a55e6f4d3bac21",
-    "public_sha256": "77b06378375dc03e9f6175201e61c8a69f5092db453ec3d708a55e6f4d3bac21",
+    "public_sha256": "1a327980c20ae33edf964cbc66c77b91926e9696a2ba1995fd8d49735ede7bad",
     "category": "migration_entry_or_metadata",
-    "adaptations": [],
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ],
     "pre_migration_public_path": "THIRD_PARTY_NOTICES.md"
   },
   {
@@ -7000,7 +7002,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "8094ec2db11591099aec8c5161fe866fb9f6ccc962bea646bdc6f41b1d529fcf",
+    "public_sha256": "e7921ed60741a141ff149d6e0890b0cf60c39df99240f377bc6b8b5fd0d775c0",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
@@ -7474,12 +7476,13 @@
     "path": "docs/CI.md",
     "origin": "CI_source_or_evidence/docs/CI.md",
     "source_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
-    "public_sha256": "417046a7789ec87fa817f206c6682cb51f6dce4755440bfc8badb2aa13afce28",
+    "public_sha256": "34f4f67997e21eec540ad5854914ae8bd3bb43f0c84a8841ce3c33f6d0ca7a9f",
     "category": "CI_source_or_evidence",
     "adaptations": [
       "Isolated CI checks and portable RTL simulation",
       "Queued Python worker identity and actual board acceptance",
-      "GitHub publication and canonical Windows test paths"
+      "GitHub publication and canonical Windows test paths",
+      "Completeness audit and deterministic vendor integration"
     ]
   },
   {
@@ -7572,7 +7575,25 @@
     "path": "docs/VENDOR_INTEGRATION.md",
     "origin": "public_reaudit/docs/VENDOR_INTEGRATION.md",
     "source_sha256": "43bda38e2a6f116009d5e117cf5933be7f126a068c261bc309f62a38839c1336",
-    "public_sha256": "43bda38e2a6f116009d5e117cf5933be7f126a068c261bc309f62a38839c1336",
+    "public_sha256": "2d573b2ea05dc593e0c738c3f557dd02b38053cdaab7470721b1a389cb4cb1a3",
+    "category": "audit_source_or_evidence",
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ]
+  },
+  {
+    "path": "docs/COMPLETENESS_AUDIT.md",
+    "origin": "public_reaudit/docs/COMPLETENESS_AUDIT.md",
+    "source_sha256": "9cabdd6d7bd98dbfc84a34b04d133558144c34412d1dccf8196d223e7b209a7f",
+    "public_sha256": "9cabdd6d7bd98dbfc84a34b04d133558144c34412d1dccf8196d223e7b209a7f",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/completeness_validation.json",
+    "origin": "public_reaudit/docs/completeness_validation.json",
+    "source_sha256": "d98cfdda5a6461fc62a1db737f4ec4a90bf147e3e53d45e9fe514e9bc6dfae77",
+    "public_sha256": "d98cfdda5a6461fc62a1db737f4ec4a90bf147e3e53d45e9fe514e9bc6dfae77",
     "category": "audit_source_or_evidence",
     "adaptations": []
   }
