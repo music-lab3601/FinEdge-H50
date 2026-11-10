@@ -2193,8 +2193,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 420553,
-      "sha256": "94f1c14737ad904a1eb78ca6391339c96f240c76e12c7ca5ad6d71950f18d9e8"
+      "bytes": 420624,
+      "sha256": "79291f249507a683bf628746e7c4a4c54b64d6f90dc9b40c1b66411ec4d583b2"
     },
     {
       "path": "provenance/template_migration.json",
@@ -2413,8 +2413,8 @@
     },
     {
       "path": "software/training/entry.py",
-      "bytes": 10399,
-      "sha256": "9e9388ed7f77d694dc86b7bd84775f81ae180a8ac6845494d283a7b7bd1bb75a"
+      "bytes": 10446,
+      "sha256": "c2bf8dcbfce8138b17781ea28824d729dd3eb62e807847ea7624d0a1b26dde67"
     },
     {
       "path": "software/training/tcn_existing_data_ed4_features.py",
@@ -2663,8 +2663,8 @@
     },
     {
       "path": "tests/test_training_entry.py",
-      "bytes": 5584,
-      "sha256": "bdbf3d066c210a9b98271e6cf56c0a82c654ed13d53d51870640b958e59b63be"
+      "bytes": 6067,
+      "sha256": "9ead1c880b4a9c79af50e7cd77d4f9ac6e0fabf6f76372cc71cc2b56a8bf01f6"
     },
     {
       "path": "tests/test_vendor_integration.py",

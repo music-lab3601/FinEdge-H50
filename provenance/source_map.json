@@ -7604,9 +7604,11 @@
     "path": "tests/test_training_entry.py",
     "origin": "public_reaudit/tests/test_training_entry.py",
     "source_sha256": "bdbf3d066c210a9b98271e6cf56c0a82c654ed13d53d51870640b958e59b63be",
-    "public_sha256": "bdbf3d066c210a9b98271e6cf56c0a82c654ed13d53d51870640b958e59b63be",
+    "public_sha256": "9ead1c880b4a9c79af50e7cd77d4f9ac6e0fabf6f76372cc71cc2b56a8bf01f6",
     "category": "audit_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ]
   },
   {
     "path": "docs/TRAINING.md",

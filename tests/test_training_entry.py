@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from shared.io import sha
 from shared.paths import ROOT
@@ -102,6 +103,13 @@ class TrainingEntryTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             entry.train(data, cache, roots, output, 'cpu', 1, {})
         self.assertEqual(sentinel.read_text('utf-8'), 'keep')
+
+    def test_historical_registration_argument_forms_are_forwarded(self):
+        for arguments in (['--registration', 'input.json'], ['--registration=input.json']):
+            with self.subTest(arguments=arguments), patch(
+                    'software.training.tcn_existing_data_ed4_train.main', return_value=7) as historical:
+                self.assertEqual(entry.main(arguments), 7)
+                historical.assert_called_once_with(arguments)
 
 
 if __name__ == '__main__':

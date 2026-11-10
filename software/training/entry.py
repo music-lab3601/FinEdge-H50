@@ -169,7 +169,7 @@ def train(data, cache, roots, output, device, epochs, identity):
 
 def main(argv=None):
     argv = list(sys.argv[1:] if argv is None else argv)
-    if '--registration' in argv:
+    if any(argument.split('=', 1)[0] == '--registration' for argument in argv):
         from software.training.tcn_existing_data_ed4_train import main as historical_main
         return historical_main(argv)
     parser = argparse.ArgumentParser(description=__doc__)
