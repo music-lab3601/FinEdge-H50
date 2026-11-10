@@ -15,6 +15,8 @@ python -B finedge.py example bundle --profile .local/public_example/manifest.jso
 
 生成器创建一个 SYNTH 股票的人工订单流。前缀建立十档买卖盘口，随后按固定算法修改订单价格和数量。交易日历使用固定的 2025-12-15 EST 时间戳，订单内容由代码生成。
 
+当前生成器为 v2。其发布者编号 2、内部标的编号 38、09:35 开始的有效盘口和逐条身份匹配冻结 FPGA 前端。界面仍显示 SYNTH。原 v1 输入保留 CPU 校验兼容，板卡回放使用重新生成的 v2 输入。
+
 | 文件 | 内容 |
 |---|---|
 | market/raw56.bin | 3,070 条 MBO56 原始订单事件，包含清空、新增与修改 |

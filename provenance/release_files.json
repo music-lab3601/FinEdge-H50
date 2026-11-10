@@ -778,8 +778,8 @@
     },
     {
       "path": "docs/PUBLIC_REPRODUCTION.md",
-      "bytes": 6276,
-      "sha256": "93d4ab66ac9e0adf6ecf4eb6eadc26db13ca82c591c74926db4be9c419376d51"
+      "bytes": 6527,
+      "sha256": "4a28d2b991615d7969b25dc45b133950869123e5b07975e26d87c25818d5ec02"
     },
     {
       "path": "docs/RUNNING.md",
@@ -2148,8 +2148,8 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 413096,
-      "sha256": "d5841793fe600fd6c4e0bb4b8352e5a493195d70d8a0ce0335868f025eedaf4d"
+      "bytes": 413378,
+      "sha256": "25706d33b8ace15caf4ef2fc891f308cda8568c3c30e1cf4b7f1e034d99b9f4d"
     },
     {
       "path": "provenance/template_migration.json",
@@ -2603,8 +2603,8 @@
     },
     {
       "path": "tests/test_synthetic_inputs.py",
-      "bytes": 6377,
-      "sha256": "75e6bcecf0e1d72e0b3329d2c3be1cb3417a4a51291b86ebf16df10f65456e94"
+      "bytes": 8272,
+      "sha256": "bec69ddab2594642dfdd360a20ae87b1906029a3c5146f1f80ce3907fd5fface"
     },
     {
       "path": "third_party/lightweight-charts/LICENSE.txt",
@@ -3308,8 +3308,8 @@
     },
     {
       "path": "tools/board_bundle.py",
-      "bytes": 4488,
-      "sha256": "4f78b4123781fcd3f2bd6950a51a3f426d19f409fbb7d52c51280d6f3b6b6475"
+      "bytes": 4690,
+      "sha256": "e52a4673c669c9c5ef09130961465cc7cb56efb34e869d070719c880bd7122a1"
     },
     {
       "path": "tools/build_native.py",
@@ -3343,8 +3343,8 @@
     },
     {
       "path": "tools/synthetic_inputs.py",
-      "bytes": 14692,
-      "sha256": "e682cbd1e2aafb933ee34542cc776611ca127be068ed5f19f6462de847f5faa5"
+      "bytes": 15503,
+      "sha256": "bccf38c7fe89665e364c1e3ac04a3a4c8b0e0e2be33d32aede62e879281eeff0"
     },
     {
       "path": "tools/verify_checkout.py",

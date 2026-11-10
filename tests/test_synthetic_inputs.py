@@ -47,6 +47,41 @@ class SyntheticInputTests(unittest.TestCase):
         with self.assertRaises(ConfigurationError):
             sample.verify(self.profile)
 
+    def test_wire_identity_time_and_row_match_frozen_FPGA(self):
+        import re
+        from contracts.market.finedge_contract import RAWMBO
+        from host.telemetry.telemetry import ROW
+        import numpy as np
+        from shared.paths import ROOT
+        text = (ROOT / 'hardware/rtl/top/g_bench_endpoint.sv').read_text('utf-8')
+        publisher = int(re.search(r"publisher_id\(16'd(\d+)\)", text).group(1))
+        instrument = int(re.search(r"instrument_id\(32'd(\d+)\)", text).group(1))
+        start = int(re.search(r"start_ns\(64'd(\d+)\)", text).group(1))
+        raw = (self.inputs / sample.FILES['raw_source']).read_bytes()
+        first = RAWMBO.unpack(raw[:56])
+        eligible = RAWMBO.unpack(raw[20 * 56:21 * 56])
+        rows = np.fromfile(self.inputs / sample.FILES['reference'], dtype=ROW)
+        self.assertEqual(first[2:4], (publisher, instrument))
+        self.assertEqual(eligible[4], start)
+        self.assertEqual(int(rows[0]['row']), 19)
+        self.assertEqual(int(rows[0]['ordinal']), 21)
+
+    def test_legacy_v1_CPU_input_remains_verifiable(self):
+        raw, rows = sample.dataset_bytes(hardware_compatible=False)
+        blobs = dict(raw_source=raw, reference=rows.tobytes())
+        manifest = json.loads(self.profile.read_text('utf-8'))
+        manifest['generator'] = 'tools.synthetic_inputs.v1'
+        for name, data in blobs.items():
+            path = self.inputs / sample.FILES[name]
+            path.write_bytes(data)
+            manifest['files'][name]['sha256'] = sha(path)
+        self.profile.write_text(json.dumps(manifest), encoding='utf-8')
+        self.assertEqual(sample.verify(self.profile)['status'], 'passed')
+        config = board_config(profile=self.profile)
+        from tools.board_bundle import preflight
+        with self.assertRaisesRegex(ConfigurationError, 'requires synthetic input v2'):
+            preflight(config)
+
     def test_model_or_relative_path_changes_are_rejected(self):
         manifest = json.loads(self.profile.read_text('utf-8'))
         manifest['files']['raw_source']['path'] = '../outside.bin'

@@ -12,7 +12,9 @@ def preflight(config):
     startup = Path(config.get('startup') or resolve_path(load_settings()['inputs']['startup']))
     if config.get('demo_profile'):
         from tools.synthetic_inputs import load_profile
-        load_profile(config['demo_profile'])
+        manifest, _ = load_profile(config['demo_profile'])
+        if manifest['generator'] != 'tools.synthetic_inputs.v2':
+            raise ConfigurationError('Board replay requires synthetic input v2. Run example generate in a new directory.')
         if sha(config['demo_profile']) != config['demo_profile_sha256']:
             raise ConfigurationError('Synthetic demo profile changed after configuration')
     paths = [Path(config[key]) for key in ('raw_source', 'reference', 'duration_data', 'hardware_release')]

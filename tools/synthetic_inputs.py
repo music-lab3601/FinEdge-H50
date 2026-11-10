@@ -51,11 +51,13 @@ def startup_bytes():
     return result
 
 
-def raw_events():
-    origin = midnight_ns(DAY) + (9 * 3600 + 30 * 60) * 1_000_000_000
+def raw_events(*, hardware_compatible=True):
+    minute = 35 if hardware_compatible else 30
+    instrument = 38 if hardware_compatible else 1
+    origin = midnight_ns(DAY) + (9 * 3600 + minute * 60) * 1_000_000_000
 
     def record(ordinal, stamp, action, order=0, side='N', price=0, quantity=0):
-        return RAWMBO.pack(14, 160, 2, 1, stamp, order, price * 100000,
+        return RAWMBO.pack(14, 160, 2, instrument, stamp, order, price * 100000,
                            quantity, 128, 0, ord(action), ord(side), stamp, 0, ordinal)
 
     yield record(1, origin - 200_000_000, 'R')
@@ -76,7 +78,7 @@ def raw_events():
 
 def apply_raw(adapter, blob):
     values = RAWMBO.unpack(blob)
-    if values[:4] != (14, 160, 2, 1) or values[8] != 128:
+    if values[:3] != (14, 160, 2) or values[3] not in (1, 38) or values[8] != 128:
         raise ValueError('Synthetic raw identity or event boundary differs')
     action = chr(values[10])
     if action == 'R':
@@ -88,20 +90,21 @@ def apply_raw(adapter, blob):
     return None if flags else np.asarray(row, dtype='<u8')
 
 
-def reference_rows(events):
-    adapter = Adapter(DAY, {1}, lambda *args: None)
+def reference_rows(events, *, hardware_compatible=True):
+    adapter = Adapter(DAY, {38 if hardware_compatible else 1}, lambda *args: None)
     rows = []
     for ordinal, blob in enumerate(events, 1):
         values = apply_raw(adapter, blob)
         if values is not None:
-            rows.append((1, len(rows) + 1, ordinal, RAWMBO.unpack(blob)[4], values))
+            row = ordinal - 2 if hardware_compatible else len(rows) + 1
+            rows.append((1, row, ordinal, RAWMBO.unpack(blob)[4], values))
     adapter.book.validate()
     return np.array(rows, dtype=ROW)
 
 
-def dataset_bytes():
-    events = list(raw_events())
-    rows = reference_rows(events)
+def dataset_bytes(*, hardware_compatible=True):
+    events = list(raw_events(hardware_compatible=hardware_compatible))
+    rows = reference_rows(events, hardware_compatible=hardware_compatible)
     if len(rows) != ROWS:
         raise RuntimeError('Synthetic book row count differs')
     return b''.join(events), rows
@@ -131,8 +134,10 @@ def generate(directory):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(blob)
         files[name] = dict(path=FILES[name], bytes=len(blob), sha256=sha(path))
-    manifest = dict(schema=SCHEMA, generator='tools.synthetic_inputs.v1', data_kind='synthetic',
+    manifest = dict(schema=SCHEMA, generator='tools.synthetic_inputs.v2', data_kind='synthetic',
                     symbol='SYNTH', date=DAY, calendar_scope='Artificial timestamps on a fixed EST calendar',
+                    hardware_profile=dict(publisher_id=2, instrument_id=38, first_eligible_local_time='09:35:00',
+                                          row_identity='zero-based mutation index including incomplete-book updates'),
                     eligibility='Synthetic regular/tradable gate with ten uncrossed levels',
                     events=len(raw) // 56, rows=len(rows), records_per_second=10,
                     model_identity=model_identity(), files=files, market_accuracy_evaluated=False,
@@ -144,7 +149,9 @@ def generate(directory):
 def load_profile(path):
     path = Path(path).resolve()
     value = json.loads(path.read_text('utf-8'))
-    if value.get('schema') != SCHEMA or value.get('data_kind') != 'synthetic' or value.get('model_identity') != model_identity():
+    if (value.get('schema') != SCHEMA or value.get('data_kind') != 'synthetic'
+            or value.get('model_identity') != model_identity()
+            or value.get('generator') not in ('tools.synthetic_inputs.v1', 'tools.synthetic_inputs.v2')):
         raise ConfigurationError('Unrecognized synthetic profile or frozen model identity')
     if set(value['files']) != set(FILES):
         raise ConfigurationError('Synthetic profile file list differs')
@@ -164,7 +171,7 @@ def load_profile(path):
 
 def verify(path):
     value, files = load_profile(path)
-    raw, rows = dataset_bytes()
+    raw, rows = dataset_bytes(hardware_compatible=value['generator'] == 'tools.synthetic_inputs.v2')
     if files['raw_source'].read_bytes() != raw or files['reference'].read_bytes() != rows.tobytes():
         raise ConfigurationError('Synthetic MBO/book reconstruction differs from generator')
     if json.loads(files['duration_data'].read_text('utf-8')) != ranges():

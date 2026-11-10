@@ -7184,10 +7184,11 @@
     "path": "tools/board_bundle.py",
     "origin": "public_repository_migration/tools/board_bundle.py",
     "source_sha256": "9c8561363e47e273a8ea405a8d9eb0b812d98f9faf19a22599794b519029fa26",
-    "public_sha256": "4f78b4123781fcd3f2bd6950a51a3f426d19f409fbb7d52c51280d6f3b6b6475",
+    "public_sha256": "e52a4673c669c9c5ef09130961465cc7cb56efb34e869d070719c880bd7122a1",
     "category": "migration_entry_or_metadata",
     "adaptations": [
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "tools/board_bundle.py"
   },
@@ -7342,9 +7343,11 @@
     "path": "tools/synthetic_inputs.py",
     "origin": "public_reproduction/tools/synthetic_inputs.py",
     "source_sha256": "e682cbd1e2aafb933ee34542cc776611ca127be068ed5f19f6462de847f5faa5",
-    "public_sha256": "e682cbd1e2aafb933ee34542cc776611ca127be068ed5f19f6462de847f5faa5",
+    "public_sha256": "bccf38c7fe89665e364c1e3ac04a3a4c8b0e0e2be33d32aede62e879281eeff0",
     "category": "public_reproduction_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Queued Python worker identity and actual board acceptance"
+    ]
   },
   {
     "path": "contracts/examples/synthetic_startup.json",
@@ -7358,18 +7361,21 @@
     "path": "tests/test_synthetic_inputs.py",
     "origin": "public_reproduction/tests/test_synthetic_inputs.py",
     "source_sha256": "75e6bcecf0e1d72e0b3329d2c3be1cb3417a4a51291b86ebf16df10f65456e94",
-    "public_sha256": "75e6bcecf0e1d72e0b3329d2c3be1cb3417a4a51291b86ebf16df10f65456e94",
+    "public_sha256": "bec69ddab2594642dfdd360a20ae87b1906029a3c5146f1f80ce3907fd5fface",
     "category": "public_reproduction_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Queued Python worker identity and actual board acceptance"
+    ]
   },
   {
     "path": "docs/PUBLIC_REPRODUCTION.md",
     "origin": "public_reproduction/docs/PUBLIC_REPRODUCTION.md",
     "source_sha256": "a8e9176425c68bd6c7b34abd4f34bbbb4361029c296ee898b816fb49bc3a8b3a",
-    "public_sha256": "93d4ab66ac9e0adf6ecf4eb6eadc26db13ca82c591c74926db4be9c419376d51",
+    "public_sha256": "4a28d2b991615d7969b25dc45b133950869123e5b07975e26d87c25818d5ec02",
     "category": "public_reproduction_source_or_evidence",
     "adaptations": [
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Queued Python worker identity and actual board acceptance"
     ]
   },
   {
