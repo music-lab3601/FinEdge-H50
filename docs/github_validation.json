@@ -1,0 +1,62 @@
+{
+  "schema": "finedge-GitHub-publication-validation-v1",
+  "date": "2026-11-10",
+  "status": "passed_repository_push_hosted_CI_and_anonymous_clone",
+  "repository": "music-lab3601/FinEdge-H50",
+  "repository_url": "https://github.com/music-lab3601/FinEdge-H50",
+  "visibility": "public",
+  "verified_source_commit": "ceecb138cf976639c49a3c8ccf2b4e3d062e73d1",
+  "workflow_run": "https://github.com/music-lab3601/FinEdge-H50/actions/runs/42785163314",
+  "jobs": [
+    {
+      "name": "Open-source RTL simulation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Windows software and model checks",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "software_tests": {
+    "executed": 686,
+    "passed": 660,
+    "skipped": 26,
+    "failed": 0
+  },
+  "hosted_Python": "3.12.10",
+  "hosted_torch": "2.7.1+cpu",
+  "hosted_onnx": "1.17.0",
+  "hosted_onnxruntime": "1.22.1",
+  "native_UDP_events": 180,
+  "ROM_files_byte_equal": 5,
+  "RTL_benches": 4,
+  "artifacts": {
+    "software-checks": {
+      "artifact_id": 13749506450,
+      "archive_sha256": "15c079285c88b59e6b3f672f9e150e4dcbad4230725d4a3e42299c8b12020190"
+    },
+    "rtl-simulation": {
+      "artifact_id": 13749036008,
+      "archive_sha256": "9ff8abb7d528a1cd6c70e0b670a9a008f0b3103e428e2189ab38742ce179ad87"
+    }
+  },
+  "anonymous_remote_clone": true,
+  "remote_clone_files_byte_equal": 673,
+  "history_scan": {
+    "status": "passed",
+    "unique_blobs": 1423,
+    "commits": 29,
+    "findings": [],
+    "source_commit": "e644c876ee0047eda25f543e7fb688793923c3a5"
+  },
+  "first_CI_failure": {
+    "run_url": "https://github.com/music-lab3601/FinEdge-H50/actions/runs/42783807520",
+    "reason": "Windows temporary directory short-name aliases in test fixture expectations",
+    "failed_test_cases": 4,
+    "resolution": "Resolve temporary fixture roots to canonical paths"
+  },
+  "board_acceptance": "docs/board_validation.json",
+  "external_dependency_instructions": "external/README.md"
+}

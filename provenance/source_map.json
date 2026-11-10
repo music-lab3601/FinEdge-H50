@@ -6522,7 +6522,7 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "01bee4ef0db3a7b7f0ea15cc48cf2bbb0cc086dcea4d9f3a282fe51c4c1813dd",
+    "public_sha256": "153be3512851b479af622dca3d2ce1d5c0bb67b57beac683a8850b664006239c",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
@@ -6530,7 +6530,8 @@
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
       "Isolated CI checks and portable RTL simulation",
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "GitHub publication and canonical Windows test paths"
     ],
     "pre_migration_public_path": "README.md"
   },
@@ -6738,7 +6739,7 @@
     "path": "docs/release_status.json",
     "origin": "public_repository_migration/docs/release_status.json",
     "source_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
-    "public_sha256": "9da92bef77dd054c57f651575699b320699bf560a29c5086476a0e23a4cad60e",
+    "public_sha256": "3885eabe91a36708bf4e29d1280befa22c6b91ef44408ea2c0eff9f1275feb1c",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
@@ -6746,7 +6747,8 @@
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
       "Isolated CI checks and portable RTL simulation",
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "GitHub publication and canonical Windows test paths"
     ],
     "pre_migration_public_path": "docs/release_status.json"
   },
@@ -6993,7 +6995,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "675cd967b2a90ffac9c67d451e70ca66d0a33bb3655b68eceb5b40f809306552",
+    "public_sha256": "a315ed4fcea0d38bc64c6b0c76699402ee86bba6f690fda82f7b1e624c55982e",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
@@ -7002,7 +7004,8 @@
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
       "Isolated CI checks and portable RTL simulation",
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "GitHub publication and canonical Windows test paths"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -7400,12 +7403,13 @@
     "path": "docs/evidence_index.json",
     "origin": "public_reproduction/docs/evidence_index.json",
     "source_sha256": "03a7d4fd7930a78c2b07103681f4785e0629497e30cc0fa0772d0802dca69a11",
-    "public_sha256": "f6e620b3c1b7b83315cd529699fa051f7422a2ee3be75759211f7f81ee98f1b7",
+    "public_sha256": "684f72ef7e5f4fc7f641a1a036cbf7406c2a6b04ee269b5978780b17db2b4525",
     "category": "public_reproduction_source_or_evidence",
     "adaptations": [
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
       "Isolated CI checks and portable RTL simulation",
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "GitHub publication and canonical Windows test paths"
     ]
   },
   {
@@ -7454,20 +7458,23 @@
     "path": "docs/CI.md",
     "origin": "CI_source_or_evidence/docs/CI.md",
     "source_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
-    "public_sha256": "0f47b764ba9769b2e4894781b54db958d0743cd5718f43a4d875b032564975ce",
+    "public_sha256": "417046a7789ec87fa817f206c6682cb51f6dce4755440bfc8badb2aa13afce28",
     "category": "CI_source_or_evidence",
     "adaptations": [
       "Isolated CI checks and portable RTL simulation",
-      "Queued Python worker identity and actual board acceptance"
+      "Queued Python worker identity and actual board acceptance",
+      "GitHub publication and canonical Windows test paths"
     ]
   },
   {
     "path": "docs/ci_validation.json",
     "origin": "CI_source_or_evidence/docs/ci_validation.json",
     "source_sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87",
-    "public_sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87",
+    "public_sha256": "d8d8606d1f49a2f9f2812acc3035df31cdeec6da35e495fc994d4898c9e92446",
     "category": "CI_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "GitHub publication and canonical Windows test paths"
+    ]
   },
   {
     "path": "tests/test_queue_worker.py",
@@ -7494,5 +7501,15 @@
     "public_sha256": "fb2dfc853bc94d71dc6b288deec42c9145518ddf73cf2718fd854b63a1478072",
     "category": "CI_source_or_evidence",
     "adaptations": []
+  },
+  {
+    "path": "docs/github_validation.json",
+    "origin": "CI_source_or_evidence/docs/github_validation.json",
+    "source_sha256": "d32dc386e24c11b87c4195aa5f2bb56cf546e8f29600f3f6110dee19ec483730",
+    "public_sha256": "d5b55241a70ad22424f97b49c19ea9218dbbb3b59ee37bd71a02b4afddb8ca85",
+    "category": "CI_source_or_evidence",
+    "adaptations": [
+      "GitHub publication and canonical Windows test paths"
+    ]
   }
 ]

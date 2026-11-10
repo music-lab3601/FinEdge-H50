@@ -1,7 +1,7 @@
 {
   "schema": "finedge-ci-validation-v1",
   "date": "2026-11-10",
-  "status": "passed_local_equivalent_checks_pending_first_GitHub_hosted_run",
+  "status": "passed_local_equivalent_checks_and_followup_GitHub_hosted_run",
   "source_commit": "a459d35e0aaf8af9a7bf132dc7b59a09216b6828",
   "fresh_clone": true,
   "workflow": ".github/workflows/ci.yml",
@@ -25,7 +25,7 @@
     "software": "windows-2025",
     "rtl": "ubuntu-24.04"
   },
-  "hosted_run_status": "pending_repository_publication",
+  "hosted_run_status": "passed_followup",
   "local_CI_command": "python -B finedge.py check ci",
   "software_stages": [
     {
@@ -191,7 +191,7 @@
       ],
       "status": "passed"
     },
-    "hosted_Ubuntu_execution": "pending_repository_publication"
+    "hosted_Ubuntu_execution": "passed_followup"
   },
   "corrected_testbench": "FIFO sequence counter updates after DUT active-edge sampling, removing simulator scheduling race",
   "failure_propagation_regressions": 2,
@@ -202,5 +202,6 @@
   "independent_build_receipts": [
     "docs/int8_rebuild_validation.json",
     "docs/fpga_build_validation.json"
-  ]
+  ],
+  "hosted_run_validation": "docs/github_validation.json"
 }

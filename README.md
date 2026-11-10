@@ -53,6 +53,8 @@ provenance/                来源、目录映射与发布文件清单
 使用64位Python 3.12和Git。Windows PowerShell先创建独立环境，再通过该环境的解释器安装依赖与运行检查。
 
 ```powershell
+git clone https://github.com/music-lab3601/FinEdge-H50.git
+cd FinEdge-H50
 py -3.12 -m venv .local/python_env
 $finedgePython = (Resolve-Path .local/python_env/Scripts/python.exe).Path
 & $finedgePython -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
@@ -65,6 +67,8 @@ $finedgePython = (Resolve-Path .local/python_env/Scripts/python.exe).Path
 & $finedgePython -B finedge.py cpu smoke --records 160
 & $finedgePython -B finedge.py check tests
 ```
+
+完整Git收录校验通过上述克隆工程执行。Release源码ZIP保存同一提交的文件快照。
 
 后续示例中的`python`同样使用这个环境的解释器。`requirements.txt`包含行情DBN解码库，完整测试会验证其状态消息解析。
 
@@ -128,6 +132,10 @@ python -B finedge.py simulate
 目录迁移、57份模板解析、CPU网络功能闭环、HTTP界面、行情源编译、ONNX导出和图变换、定点ROM再生成、四项RTL仿真已进行本地验证。精确结果以`docs/migration_validation.json`为准。
 
 完整Icraft原生INT8部署重编译已通过本机验收，JSON/RAW与冻结工件逐字节一致，1024窗新旧Host输出逐位一致。结果见`docs/int8_rebuild_validation.json`。H50厂商集成工程已在全新克隆中通过单次完整构建、物理审计及BOOT打包，结果见`docs/fpga_build_validation.json`。本轮新固件已通过AAPL五分钟回放和公开合成输入板测，详见[真机验收](docs/BOARD_VALIDATION.md)。公开合成输入已在新克隆中验证，677项测试中651项通过、26项历史收据缺失跳过。CPU的160条盘口产生61窗，原生派发器180条UDP事件的身份和原始字节全部一致，HTTP界面正常启动退出，两组Icraft Host启动输出逐字节一致。结果见[公开复现验收](docs/public_reproduction_validation.json)。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
+
+## GitHub验收
+
+Windows云端执行686项测试，660项通过、26项历史收据缺失跳过。Ubuntu四项RTL测试通过。GitHub匿名克隆已核对全部源码、模型、ROM、约束与许可证。完整记录见[云端与克隆验收](docs/github_validation.json)，工作流见[GitHub Actions](https://github.com/music-lab3601/FinEdge-H50/actions/workflows/ci.yml)。
 
 ## 自动检查
 

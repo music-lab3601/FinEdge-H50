@@ -1,5 +1,5 @@
 {
-  "stage": "source_build_and_board_verified_pending_GitHub_publication",
+  "stage": "GitHub_published_and_hosted_CI_verified",
   "team_license": "MIT",
   "scope": "Full H50",
   "production_directory_migration": "completed",
@@ -11,8 +11,8 @@
   "vendor_reference_reconstruction": "passed_manifest_vendor_inputs",
   "full_FPGA_build": "passed_fresh_clone_single_command_with_physical_audit_and_BOOT",
   "board_validation": "passed_source_build_BOOT_real_and_synthetic_replay",
-  "GitHub_remote_created": false,
-  "GitHub_pushed": false,
+  "GitHub_remote_created": true,
+  "GitHub_pushed": true,
   "validation": "docs/migration_validation.json",
   "clean_Python_environment": "passed_after_databento_dependency_correction",
   "clean_environment_validation": "docs/clean_environment_validation.json",
@@ -26,6 +26,8 @@
   "CI_workflow": ".github/workflows/ci.yml",
   "CI_local_equivalent_checks": "passed",
   "CI_validation": "docs/ci_validation.json",
-  "GitHub_hosted_CI": "pending_repository_publication",
-  "board_validation_receipt": "docs/board_validation.json"
+  "GitHub_hosted_CI": "passed",
+  "board_validation_receipt": "docs/board_validation.json",
+  "repository_url": "https://github.com/music-lab3601/FinEdge-H50",
+  "GitHub_validation": "docs/github_validation.json"
 }

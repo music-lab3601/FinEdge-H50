@@ -45,4 +45,4 @@ python -B finedge.py simulate
 
 完整 Icraft 编译使用匹配 SDK 和授权行情，FPGA 全构建使用 Vivado、Procise、JFM 及匹配厂商依赖。它们的已执行结果分别保存在 `int8_rebuild_validation.json` 和 `fpga_build_validation.json`。真机运行记录通过 `evidence_index.json` 绑定固件及输入身份。新构建BOOT已完成真实行情和公开合成输入板测，见`board_validation.json`。
 
-本轮工作流和本地等效执行结果登记于 `ci_validation.json`。首次 GitHub 托管执行在推送后登记运行链接和提交身份。
+本轮工作流和本地等效执行结果登记于 `ci_validation.json`。GitHub托管Windows与Ubuntu任务已通过，运行链接、提交身份及匿名克隆结果见`github_validation.json`。

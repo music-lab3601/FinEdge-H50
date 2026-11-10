@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9419,
-      "sha256": "01bee4ef0db3a7b7f0ea15cc48cf2bbb0cc086dcea4d9f3a282fe51c4c1813dd"
+      "bytes": 9981,
+      "sha256": "153be3512851b479af622dca3d2ce1d5c0bb67b57beac683a8850b664006239c"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -763,8 +763,8 @@
     },
     {
       "path": "docs/CI.md",
-      "bytes": 3014,
-      "sha256": "0f47b764ba9769b2e4894781b54db958d0743cd5718f43a4d875b032564975ce"
+      "bytes": 3064,
+      "sha256": "417046a7789ec87fa817f206c6682cb51f6dce4755440bfc8badb2aa13afce28"
     },
     {
       "path": "docs/EVIDENCE.md",
@@ -798,8 +798,8 @@
     },
     {
       "path": "docs/ci_validation.json",
-      "bytes": 4821,
-      "sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87"
+      "bytes": 4848,
+      "sha256": "d8d8606d1f49a2f9f2812acc3035df31cdeec6da35e495fc994d4898c9e92446"
     },
     {
       "path": "docs/clean_environment_validation.json",
@@ -808,13 +808,18 @@
     },
     {
       "path": "docs/evidence_index.json",
-      "bytes": 5994,
-      "sha256": "f6e620b3c1b7b83315cd529699fa051f7422a2ee3be75759211f7f81ee98f1b7"
+      "bytes": 6336,
+      "sha256": "684f72ef7e5f4fc7f641a1a036cbf7406c2a6b04ee269b5978780b17db2b4525"
     },
     {
       "path": "docs/fpga_build_validation.json",
       "bytes": 6176,
       "sha256": "511367a8d72df7ed98be6f202eff5dcb8c8970fda75c7f4ac337533ad0b9ed2b"
+    },
+    {
+      "path": "docs/github_validation.json",
+      "bytes": 2078,
+      "sha256": "d5b55241a70ad22424f97b49c19ea9218dbbb3b59ee37bd71a02b4afddb8ca85"
     },
     {
       "path": "docs/int8_rebuild_validation.json",
@@ -833,8 +838,8 @@
     },
     {
       "path": "docs/release_status.json",
-      "bytes": 1655,
-      "sha256": "9da92bef77dd054c57f651575699b320699bf560a29c5086476a0e23a4cad60e"
+      "bytes": 1734,
+      "sha256": "3885eabe91a36708bf4e29d1280befa22c6b91ef44408ea2c0eff9f1275feb1c"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -2158,13 +2163,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 414851,
-      "sha256": "56fff8b0ed3f4bc89d0f510e976977c2a988b5714edc1eaed4555ad2c3fb229d"
+      "bytes": 415663,
+      "sha256": "86a89239d72ba746c03fd057bcdd86eefba5613b07000d6db182a42da53b6840"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "675cd967b2a90ffac9c67d451e70ca66d0a33bb3655b68eceb5b40f809306552"
+      "sha256": "a315ed4fcea0d38bc64c6b0c76699402ee86bba6f690fda82f7b1e624c55982e"
     },
     {
       "path": "requirements.txt",

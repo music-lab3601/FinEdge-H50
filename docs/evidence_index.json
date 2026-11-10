@@ -125,6 +125,14 @@
       "BOOT_sha256": "2f217f4677bd9fc3858c6b5a546d75e8a9640163939cc9845ed4782c66243b1e",
       "raw_input_sha256": "4d04f259a969e20d7086ac311eb8aa3faa5f03795e603c02086b105df51a74e3",
       "analysis_sha256": "a13b81c8d3e1552e9977be1c0572b2103e0fea76cb3ddd5cccc55c1ad4025b75"
+    },
+    {
+      "id": "GitHub_CI_20261110",
+      "kind": "GitHub_hosted_CI_and_anonymous_clone",
+      "source_commit": "ceecb138cf976639c49a3c8ccf2b4e3d062e73d1",
+      "validation": "docs/github_validation.json",
+      "workflow_run": "https://github.com/music-lab3601/FinEdge-H50/actions/runs/42785163314",
+      "board_access": false
     }
   ]
 }
