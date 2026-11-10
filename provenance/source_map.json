@@ -6734,13 +6734,14 @@
     "path": "docs/release_status.json",
     "origin": "public_repository_migration/docs/release_status.json",
     "source_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
-    "public_sha256": "6a9f444590a58cf5317a9c0de60e0d2c20cd8cc31042803025a4fb0029b065d2",
+    "public_sha256": "440fa5440f62baf562cd4c7d8af3262c291843d68bafa546e473d98c519042b6",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Isolated CI checks and portable RTL simulation"
     ],
     "pre_migration_public_path": "docs/release_status.json"
   },
@@ -6987,7 +6988,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "d44a705a8eb7ffc28690881e5ac267ec1accb4a56df758380395040b7ef2c084",
+    "public_sha256": "09fb046c98033c488ad6221e88831812b49b5f9c7a47f06b1b3053f79e392cc7",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
@@ -7380,10 +7381,11 @@
     "path": "docs/evidence_index.json",
     "origin": "public_reproduction/docs/evidence_index.json",
     "source_sha256": "03a7d4fd7930a78c2b07103681f4785e0629497e30cc0fa0772d0802dca69a11",
-    "public_sha256": "4e59116a47fd9d9633877e632a12d283a3747b0d3e0dcfe3e1151395ffef2096",
+    "public_sha256": "eb13cd5f2ceb519a3a290212b16e7479c35d4d0ee466f01dddac89cbf9312a4b",
     "category": "public_reproduction_source_or_evidence",
     "adaptations": [
-      "Public synthetic inputs, portable runtime profile and release-scope documentation"
+      "Public synthetic inputs, portable runtime profile and release-scope documentation",
+      "Isolated CI checks and portable RTL simulation"
     ]
   },
   {
@@ -7437,5 +7439,13 @@
     "adaptations": [
       "Isolated CI checks and portable RTL simulation"
     ]
+  },
+  {
+    "path": "docs/ci_validation.json",
+    "origin": "CI_source_or_evidence/docs/ci_validation.json",
+    "source_sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87",
+    "public_sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
   }
 ]

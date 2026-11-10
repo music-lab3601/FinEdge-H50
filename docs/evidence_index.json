@@ -95,6 +95,15 @@
       "market_accuracy_evaluated": false,
       "board_access": false,
       "board_validation": "deferred"
+    },
+    {
+      "id": "CI_local_validation_20261110",
+      "kind": "fresh_clone_CI_command_and_RTL_simulation",
+      "source_commit": "a459d35e0aaf8af9a7bf132dc7b59a09216b6828",
+      "validation": "docs/ci_validation.json",
+      "workflow_sha256": "03f1dcd43f0eac06abacb454dbcc69285433ff22ae0a05a011bb8fc456b20e15",
+      "hosted_run_status": "pending_repository_publication",
+      "board_access": false
     }
   ]
 }

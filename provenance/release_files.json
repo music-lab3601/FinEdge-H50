@@ -787,14 +787,19 @@
       "sha256": "6ae671e560f80da0680123a834564b9a528fc54c65446f54dd545ca4520d4462"
     },
     {
+      "path": "docs/ci_validation.json",
+      "bytes": 4821,
+      "sha256": "9a6129d5676fe1660dc4e241b9ceebd00d884918a9e2e312b1161bd9fa504f87"
+    },
+    {
       "path": "docs/clean_environment_validation.json",
       "bytes": 2482,
       "sha256": "761a3ee7e55b06f8861e4b3d78d7bf7a16ccf8c0e852c1f933c4ca9d1d62bdef"
     },
     {
       "path": "docs/evidence_index.json",
-      "bytes": 4448,
-      "sha256": "4e59116a47fd9d9633877e632a12d283a3747b0d3e0dcfe3e1151395ffef2096"
+      "bytes": 4860,
+      "sha256": "eb13cd5f2ceb519a3a290212b16e7479c35d4d0ee466f01dddac89cbf9312a4b"
     },
     {
       "path": "docs/fpga_build_validation.json",
@@ -818,8 +823,8 @@
     },
     {
       "path": "docs/release_status.json",
-      "bytes": 1384,
-      "sha256": "6a9f444590a58cf5317a9c0de60e0d2c20cd8cc31042803025a4fb0029b065d2"
+      "bytes": 1561,
+      "sha256": "440fa5440f62baf562cd4c7d8af3262c291843d68bafa546e473d98c519042b6"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -2143,13 +2148,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 412052,
-      "sha256": "27d4ddaf96fe2d8154c664bce93b4da85b6005ed5036da026639d0fed273fd93"
+      "bytes": 412526,
+      "sha256": "c65844e25511b1f6806f68fc8a67158950ad24de7e13632bafdec07fe39dab5a"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "d44a705a8eb7ffc28690881e5ac267ec1accb4a56df758380395040b7ef2c084"
+      "sha256": "09fb046c98033c488ad6221e88831812b49b5f9c7a47f06b1b3053f79e392cc7"
     },
     {
       "path": "requirements.txt",

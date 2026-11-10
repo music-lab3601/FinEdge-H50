@@ -1,0 +1,206 @@
+{
+  "schema": "finedge-ci-validation-v1",
+  "date": "2026-11-10",
+  "status": "passed_local_equivalent_checks_pending_first_GitHub_hosted_run",
+  "source_commit": "a459d35e0aaf8af9a7bf132dc7b59a09216b6828",
+  "fresh_clone": true,
+  "workflow": ".github/workflows/ci.yml",
+  "workflow_sha256": "03f1dcd43f0eac06abacb454dbcc69285433ff22ae0a05a011bb8fc456b20e15",
+  "workflow_lint": {
+    "tool": "actionlint",
+    "version": "1.7.12",
+    "status": "passed"
+  },
+  "triggers": [
+    "push",
+    "pull_request",
+    "workflow_dispatch"
+  ],
+  "local_environment": {
+    "platform": "Windows x64",
+    "python": "3.12.15",
+    "independent_application_venv": true
+  },
+  "hosted_jobs": {
+    "software": "windows-2025",
+    "rtl": "ubuntu-24.04"
+  },
+  "hosted_run_status": "pending_repository_publication",
+  "local_CI_command": "python -B finedge.py check ci",
+  "software_stages": [
+    {
+      "name": "dependencies",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.5
+    },
+    {
+      "name": "checkout",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.0
+    },
+    {
+      "name": "templates",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.40599999998812564
+    },
+    {
+      "name": "imports",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 1.0320000000065193
+    },
+    {
+      "name": "generate",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.4370000000053551
+    },
+    {
+      "name": "verify",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.3279999999940628
+    },
+    {
+      "name": "tests",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 22.077999999994063
+    },
+    {
+      "name": "CPU_model",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 1.9070000000065193
+    },
+    {
+      "name": "CPU_network",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.1089999999967404
+    },
+    {
+      "name": "public_CPU",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.8589999999967404
+    },
+    {
+      "name": "board_bundle",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.45300000000861473
+    },
+    {
+      "name": "ONNX_export",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.375
+    },
+    {
+      "name": "causal_graph",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.7189999999973224
+    },
+    {
+      "name": "ROM_generation",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.26600000000325963
+    },
+    {
+      "name": "native_build",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 7.514999999999418
+    }
+  ],
+  "tests": {
+    "executed": 679,
+    "passed": 653,
+    "skipped": 26,
+    "failed": 0
+  },
+  "expected_historical_skips": "Unavailable historical SDK or market-data receipts",
+  "synthetic_CPU_replay": {
+    "records": 160,
+    "windows": 61,
+    "data_kind": "synthetic"
+  },
+  "native_source": {
+    "status": "passed",
+    "UDP_events": 180,
+    "identity_and_raw_bytes_equal": true
+  },
+  "ROM_files_byte_equal": 5,
+  "ONNX_export": {
+    "windows": 32,
+    "max_abs_difference": 3.5762786865234375e-07
+  },
+  "causal_graph": {
+    "windows": 96,
+    "max_abs_difference": 1.430511474609375e-06,
+    "class_mismatches": 0
+  },
+  "RTL": {
+    "Icarus": {
+      "version": "12.0 devel Windows binary",
+      "tests": [
+        {
+          "bench": "fifo",
+          "status": "passed"
+        },
+        {
+          "bench": "window_bridge",
+          "status": "passed"
+        },
+        {
+          "bench": "history",
+          "status": "passed"
+        },
+        {
+          "bench": "window_bridge_earliest",
+          "status": "passed"
+        }
+      ],
+      "status": "passed"
+    },
+    "XSim": {
+      "version": "2018.3",
+      "tests": [
+        {
+          "bench": "fifo",
+          "status": "passed"
+        },
+        {
+          "bench": "window_bridge",
+          "status": "passed"
+        },
+        {
+          "bench": "history",
+          "status": "passed"
+        },
+        {
+          "bench": "window_bridge_earliest",
+          "status": "passed"
+        }
+      ],
+      "status": "passed"
+    },
+    "hosted_Ubuntu_execution": "pending_repository_publication"
+  },
+  "corrected_testbench": "FIFO sequence counter updates after DUT active-edge sampling, removing simulator scheduling race",
+  "failure_propagation_regressions": 2,
+  "standalone_config_preserved": true,
+  "FPGA_build_source_inputs_still_equal": 209,
+  "board_access": false,
+  "new_firmware_board_validation": "deferred_for_initial_source_release",
+  "independent_build_receipts": [
+    "docs/int8_rebuild_validation.json",
+    "docs/fpga_build_validation.json"
+  ]
+}

@@ -157,7 +157,7 @@
         "VIVADO_INSTALL"
       ],
       "status": "runtime_resolver_or_unified_entry_connected",
-      "public_sha256": "6a9f444590a58cf5317a9c0de60e0d2c20cd8cc31042803025a4fb0029b065d2"
+      "public_sha256": "440fa5440f62baf562cd4c7d8af3262c291843d68bafa546e473d98c519042b6"
     },
     {
       "old": "hardware/artifacts/fpga_reference_20261021/boot_candidate_UNVERIFIED_20261021/manifest.json",
