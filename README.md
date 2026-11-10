@@ -46,7 +46,7 @@ provenance/                来源、目录映射与发布文件清单
 
 正式入口统一使用仓库根目录的`finedge.py`。`experiments/reference/`保留历史辅助实现及其来源身份。当前可执行路径与验证范围见下文。
 
-首个开源版本按源码与构建验证范围发布，最新固件的真机验收列为后续验证项。实验与固件对应关系见[证据索引说明](docs/EVIDENCE.md)。
+当前开源版本已完成源码、完整构建与新固件真机闭环验收。实验与固件对应关系见[证据索引说明](docs/EVIDENCE.md)。
 
 ## 无板卡验证
 
@@ -81,7 +81,7 @@ python -B finedge.py example cpu --profile .local/public_example/manifest.json -
 python -B finedge.py example bundle --profile .local/public_example/manifest.json --directory .local/example_arm_bundle
 ```
 
-生成 3,070 条人工订单、3,050 条盘口、1/2/5分钟范围和四份启动向量。CPU 示例经 UDP 在线建簿、组窗和推理，160 条盘口产生61窗。合成数据、CPU后端和Icraft Host启动参考均明确记录身份。板端运行包可独立组装，真机验收状态为待验证。完整步骤见[公开复现说明](docs/PUBLIC_REPRODUCTION.md)，外部组件取得方式见[依赖说明](external/README.md)。
+生成 3,070 条人工订单、3,050 条盘口、1/2/5分钟范围和四份启动向量。CPU 示例经 UDP 在线建簿、组窗和推理，160 条盘口产生61窗。合成数据、CPU后端和Icraft Host启动参考均明确记录身份。公开v2合成输入已完成真机闭环验收。完整步骤见[公开复现说明](docs/PUBLIC_REPRODUCTION.md)，外部组件取得方式见[依赖说明](external/README.md)。
 
 ## 配置
 
@@ -127,7 +127,7 @@ python -B finedge.py simulate
 
 目录迁移、57份模板解析、CPU网络功能闭环、HTTP界面、行情源编译、ONNX导出和图变换、定点ROM再生成、四项RTL仿真已进行本地验证。精确结果以`docs/migration_validation.json`为准。
 
-完整Icraft原生INT8部署重编译已通过本机验收，JSON/RAW与冻结工件逐字节一致，1024窗新旧Host输出逐位一致。结果见`docs/int8_rebuild_validation.json`。H50厂商集成工程已在全新克隆中通过单次完整构建、物理审计及BOOT打包，结果见`docs/fpga_build_validation.json`。本轮新固件的板卡验收待执行。公开合成输入已在新克隆中验证，677项测试中651项通过、26项历史收据缺失跳过。CPU的160条盘口产生61窗，原生派发器180条UDP事件的身份和原始字节全部一致，HTTP界面正常启动退出，两组Icraft Host启动输出逐字节一致。结果见[公开复现验收](docs/public_reproduction_validation.json)。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
+完整Icraft原生INT8部署重编译已通过本机验收，JSON/RAW与冻结工件逐字节一致，1024窗新旧Host输出逐位一致。结果见`docs/int8_rebuild_validation.json`。H50厂商集成工程已在全新克隆中通过单次完整构建、物理审计及BOOT打包，结果见`docs/fpga_build_validation.json`。本轮新固件已通过AAPL五分钟回放和公开合成输入板测，详见[真机验收](docs/BOARD_VALIDATION.md)。公开合成输入已在新克隆中验证，677项测试中651项通过、26项历史收据缺失跳过。CPU的160条盘口产生61窗，原生派发器180条UDP事件的身份和原始字节全部一致，HTTP界面正常启动退出，两组Icraft Host启动输出逐字节一致。结果见[公开复现验收](docs/public_reproduction_validation.json)。全新克隆审计核对Git实际收录、哈希、许可证、敏感信息及本机路径。
 
 ## 自动检查
 

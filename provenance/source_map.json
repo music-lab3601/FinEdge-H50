@@ -6522,14 +6522,15 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "04124be6d3935ab99337986419e4ae275e6398db39ac2b48430d18880bf1319d",
+    "public_sha256": "01bee4ef0db3a7b7f0ea15cc48cf2bbb0cc086dcea4d9f3a282fe51c4c1813dd",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "README.md"
   },
@@ -6737,14 +6738,15 @@
     "path": "docs/release_status.json",
     "origin": "public_repository_migration/docs/release_status.json",
     "source_sha256": "2bbd436c2af71e1346981b50766b67234a149fb7061555523bd2693285336bc9",
-    "public_sha256": "440fa5440f62baf562cd4c7d8af3262c291843d68bafa546e473d98c519042b6",
+    "public_sha256": "9da92bef77dd054c57f651575699b320699bf560a29c5086476a0e23a4cad60e",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
       "Full frozen native INT8 rebuild entry and verification connected",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "docs/release_status.json"
   },
@@ -6991,7 +6993,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "09fb046c98033c488ad6221e88831812b49b5f9c7a47f06b1b3053f79e392cc7",
+    "public_sha256": "675cd967b2a90ffac9c67d451e70ca66d0a33bb3655b68eceb5b40f809306552",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
@@ -6999,7 +7001,8 @@
       "Full frozen native INT8 rebuild entry and verification connected",
       "Full FPGA source-build portability, HDL newline repair and acceptance updates",
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Queued Python worker identity and actual board acceptance"
     ],
     "pre_migration_public_path": "provenance/template_migration.json"
   },
@@ -7309,10 +7312,11 @@
     "path": "docs/FPGA_BUILD.md",
     "origin": "fpga_source_build/docs/FPGA_BUILD.md",
     "source_sha256": "d1b178bad4c6a9db8639184190c90551635f5e601882398dca7aab1567c418be",
-    "public_sha256": "5128c9be7d1435f449905cf1cc3460ebf7c7f077a1e816931d14a96c227423cd",
+    "public_sha256": "6f209c32f437b3a1b87451f35af41697d0d045c6ebc7086be4b25efcf04f91c1",
     "category": "FPGA_build_source_or_validation",
     "adaptations": [
-      "Full FPGA source-build portability, HDL newline repair and acceptance updates"
+      "Full FPGA source-build portability, HDL newline repair and acceptance updates",
+      "Queued Python worker identity and actual board acceptance"
     ]
   },
   {
@@ -7335,9 +7339,11 @@
     "path": "docs/fpga_build_validation.json",
     "origin": "fpga_source_build/docs/fpga_build_validation.json",
     "source_sha256": "dddc4917484d7a4061cccb9c7b18137e87eba707420ea3d9758bcad11dc6acf1",
-    "public_sha256": "dddc4917484d7a4061cccb9c7b18137e87eba707420ea3d9758bcad11dc6acf1",
+    "public_sha256": "511367a8d72df7ed98be6f202eff5dcb8c8970fda75c7f4ac337533ad0b9ed2b",
     "category": "FPGA_build_source_or_validation",
-    "adaptations": []
+    "adaptations": [
+      "Queued Python worker identity and actual board acceptance"
+    ]
   },
   {
     "path": "tools/synthetic_inputs.py",
@@ -7371,7 +7377,7 @@
     "path": "docs/PUBLIC_REPRODUCTION.md",
     "origin": "public_reproduction/docs/PUBLIC_REPRODUCTION.md",
     "source_sha256": "a8e9176425c68bd6c7b34abd4f34bbbb4361029c296ee898b816fb49bc3a8b3a",
-    "public_sha256": "4a28d2b991615d7969b25dc45b133950869123e5b07975e26d87c25818d5ec02",
+    "public_sha256": "8befd614ecd618d4b9a19235efef824052e60a5cc2a5559431ef8845959e5980",
     "category": "public_reproduction_source_or_evidence",
     "adaptations": [
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
@@ -7382,19 +7388,22 @@
     "path": "docs/EVIDENCE.md",
     "origin": "public_reproduction/docs/EVIDENCE.md",
     "source_sha256": "13b7acbb4bcbd7878966ac2178f005e60472bbcb6dd0b8d8c17fa1c33389a7a5",
-    "public_sha256": "13b7acbb4bcbd7878966ac2178f005e60472bbcb6dd0b8d8c17fa1c33389a7a5",
+    "public_sha256": "6e852d509941f524530563a4899259ae6812161d8bb62fef7a77356d0c296960",
     "category": "public_reproduction_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Queued Python worker identity and actual board acceptance"
+    ]
   },
   {
     "path": "docs/evidence_index.json",
     "origin": "public_reproduction/docs/evidence_index.json",
     "source_sha256": "03a7d4fd7930a78c2b07103681f4785e0629497e30cc0fa0772d0802dca69a11",
-    "public_sha256": "eb13cd5f2ceb519a3a290212b16e7479c35d4d0ee466f01dddac89cbf9312a4b",
+    "public_sha256": "f6e620b3c1b7b83315cd529699fa051f7422a2ee3be75759211f7f81ee98f1b7",
     "category": "public_reproduction_source_or_evidence",
     "adaptations": [
       "Public synthetic inputs, portable runtime profile and release-scope documentation",
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Queued Python worker identity and actual board acceptance"
     ]
   },
   {
@@ -7443,10 +7452,11 @@
     "path": "docs/CI.md",
     "origin": "CI_source_or_evidence/docs/CI.md",
     "source_sha256": "981337f0496a531353dc92180275fd205b898018c49993169b72c1b402d67a6a",
-    "public_sha256": "e45a334c6bce57dc15f09b7aca6aa1e7013759f74f6edfcd0fe05271db66b42a",
+    "public_sha256": "0f47b764ba9769b2e4894781b54db958d0743cd5718f43a4d875b032564975ce",
     "category": "CI_source_or_evidence",
     "adaptations": [
-      "Isolated CI checks and portable RTL simulation"
+      "Isolated CI checks and portable RTL simulation",
+      "Queued Python worker identity and actual board acceptance"
     ]
   },
   {
@@ -7462,6 +7472,22 @@
     "origin": "CI_source_or_evidence/tests/test_queue_worker.py",
     "source_sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195",
     "public_sha256": "bb999feb4ed43c2a9d4fb03e1400c8a78517e640a387370f48cb869dd545f195",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/board_validation.json",
+    "origin": "CI_source_or_evidence/docs/board_validation.json",
+    "source_sha256": "8d2508b07250e877e80196f12897029d5bcd7ed22cfd036ac83425cfa4d33c12",
+    "public_sha256": "8d2508b07250e877e80196f12897029d5bcd7ed22cfd036ac83425cfa4d33c12",
+    "category": "CI_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/BOARD_VALIDATION.md",
+    "origin": "CI_source_or_evidence/docs/BOARD_VALIDATION.md",
+    "source_sha256": "fb2dfc853bc94d71dc6b288deec42c9145518ddf73cf2718fd854b63a1478072",
+    "public_sha256": "fb2dfc853bc94d71dc6b288deec42c9145518ddf73cf2718fd854b63a1478072",
     "category": "CI_source_or_evidence",
     "adaptations": []
   }

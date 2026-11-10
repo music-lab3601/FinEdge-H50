@@ -1,6 +1,6 @@
 # 公开示例与复现路线
 
-首个开源版本采用源码与构建验证范围。已完成的验收包括独立 Python 环境、CPU 网络闭环、完整模型转换、FPGA 源构建及 BOOT 打包。新生成固件的真机验收列为后续验证项。
+当前版本已完成独立Python环境、CPU网络闭环、完整模型转换、FPGA源构建、BOOT打包及真机闭环验收。新固件分别通过AAPL五分钟回放与公开v2合成输入测试，见[真机验收](BOARD_VALIDATION.md)。
 
 ## 先运行公开合成示例
 
@@ -42,7 +42,7 @@ python -B finedge.py example bundle --profile .local/public_example/manifest.jso
 
 ## 为后续板端运行准备资料
 
-`example bundle` 使用现有板端打包函数，组装冻结模型、四份启动向量、PHY 配置、原生 C 调用代码及 Python 所有者。Python 文件按 3.8 语法检查，`config.json` 记录逐文件身份。输出状态为 `prepared`，真机验证状态为 `deferred`。
+`example bundle` 使用现有板端打包函数，组装冻结模型、四份启动向量、PHY 配置、原生 C 调用代码及 Python 所有者。Python 文件按 3.8 语法检查，`config.json` 记录逐文件身份。包组装状态为`prepared`，实际执行结果另存于真机验收记录。
 
 需要运行板卡时，显式选择公开输入清单和固件发布记录。
 
@@ -54,7 +54,7 @@ python -B finedge.py native
 python -B finedge.py demo
 ```
 
-固件身份读取所选 `release.json` 的 `boot_sha256`。回退记录通过单独的配置项指定。界面显示 SYNTH 和“公开合成订单”，运行清单也保存该数据身份。PS 串口、PL 网口、ARM64 Icraft 运行组件及板端登录配置按 `docs/RUNNING.md` 准备。当前版本的最新 BOOT 上板验收由后续任务完成。
+固件身份读取所选 `release.json` 的 `boot_sha256`。回退记录通过单独的配置项指定。界面显示 SYNTH 和“公开合成订单”，运行清单也保存该数据身份。PS 串口、PL 网口、ARM64 Icraft 运行组件及板端登录配置按 `docs/RUNNING.md` 准备。当前源码构建的BOOT已完成本轮真机验收。
 
 现有原生派发程序使用逻辑核 0、2、4、6，板卡演示需要这些逻辑核可用。
 

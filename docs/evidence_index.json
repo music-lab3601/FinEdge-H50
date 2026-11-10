@@ -1,7 +1,7 @@
 {
   "schema": "finedge-published-evidence-v1",
-  "release_scope": "source_and_build_verified",
-  "new_firmware_board_validation": "deferred",
+  "release_scope": "source_build_and_board_verified",
+  "new_firmware_board_validation": "passed",
   "records": [
     {
       "id": "historical_board_20261104",
@@ -76,7 +76,8 @@
         "max": 0.03,
         "min": 0.014
       },
-      "board_validation": "deferred"
+      "board_validation": "passed_followup",
+      "board_validation_receipt": "docs/board_validation.json"
     },
     {
       "id": "public_synthetic_reproduction_20261110",
@@ -104,6 +105,26 @@
       "workflow_sha256": "03f1dcd43f0eac06abacb454dbcc69285433ff22ae0a05a011bb8fc456b20e15",
       "hosted_run_status": "pending_repository_publication",
       "board_access": false
+    },
+    {
+      "id": "board_20261110_historical",
+      "kind": "actual_board_replay",
+      "validation": "docs/board_validation.json",
+      "run_name": "run_20261110_155451_5e3c7",
+      "source_commit": "4836677d7f774e8ee4d8aa2956775279ae458c4e",
+      "BOOT_sha256": "2f217f4677bd9fc3858c6b5a546d75e8a9640163939cc9845ed4782c66243b1e",
+      "raw_input_sha256": "99054880e83babc3468d0a7419d43866a39d9727defbfae9461824ab7dd12661",
+      "analysis_sha256": "ed2a49c74f8d8cc0293706a1b2f2a5351a5758c2720451b4601a09dd0a20f3d9"
+    },
+    {
+      "id": "board_20261110_synthetic",
+      "kind": "actual_board_replay",
+      "validation": "docs/board_validation.json",
+      "run_name": "run_20261110_160917_161ae",
+      "source_commit": "ab8d142ec513e7d907a9245bf867c2b5deb483d4",
+      "BOOT_sha256": "2f217f4677bd9fc3858c6b5a546d75e8a9640163939cc9845ed4782c66243b1e",
+      "raw_input_sha256": "4d04f259a969e20d7086ac311eb8aa3faa5f03795e603c02086b105df51a74e3",
+      "analysis_sha256": "a13b81c8d3e1552e9977be1c0572b2103e0fea76cb3ddd5cccc55c1ad4025b75"
     }
   ]
 }

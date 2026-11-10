@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9382,
-      "sha256": "04124be6d3935ab99337986419e4ae275e6398db39ac2b48430d18880bf1319d"
+      "bytes": 9419,
+      "sha256": "01bee4ef0db3a7b7f0ea15cc48cf2bbb0cc086dcea4d9f3a282fe51c4c1813dd"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -757,19 +757,24 @@
       "sha256": "02d31338fd23369a554a7d87b1de64e1f5039a02027babe748e6c960fff9eccc"
     },
     {
+      "path": "docs/BOARD_VALIDATION.md",
+      "bytes": 3853,
+      "sha256": "fb2dfc853bc94d71dc6b288deec42c9145518ddf73cf2718fd854b63a1478072"
+    },
+    {
       "path": "docs/CI.md",
-      "bytes": 2975,
-      "sha256": "e45a334c6bce57dc15f09b7aca6aa1e7013759f74f6edfcd0fe05271db66b42a"
+      "bytes": 3014,
+      "sha256": "0f47b764ba9769b2e4894781b54db958d0743cd5718f43a4d875b032564975ce"
     },
     {
       "path": "docs/EVIDENCE.md",
-      "bytes": 2320,
-      "sha256": "13b7acbb4bcbd7878966ac2178f005e60472bbcb6dd0b8d8c17fa1c33389a7a5"
+      "bytes": 2504,
+      "sha256": "6e852d509941f524530563a4899259ae6812161d8bb62fef7a77356d0c296960"
     },
     {
       "path": "docs/FPGA_BUILD.md",
-      "bytes": 6311,
-      "sha256": "5128c9be7d1435f449905cf1cc3460ebf7c7f077a1e816931d14a96c227423cd"
+      "bytes": 6402,
+      "sha256": "6f209c32f437b3a1b87451f35af41697d0d045c6ebc7086be4b25efcf04f91c1"
     },
     {
       "path": "docs/MODEL_BUILD.md",
@@ -778,13 +783,18 @@
     },
     {
       "path": "docs/PUBLIC_REPRODUCTION.md",
-      "bytes": 6527,
-      "sha256": "4a28d2b991615d7969b25dc45b133950869123e5b07975e26d87c25818d5ec02"
+      "bytes": 6551,
+      "sha256": "8befd614ecd618d4b9a19235efef824052e60a5cc2a5559431ef8845959e5980"
     },
     {
       "path": "docs/RUNNING.md",
       "bytes": 4155,
       "sha256": "6ae671e560f80da0680123a834564b9a528fc54c65446f54dd545ca4520d4462"
+    },
+    {
+      "path": "docs/board_validation.json",
+      "bytes": 20657,
+      "sha256": "8d2508b07250e877e80196f12897029d5bcd7ed22cfd036ac83425cfa4d33c12"
     },
     {
       "path": "docs/ci_validation.json",
@@ -798,13 +808,13 @@
     },
     {
       "path": "docs/evidence_index.json",
-      "bytes": 4860,
-      "sha256": "eb13cd5f2ceb519a3a290212b16e7479c35d4d0ee466f01dddac89cbf9312a4b"
+      "bytes": 5994,
+      "sha256": "f6e620b3c1b7b83315cd529699fa051f7422a2ee3be75759211f7f81ee98f1b7"
     },
     {
       "path": "docs/fpga_build_validation.json",
-      "bytes": 6096,
-      "sha256": "dddc4917484d7a4061cccb9c7b18137e87eba707420ea3d9758bcad11dc6acf1"
+      "bytes": 6176,
+      "sha256": "511367a8d72df7ed98be6f202eff5dcb8c8970fda75c7f4ac337533ad0b9ed2b"
     },
     {
       "path": "docs/int8_rebuild_validation.json",
@@ -823,8 +833,8 @@
     },
     {
       "path": "docs/release_status.json",
-      "bytes": 1561,
-      "sha256": "440fa5440f62baf562cd4c7d8af3262c291843d68bafa546e473d98c519042b6"
+      "bytes": 1655,
+      "sha256": "9da92bef77dd054c57f651575699b320699bf560a29c5086476a0e23a4cad60e"
     },
     {
       "path": "docs/research/TCN_现有数据优化第4步相对价格特征训练报告_2026-10-17.txt",
@@ -2148,13 +2158,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 413378,
-      "sha256": "25706d33b8ace15caf4ef2fc891f308cda8568c3c30e1cf4b7f1e034d99b9f4d"
+      "bytes": 414660,
+      "sha256": "7913456fad8613c3930d74c115c9be99b4cc5bb727882cb2fe23338738ad01d8"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "09fb046c98033c488ad6221e88831812b49b5f9c7a47f06b1b3053f79e392cc7"
+      "sha256": "675cd967b2a90ffac9c67d451e70ca66d0a33bb3655b68eceb5b40f809306552"
     },
     {
       "path": "requirements.txt",

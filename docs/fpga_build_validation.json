@@ -1,5 +1,5 @@
 {
-  "status": "passed_pending_board_validation",
+  "status": "passed_build_and_followup_board_validation",
   "source_commit": "f218ebc44443f41fa94413ed41b141b2aad8a0d0",
   "input_files": 209,
   "source_changes_since_staging": [],
@@ -125,7 +125,7 @@
     }
   },
   "board_access": false,
-  "board_validation": "pending",
+  "board_validation": "passed_followup",
   "schema": "finedge_fpga_source_build_validation_v1",
   "date": "2026-11-10",
   "scope": "H50 Wujing FMQL30TAI full board",
@@ -176,6 +176,7 @@
   "PHY_RX_extra_delay_ps": 750,
   "PHY_timing_validated_on_this_board_run": false,
   "earlier_attempts": "Failure logs and the successful staged candidate are retained in the local build audit",
-  "board_acceptance": false,
-  "earlier_successful_candidate_BOOT_byte_equal": true
+  "board_acceptance": true,
+  "earlier_successful_candidate_BOOT_byte_equal": true,
+  "followup_board_validation": "docs/board_validation.json"
 }

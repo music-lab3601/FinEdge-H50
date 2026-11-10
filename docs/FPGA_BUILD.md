@@ -62,9 +62,9 @@ Vivado 重置综合运行时会移除部分 IP 输出。构建入口在生成运
 
 命令与完成信息的两个小型异步 FIFO 使用双级 Gray 指针同步后读取 RAM。其叶级 RAM 时钟输出到读寄存器的数据发布路径按 5 ns 限制，异步保持关系仅对该路径豁免。命令 FIFO 的 200 MHz 读域提供至少 10 ns 的发布等待，完成 FIFO 的 125 MHz 读域提供至少 16 ns。读地址路径单独约束。物理审计逐 FIFO 核验实际路径、5 ns 要求、裕量和保持例外，将命中端点写入 `physical_audit/fifo_publication.tsv`。
 
-BOOT 使用厂商后处理生成的 `ai7030_edif_top_disable_icap.bit`，结合已登记的 FSBL、BL31 和 U-Boot 打包。主要发布产物为 `boot/BOOT.bin`、`boot/BOOT.bin.gz` 与 `boot/release.json`。本轮功耗报告采用环境温度 25℃、典型工艺及工具默认活动率，属于工具估计。
+BOOT 使用厂商后处理生成的 `ai7030_edif_top_disable_icap.bit`，结合已登记的 FSBL、BL31 和 U-Boot 打包。主要发布产物为 `boot/BOOT.bin`、`boot/BOOT.bin.gz` 与 `boot/release.json`。本轮功耗报告采用环境温度25℃、典型工艺及工具默认活动率，属于工具估计。
 
-构建成功时，BOOT 收据状态为 `packaged_pending_board_validation`。后续应在板卡加载该产物，并核验 DDR、行情接收、推理结果及演示完整链路。
+构建成功时，BOOT 收据状态为 `packaged_pending_board_validation`。该产物已完成DDR、行情接收、NPU结果及演示完整链路的后续真机验收，记录见`docs/board_validation.json`。
 
 ## 2026-11-10 构建验收
 
@@ -80,4 +80,4 @@ BOOT 使用厂商后处理生成的 `ai7030_edif_top_disable_icap.bit`，结合�
 | BRAM 等效块 | 216 / 265 | 81.51% |
 | DSP | 18 / 400 | 4.50% |
 
-工具估计片上功耗为 3.842 W，使用默认活动率，置信度为 Low，PS7 活动参数未指定。新生成的 BOOT 状态为 `packaged_pending_board_validation`，真机数据通路验收列入下一阶段。
+工具估计片上功耗为 3.842 W，使用默认活动率，置信度为 Low，PS7 活动参数未指定。构建收据的BOOT状态为`packaged_pending_board_validation`。同一固件后续真机验收结果独立保存于`docs/board_validation.json`，通过BOOT哈希关联。
