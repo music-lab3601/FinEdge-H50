@@ -120,6 +120,8 @@ def train(data, cache, roots, output, device, epochs, identity):
                   normalization=cache['normalization'], software=dict(torch=str(torch.__version__), numpy=np.__version__),
                   source_sha256={name: sha(ROOT/name) for name in (
                       'software/training/entry.py', 'software/training/tcn_existing_data_ed4_features.py',
+                      'software/training/tcn_existing_data_ed4_train.py',
+                      'software/training/tcn_research_data_p2.py', 'software/training/tcn_research_evaluate_p2.py',
                       'software/model/tcn_research_p5_model.py', 'software/model/tcn_candidate.py')}, history=[])
     atomic_json(output/'result.json', result)
     try:

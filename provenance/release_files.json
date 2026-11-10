@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10545,
-      "sha256": "667a10de26dbe2fe25ba602f67b9aacf7adc3925348f299d0845b8530ce8aab1"
+      "bytes": 10839,
+      "sha256": "1b5e63fd66a45656b4a8a3f576d665fa2ff155676585448efa0bcca8124ad032"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -768,8 +768,8 @@
     },
     {
       "path": "docs/COMPLETENESS_AUDIT.md",
-      "bytes": 2951,
-      "sha256": "9cabdd6d7bd98dbfc84a34b04d133558144c34412d1dccf8196d223e7b209a7f"
+      "bytes": 4274,
+      "sha256": "127db3aa5c55e722dd6075f7f60c5663643bbab4f47717a6874de00b6cc61295"
     },
     {
       "path": "docs/EVIDENCE.md",
@@ -825,6 +825,11 @@
       "path": "docs/completeness_validation.json",
       "bytes": 12724,
       "sha256": "d98cfdda5a6461fc62a1db737f4ec4a90bf147e3e53d45e9fe514e9bc6dfae77"
+    },
+    {
+      "path": "docs/completeness_validation_v2.json",
+      "bytes": 12306,
+      "sha256": "5a9cded923ee630e2c7c2add2d1594fc22371458ceb21388bc35bea888f710b6"
     },
     {
       "path": "docs/evidence_index.json",
@@ -2193,13 +2198,13 @@
     },
     {
       "path": "provenance/source_map.json",
-      "bytes": 420624,
-      "sha256": "79291f249507a683bf628746e7c4a4c54b64d6f90dc9b40c1b66411ec4d583b2"
+      "bytes": 421439,
+      "sha256": "4bbfc9971c63f6c08ef62a472b256d968a7aaa5ff7b072960550d8544fe46f60"
     },
     {
       "path": "provenance/template_migration.json",
       "bytes": 21942,
-      "sha256": "41454bceee01c1557885652fdd8347ab496e5ec17814d2ab8e846447b99cdd97"
+      "sha256": "415d35e3f0626db8d6ec36c237e8b0f01e7ccf3258a74a192104f9e834f97868"
     },
     {
       "path": "requirements.txt",
@@ -2413,8 +2418,8 @@
     },
     {
       "path": "software/training/entry.py",
-      "bytes": 10446,
-      "sha256": "c2bf8dcbfce8138b17781ea28824d729dd3eb62e807847ea7624d0a1b26dde67"
+      "bytes": 10636,
+      "sha256": "6335d9580a5481ba9ccd49c1e7fe9441caa1c974b993d81d3c259ae46e98ce08"
     },
     {
       "path": "software/training/tcn_existing_data_ed4_features.py",
@@ -2663,8 +2668,8 @@
     },
     {
       "path": "tests/test_training_entry.py",
-      "bytes": 6067,
-      "sha256": "9ead1c880b4a9c79af50e7cd77d4f9ac6e0fabf6f76372cc71cc2b56a8bf01f6"
+      "bytes": 6125,
+      "sha256": "11db96ce390a6463b5a47271fb4cf48e2ac0a16db50b37e5dc248884b1a8fda4"
     },
     {
       "path": "tests/test_vendor_integration.py",

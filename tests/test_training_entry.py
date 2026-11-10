@@ -56,6 +56,7 @@ class TrainingEntryTests(unittest.TestCase):
         self.assertEqual(result['status'], 'completed')
         self.assertEqual(result['data_kind'], 'synthetic')
         self.assertEqual(result['optimizer_updates'], 1)
+        self.assertEqual(len(result['source_sha256']), 7)
         self.assertEqual(result['history'][0]['train']['samples'], 30)
         self.assertEqual(result['history'][0]['development']['samples'], 12)
         import torch

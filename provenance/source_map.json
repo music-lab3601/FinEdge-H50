@@ -6524,7 +6524,7 @@
     "path": "README.md",
     "origin": "public_repository_migration/README.md",
     "source_sha256": "8852d5a06c62fc394d4e4ee1db8aac5d4e33eb26293625506f4b99fc47ff3423",
-    "public_sha256": "667a10de26dbe2fe25ba602f67b9aacf7adc3925348f299d0845b8530ce8aab1",
+    "public_sha256": "1b5e63fd66a45656b4a8a3f576d665fa2ff155676585448efa0bcca8124ad032",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Clean Python acceptance; dependency or installation metadata updated",
@@ -7004,7 +7004,7 @@
     "path": "provenance/template_migration.json",
     "origin": "public_repository_migration/provenance/template_migration.json",
     "source_sha256": "dc4ce8890b9d285177bc685a3e8b2e250991a718a551febf0b54dbad12b125e1",
-    "public_sha256": "41454bceee01c1557885652fdd8347ab496e5ec17814d2ab8e846447b99cdd97",
+    "public_sha256": "415d35e3f0626db8d6ec36c237e8b0f01e7ccf3258a74a192104f9e834f97868",
     "category": "migration_entry_or_metadata",
     "adaptations": [
       "Functional directory migration and portable runtime configuration",
@@ -7588,9 +7588,11 @@
     "path": "docs/COMPLETENESS_AUDIT.md",
     "origin": "public_reaudit/docs/COMPLETENESS_AUDIT.md",
     "source_sha256": "9cabdd6d7bd98dbfc84a34b04d133558144c34412d1dccf8196d223e7b209a7f",
-    "public_sha256": "9cabdd6d7bd98dbfc84a34b04d133558144c34412d1dccf8196d223e7b209a7f",
+    "public_sha256": "127db3aa5c55e722dd6075f7f60c5663643bbab4f47717a6874de00b6cc61295",
     "category": "audit_source_or_evidence",
-    "adaptations": []
+    "adaptations": [
+      "Completeness audit and deterministic vendor integration"
+    ]
   },
   {
     "path": "docs/completeness_validation.json",
@@ -7604,7 +7606,7 @@
     "path": "tests/test_training_entry.py",
     "origin": "public_reaudit/tests/test_training_entry.py",
     "source_sha256": "bdbf3d066c210a9b98271e6cf56c0a82c654ed13d53d51870640b958e59b63be",
-    "public_sha256": "9ead1c880b4a9c79af50e7cd77d4f9ac6e0fabf6f76372cc71cc2b56a8bf01f6",
+    "public_sha256": "11db96ce390a6463b5a47271fb4cf48e2ac0a16db50b37e5dc248884b1a8fda4",
     "category": "audit_source_or_evidence",
     "adaptations": [
       "Completeness audit and deterministic vendor integration"
@@ -7615,6 +7617,22 @@
     "origin": "public_reaudit/docs/TRAINING.md",
     "source_sha256": "e76d9341575924b0192c9a506ee26ba616fd38f2ec56904a9c4b9a7e879eeb59",
     "public_sha256": "e76d9341575924b0192c9a506ee26ba616fd38f2ec56904a9c4b9a7e879eeb59",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "software/training/entry.py",
+    "origin": "public_reaudit/software/training/entry.py",
+    "source_sha256": "6335d9580a5481ba9ccd49c1e7fe9441caa1c974b993d81d3c259ae46e98ce08",
+    "public_sha256": "6335d9580a5481ba9ccd49c1e7fe9441caa1c974b993d81d3c259ae46e98ce08",
+    "category": "audit_source_or_evidence",
+    "adaptations": []
+  },
+  {
+    "path": "docs/completeness_validation_v2.json",
+    "origin": "public_reaudit/docs/completeness_validation_v2.json",
+    "source_sha256": "5a9cded923ee630e2c7c2add2d1594fc22371458ceb21388bc35bea888f710b6",
+    "public_sha256": "5a9cded923ee630e2c7c2add2d1594fc22371458ceb21388bc35bea888f710b6",
     "category": "audit_source_or_evidence",
     "adaptations": []
   }

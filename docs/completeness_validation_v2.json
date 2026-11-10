@@ -1,0 +1,333 @@
+{
+  "schema": "finedge-completeness-audit-2",
+  "status": "passed",
+  "date": "2026-11-10",
+  "implementation_commit": "16feae424cbefce494334c422a4e279f4b92576c",
+  "previous_release": {
+    "status": "passed",
+    "version": "v1.0.1",
+    "files": 682,
+    "assets": [
+      {
+        "name": "FinEdge-H50-v1.0.1-source.zip",
+        "sha256": "3c24ecb3c88fb0db53ef12c57cbffaedc07e94dbd8c21a610aa39925a4e36c2d",
+        "bytes": 3386208
+      },
+      {
+        "name": "FinEdge-H50-v1.0.1-synthetic-inputs.zip",
+        "sha256": "994c487aae7830524184431545010c483e8949d730970eb74e92c0493d8d1e80",
+        "bytes": 105262
+      },
+      {
+        "name": "SHA256SUMS",
+        "sha256": "8fac83ce3ae04c8fc2a5577c125bae3df5093c20ebe196cd172bf9bf1fe9e948",
+        "bytes": 204
+      }
+    ]
+  },
+  "corrected_issue": "Public train entry depended on pre-migration paths and historical registration context",
+  "correction": "Portable prepare/admit/run over explicitly SHA-bound P2 data and row-cache manifests",
+  "training_probe": {
+    "status": "passed",
+    "data_kind": "synthetic",
+    "TRAIN_windows": 30,
+    "DEV_windows": 12,
+    "epochs": 1,
+    "optimizer_updates": 1,
+    "parameters": 33539,
+    "checkpoint_reloaded_and_state_verified": true,
+    "weights_changed": true,
+    "data_manifest_sha256": "6e6703b183123a5009a6a2f254ccc2e3190db6506aaa09ce1a3659ffdae1613f",
+    "cache_manifest_sha256": "2e115c717e3054b501ca65f484e863b7ae438fb82351e2b5872d62edcd86cde0",
+    "checkpoint_sha256": "43e6c6ea9953affc56ed6f9c03f0dc76e8c09f55b5c372e07127fdbf62fd3cb5"
+  },
+  "tests": {
+    "executed": 702,
+    "passed": 676,
+    "skipped": 26,
+    "failed": 0,
+    "skipped_cases": [
+      {
+        "test": "test_sdk_dequantization (tests.deployment.base.test_contract_codec.CodecContractTests.test_sdk_dequantization)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_sdk_goldens_exact (tests.deployment.base.test_contract_codec.CodecContractTests.test_sdk_goldens_exact)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_frozen_evaluation_identity (tests.deployment.base.test_contract_codec.IsolationTests.test_frozen_evaluation_identity)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_input_contract_matches_compiler (tests.deployment.base.test_contract_codec.IsolationTests.test_input_contract_matches_compiler)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_real_full_footprints (tests.deployment.base.test_contract_codec.IsolationTests.test_real_full_footprints)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_actual_mixed_types (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_actual_mixed_types)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_exact_integer_h50_labels (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_exact_integer_h50_labels)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_external_type_matches_generated_model (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_external_type_matches_generated_model)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_failed_fp16_attempt_preserved (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_failed_fp16_attempt_preserved)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_frozen_graph_identity (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_frozen_graph_identity)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_frozen_original_preprocess (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_frozen_original_preprocess)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_saved_counts_and_budget (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_saved_counts_and_budget)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_unused_nonoverlapping_full_footprints (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_unused_nonoverlapping_full_footprints)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_v1_payloads_unchanged (tests.deployment.mixed.test_improvement.PrecisionImprovementTests.test_v1_payloads_unchanged)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_64_goldens_match_actual_sdk (tests.deployment.native.test_native_entry.NativeEntryTests.test_64_goldens_match_actual_sdk)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_board_request_bound_to_bytes_outputs_and_layer_counts (tests.deployment.native.test_native_entry.NativeEntryTests.test_board_request_bound_to_bytes_outputs_and_layer_counts)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_fresh_normalization_independently_rebuilt (tests.deployment.native.test_native_entry.NativeEntryTests.test_fresh_normalization_independently_rebuilt)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_frozen_identity_and_actual_abi (tests.deployment.native.test_native_entry.NativeEntryTests.test_frozen_identity_and_actual_abi)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_h50_label_uses_only_evaluation_future (tests.deployment.native.test_native_entry.NativeEntryTests.test_h50_label_uses_only_evaluation_future)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_new_full_footprints_isolated_and_nonoverlapping (tests.deployment.native.test_native_entry.NativeEntryTests.test_new_full_footprints_isolated_and_nonoverlapping)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_parameter_and_bias_audit (tests.deployment.native.test_native_entry.NativeEntryTests.test_parameter_and_bias_audit)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_prior_v1_v2_releases_unchanged (tests.deployment.native.test_native_entry.NativeEntryTests.test_prior_v1_v2_releases_unchanged)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_quality_counts_budget_and_no_fresh_tuning (tests.deployment.native.test_native_entry.NativeEntryTests.test_quality_counts_budget_and_no_fresh_tuning)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_scales_fit_only_observed_data_and_invariant (tests.deployment.native.test_native_entry.NativeEntryTests.test_scales_fit_only_observed_data_and_invariant)",
+        "reason": "External historical SDK/data receipts required"
+      },
+      {
+        "test": "test_admission_real_metadata_no_source_read (tests.software.test_tcn_research_data_p2.P2DataTests.test_admission_real_metadata_no_source_read)",
+        "reason": "External historical P1 admission receipts are required"
+      },
+      {
+        "test": "test_11_CPU_GPU_weight_norm_consistency (tests.software.test_tcn_research_p5_model.ModelTests.test_11_CPU_GPU_weight_norm_consistency)",
+        "reason": "CUDA unavailable; no GPU result claimed"
+      }
+    ]
+  },
+  "CI_steps": [
+    {
+      "name": "dependencies",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.5149999999994179
+    },
+    {
+      "name": "checkout",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.327999999994063
+    },
+    {
+      "name": "templates",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.39100000000325963
+    },
+    {
+      "name": "imports",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 1.0470000000059372
+    },
+    {
+      "name": "generate",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.4369999999908032
+    },
+    {
+      "name": "verify",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.3130000000091968
+    },
+    {
+      "name": "tests",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 30.436999999990803
+    },
+    {
+      "name": "CPU_model",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.110000000000582
+    },
+    {
+      "name": "CPU_network",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.2810000000026776
+    },
+    {
+      "name": "public_CPU",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.875
+    },
+    {
+      "name": "board_bundle",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.5620000000053551
+    },
+    {
+      "name": "ONNX_export",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 2.5789999999979045
+    },
+    {
+      "name": "causal_graph",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.6870000000053551
+    },
+    {
+      "name": "ROM_generation",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 0.28099999998812564
+    },
+    {
+      "name": "native_build",
+      "status": "passed",
+      "return_code": 0,
+      "seconds": 7.922000000005937
+    }
+  ],
+  "RTL": {
+    "status": "passed",
+    "simulator": "iverilog",
+    "tests": [
+      {
+        "bench": "fifo",
+        "status": "passed"
+      },
+      {
+        "bench": "window_bridge",
+        "status": "passed"
+      },
+      {
+        "bench": "history",
+        "status": "passed"
+      },
+      {
+        "bench": "window_bridge_earliest",
+        "status": "passed"
+      }
+    ],
+    "board_access": false
+  },
+  "ROM_files_byte_equal": 5,
+  "native_protocol": {
+    "status": "passed",
+    "UDP_events": 180,
+    "identity_and_raw_bytes_equal": true
+  },
+  "missing_file_detection_probes": {
+    "status": "passed",
+    "cases": [
+      {
+        "file": "software/training/entry.py",
+        "missing_detected": true,
+        "return_code": 1
+      },
+      {
+        "file": "hardware/rtl/top/g_bench_endpoint.sv",
+        "missing_detected": true,
+        "return_code": 1
+      },
+      {
+        "file": "hardware/rom/fixed_lane0.hex",
+        "missing_detected": true,
+        "return_code": 1
+      },
+      {
+        "file": "hardware/constraints/market_io.xdc",
+        "missing_detected": true,
+        "return_code": 1
+      },
+      {
+        "file": "third_party/verilog-ethernet/lib/axis/syn/vivado/axis_async_fifo.tcl",
+        "missing_detected": true,
+        "return_code": 1
+      },
+      {
+        "file": "models/npu/model.raw",
+        "missing_detected": true,
+        "return_code": 2
+      },
+      {
+        "file": "docs/TRAINING.md",
+        "missing_detected": true,
+        "return_code": 1
+      },
+      {
+        "file": "LICENSE",
+        "missing_detected": true,
+        "return_code": 1
+      }
+    ],
+    "restored_checkout_passed": true
+  },
+  "extra_static_references": {
+    "status": "passed",
+    "checked": 128,
+    "errors": []
+  },
+  "required_FPGA_dependencies_checked": 746,
+  "XPR_inputs": 273,
+  "board_access": false,
+  "training_scope": "Seven synthetic segments, one CPU epoch. Full historical retraining requires the seven-day data and manifests.",
+  "hardware_scope": "Dependency identity and RTL simulation; full implementation and board evidence linked by existing input identities"
+}
